@@ -13,7 +13,7 @@ export const VideoPlayer = ({ videoId, title, platform = "youtube" }: VideoPlaye
 
   const getEmbedUrl = () => {
     if (platform === "youtube") {
-      return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
+      return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&controls=1`;
     }
     return `https://player.vimeo.com/video/${videoId}`;
   };
