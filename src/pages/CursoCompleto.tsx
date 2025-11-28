@@ -46,7 +46,7 @@ const CursoCompleto = () => {
   const [filterCategory, setFilterCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   
-  const videosPerPage = 8;
+  const videosPerPage = 4;
 
   const categories = ["Técnicas Básicas", "Técnicas Intermediárias", "Projetos Práticos", "Técnicas Avançadas"];
   
