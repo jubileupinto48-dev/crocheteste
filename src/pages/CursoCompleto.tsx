@@ -8,6 +8,7 @@ import { VideoCard } from "@/components/VideoCard";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 
 const CursoCompleto = () => {
   const videos = [
@@ -43,6 +44,9 @@ const CursoCompleto = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const videosPerPage = 8;
 
   const categories = ["Técnicas Básicas", "Técnicas Intermediárias", "Projetos Práticos", "Técnicas Avançadas"];
   
@@ -55,10 +59,18 @@ const CursoCompleto = () => {
     return matchesSearch && matchesCategory;
   });
 
+  const totalPages = Math.ceil(filteredVideos.length / videosPerPage);
+  const startIndex = (currentPage - 1) * videosPerPage;
+  const paginatedVideos = filteredVideos.slice(startIndex, startIndex + videosPerPage);
+
   const handleVideoSelect = (index: number) => {
-    const actualIndex = videos.findIndex(v => v.id === filteredVideos[index].id);
+    const actualIndex = videos.findIndex(v => v.id === paginatedVideos[index].id);
     setCurrentVideoIndex(actualIndex);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
   const handleNext = () => {
@@ -225,54 +237,55 @@ const CursoCompleto = () => {
                   </Select>
                 </div>
 
-                {/* Lista com scroll organizada por categoria */}
-                <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
-                  {filterCategory === "all" ? (
-                    categories.map(category => {
-                      const categoryVideos = filteredVideos.filter(v => v.category === category);
-                      if (categoryVideos.length === 0) return null;
-                      
-                      return (
-                        <div key={category} className="space-y-2">
-                          <h4 className="font-semibold text-sm text-foreground sticky top-0 bg-background py-2 border-b border-border">
-                            {category}
-                          </h4>
-                          {categoryVideos.map((video, index) => {
-                            const actualIndex = videos.findIndex(v => v.id === video.id);
-                            return (
-                              <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
-                                <VideoCard
-                                  title={video.title}
-                                  duration={video.duration}
-                                  thumbnail={video.thumbnail}
-                                  videoNumber={video.id}
-                                  isActive={actualIndex === currentVideoIndex}
-                                  onClick={() => handleVideoSelect(filteredVideos.findIndex(v => v.id === video.id))}
-                                />
-                              </div>
-                            );
-                          })}
-                        </div>
-                      );
-                    })
-                  ) : (
-                    filteredVideos.map((video, index) => {
-                      const actualIndex = videos.findIndex(v => v.id === video.id);
-                      return (
-                        <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
-                          <VideoCard
-                            title={video.title}
-                            duration={video.duration}
-                            thumbnail={video.thumbnail}
-                            videoNumber={video.id}
-                            isActive={actualIndex === currentVideoIndex}
-                            onClick={() => handleVideoSelect(index)}
-                          />
-                        </div>
-                      );
-                    })
-                  )}
+                {/* Lista paginada */}
+                <div className="space-y-4 mb-4">
+                  {paginatedVideos.map((video, index) => {
+                    const actualIndex = videos.findIndex(v => v.id === video.id);
+                    return (
+                      <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
+                        <VideoCard
+                          title={video.title}
+                          duration={video.duration}
+                          thumbnail={video.thumbnail}
+                          videoNumber={video.id}
+                          isActive={actualIndex === currentVideoIndex}
+                          onClick={() => handleVideoSelect(index)}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
+
+                {/* Paginação */}
+                {totalPages > 1 && (
+                  <Pagination className="mt-4">
+                    <PaginationContent>
+                      <PaginationItem>
+                        <PaginationPrevious 
+                          onClick={() => currentPage > 1 && handlePageChange(currentPage - 1)}
+                          className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                        />
+                      </PaginationItem>
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                        <PaginationItem key={page}>
+                          <PaginationLink
+                            onClick={() => handlePageChange(page)}
+                            isActive={currentPage === page}
+                            className="cursor-pointer"
+                          >
+                            {page}
+                          </PaginationLink>
+                        </PaginationItem>
+                      ))}
+                      <PaginationItem>
+                        <PaginationNext 
+                          onClick={() => currentPage < totalPages && handlePageChange(currentPage + 1)}
+                          className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                        />
+                      </PaginationItem>
+                    </PaginationContent>
+                  </Pagination>
+                )}
               </CardContent>
             </Card>
           </div>
