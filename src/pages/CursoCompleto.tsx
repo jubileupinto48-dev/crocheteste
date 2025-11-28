@@ -8,7 +8,7 @@ import { VideoCard } from "@/components/VideoCard";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
+
 
 const CursoCompleto = () => {
   const videos = [
@@ -221,10 +221,16 @@ const CursoCompleto = () => {
                   <Input
                     placeholder="Buscar aula..."
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={(e) => {
+                      setSearchTerm(e.target.value);
+                      setCurrentPage(1);
+                    }}
                     className="h-10"
                   />
-                  <Select value={filterCategory} onValueChange={setFilterCategory}>
+                  <Select value={filterCategory} onValueChange={(value) => {
+                    setFilterCategory(value);
+                    setCurrentPage(1);
+                  }}>
                     <SelectTrigger className="h-10">
                       <SelectValue placeholder="Filtrar por categoria" />
                     </SelectTrigger>
@@ -237,8 +243,8 @@ const CursoCompleto = () => {
                   </Select>
                 </div>
 
-                {/* Lista paginada */}
-                <div className="space-y-4 mb-4">
+                {/* Lista com scroll */}
+                <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
                   {paginatedVideos.map((video, index) => {
                     const actualIndex = videos.findIndex(v => v.id === video.id);
                     return (
@@ -258,33 +264,27 @@ const CursoCompleto = () => {
 
                 {/* Paginação */}
                 {totalPages > 1 && (
-                  <Pagination className="mt-4">
-                    <PaginationContent>
-                      <PaginationItem>
-                        <PaginationPrevious 
-                          onClick={() => currentPage > 1 && handlePageChange(currentPage - 1)}
-                          className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
-                        />
-                      </PaginationItem>
-                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                        <PaginationItem key={page}>
-                          <PaginationLink
-                            onClick={() => handlePageChange(page)}
-                            isActive={currentPage === page}
-                            className="cursor-pointer"
-                          >
-                            {page}
-                          </PaginationLink>
-                        </PaginationItem>
-                      ))}
-                      <PaginationItem>
-                        <PaginationNext 
-                          onClick={() => currentPage < totalPages && handlePageChange(currentPage + 1)}
-                          className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
-                        />
-                      </PaginationItem>
-                    </PaginationContent>
-                  </Pagination>
+                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                      disabled={currentPage === 1}
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </Button>
+                    <span className="text-sm text-muted-foreground">
+                      Página {currentPage} de {totalPages}
+                    </span>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                      disabled={currentPage === totalPages}
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </Button>
+                  </div>
                 )}
               </CardContent>
             </Card>
