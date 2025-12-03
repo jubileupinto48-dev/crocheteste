@@ -75,7 +75,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
       {/* Header */}
-      <header className="sticky top-0 z-50 py-6">
+      <header className="py-6">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-3">
             <Sparkles className="w-7 h-7 text-primary" />
