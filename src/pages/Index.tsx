@@ -75,16 +75,16 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
       {/* Header */}
-      <header className="border-b border-border/50 bg-card/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-center gap-2">
-            <Sparkles className="w-6 h-6 text-primary" />
-            <h1 className="text-2xl md:text-3xl font-bold gradient-primary bg-clip-text text-transparent">
-              Arte em Crochê
+      <header className="sticky top-0 z-50 py-6">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center gap-3">
+            <Sparkles className="w-7 h-7 text-primary" />
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground">
+              Crochê da Nana
             </h1>
           </div>
           <p className="text-center text-muted-foreground mt-2 text-sm md:text-base">
-            Sua jornada completa no mundo do crochê
+            Sua área exclusiva de conteúdos
           </p>
         </div>
       </header>
@@ -124,7 +124,7 @@ const Index = () => {
       <footer className="border-t border-border/50 mt-20 bg-card/30">
         <div className="container mx-auto px-4 py-8 text-center text-muted-foreground">
           <p className="text-sm">
-            © {new Date().getFullYear()} Arte em Crochê - Todos os direitos reservados
+            © {new Date().getFullYear()} Crochê da Nana - Todos os direitos reservados
           </p>
         </div>
       </footer>
