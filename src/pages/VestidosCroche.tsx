@@ -436,7 +436,7 @@ const VestidosCroche = () => {
         </Link>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Player Principal */}
+          {/* Player Principal + Info */}
           <div className="lg:col-span-2 space-y-6">
             <div className="animate-fade-in">
               <VideoPlayer
@@ -490,33 +490,11 @@ const VestidosCroche = () => {
                 </div>
               </CardContent>
             </Card>
-
-            <Card className="shadow-card">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Sobre esta Aula
-                </h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Neste tutorial completo, você aprenderá todas as técnicas necessárias para 
-                  criar este lindo {currentVideo.project.toLowerCase()}. Siga o passo a passo com atenção e tire 
-                  suas dúvidas nos comentários.
-                </p>
-                <div className="bg-accent/20 border border-accent rounded-lg p-4">
-                  <h4 className="font-semibold text-foreground mb-2">Materiais Necessários:</h4>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• Linha de sua preferência (quantidade varia por projeto)</li>
-                    <li>• Agulha de crochê adequada para a linha</li>
-                    <li>• Tesoura e agulha de tapeçaria</li>
-                    <li>• Marcadores de ponto (opcional)</li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
-          {/* Lista de Vídeos */}
-          <div className="lg:col-span-1">
-            <Card className="sticky top-8 shadow-card animate-fade-in">
+          {/* Lista de Vídeos - Aparece segundo no mobile, sidebar no desktop */}
+          <div className="lg:col-span-1 lg:row-span-2">
+            <Card className="lg:sticky lg:top-8 shadow-card animate-fade-in">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-4">
                   Todas as Aulas ({videos.length})
@@ -550,7 +528,7 @@ const VestidosCroche = () => {
                 </div>
 
                 {/* Lista com scroll */}
-                <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+                <div className="space-y-3 max-h-[400px] lg:max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
                   {paginatedVideos.map((video, index) => {
                     const actualIndex = videos.findIndex(v => v.id === video.id);
                     return (
@@ -592,6 +570,31 @@ const VestidosCroche = () => {
                     </Button>
                   </div>
                 )}
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Sobre esta Aula - Aparece por último no mobile */}
+          <div className="lg:col-span-2">
+            <Card className="shadow-card">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  Sobre esta Aula
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Neste tutorial completo, você aprenderá todas as técnicas necessárias para 
+                  criar este lindo {currentVideo.project.toLowerCase()}. Siga o passo a passo com atenção e tire 
+                  suas dúvidas nos comentários.
+                </p>
+                <div className="bg-accent/20 border border-accent rounded-lg p-4">
+                  <h4 className="font-semibold text-foreground mb-2">Materiais Necessários:</h4>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>• Linha de sua preferência (quantidade varia por projeto)</li>
+                    <li>• Agulha de crochê adequada para a linha</li>
+                    <li>• Tesoura e agulha de tapeçaria</li>
+                    <li>• Marcadores de ponto (opcional)</li>
+                  </ul>
+                </div>
               </CardContent>
             </Card>
           </div>
