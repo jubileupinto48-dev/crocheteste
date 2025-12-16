@@ -20,48 +20,48 @@ const VestidosCroche = () => {
     { id: 4, title: "Saída Mel Maia - Parte 1", videoId: "MV86APDdJrE", project: "Saída Mel Maia", part: 1 },
     { id: 5, title: "Saída Mel Maia - Parte 2", videoId: "WPavNu7xI_o", project: "Saída Mel Maia", part: 2 },
     
-    // ===== OUTROS PROJETOS =====
-    // Calça Crochê Correntinha
-    { id: 6, title: "Calça Crochê Correntinha", videoId: "23pELsHCpw0", project: "Calça Crochê Correntinha", part: null },
-    
-    // Calça de Crochê Tela
-    { id: 7, title: "Calça de Crochê Tela", videoId: "kEfX4uBE8_w", project: "Calça de Crochê Tela", part: null },
-    
-    // Conjunto de Crochê com paetê
-    { id: 8, title: "Conjunto de Crochê com Paetê de Acrílico Espelhado", videoId: "QMuwadztjHk", project: "Conjunto Paetê", part: null },
-    
-    // Cropped Ana Clara
-    { id: 9, title: "Cropped Ana Clara", videoId: "qTFQF2JuxMY", project: "Cropped Ana Clara", part: null },
-    
-    // Conjunto Gabi (3 partes)
-    { id: 10, title: "Conjunto Gabi - Parte 1", videoId: "fm3XUSkCy3c", project: "Conjunto Gabi", part: 1 },
-    { id: 11, title: "Conjunto Gabi - Parte 2", videoId: "5zNb43Hi7MQ", project: "Conjunto Gabi", part: 2 },
-    { id: 12, title: "Conjunto Gabi - Parte 3", videoId: "kUM9BDOY2B4", project: "Conjunto Gabi", part: 3 },
-    
-    // Conjunto Franjas (2 partes)
-    { id: 11, title: "Conjunto Franjas - Parte 1", videoId: "7BuqNEXwXKw", project: "Conjunto Franjas", part: 1 },
-    { id: 12, title: "Conjunto Franjas - Parte 2", videoId: "rhmemKGV9N8", project: "Conjunto Franjas", part: 2 },
-    
-    // Saia Laura
-    { id: 13, title: "Saia Laura", videoId: "P0Emfo_2qsU", project: "Saia Laura", part: null },
-    
-    // Vestido Patricia (2 partes)
-    { id: 14, title: "Vestido Patricia - Parte 1", videoId: "o0Txp_D4c1M", project: "Vestido Patricia", part: 1 },
-    { id: 15, title: "Vestido Patricia - Parte 2", videoId: "gF4LIZrQIQw", project: "Vestido Patricia", part: 2 },
+    // Vestido Maria (3 partes)
+    { id: 6, title: "Vestido Maria - Parte 1", videoId: "esZk0CWJPxw", project: "Vestido Maria", part: 1 },
+    { id: 7, title: "Vestido Maria - Parte 2", videoId: "RFPdFNMXSxo", project: "Vestido Maria", part: 2 },
+    { id: 8, title: "Vestido Maria - Parte 3", videoId: "d1DB5J1cHmk", project: "Vestido Maria", part: 3 },
     
     // Vestido Juliana Paes (4 partes)
-    { id: 16, title: "Vestido Juliana Paes - Parte 1", videoId: "3GLLTdColiE", project: "Vestido Juliana Paes", part: 1 },
-    { id: 17, title: "Vestido Juliana Paes - Parte 2", videoId: "Mx4tkT0Qyew", project: "Vestido Juliana Paes", part: 2 },
-    { id: 18, title: "Vestido Juliana Paes - Parte 3", videoId: "g4oWC8uHiY4", project: "Vestido Juliana Paes", part: 3 },
-    { id: 19, title: "Vestido Juliana Paes - Parte 4", videoId: "RWGTCFU8GjM", project: "Vestido Juliana Paes", part: 4 },
+    { id: 9, title: "Vestido Juliana Paes - Parte 1", videoId: "3GLLTdColiE", project: "Vestido Juliana Paes", part: 1 },
+    { id: 10, title: "Vestido Juliana Paes - Parte 2", videoId: "Mx4tkT0Qyew", project: "Vestido Juliana Paes", part: 2 },
+    { id: 11, title: "Vestido Juliana Paes - Parte 3", videoId: "g4oWC8uHiY4", project: "Vestido Juliana Paes", part: 3 },
+    { id: 12, title: "Vestido Juliana Paes - Parte 4", videoId: "RWGTCFU8GjM", project: "Vestido Juliana Paes", part: 4 },
+    
+    // ===== OUTROS PROJETOS =====
+    // Calça Crochê Correntinha
+    { id: 13, title: "Calça Crochê Correntinha", videoId: "23pELsHCpw0", project: "Calça Crochê Correntinha", part: null },
+    
+    // Calça de Crochê Tela
+    { id: 14, title: "Calça de Crochê Tela", videoId: "kEfX4uBE8_w", project: "Calça de Crochê Tela", part: null },
+    
+    // Conjunto de Crochê com paetê
+    { id: 15, title: "Conjunto de Crochê com Paetê de Acrílico Espelhado", videoId: "QMuwadztjHk", project: "Conjunto Paetê", part: null },
+    
+    // Cropped Ana Clara
+    { id: 16, title: "Cropped Ana Clara", videoId: "qTFQF2JuxMY", project: "Cropped Ana Clara", part: null },
+    
+    // Conjunto Gabi (3 partes)
+    { id: 17, title: "Conjunto Gabi - Parte 1", videoId: "fm3XUSkCy3c", project: "Conjunto Gabi", part: 1 },
+    { id: 18, title: "Conjunto Gabi - Parte 2", videoId: "5zNb43Hi7MQ", project: "Conjunto Gabi", part: 2 },
+    { id: 19, title: "Conjunto Gabi - Parte 3", videoId: "kUM9BDOY2B4", project: "Conjunto Gabi", part: 3 },
+    
+    // Conjunto Franjas (2 partes)
+    { id: 20, title: "Conjunto Franjas - Parte 1", videoId: "7BuqNEXwXKw", project: "Conjunto Franjas", part: 1 },
+    { id: 21, title: "Conjunto Franjas - Parte 2", videoId: "rhmemKGV9N8", project: "Conjunto Franjas", part: 2 },
+    
+    // Saia Laura
+    { id: 22, title: "Saia Laura", videoId: "P0Emfo_2qsU", project: "Saia Laura", part: null },
+    
+    // Vestido Patricia (2 partes)
+    { id: 23, title: "Vestido Patricia - Parte 1", videoId: "o0Txp_D4c1M", project: "Vestido Patricia", part: 1 },
+    { id: 24, title: "Vestido Patricia - Parte 2", videoId: "gF4LIZrQIQw", project: "Vestido Patricia", part: 2 },
     
     // Vestido Sophia
-    { id: 20, title: "Vestido Sophia", videoId: "IXkkWfjBD_A", project: "Vestido Sophia", part: null },
-    
-    // Vestido Maria (3 partes)
-    { id: 21, title: "Vestido Maria - Parte 1", videoId: "esZk0CWJPxw", project: "Vestido Maria", part: 1 },
-    { id: 22, title: "Vestido Maria - Parte 2", videoId: "RFPdFNMXSxo", project: "Vestido Maria", part: 2 },
-    { id: 23, title: "Vestido Maria - Parte 3", videoId: "d1DB5J1cHmk", project: "Vestido Maria", part: 3 },
+    { id: 25, title: "Vestido Sophia", videoId: "IXkkWfjBD_A", project: "Vestido Sophia", part: null },
     
     // Vestido Moana
     { id: 24, title: "Vestido Moana", videoId: "W6NReaWkX-4", project: "Vestido Moana", part: null },
