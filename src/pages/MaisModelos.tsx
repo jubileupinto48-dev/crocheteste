@@ -1,57 +1,73 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Sparkles } from "lucide-react";
+import { ArrowLeft, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { VideoPlayer } from "@/components/VideoPlayer";
+import { VideoCard } from "@/components/VideoCard";
+import { Input } from "@/components/ui/input";
 import maisModelos from "@/assets/mais-modelos.jpg";
 
 const MaisModelos = () => {
-  const collections = [
-    {
-      title: "Amigurumis",
-      description: "Personagens fofos e criativos para todas as idades",
-      models: 185,
-      featured: true
-    },
-    {
-      title: "Decoração para Casa",
-      description: "Itens decorativos para deixar seu lar ainda mais acolhedor",
-      models: 120
-    },
-    {
-      title: "Mantas e Cobertores",
-      description: "Peças confortáveis para todas as estações",
-      models: 95
-    },
-    {
-      title: "Tapetes",
-      description: "Designs variados para todos os ambientes",
-      models: 78
-    },
-    {
-      title: "Biquínis e Tops",
-      description: "Moda praia moderna e estilosa",
-      models: 62
-    },
-    {
-      title: "Sousplats e Jogos Americanos",
-      description: "Elegância para sua mesa",
-      models: 54
-    },
-    {
-      title: "Toalhas e Barrados",
-      description: "Detalhes que fazem a diferença",
-      models: 68
-    },
-    {
-      title: "Acessórios Diversos",
-      description: "Cachecóis, tiaras, presilhas e muito mais",
-      models: 142
-    }
+  const videos = [
+    // Cropped
+    { id: 1, title: "Cropped de Crochê com Abacaxi - Passo a Passo", duration: "45 min", thumbnail: "https://drive.google.com/thumbnail?id=1IJveoglkrIE7ADGwDDAgeMCZIa5PCF5N", driveId: "1IJveoglkrIE7ADGwDDAgeMCZIa5PCF5N", category: "Cropped" },
+    
+    // Top
+    { id: 2, title: "Top Cala Crochê - Tutorial Completo para Iniciantes", duration: "38 min", thumbnail: "https://drive.google.com/thumbnail?id=1dABqZDysrRhGngpY69JTKuZpnf8vD82R", driveId: "1dABqZDysrRhGngpY69JTKuZpnf8vD82R", category: "Top" },
+    
+    // Biquini
+    { id: 3, title: "Biquíni Tomara Que Caia de Crochê", duration: "40 min", thumbnail: "https://drive.google.com/thumbnail?id=1IJveoglkrIE7ADGwDDAgeMCZIa5PCF5N", driveId: "1IJveoglkrIE7ADGwDDAgeMCZIa5PCF5N", category: "Biquíni" },
+    { id: 4, title: "Biquíni Mel Maia em Crochê", duration: "48 min", thumbnail: "https://drive.google.com/thumbnail?id=1dABqZDysrRhGngpY69JTKuZpnf8vD82R", driveId: "1dABqZDysrRhGngpY69JTKuZpnf8vD82R", category: "Biquíni" },
+    { id: 5, title: "Biquíni de Crochê com Franjas", duration: "42 min", thumbnail: "https://drive.google.com/thumbnail?id=1IJveoglkrIE7ADGwDDAgeMCZIa5PCF5N", driveId: "1IJveoglkrIE7ADGwDDAgeMCZIa5PCF5N", category: "Biquíni" },
+    
+    // Vestido
+    { id: 6, title: "Vestido Curto Tubinho em Crochê", duration: "55 min", thumbnail: "https://drive.google.com/thumbnail?id=1dABqZDysrRhGngpY69JTKuZpnf8vD82R", driveId: "1dABqZDysrRhGngpY69JTKuZpnf8vD82R", category: "Vestido" },
+    
+    // Top
+    { id: 7, title: "Top de Crochê Passo a Passo", duration: "35 min", thumbnail: "https://drive.google.com/thumbnail?id=1IJveoglkrIE7ADGwDDAgeMCZIa5PCF5N", driveId: "1IJveoglkrIE7ADGwDDAgeMCZIa5PCF5N", category: "Top" },
+    { id: 8, title: "Top Faixa de Crochê", duration: "32 min", thumbnail: "https://drive.google.com/thumbnail?id=1dABqZDysrRhGngpY69JTKuZpnf8vD82R", driveId: "1dABqZDysrRhGngpY69JTKuZpnf8vD82R", category: "Top" },
+    
+    // Short
+    { id: 9, title: "Short de Crochê Cintura Alta", duration: "50 min", thumbnail: "https://drive.google.com/thumbnail?id=1IJveoglkrIE7ADGwDDAgeMCZIa5PCF5N", driveId: "1IJveoglkrIE7ADGwDDAgeMCZIa5PCF5N", category: "Short" },
   ];
+
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const videosPerPage = 6;
+
+  const filteredVideos = videos.filter(video =>
+    video.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredVideos.length / videosPerPage);
+  const startIndex = (currentPage - 1) * videosPerPage;
+  const paginatedVideos = filteredVideos.slice(startIndex, startIndex + videosPerPage);
+
+  const handleVideoSelect = (index: number) => {
+    const actualIndex = videos.findIndex(v => v.id === paginatedVideos[index].id);
+    setCurrentVideoIndex(actualIndex);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNext = () => {
+    if (currentVideoIndex < videos.length - 1) {
+      setCurrentVideoIndex(currentVideoIndex + 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentVideoIndex > 0) {
+      setCurrentVideoIndex(currentVideoIndex - 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 max-w-7xl">
         <Link to="/">
           <Button variant="ghost" className="mb-6 hover:bg-accent">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -59,113 +75,226 @@ const MaisModelos = () => {
           </Button>
         </Link>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8 animate-fade-in">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <Sparkles className="w-10 h-10 text-primary" />
+        {/* Header */}
+        <div className="text-center mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <Sparkles className="w-10 h-10 text-primary" />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Modelos Adulto
+          </h1>
+          <p className="text-muted-foreground text-lg">
+            Peças elegantes e modernas para você arrasar
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Player Principal */}
+          <div className="lg:col-span-2 space-y-6">
+            <div className="animate-fade-in">
+              <VideoPlayer
+                videoId={videos[currentVideoIndex].driveId}
+                title={videos[currentVideoIndex].title}
+                platform="gdrive"
+              />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              + Modelos de Crochê
-            </h1>
-            <p className="text-muted-foreground text-lg">
-              Explore centenas de outros modelos para expandir suas criações
-            </p>
-          </div>
 
-          <div className="relative mb-12 animate-scale-in">
-            <img
-              src={maisModelos}
-              alt="Mais Modelos"
-              className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-card"
-            />
-          </div>
-
-          <Card className="mb-12 shadow-card animate-fade-in">
-            <CardContent className="p-8">
-              <div className="text-center">
-                <h2 className="text-3xl font-bold text-foreground mb-4">
-                  804+ Modelos Adicionais
-                </h2>
-                <p className="text-muted-foreground text-lg mb-6">
-                  Uma variedade incrível de projetos para você explorar e criar
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-1">185</div>
-                    <div className="text-sm text-muted-foreground">Amigurumis</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-1">120</div>
-                    <div className="text-sm text-muted-foreground">Decoração</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-1">142</div>
-                    <div className="text-sm text-muted-foreground">Acessórios</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-1">357</div>
-                    <div className="text-sm text-muted-foreground">Outros</div>
+            <Card className="shadow-card animate-scale-in">
+              <CardContent className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                        Aula {currentVideoIndex + 1} de {videos.length}
+                      </span>
+                      <span className="bg-accent/50 text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
+                        {videos[currentVideoIndex].category}
+                      </span>
+                    </div>
+                    <h2 className="text-2xl font-bold text-foreground mb-2">
+                      {videos[currentVideoIndex].title}
+                    </h2>
+                    <p className="text-muted-foreground">
+                      Duração: {videos[currentVideoIndex].duration}
+                    </p>
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
 
-          <h2 className="text-2xl font-bold text-foreground mb-6 animate-fade-in">
-            Todas as Categorias
-          </h2>
+                <div className="flex gap-3 pt-4 border-t border-border">
+                  <Button
+                    variant="outline"
+                    onClick={handlePrevious}
+                    disabled={currentVideoIndex === 0}
+                    className="flex-1"
+                  >
+                    <ChevronLeft className="mr-2 h-4 w-4" />
+                    Anterior
+                  </Button>
+                  <Button
+                    onClick={handleNext}
+                    disabled={currentVideoIndex === videos.length - 1}
+                    className="flex-1"
+                  >
+                    Próximo
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-scale-in">
-            {collections.map((collection, index) => (
-              <Card
-                key={index}
-                className={`shadow-card hover-lift cursor-pointer group ${
-                  collection.featured ? 'ring-2 ring-primary/50' : ''
-                }`}
-              >
-                <CardContent className="p-6">
-                  {collection.featured && (
-                    <div className="inline-flex items-center gap-1 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mb-3">
-                      <Sparkles className="w-3 h-3" />
-                      Destaque
-                    </div>
-                  )}
-                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {collection.title}
+            {/* Mobile Video List */}
+            <div className="lg:hidden">
+              <Card className="shadow-card animate-fade-in">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
+                    Todas as Aulas ({videos.length})
                   </h3>
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                    {collection.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-primary">
-                      {collection.models} modelos
-                    </span>
-                    <Button variant="ghost" size="sm" className="group-hover:bg-accent">
-                      Ver Todos
-                    </Button>
+                  <Input
+                    placeholder="Buscar aula..."
+                    value={searchTerm}
+                    onChange={(e) => {
+                      setSearchTerm(e.target.value);
+                      setCurrentPage(1);
+                    }}
+                    className="mb-4"
+                  />
+                  <div className="space-y-3 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                    {paginatedVideos.map((video, index) => {
+                      const actualIndex = videos.findIndex(v => v.id === video.id);
+                      return (
+                        <VideoCard
+                          key={video.id}
+                          title={video.title}
+                          duration={video.duration}
+                          thumbnail={video.thumbnail}
+                          videoNumber={video.id}
+                          isActive={actualIndex === currentVideoIndex}
+                          onClick={() => handleVideoSelect(index)}
+                        />
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            </div>
+
+            {/* Sobre esta Aula */}
+            <Card className="shadow-card animate-fade-in">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  Sobre esta Coleção
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Uma variedade incrível de projetos para você explorar e criar. Desde croppeds 
+                  modernos até biquínis estilosos, essa coleção tem tudo que você precisa para 
+                  criar peças adultas de alta qualidade.
+                </p>
+
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="text-center bg-accent/20 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">9+</div>
+                    <p className="text-sm text-muted-foreground">Vídeos</p>
+                  </div>
+                  <div className="text-center bg-accent/20 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">5</div>
+                    <p className="text-sm text-muted-foreground">Categorias</p>
+                  </div>
+                  <div className="text-center bg-accent/20 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">HD</div>
+                    <p className="text-sm text-muted-foreground">Qualidade</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
-          <div className="mt-12 text-center">
-            <Card className="shadow-card inline-block">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-3">
-                  Novos Modelos Toda Semana!
+          {/* Desktop Video List */}
+          <div className="hidden lg:block lg:col-span-1">
+            <Card className="sticky top-8 shadow-card animate-fade-in">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  Todas as Aulas ({videos.length})
                 </h3>
-                <p className="text-muted-foreground mb-6">
-                  Cadastre-se para receber notificações de novos conteúdos
-                </p>
-                <Button size="lg" className="shadow-soft">
-                  Ativar Notificações
-                </Button>
+
+                <Input
+                  placeholder="Buscar aula..."
+                  value={searchTerm}
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    setCurrentPage(1);
+                  }}
+                  className="mb-4"
+                />
+
+                <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+                  {paginatedVideos.map((video, index) => {
+                    const actualIndex = videos.findIndex(v => v.id === video.id);
+                    return (
+                      <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
+                        <VideoCard
+                          title={video.title}
+                          duration={video.duration}
+                          thumbnail={video.thumbnail}
+                          videoNumber={video.id}
+                          isActive={actualIndex === currentVideoIndex}
+                          onClick={() => handleVideoSelect(index)}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {totalPages > 1 && (
+                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                      disabled={currentPage === 1}
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </Button>
+                    <span className="text-sm text-muted-foreground">
+                      Página {currentPage} de {totalPages}
+                    </span>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                      disabled={currentPage === totalPages}
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </Button>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>
         </div>
+
+        <div className="mt-8 text-center">
+          <p className="text-sm text-muted-foreground">
+            Atualizações feitas diariamente! 🥰🙏
+          </p>
+        </div>
       </div>
+
+      <style>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: hsl(var(--muted));
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: hsl(var(--primary));
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: hsl(var(--primary) / 0.8);
+        }
+      `}</style>
     </div>
   );
 };
