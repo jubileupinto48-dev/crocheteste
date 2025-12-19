@@ -1,47 +1,69 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ShoppingBag } from "lucide-react";
+import { ArrowLeft, ShoppingBag, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { VideoPlayer } from "@/components/VideoPlayer";
+import { VideoCard } from "@/components/VideoCard";
+import { Input } from "@/components/ui/input";
 import bolsasCroche from "@/assets/bolsas-croche.jpg";
 
 const BolsasCroche = () => {
-  const categories = [
-    {
-      title: "Bolsas de Mão",
-      description: "Modelos elegantes para eventos e dia a dia",
-      models: 32,
-      trending: true
-    },
-    {
-      title: "Bolsas de Praia",
-      description: "Designs práticos e estilosos para o verão",
-      models: 28
-    },
-    {
-      title: "Mochilas",
-      description: "Versáteis e confortáveis para qualquer ocasião",
-      models: 24
-    },
-    {
-      title: "Carteiras",
-      description: "Pequenas e charmosas para seus essenciais",
-      models: 36
-    },
-    {
-      title: "Clutches",
-      description: "Sofisticadas para ocasiões especiais",
-      models: 18
-    },
-    {
-      title: "Necessaires",
-      description: "Práticas para organização e viagens",
-      models: 22
-    }
+  const videos = [
+    // Bag Gringa
+    { id: 1, title: "Bag Gringa de Crochê - Versão Atualizada", duration: "35 min", thumbnail: "https://drive.google.com/thumbnail?id=1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Bag Gringa" },
+    
+    // Bolsa de Ombro
+    { id: 2, title: "Bolsa de Crochê com Fio de Malha", duration: "40 min", thumbnail: "https://drive.google.com/thumbnail?id=1cZTA03xROF2R64HXEhavjYwhzm78ylk2", driveId: "1cZTA03xROF2R64HXEhavjYwhzm78ylk2", category: "Bolsa de Ombro" },
+    
+    // Bolsa de Ombro (mais modelos)
+    { id: 3, title: "Bolsa de Ombro de Crochê - Modelo 1", duration: "38 min", thumbnail: "https://drive.google.com/thumbnail?id=1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Bolsa de Ombro" },
+    { id: 4, title: "Bolsa de Ombro de Crochê - Modelo 2", duration: "42 min", thumbnail: "https://drive.google.com/thumbnail?id=1cZTA03xROF2R64HXEhavjYwhzm78ylk2", driveId: "1cZTA03xROF2R64HXEhavjYwhzm78ylk2", category: "Bolsa de Ombro" },
+    
+    // Bolsa Fácil
+    { id: 5, title: "Bolsa Fácil de Crochê", duration: "30 min", thumbnail: "https://drive.google.com/thumbnail?id=1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Bolsa Fácil" },
+    
+    // Clutch
+    { id: 6, title: "Clutch de Crochê - Modelo 1", duration: "28 min", thumbnail: "https://drive.google.com/thumbnail?id=1cZTA03xROF2R64HXEhavjYwhzm78ylk2", driveId: "1cZTA03xROF2R64HXEhavjYwhzm78ylk2", category: "Clutch" },
+    { id: 7, title: "Clutch de Crochê - Modelo 2", duration: "32 min", thumbnail: "https://drive.google.com/thumbnail?id=1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Clutch" },
   ];
+
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const videosPerPage = 6;
+
+  const filteredVideos = videos.filter(video =>
+    video.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredVideos.length / videosPerPage);
+  const startIndex = (currentPage - 1) * videosPerPage;
+  const paginatedVideos = filteredVideos.slice(startIndex, startIndex + videosPerPage);
+
+  const handleVideoSelect = (index: number) => {
+    const actualIndex = videos.findIndex(v => v.id === paginatedVideos[index].id);
+    setCurrentVideoIndex(actualIndex);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNext = () => {
+    if (currentVideoIndex < videos.length - 1) {
+      setCurrentVideoIndex(currentVideoIndex + 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentVideoIndex > 0) {
+      setCurrentVideoIndex(currentVideoIndex - 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 max-w-7xl">
         <Link to="/">
           <Button variant="ghost" className="mb-6 hover:bg-accent">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -49,100 +71,226 @@ const BolsasCroche = () => {
           </Button>
         </Link>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8 animate-fade-in">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <ShoppingBag className="w-8 h-8 text-primary" />
+        {/* Header */}
+        <div className="text-center mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <ShoppingBag className="w-8 h-8 text-primary" />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Bolsas de Crochê
+          </h1>
+          <p className="text-muted-foreground text-lg">
+            Crie acessórios únicos que combinam estilo e funcionalidade
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Player Principal */}
+          <div className="lg:col-span-2 space-y-6">
+            <div className="animate-fade-in">
+              <VideoPlayer
+                videoId={videos[currentVideoIndex].driveId}
+                title={videos[currentVideoIndex].title}
+                platform="gdrive"
+              />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Bolsas de Crochê
-            </h1>
-            <p className="text-muted-foreground text-lg">
-              Crie acessórios únicos que combinam estilo e funcionalidade
-            </p>
-          </div>
 
-          <div className="relative mb-12 animate-scale-in">
-            <img
-              src={bolsasCroche}
-              alt="Bolsas de Crochê"
-              className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-card"
-            />
-          </div>
-
-          <Card className="mb-12 shadow-card animate-fade-in">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                Transforme Fios em Acessórios Incríveis
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Nossa coleção de bolsas oferece desde modelos básicos até designs sofisticados. 
-                Aprenda técnicas especiais de estruturação, forros, fechos e alças para criar 
-                peças profissionais que podem ser usadas ou vendidas.
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                    <span className="text-2xl font-bold text-primary">160+</span>
+            <Card className="shadow-card animate-scale-in">
+              <CardContent className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                        Aula {currentVideoIndex + 1} de {videos.length}
+                      </span>
+                      <span className="bg-accent/50 text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
+                        {videos[currentVideoIndex].category}
+                      </span>
+                    </div>
+                    <h2 className="text-2xl font-bold text-foreground mb-2">
+                      {videos[currentVideoIndex].title}
+                    </h2>
+                    <p className="text-muted-foreground">
+                      Duração: {videos[currentVideoIndex].duration}
+                    </p>
                   </div>
-                  <h4 className="font-semibold text-foreground mb-1">Modelos</h4>
-                  <p className="text-sm text-muted-foreground">Diversos estilos</p>
                 </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                    <span className="text-2xl font-bold text-primary">45</span>
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-1">Vídeos</h4>
-                  <p className="text-sm text-muted-foreground">Tutoriais completos</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                    <span className="text-2xl font-bold text-primary">12</span>
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-1">Técnicas</h4>
-                  <p className="text-sm text-muted-foreground">Especializadas</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
 
-          <h2 className="text-2xl font-bold text-foreground mb-6 animate-fade-in">
-            Categorias de Bolsas
-          </h2>
+                <div className="flex gap-3 pt-4 border-t border-border">
+                  <Button
+                    variant="outline"
+                    onClick={handlePrevious}
+                    disabled={currentVideoIndex === 0}
+                    className="flex-1"
+                  >
+                    <ChevronLeft className="mr-2 h-4 w-4" />
+                    Anterior
+                  </Button>
+                  <Button
+                    onClick={handleNext}
+                    disabled={currentVideoIndex === videos.length - 1}
+                    className="flex-1"
+                  >
+                    Próximo
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
 
-          <div className="grid md:grid-cols-2 gap-6 animate-scale-in">
-            {categories.map((category, index) => (
-              <Card
-                key={index}
-                className="shadow-card hover-lift cursor-pointer group relative overflow-hidden"
-              >
-                {category.trending && (
-                  <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium shadow-soft">
-                    Em Alta
-                  </div>
-                )}
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {category.title}
+            {/* Mobile Video List */}
+            <div className="lg:hidden">
+              <Card className="shadow-card animate-fade-in">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
+                    Todas as Aulas ({videos.length})
                   </h3>
-                  <p className="text-muted-foreground mb-4">
-                    {category.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-primary">
-                      {category.models} modelos
-                    </span>
-                    <Button variant="ghost" size="sm" className="group-hover:bg-accent">
-                      Explorar
-                    </Button>
+                  <Input
+                    placeholder="Buscar aula..."
+                    value={searchTerm}
+                    onChange={(e) => {
+                      setSearchTerm(e.target.value);
+                      setCurrentPage(1);
+                    }}
+                    className="mb-4"
+                  />
+                  <div className="space-y-3 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                    {paginatedVideos.map((video, index) => {
+                      const actualIndex = videos.findIndex(v => v.id === video.id);
+                      return (
+                        <VideoCard
+                          key={video.id}
+                          title={video.title}
+                          duration={video.duration}
+                          thumbnail={video.thumbnail}
+                          videoNumber={video.id}
+                          isActive={actualIndex === currentVideoIndex}
+                          onClick={() => handleVideoSelect(index)}
+                        />
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            </div>
+
+            {/* Sobre esta Aula */}
+            <Card className="shadow-card animate-fade-in">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  Sobre esta Coleção
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Nossa coleção de bolsas oferece desde modelos básicos até designs sofisticados. 
+                  Aprenda técnicas especiais de estruturação, forros, fechos e alças para criar 
+                  peças profissionais que podem ser usadas ou vendidas.
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="text-center bg-accent/20 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">7+</div>
+                    <p className="text-sm text-muted-foreground">Vídeos</p>
+                  </div>
+                  <div className="text-center bg-accent/20 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">5</div>
+                    <p className="text-sm text-muted-foreground">Categorias</p>
+                  </div>
+                  <div className="text-center bg-accent/20 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">∞</div>
+                    <p className="text-sm text-muted-foreground">Possibilidades</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Desktop Video List */}
+          <div className="hidden lg:block lg:col-span-1">
+            <Card className="sticky top-8 shadow-card animate-fade-in">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  Todas as Aulas ({videos.length})
+                </h3>
+
+                <Input
+                  placeholder="Buscar aula..."
+                  value={searchTerm}
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    setCurrentPage(1);
+                  }}
+                  className="mb-4"
+                />
+
+                <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+                  {paginatedVideos.map((video, index) => {
+                    const actualIndex = videos.findIndex(v => v.id === video.id);
+                    return (
+                      <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
+                        <VideoCard
+                          title={video.title}
+                          duration={video.duration}
+                          thumbnail={video.thumbnail}
+                          videoNumber={video.id}
+                          isActive={actualIndex === currentVideoIndex}
+                          onClick={() => handleVideoSelect(index)}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {totalPages > 1 && (
+                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                      disabled={currentPage === 1}
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </Button>
+                    <span className="text-sm text-muted-foreground">
+                      Página {currentPage} de {totalPages}
+                    </span>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                      disabled={currentPage === totalPages}
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </Button>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
           </div>
         </div>
+
+        <div className="mt-8 text-center">
+          <p className="text-sm text-muted-foreground">
+            Atualizações feitas diariamente! 🥰🙏
+          </p>
+        </div>
       </div>
+
+      <style>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: hsl(var(--muted));
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: hsl(var(--primary));
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: hsl(var(--primary) / 0.8);
+        }
+      `}</style>
     </div>
   );
 };
