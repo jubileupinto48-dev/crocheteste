@@ -13,6 +13,14 @@ const Index = () => {
   const modules = [
     {
       id: 1,
+      title: "Vestidos de Crochê",
+      description: "Modelos exclusivos de vestidos artesanais com receitas detalhadas.",
+      image: vestidosCroche,
+      link: "/vestidos-croche",
+      badge: "Novidade"
+    },
+    {
+      id: 2,
       title: "Mini Curso para Iniciante",
       description: "Aprenda do zero com técnicas fundamentais de crochê passo a passo.",
       image: cursoCompleto,
@@ -20,7 +28,7 @@ const Index = () => {
       badge: "Iniciante"
     },
     {
-      id: 2,
+      id: 3,
       title: "+2000 Modelos e Receitas",
       description: "Acesso completo a mais de 2000 modelos e receitas em PDF para todos os níveis.",
       image: modelosReceitas,
@@ -28,21 +36,21 @@ const Index = () => {
       badge: "Popular"
     },
     {
-      id: 3,
+      id: 4,
       title: "Roupinhas Infantil",
       description: "Coleção especial de roupinhas adoráveis para bebês e crianças.",
       image: vestidosInfantis,
       link: "/vestidos-infantis"
     },
     {
-      id: 4,
+      id: 5,
       title: "Sapatinhos de Crochê",
       description: "Modelos adoráveis de sapatinhos e botinhas para os pequenos.",
       image: sapatinhosCroche,
       link: "/sapatinhos-croche"
     },
     {
-      id: 5,
+      id: 6,
       title: "Chapéus de Crochê",
       description: "Bucket hats, toucas e chapéus lindos para todas as idades.",
       image: maisModelos,
@@ -50,26 +58,18 @@ const Index = () => {
       badge: "Novo"
     },
     {
-      id: 6,
+      id: 7,
       title: "Bolsas de Crochê",
       description: "Designs modernos e elegantes de bolsas, carteiras e acessórios.",
       image: bolsasCroche,
       link: "/bolsas-croche"
     },
     {
-      id: 7,
+      id: 8,
       title: "Modelos Adulto",
       description: "Croppeds, biquínis, tops e peças estilosas para você arrasar.",
       image: maisModelos,
       link: "/mais-modelos"
-    },
-    {
-      id: 8,
-      title: "Vestidos de Crochê",
-      description: "Modelos exclusivos de vestidos artesanais com receitas detalhadas.",
-      image: vestidosCroche,
-      link: "/vestidos-croche",
-      badge: "Novidade"
     },
     {
       id: 9,
