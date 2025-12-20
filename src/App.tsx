@@ -14,6 +14,7 @@ import SapatinhosCroche from "./pages/SapatinhosCroche";
 import BolsasCroche from "./pages/BolsasCroche";
 import Certificado from "./pages/Certificado";
 import MaisModelos from "./pages/MaisModelos";
+import ChapeuCroche from "./pages/ChapeuCroche";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/bolsas-croche" element={<BolsasCroche />} />
           <Route path="/certificado" element={<Certificado />} />
           <Route path="/mais-modelos" element={<MaisModelos />} />
+          <Route path="/chapeu-croche" element={<ChapeuCroche />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

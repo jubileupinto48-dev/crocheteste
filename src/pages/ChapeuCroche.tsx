@@ -1,45 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Award, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Crown, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Progress } from "@/components/ui/progress";
+import { useState } from "react";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
-import { useState } from "react";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-
-const CursoCompleto = () => {
+const ChapeuCroche = () => {
   const videos = [
-    // Mini Curso Iniciante - Aulas baseadas no Notion
-    { id: 1, title: "Como fazer a emenda nos Squares #3", duration: "15 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 2, title: "Como fazer um círculo com ponto alto", duration: "12 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 3, title: "Como segurar a agulha de crochê", duration: "10 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 4, title: "Ponto Alto de Crochê", duration: "18 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 5, title: "Ponto Baixo de Crochê", duration: "15 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 6, title: "Ponto de Picô de Crochê", duration: "12 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 7, title: "Linhas e Barbantes de Crochê", duration: "20 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Materiais", completed: false },
-    { id: 8, title: "Dicas para Iniciantes", duration: "25 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Dicas", completed: false },
+    // Bucket Hat
+    { id: 1, title: "Bucket Hat de Inverno em Crochê - Fio Lã Mollet", duration: "35 min", thumbnail: "https://drive.google.com/thumbnail?id=18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Bucket Hat" },
+    
+    // Chapéu Infantil
+    { id: 2, title: "Chapéu de Crochê Infantil", duration: "28 min", thumbnail: "https://drive.google.com/thumbnail?id=1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", driveId: "1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", category: "Chapéu Infantil" },
+    
+    // Outros modelos
+    { id: 3, title: "Chapéu Infantil - Modelo 2", duration: "30 min", thumbnail: "https://drive.google.com/thumbnail?id=18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Chapéu Infantil" },
+    { id: 4, title: "Chapéu Branco de Crochê", duration: "32 min", thumbnail: "https://drive.google.com/thumbnail?id=1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", driveId: "1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", category: "Chapéu" },
+    { id: 5, title: "Chapéu de Morango Infantil", duration: "38 min", thumbnail: "https://drive.google.com/thumbnail?id=18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Chapéu Infantil" },
+    { id: 6, title: "Chapéu Verde Infantil", duration: "25 min", thumbnail: "https://drive.google.com/thumbnail?id=1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", driveId: "1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", category: "Chapéu Infantil" },
+    { id: 7, title: "Touca Olaf de Crochê", duration: "42 min", thumbnail: "https://drive.google.com/thumbnail?id=18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Touca" },
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterCategory, setFilterCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
-  
-  const videosPerPage = 4;
+  const videosPerPage = 6;
 
-  const categories = ["Técnicas Básicas", "Materiais", "Dicas"];
-  
-  const completedCount = videos.filter(v => v.completed).length;
-  const totalProgress = (completedCount / videos.length) * 100;
-
-  const filteredVideos = videos.filter(video => {
-    const matchesSearch = video.title.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = filterCategory === "all" || video.category === filterCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const filteredVideos = videos.filter(video =>
+    video.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const totalPages = Math.ceil(filteredVideos.length / videosPerPage);
   const startIndex = (currentPage - 1) * videosPerPage;
@@ -49,10 +40,6 @@ const CursoCompleto = () => {
     const actualIndex = videos.findIndex(v => v.id === paginatedVideos[index].id);
     setCurrentVideoIndex(actualIndex);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
   };
 
   const handleNext = () => {
@@ -79,22 +66,18 @@ const CursoCompleto = () => {
           </Button>
         </Link>
 
-        {/* Barra de Progresso no Topo */}
-        <Card className="mb-8 shadow-card animate-fade-in">
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <h2 className="text-2xl font-bold text-foreground mb-1">Mini Curso para Iniciante</h2>
-                <p className="text-muted-foreground">Aprenda do zero com técnicas fundamentais</p>
-              </div>
-              <div className="text-right">
-                <div className="text-3xl font-bold text-primary mb-1">{Math.round(totalProgress)}%</div>
-                <p className="text-sm text-muted-foreground">{completedCount} de {videos.length} aulas</p>
-              </div>
-            </div>
-            <Progress value={totalProgress} className="h-3" />
-          </CardContent>
-        </Card>
+        {/* Header */}
+        <div className="text-center mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <Crown className="w-8 h-8 text-primary" />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Chapéus de Crochê
+          </h1>
+          <p className="text-muted-foreground text-lg">
+            Modelos lindos de chapéus, bucket hats e toucas para todas as idades
+          </p>
+        </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Player Principal */}
@@ -118,9 +101,6 @@ const CursoCompleto = () => {
                       <span className="bg-accent/50 text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
                         {videos[currentVideoIndex].category}
                       </span>
-                      {videos[currentVideoIndex].completed && (
-                        <Award className="w-5 h-5 text-primary" />
-                      )}
                     </div>
                     <h2 className="text-2xl font-bold text-foreground mb-2">
                       {videos[currentVideoIndex].title}
@@ -153,35 +133,13 @@ const CursoCompleto = () => {
               </CardContent>
             </Card>
 
-            {totalProgress >= 80 && (
-              <Card className="shadow-card border-primary/50 bg-primary/5">
-                <CardContent className="p-6 text-center">
-                  <Award className="w-16 h-16 text-primary mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Parabéns!</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Você completou {Math.round(totalProgress)}% do curso e já pode emitir seu certificado!
-                  </p>
-                  <Link to="/certificado">
-                    <Button size="lg" className="shadow-soft">
-                      <Award className="mr-2 h-5 w-5" />
-                      Emitir Certificado
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            )}
-          </div>
-
-          {/* Lista de Vídeos */}
-          <div className="lg:col-span-1">
-            <Card className="sticky top-8 shadow-card animate-fade-in">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Todas as Aulas ({videos.length})
-                </h3>
-
-                {/* Filtros */}
-                <div className="space-y-3 mb-4">
+            {/* Mobile Video List */}
+            <div className="lg:hidden">
+              <Card className="shadow-card animate-fade-in">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
+                    Todas as Aulas ({videos.length})
+                  </h3>
                   <Input
                     placeholder="Buscar aula..."
                     value={searchTerm}
@@ -189,25 +147,75 @@ const CursoCompleto = () => {
                       setSearchTerm(e.target.value);
                       setCurrentPage(1);
                     }}
-                    className="h-10"
+                    className="mb-4"
                   />
-                  <Select value={filterCategory} onValueChange={(value) => {
-                    setFilterCategory(value);
-                    setCurrentPage(1);
-                  }}>
-                    <SelectTrigger className="h-10">
-                      <SelectValue placeholder="Filtrar por categoria" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">Todas as categorias</SelectItem>
-                      {categories.map(cat => (
-                        <SelectItem key={cat} value={cat}>{cat}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
+                  <div className="space-y-3 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                    {paginatedVideos.map((video, index) => {
+                      const actualIndex = videos.findIndex(v => v.id === video.id);
+                      return (
+                        <VideoCard
+                          key={video.id}
+                          title={video.title}
+                          duration={video.duration}
+                          thumbnail={video.thumbnail}
+                          videoNumber={video.id}
+                          isActive={actualIndex === currentVideoIndex}
+                          onClick={() => handleVideoSelect(index)}
+                        />
+                      );
+                    })}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
 
-                {/* Lista com scroll */}
+            {/* Sobre esta Aula */}
+            <Card className="shadow-card animate-fade-in">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  Sobre esta Coleção
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Descubra como fazer lindos chapéus de crochê, desde bucket hats modernos até 
+                  toucas divertidas para as crianças. Cada modelo vem com instruções detalhadas 
+                  para diferentes tamanhos e idades.
+                </p>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="text-center bg-accent/20 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">7+</div>
+                    <p className="text-sm text-muted-foreground">Vídeos</p>
+                  </div>
+                  <div className="text-center bg-accent/20 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">4</div>
+                    <p className="text-sm text-muted-foreground">Categorias</p>
+                  </div>
+                  <div className="text-center bg-accent/20 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">HD</div>
+                    <p className="text-sm text-muted-foreground">Qualidade</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Desktop Video List */}
+          <div className="hidden lg:block lg:col-span-1">
+            <Card className="sticky top-8 shadow-card animate-fade-in">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  Todas as Aulas ({videos.length})
+                </h3>
+
+                <Input
+                  placeholder="Buscar aula..."
+                  value={searchTerm}
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    setCurrentPage(1);
+                  }}
+                  className="mb-4"
+                />
+
                 <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
                   {paginatedVideos.map((video, index) => {
                     const actualIndex = videos.findIndex(v => v.id === video.id);
@@ -226,7 +234,6 @@ const CursoCompleto = () => {
                   })}
                 </div>
 
-                {/* Paginação */}
                 {totalPages > 1 && (
                   <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
                     <Button
@@ -282,4 +289,4 @@ const CursoCompleto = () => {
   );
 };
 
-export default CursoCompleto;
+export default ChapeuCroche;
