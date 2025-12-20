@@ -13,40 +13,41 @@ const Index = () => {
   const modules = [
     {
       id: 1,
-      title: "Vestidos de Crochê",
-      description: "Modelos exclusivos de vestidos artesanais com receitas detalhadas e vídeos passo a passo.",
-      image: vestidosCroche,
-      link: "/vestidos-croche",
-      badge: "Novidade"
+      title: "Mini Curso para Iniciante",
+      description: "Aprenda do zero com técnicas fundamentais de crochê passo a passo.",
+      image: cursoCompleto,
+      link: "/curso-completo",
+      badge: "Iniciante"
     },
     {
       id: 2,
       title: "+2000 Modelos e Receitas",
-      description: "Acesso completo a mais de 2000 modelos e receitas para todos os níveis de habilidade.",
+      description: "Acesso completo a mais de 2000 modelos e receitas em PDF para todos os níveis.",
       image: modelosReceitas,
       link: "/modelos-receitas",
       badge: "Popular"
     },
     {
       id: 3,
-      title: "Curso Completo + Certificado",
-      description: "Aprenda do básico ao avançado com certificado profissional ao finalizar.",
-      image: cursoCompleto,
-      link: "/curso-completo"
-    },
-    {
-      id: 4,
-      title: "Vestidos Infantis",
-      description: "Coleção especial de vestidos encantadores para bebês e crianças.",
+      title: "Roupinhas Infantil",
+      description: "Coleção especial de roupinhas adoráveis para bebês e crianças.",
       image: vestidosInfantis,
       link: "/vestidos-infantis"
     },
     {
-      id: 5,
+      id: 4,
       title: "Sapatinhos de Crochê",
       description: "Modelos adoráveis de sapatinhos e botinhas para os pequenos.",
       image: sapatinhosCroche,
       link: "/sapatinhos-croche"
+    },
+    {
+      id: 5,
+      title: "Chapéus de Crochê",
+      description: "Bucket hats, toucas e chapéus lindos para todas as idades.",
+      image: maisModelos,
+      link: "/chapeu-croche",
+      badge: "Novo"
     },
     {
       id: 6,
@@ -57,18 +58,26 @@ const Index = () => {
     },
     {
       id: 7,
+      title: "Modelos Adulto",
+      description: "Croppeds, biquínis, tops e peças estilosas para você arrasar.",
+      image: maisModelos,
+      link: "/mais-modelos"
+    },
+    {
+      id: 8,
+      title: "Vestidos de Crochê",
+      description: "Modelos exclusivos de vestidos artesanais com receitas detalhadas.",
+      image: vestidosCroche,
+      link: "/vestidos-croche",
+      badge: "Novidade"
+    },
+    {
+      id: 9,
       title: "Emitir Certificado",
       description: "Clique aqui para emitir seu certificado de conclusão do curso.",
       image: certificado,
       link: "/certificado",
       badge: "Certificado"
-    },
-    {
-      id: 8,
-      title: "+ Modelos de Crochê",
-      description: "Explore ainda mais modelos incluindo amigurumis, decoração e muito mais.",
-      image: maisModelos,
-      link: "/mais-modelos"
     }
   ];
 
