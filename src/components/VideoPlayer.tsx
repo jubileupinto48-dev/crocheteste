@@ -5,7 +5,7 @@ import { useState } from "react";
 interface VideoPlayerProps {
   videoId: string;
   title: string;
-  platform?: "youtube" | "vimeo";
+  platform?: "youtube" | "vimeo" | "gdrive";
 }
 
 export const VideoPlayer = ({ videoId, title, platform = "youtube" }: VideoPlayerProps) => {
@@ -14,6 +14,9 @@ export const VideoPlayer = ({ videoId, title, platform = "youtube" }: VideoPlaye
   const getEmbedUrl = () => {
     if (platform === "youtube") {
       return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&controls=1`;
+    }
+    if (platform === "gdrive") {
+      return `https://drive.google.com/file/d/${videoId}/preview`;
     }
     return `https://player.vimeo.com/video/${videoId}`;
   };
