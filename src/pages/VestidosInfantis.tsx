@@ -10,27 +10,13 @@ import vestidosInfantis from "@/assets/vestidos-infantis.jpg";
 
 const VestidosInfantis = () => {
   const videos = [
-    // Vestido Crochê Infantil
-    { id: 1, title: "Vestido de Crochê Infantil", duration: "45 min", thumbnail: "https://drive.google.com/thumbnail?id=dQw4w9WgXcQ", driveId: "dQw4w9WgXcQ", category: "Vestido" },
-    
-    // Calcinha de Crochê Infantil
-    { id: 2, title: "Calcinha de Crochê Infantil", duration: "25 min", thumbnail: "https://drive.google.com/thumbnail?id=dQw4w9WgXcQ", driveId: "dQw4w9WgXcQ", category: "Calcinha" },
-    
-    // Conjunto
-    { id: 3, title: "Conjunto de Crochê Infantil", duration: "50 min", thumbnail: "https://drive.google.com/thumbnail?id=dQw4w9WgXcQ", driveId: "dQw4w9WgXcQ", category: "Conjunto" },
-    
-    // Cropped
-    { id: 4, title: "Cropped de Crochê Infantil", duration: "35 min", thumbnail: "https://drive.google.com/thumbnail?id=dQw4w9WgXcQ", driveId: "dQw4w9WgXcQ", category: "Cropped" },
-    
-    // Conjuntinho
-    { id: 5, title: "Conjuntinho de Crochê", duration: "48 min", thumbnail: "https://drive.google.com/thumbnail?id=dQw4w9WgXcQ", driveId: "dQw4w9WgXcQ", category: "Conjuntinho" },
-    
-    // Vestido da Branca de Neve
-    { id: 6, title: "Vestido da Branca de Neve", duration: "55 min", thumbnail: "https://drive.google.com/thumbnail?id=dQw4w9WgXcQ", driveId: "dQw4w9WgXcQ", category: "Vestido Temático" },
-    
-    // Vestidos
-    { id: 7, title: "Vestido de Crochê - Modelo 1", duration: "42 min", thumbnail: "https://drive.google.com/thumbnail?id=dQw4w9WgXcQ", driveId: "dQw4w9WgXcQ", category: "Vestido" },
-    { id: 8, title: "Vestido de Crochê - Modelo 2", duration: "40 min", thumbnail: "https://drive.google.com/thumbnail?id=dQw4w9WgXcQ", driveId: "dQw4w9WgXcQ", category: "Vestido" },
+    { id: 1, title: "Roupinha Infantil - Aula 1", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy", driveId: "13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy", category: "Roupinha" },
+    { id: 2, title: "Roupinha Infantil - Aula 2", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=15yQAl2f_wZIf8FVzeM8ldSmHybKVzGSI", driveId: "15yQAl2f_wZIf8FVzeM8ldSmHybKVzGSI", category: "Roupinha" },
+    { id: 3, title: "Roupinha Infantil - Aula 3", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=1O5WB357pXITJ-RfE_KBTWpPn7V6qGkgw", driveId: "1O5WB357pXITJ-RfE_KBTWpPn7V6qGkgw", category: "Roupinha" },
+    { id: 4, title: "Roupinha Infantil - Aula 4", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=14iLA_ysURYK8n38sxk0G311YJtAt3oRt", driveId: "14iLA_ysURYK8n38sxk0G311YJtAt3oRt", category: "Roupinha" },
+    { id: 5, title: "Roupinha Infantil - Aula 5", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=1bPnhgs5N8KRusKlvQPueqym2w0Y8z8jP", driveId: "1bPnhgs5N8KRusKlvQPueqym2w0Y8z8jP", category: "Roupinha" },
+    { id: 6, title: "Roupinha Infantil - Aula 6", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=16ufU8MytgqyPr4Fo7pzAdOO0dRz6LaTa", driveId: "16ufU8MytgqyPr4Fo7pzAdOO0dRz6LaTa", category: "Roupinha" },
+    { id: 7, title: "Roupinha Infantil - Aula 7", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=1QqFa2gsQKtDOX3GsgNL0FWl-5zDTbl1Y", driveId: "1QqFa2gsQKtDOX3GsgNL0FWl-5zDTbl1Y", category: "Roupinha" },
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
