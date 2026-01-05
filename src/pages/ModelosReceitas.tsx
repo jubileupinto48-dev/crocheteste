@@ -28,7 +28,7 @@ const ModelosReceitas = () => {
     },
     { 
       name: "VÁRIOS MODELOS DIVERSIFICADOS", 
-      url: "https://drive.google.com/drive/folders/15lHDk8fMxgeUVrkLqxLo-IcP3DQ0_EV_?usp=sharing",
+      url: "https://drive.google.com/drive/folders/15lHDk8fMxgeUVrkLqxLo-IcP3DQ0_EV_",
       description: "Modelos variados e diversificados para todos os gostos"
     },
   ];
