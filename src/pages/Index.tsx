@@ -89,7 +89,7 @@ const Index = () => {
           <div className="flex items-center justify-center gap-3">
             <Sparkles className="w-7 h-7 text-primary" />
             <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-              Crochê da Nana
+              Crochê da Josi
             </h1>
           </div>
           <p className="text-center text-muted-foreground mt-2 text-sm md:text-base">
@@ -133,7 +133,7 @@ const Index = () => {
       <footer className="border-t border-border/50 mt-20 bg-card/30">
         <div className="container mx-auto px-4 py-8 text-center text-muted-foreground">
           <p className="text-sm">
-            © {new Date().getFullYear()} Crochê da Nana - Todos os direitos reservados
+            © {new Date().getFullYear()} Crochê da Josi - Todos os direitos reservados
           </p>
         </div>
       </footer>
