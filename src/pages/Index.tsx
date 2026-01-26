@@ -8,7 +8,7 @@ import bolsasCroche from "@/assets/bolsas-croche.jpg";
 import certificado from "@/assets/certificado.jpg";
 import maisModelos from "@/assets/mais-modelos.jpg";
 import heroBackground from "@/assets/hero-background.jpg";
-import { Sparkles, ChevronDown } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const Index = () => {
   const modules = [
@@ -85,7 +85,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
       {/* Hero Section - Netflix Style */}
-      <section className="relative min-h-[50vh] md:min-h-[55vh] flex items-start justify-center overflow-hidden pt-[25px] pb-8 md:pb-12">
+      <section className="relative flex items-start justify-center overflow-hidden pt-[25px]">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -105,27 +105,24 @@ const Index = () => {
           <p className="text-white/80 text-base md:text-xl lg:text-2xl mb-4 md:mb-6 font-light leading-relaxed">
             Sua área exclusiva de conteúdos
           </p>
-          <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-white/90 mb-8 md:mb-10 leading-snug px-2">
+          <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-white/90 leading-snug px-2 mb-[50px]">
             Acesse sua área de membros abaixo
           </h2>
           
-          {/* Scroll Indicator */}
-          <div className="animate-bounce">
-            <ChevronDown className="w-8 h-8 md:w-10 md:h-10 text-white/60 mx-auto" />
+          {/* Módulos section inside hero */}
+          <div className="text-center animate-fade-in">
+            <h2 className="text-2xl md:text-3xl font-bold text-white drop-shadow-md mb-2">
+              Módulos Disponíveis
+            </h2>
+            <p className="text-white/80 text-base max-w-2xl mx-auto mb-6">
+              Explore todos os módulos e comece sua jornada criativa
+            </p>
           </div>
         </div>
       </section>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-6 md:py-8">
-        <div className="mb-8 text-center animate-fade-in">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-            Módulos Disponíveis
-          </h2>
-          <p className="text-muted-foreground text-base max-w-2xl mx-auto">
-            Explore todos os módulos e comece sua jornada criativa
-          </p>
-        </div>
 
         {/* Modules Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-scale-in">
