@@ -480,52 +480,28 @@ const VestidosCroche = () => {
                   platform="youtube"
                 />
               </div>
+              
+              {/* Botões de navegação abaixo do player */}
+              <div className="flex gap-3 mt-4">
+                <Button
+                  variant="outline"
+                  onClick={handlePrevious}
+                  disabled={currentVideoIndex === 0}
+                  className="flex-1"
+                >
+                  <ChevronLeft className="mr-2 h-4 w-4" />
+                  Anterior
+                </Button>
+                <Button
+                  onClick={handleNext}
+                  disabled={currentVideoIndex === videos.length - 1}
+                  className="flex-1"
+                >
+                  Próximo
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
             </div>
-
-            <Card className="shadow-card animate-scale-in">
-              <CardContent className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2 flex-wrap">
-                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                        Aula {currentVideoIndex + 1} de {videos.length}
-                      </span>
-                      <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
-                        {currentVideo.project}
-                      </span>
-                      {currentVideo.part && (
-                        <span className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                          Parte {currentVideo.part}
-                        </span>
-                      )}
-                    </div>
-                    <h2 className="text-2xl font-bold text-foreground mb-2">
-                      {currentVideo.title}
-                    </h2>
-                  </div>
-                </div>
-
-                <div className="flex gap-3 pt-4 border-t border-border">
-                  <Button
-                    variant="outline"
-                    onClick={handlePrevious}
-                    disabled={currentVideoIndex === 0}
-                    className="flex-1"
-                  >
-                    <ChevronLeft className="mr-2 h-4 w-4" />
-                    Anterior
-                  </Button>
-                  <Button
-                    onClick={handleNext}
-                    disabled={currentVideoIndex === videos.length - 1}
-                    className="flex-1"
-                  >
-                    Próximo
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Lista de Vídeos - Aparece segundo no mobile, sidebar no desktop */}
