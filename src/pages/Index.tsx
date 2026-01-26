@@ -1,5 +1,5 @@
 import { ModuleCard } from "@/components/ModuleCard";
-import vestidosCroche from "@/assets/vestidos-croche.jpg";
+import vestidosCroche from "@/assets/vestidos-croche-new.png";
 import modelosReceitas from "@/assets/modelos-receitas.jpg";
 import cursoCompleto from "@/assets/curso-completo.jpg";
 import vestidosInfantis from "@/assets/vestidos-infantis.jpg";
@@ -7,7 +7,8 @@ import sapatinhosCroche from "@/assets/sapatinhos-croche.jpg";
 import bolsasCroche from "@/assets/bolsas-croche.jpg";
 import certificado from "@/assets/certificado.jpg";
 import maisModelos from "@/assets/mais-modelos.jpg";
-import { Sparkles } from "lucide-react";
+import heroBackground from "@/assets/hero-background.jpg";
+import { Sparkles, ChevronDown } from "lucide-react";
 
 const Index = () => {
   const modules = [
@@ -83,29 +84,46 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
-      {/* Header */}
-      <header className="py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-3">
-            <Sparkles className="w-7 h-7 text-primary" />
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground">
+      {/* Hero Section - Netflix Style */}
+      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBackground})` }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-background" />
+        
+        {/* Content */}
+        <div className="relative z-10 text-center px-4 animate-fade-in">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Sparkles className="w-10 h-10 text-primary" />
+            <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
               Crochê da Josi
             </h1>
           </div>
-          <p className="text-center text-muted-foreground mt-2 text-sm md:text-base">
+          <p className="text-white/90 text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-light">
             Sua área exclusiva de conteúdos
           </p>
+          <h2 className="text-2xl md:text-4xl font-semibold text-white/95 mb-12">
+            Acesse sua área de membros abaixo
+          </h2>
+          
+          {/* Scroll Indicator */}
+          <div className="animate-bounce">
+            <ChevronDown className="w-10 h-10 text-white/70 mx-auto" />
+          </div>
         </div>
-      </header>
+      </section>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12">
         <div className="mb-12 text-center animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Bem-vinda à Área de Membros
+            Módulos Disponíveis
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Explore todos os módulos disponíveis e comece sua jornada criativa
+            Explore todos os módulos e comece sua jornada criativa
           </p>
         </div>
 
