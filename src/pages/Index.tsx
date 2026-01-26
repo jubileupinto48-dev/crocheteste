@@ -85,7 +85,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
       {/* Hero Section - Netflix Style */}
-      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] md:h-[70vh] md:min-h-[500px] flex items-center justify-center overflow-hidden py-12 md:py-0">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -95,23 +95,23 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-background" />
         
         {/* Content */}
-        <div className="relative z-10 text-center px-4 animate-fade-in">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Sparkles className="w-10 h-10 text-primary" />
-            <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+        <div className="relative z-10 text-center px-6 animate-fade-in max-w-3xl mx-auto">
+          <div className="flex items-center justify-center gap-2 md:gap-3 mb-3 md:mb-4">
+            <Sparkles className="w-7 h-7 md:w-10 md:h-10 text-primary flex-shrink-0" />
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg leading-tight">
               Crochê da Josi
             </h1>
           </div>
-          <p className="text-white/90 text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-light">
+          <p className="text-white/80 text-base md:text-xl lg:text-2xl mb-4 md:mb-6 font-light leading-relaxed">
             Sua área exclusiva de conteúdos
           </p>
-          <h2 className="text-2xl md:text-4xl font-semibold text-white/95 mb-12">
+          <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-white/90 mb-8 md:mb-10 leading-snug px-2">
             Acesse sua área de membros abaixo
           </h2>
           
           {/* Scroll Indicator */}
           <div className="animate-bounce">
-            <ChevronDown className="w-10 h-10 text-white/70 mx-auto" />
+            <ChevronDown className="w-8 h-8 md:w-10 md:h-10 text-white/60 mx-auto" />
           </div>
         </div>
       </section>
