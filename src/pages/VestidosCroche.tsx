@@ -482,7 +482,7 @@ const VestidosCroche = () => {
               </div>
               
               {/* Botões de navegação abaixo do player */}
-              <div className="flex gap-3 mt-4">
+              <div className="flex gap-3 mt-2">
                 <Button
                   variant="outline"
                   onClick={handlePrevious}
