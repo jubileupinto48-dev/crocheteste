@@ -8,7 +8,7 @@ import bolsasCroche from "@/assets/bolsas-croche.jpg";
 import certificado from "@/assets/certificado.jpg";
 import maisModelos from "@/assets/mais-modelos.jpg";
 import heroBackground from "@/assets/hero-background.jpg";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ChevronDown } from "lucide-react";
 
 const Index = () => {
   const modules = [
@@ -105,9 +105,14 @@ const Index = () => {
           <p className="text-white/80 text-base md:text-xl lg:text-2xl mb-4 md:mb-6 font-light leading-relaxed">
             Sua área exclusiva de conteúdos
           </p>
-          <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-white/90 leading-snug px-2 mb-[50px]">
+          <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-white/90 leading-snug px-2 mb-6">
             Acesse sua área de membros abaixo
           </h2>
+          
+          {/* Scroll Indicator */}
+          <div className="animate-bounce mb-[100px]">
+            <ChevronDown className="w-8 h-8 md:w-10 md:h-10 text-white/60 mx-auto" />
+          </div>
           
           {/* Módulos section inside hero */}
           <div className="text-center animate-fade-in">
