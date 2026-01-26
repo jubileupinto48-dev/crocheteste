@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
@@ -23,19 +23,19 @@ const VestidosCroche = () => {
     { id: 7, title: "Vestido Angel - Parte 3", videoId: "1q8PAEcytMk", project: "Vestido Angel", part: 3 },
     
     // Saída Mel Maia (2 partes)
-    { id: 4, title: "Saída Mel Maia - Parte 1", videoId: "MV86APDdJrE", project: "Saída Mel Maia", part: 1 },
-    { id: 5, title: "Saída Mel Maia - Parte 2", videoId: "WPavNu7xI_o", project: "Saída Mel Maia", part: 2 },
+    { id: 8, title: "Saída Mel Maia - Parte 1", videoId: "MV86APDdJrE", project: "Saída Mel Maia", part: 1 },
+    { id: 9, title: "Saída Mel Maia - Parte 2", videoId: "WPavNu7xI_o", project: "Saída Mel Maia", part: 2 },
     
     // Vestido Maria (3 partes)
-    { id: 6, title: "Vestido Maria - Parte 1", videoId: "esZk0CWJPxw", project: "Vestido Maria", part: 1 },
-    { id: 7, title: "Vestido Maria - Parte 2", videoId: "RFPdFNMXSxo", project: "Vestido Maria", part: 2 },
-    { id: 8, title: "Vestido Maria - Parte 3", videoId: "d1DB5J1cHmk", project: "Vestido Maria", part: 3 },
+    { id: 10, title: "Vestido Maria - Parte 1", videoId: "esZk0CWJPxw", project: "Vestido Maria", part: 1 },
+    { id: 11, title: "Vestido Maria - Parte 2", videoId: "RFPdFNMXSxo", project: "Vestido Maria", part: 2 },
+    { id: 12, title: "Vestido Maria - Parte 3", videoId: "d1DB5J1cHmk", project: "Vestido Maria", part: 3 },
     
     // Vestido Juliana Paes (4 partes)
-    { id: 9, title: "Vestido Juliana Paes - Parte 1", videoId: "3GLLTdColiE", project: "Vestido Juliana Paes", part: 1 },
-    { id: 10, title: "Vestido Juliana Paes - Parte 2", videoId: "Mx4tkT0Qyew", project: "Vestido Juliana Paes", part: 2 },
-    { id: 11, title: "Vestido Juliana Paes - Parte 3", videoId: "g4oWC8uHiY4", project: "Vestido Juliana Paes", part: 3 },
-    { id: 12, title: "Vestido Juliana Paes - Parte 4", videoId: "RWGTCFU8GjM", project: "Vestido Juliana Paes", part: 4 },
+    { id: 13, title: "Vestido Juliana Paes - Parte 1", videoId: "3GLLTdColiE", project: "Vestido Juliana Paes", part: 1 },
+    { id: 14, title: "Vestido Juliana Paes - Parte 2", videoId: "Mx4tkT0Qyew", project: "Vestido Juliana Paes", part: 2 },
+    { id: 15, title: "Vestido Juliana Paes - Parte 3", videoId: "g4oWC8uHiY4", project: "Vestido Juliana Paes", part: 3 },
+    { id: 16, title: "Vestido Juliana Paes - Parte 4", videoId: "RWGTCFU8GjM", project: "Vestido Juliana Paes", part: 4 },
     
     // ===== OUTROS PROJETOS =====
     // Calça Crochê Correntinha
@@ -396,6 +396,7 @@ const VestidosCroche = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterProject, setFilterProject] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
+  const videoListRef = useRef<HTMLDivElement>(null);
   const videosPerPage = 12;
 
   const filteredVideos = videos.filter(video => {
@@ -534,7 +535,7 @@ const VestidosCroche = () => {
                 </div>
 
                 {/* Lista com scroll */}
-                <div className="space-y-3 max-h-[400px] lg:max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+                <div ref={videoListRef} className="space-y-3 max-h-[400px] lg:max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
                   {paginatedVideos.map((video, index) => {
                     const actualIndex = videos.findIndex(v => v.id === video.id);
                     return (
@@ -560,7 +561,7 @@ const VestidosCroche = () => {
                       size="sm"
                       onClick={() => {
                         setCurrentPage(p => Math.max(1, p - 1));
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        videoListRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
                       disabled={currentPage === 1}
                     >
@@ -574,7 +575,7 @@ const VestidosCroche = () => {
                       size="sm"
                       onClick={() => {
                         setCurrentPage(p => Math.min(totalPages, p + 1));
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        videoListRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
                       disabled={currentPage === totalPages}
                     >
