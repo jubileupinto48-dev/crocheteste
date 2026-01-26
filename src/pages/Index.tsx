@@ -85,7 +85,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
       {/* Hero Section - Netflix Style */}
-      <section className="relative min-h-[60vh] md:h-[70vh] md:min-h-[500px] flex items-center justify-center overflow-hidden py-12 md:py-0">
+      <section className="relative min-h-[50vh] md:min-h-[55vh] flex items-start justify-center overflow-hidden pt-[25px] pb-8 md:pb-12">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -117,12 +117,12 @@ const Index = () => {
       </section>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-12">
-        <div className="mb-12 text-center animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+      <main className="container mx-auto px-4 py-6 md:py-8">
+        <div className="mb-8 text-center animate-fade-in">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
             Módulos Disponíveis
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base max-w-2xl mx-auto">
             Explore todos os módulos e comece sua jornada criativa
           </p>
         </div>
