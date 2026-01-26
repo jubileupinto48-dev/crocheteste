@@ -8,6 +8,23 @@ import { useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
+// Import AI-generated dress images
+import vestidoAngelPreview from "@/assets/vestidos/vestido-angel-preview.jpg";
+import vestidoAngelDiagram from "@/assets/vestidos/vestido-angel-diagram.jpg";
+import saidaMelMaiaPreview from "@/assets/vestidos/saida-mel-maia-preview.jpg";
+import saidaMelMaiaDiagram from "@/assets/vestidos/saida-mel-maia-diagram.jpg";
+import vestidoMariaPreview from "@/assets/vestidos/vestido-maria-preview.jpg";
+import vestidoMariaDiagram from "@/assets/vestidos/vestido-maria-diagram.jpg";
+import vestidoJulianaPaesPreview from "@/assets/vestidos/vestido-juliana-paes-preview.jpg";
+import vestidoJulianaPaesDiagram from "@/assets/vestidos/vestido-juliana-paes-diagram.jpg";
+
+// Map of project names to their graphics
+const projectGraphics: Record<string, { preview: string; diagram: string }> = {
+  "Vestido Angel": { preview: vestidoAngelPreview, diagram: vestidoAngelDiagram },
+  "Saída Mel Maia": { preview: saidaMelMaiaPreview, diagram: saidaMelMaiaDiagram },
+  "Vestido Maria": { preview: vestidoMariaPreview, diagram: vestidoMariaDiagram },
+  "Vestido Juliana Paes": { preview: vestidoJulianaPaesPreview, diagram: vestidoJulianaPaesDiagram },
+};
 const VestidosCroche = () => {
   const videos = [
     // ===== DESTAQUES PRINCIPAIS =====
@@ -445,12 +462,24 @@ const VestidosCroche = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Player Principal + Info */}
           <div className="lg:col-span-2 space-y-6">
+            {/* Mobile: Video player mais proeminente */}
             <div className="animate-fade-in">
-              <VideoPlayer
-                videoId={currentVideo.videoId}
-                title={currentVideo.title}
-                platform="youtube"
-              />
+              <div className="md:hidden">
+                <div className="aspect-[4/3] sm:aspect-video">
+                  <VideoPlayer
+                    videoId={currentVideo.videoId}
+                    title={currentVideo.title}
+                    platform="youtube"
+                  />
+                </div>
+              </div>
+              <div className="hidden md:block">
+                <VideoPlayer
+                  videoId={currentVideo.videoId}
+                  title={currentVideo.title}
+                  platform="youtube"
+                />
+              </div>
             </div>
 
             <Card className="shadow-card animate-scale-in">
@@ -590,7 +619,7 @@ const VestidosCroche = () => {
           {/* Sobre esta Aula - Aparece por último no mobile */}
           <div className="lg:col-span-2">
             <Card className="shadow-card">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-4">
                   Sobre esta Aula
                 </h3>
@@ -599,6 +628,41 @@ const VestidosCroche = () => {
                   criar este lindo {currentVideo.project.toLowerCase()}. Siga o passo a passo com atenção e tire 
                   suas dúvidas nos comentários.
                 </p>
+                
+                {/* Gráficos AI - Imagem do projeto e diagrama de pontos */}
+                {projectGraphics[currentVideo.project] && (
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                      <span className="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs">IA</span>
+                      Visualização do Projeto
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <p className="text-sm text-muted-foreground font-medium">Resultado Final</p>
+                        <div className="relative overflow-hidden rounded-lg border border-border bg-muted/30">
+                          <img 
+                            src={projectGraphics[currentVideo.project].preview} 
+                            alt={`Preview do ${currentVideo.project}`}
+                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <p className="text-sm text-muted-foreground font-medium">Diagrama de Pontos</p>
+                        <div className="relative overflow-hidden rounded-lg border border-border bg-white">
+                          <img 
+                            src={projectGraphics[currentVideo.project].diagram} 
+                            alt={`Diagrama de pontos do ${currentVideo.project}`}
+                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
                 <div className="bg-accent/20 border border-accent rounded-lg p-4">
                   <h4 className="font-semibold text-foreground mb-2">Materiais Necessários:</h4>
                   <ul className="space-y-1 text-sm text-muted-foreground">
