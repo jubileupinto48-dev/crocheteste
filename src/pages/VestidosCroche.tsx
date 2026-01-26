@@ -10,11 +10,17 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 const VestidosCroche = () => {
   const videos = [
+    // ===== DESTAQUES PRINCIPAIS =====
+    { id: 1, title: "Vestido Destaque 1", videoId: "wa2xHd3ghg8", project: "Destaque", part: null },
+    { id: 2, title: "Vestido Destaque 2", videoId: "MqT6DfpAGfE", project: "Destaque", part: null },
+    { id: 3, title: "Vestido Destaque 3", videoId: "T3mKfEMGzpE", project: "Destaque", part: null },
+    { id: 4, title: "Vestido Destaque 4", videoId: "7Ry1SQfBs-A", project: "Destaque", part: null },
+    
     // ===== DESTAQUES =====
     // Vestido Angel (3 partes)
-    { id: 1, title: "Vestido Angel - Parte 1", videoId: "QmMtlJu0cTI", project: "Vestido Angel", part: 1 },
-    { id: 2, title: "Vestido Angel - Parte 2", videoId: "cCFOGukAh-Y", project: "Vestido Angel", part: 2 },
-    { id: 3, title: "Vestido Angel - Parte 3", videoId: "1q8PAEcytMk", project: "Vestido Angel", part: 3 },
+    { id: 5, title: "Vestido Angel - Parte 1", videoId: "QmMtlJu0cTI", project: "Vestido Angel", part: 1 },
+    { id: 6, title: "Vestido Angel - Parte 2", videoId: "cCFOGukAh-Y", project: "Vestido Angel", part: 2 },
+    { id: 7, title: "Vestido Angel - Parte 3", videoId: "1q8PAEcytMk", project: "Vestido Angel", part: 3 },
     
     // Saída Mel Maia (2 partes)
     { id: 4, title: "Saída Mel Maia - Parte 1", videoId: "MV86APDdJrE", project: "Saída Mel Maia", part: 1 },
@@ -552,7 +558,10 @@ const VestidosCroche = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                      onClick={() => {
+                        setCurrentPage(p => Math.max(1, p - 1));
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
                       disabled={currentPage === 1}
                     >
                       <ChevronLeft className="h-4 w-4" />
@@ -563,7 +572,10 @@ const VestidosCroche = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                      onClick={() => {
+                        setCurrentPage(p => Math.min(totalPages, p + 1));
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
                       disabled={currentPage === totalPages}
                     >
                       <ChevronRight className="h-4 w-4" />
