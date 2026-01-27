@@ -8,48 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Bege aconchegante #fce6cf como base */
-    --background: 31 88% 90%;
-    --foreground: 25 35% 22%;
+    /* Amarelo dourado aconchegante #ffefc1 como base */
+    --background: 45 100% 88%;
+    --foreground: 40 35% 20%;
 
     /* Cards com leve contraste - tom mais claro */
-    --card: 31 85% 94%;
-    --card-foreground: 25 35% 22%;
+    --card: 45 100% 92%;
+    --card-foreground: 40 35% 20%;
 
-    --popover: 31 85% 94%;
-    --popover-foreground: 25 35% 22%;
+    --popover: 45 100% 92%;
+    --popover-foreground: 40 35% 20%;
 
     /* Laranja rosado coral como primary */
     --primary: 12 85% 65%;
-    --primary-foreground: 30 25% 98%;
+    --primary-foreground: 45 25% 98%;
 
     /* Tons complementares */
-    --secondary: 25 35% 88%;
-    --secondary-foreground: 25 30% 25%;
+    --secondary: 45 50% 85%;
+    --secondary-foreground: 40 30% 22%;
 
-    --muted: 30 20% 90%;
-    --muted-foreground: 25 15% 50%;
+    --muted: 45 30% 88%;
+    --muted-foreground: 40 15% 45%;
 
     /* Accent em tom coral mais suave */
     --accent: 15 75% 75%;
-    --accent-foreground: 25 30% 25%;
+    --accent-foreground: 40 30% 22%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 30 25% 98%;
+    --destructive-foreground: 45 25% 98%;
 
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
+    --border: 45 30% 85%;
+    --input: 45 30% 85%;
     --ring: 12 85% 65%;
 
     --radius: 1rem;
     
     /* Gradientes personalizados */
     --gradient-primary: linear-gradient(135deg, hsl(12 85% 65%), hsl(20 80% 70%));
-    --gradient-soft: linear-gradient(180deg, hsl(30 25% 96%), hsl(25 30% 92%));
+    --gradient-soft: linear-gradient(180deg, hsl(45 50% 94%), hsl(45 40% 90%));
     
     /* Sombras elegantes */
     --shadow-soft: 0 4px 20px -4px hsl(12 85% 65% / 0.15);
-    --shadow-card: 0 2px 12px -2px hsl(25 30% 25% / 0.08);
+    --shadow-card: 0 2px 12px -2px hsl(40 30% 20% / 0.08);
 
     --sidebar-background: 0 0% 98%;
 
