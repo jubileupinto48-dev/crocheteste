@@ -7,7 +7,7 @@ import sapatinhosCroche from "@/assets/sapatinhos-croche.jpg";
 import bolsasCroche from "@/assets/bolsas-croche.jpg";
 import certificado from "@/assets/certificado.jpg";
 import maisModelos from "@/assets/mais-modelos.jpg";
-import heroBackground from "@/assets/hero-background.jpg";
+import heroBackground from "@/assets/hero-background.png";
 import { Sparkles, ChevronDown } from "lucide-react";
 
 const Index = () => {
