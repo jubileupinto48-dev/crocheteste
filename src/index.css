@@ -8,16 +8,16 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Bege claro quase branco para background */
-    --background: 30 25% 96%;
-    --foreground: 25 30% 25%;
+    /* Bege aconchegante #fce6cf como base */
+    --background: 31 88% 90%;
+    --foreground: 25 35% 22%;
 
-    /* Cards com leve contraste */
-    --card: 30 30% 98%;
-    --card-foreground: 25 30% 25%;
+    /* Cards com leve contraste - tom mais claro */
+    --card: 31 85% 94%;
+    --card-foreground: 25 35% 22%;
 
-    --popover: 30 30% 98%;
-    --popover-foreground: 25 30% 25%;
+    --popover: 31 85% 94%;
+    --popover-foreground: 25 35% 22%;
 
     /* Laranja rosado coral como primary */
     --primary: 12 85% 65%;
