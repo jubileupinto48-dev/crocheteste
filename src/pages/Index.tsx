@@ -131,19 +131,21 @@ const Index = () => {
             <ChevronDown className="w-8 h-8 md:w-10 md:h-10 text-white/60 mx-auto" />
           </div>
 
-          {/* PIX Section - Compact */}
-          <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-md mb-8">
-            <span className="text-sm text-muted-foreground">PIX:</span>
-            <code className="font-mono font-semibold text-foreground">{pixKey}</code>
+          {/* PIX Section */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl px-6 py-4 mb-8 max-w-xs mx-auto text-center">
+            <p className="text-white/90 text-sm mb-1">Chave Pix: <span className="font-medium">Celular</span></p>
+            <p className="text-white/80 text-sm mb-2">Nome: Lucas Morone (Meu filho)</p>
+            <code className="block text-white font-mono font-bold text-lg mb-3">{pixKey}</code>
             <Button 
               onClick={copyPixKey} 
-              variant="ghost"
+              variant="secondary"
               size="sm"
-              className="h-7 px-2 gap-1 text-xs"
+              className="gap-2 w-full mb-3"
             >
-              {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
-              {copied ? "Copiado" : "Copiar"}
+              {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+              {copied ? "Copiado!" : "Copiar chave"}
             </Button>
+            <p className="text-white/70 text-xs">Conto com sua honestidade 🙏</p>
           </div>
           
           {/* Módulos section inside hero */}
