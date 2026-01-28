@@ -1,12 +1,17 @@
 import { ModuleCard } from "@/components/ModuleCard";
 import vestidosCroche from "@/assets/vestidos-croche-new.png";
+import modelosReceitas from "@/assets/modelos-receitas.jpg";
+import cursoCompleto from "@/assets/curso-completo.jpg";
+import vestidosInfantis from "@/assets/vestidos-infantis.jpg";
+import sapatinhosCroche from "@/assets/sapatinhos-croche.jpg";
+import bolsasCroche from "@/assets/bolsas-croche.jpg";
 import certificado from "@/assets/certificado.jpg";
+import maisModelos from "@/assets/mais-modelos.jpg";
 import heroBackground from "@/assets/hero-background.png";
-import { Sparkles, ChevronDown, Copy, Check, Smartphone, Play, ArrowRight } from "lucide-react";
+import { Sparkles, ChevronDown, Copy, Check, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Link } from "react-router-dom";
 
 const Index = () => {
   const [copied, setCopied] = useState(false);
@@ -23,23 +28,20 @@ const Index = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  // Módulo principal em destaque
-  const featuredModule = {
-    id: 1,
-    title: "Vestidos de Crochê",
-    description: "Modelos exclusivos de vestidos artesanais com receitas detalhadas passo a passo. Aprenda técnicas profissionais e crie peças incríveis.",
-    image: vestidosCroche,
-    link: "/vestidos-croche",
-    badge: "Novidade"
-  };
-
-  // Outros módulos
   const modules = [
+    {
+      id: 1,
+      title: "Vestidos de Crochê",
+      description: "Modelos exclusivos de vestidos artesanais com receitas detalhadas.",
+      image: vestidosCroche,
+      link: "/vestidos-croche",
+      badge: "Novidade"
+    },
     {
       id: 2,
       title: "Mini Curso para Iniciante",
       description: "Aprenda do zero com técnicas fundamentais de crochê passo a passo.",
-      image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589237/ChatGPT_Image_21_de_jan._de_2026_18_39_04_ktuyey.webp",
+      image: cursoCompleto,
       link: "/curso-completo",
       badge: "Iniciante"
     },
@@ -47,7 +49,7 @@ const Index = () => {
       id: 3,
       title: "+2000 Modelos e Receitas",
       description: "Acesso completo a mais de 2000 modelos e receitas em PDF para todos os níveis.",
-      image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589285/ChatGPT_Image_21_de_jan._de_2026_18_45_10_u80nde.webp",
+      image: modelosReceitas,
       link: "/modelos-receitas",
       badge: "Popular"
     },
@@ -55,21 +57,21 @@ const Index = () => {
       id: 4,
       title: "Roupinhas Infantil",
       description: "Coleção especial de roupinhas adoráveis para bebês e crianças.",
-      image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589307/ChatGPT_Image_21_de_jan._de_2026_18_56_22_eobbgv.webp",
+      image: vestidosInfantis,
       link: "/vestidos-infantis"
     },
     {
       id: 5,
       title: "Sapatinhos de Crochê",
       description: "Modelos adoráveis de sapatinhos e botinhas para os pequenos.",
-      image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589329/ChatGPT_Image_21_de_jan._de_2026_18_58_52_psqfqs.webp",
+      image: sapatinhosCroche,
       link: "/sapatinhos-croche"
     },
     {
       id: 6,
       title: "Chapéus de Crochê",
       description: "Bucket hats, toucas e chapéus lindos para todas as idades.",
-      image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589391/ChatGPT_Image_21_de_jan._de_2026_18_54_42_szutmx.webp",
+      image: maisModelos,
       link: "/chapeu-croche",
       badge: "Novo"
     },
@@ -77,14 +79,14 @@ const Index = () => {
       id: 7,
       title: "Bolsas de Crochê",
       description: "Designs modernos e elegantes de bolsas, carteiras e acessórios.",
-      image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589485/ChatGPT_Image_21_de_jan._de_2026_18_52_57_ib52kw.webp",
+      image: bolsasCroche,
       link: "/bolsas-croche"
     },
     {
       id: 8,
       title: "Modelos Adulto",
       description: "Croppeds, biquínis, tops e peças estilosas para você arrasar.",
-      image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589503/ChatGPT_Image_21_de_jan._de_2026_18_50_05_qj04ps.webp",
+      image: maisModelos,
       link: "/mais-modelos"
     },
     {
@@ -99,7 +101,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
-      {/* Hero Section */}
+      {/* Hero Section - Netflix Style */}
       <section className="relative flex items-start justify-center overflow-hidden pt-[25px]">
         {/* Background Image */}
         <div 
@@ -148,94 +150,40 @@ const Index = () => {
             </Button>
             <p className="text-muted-foreground text-xs">Conto com sua honestidade 🙏</p>
           </div>
+          
+          {/* Módulos section inside hero */}
+          <div className="text-center animate-fade-in">
+            <h2 className="text-2xl md:text-3xl font-bold text-white drop-shadow-md mb-2">
+              Módulos Disponíveis
+            </h2>
+            <p className="text-white/80 text-base max-w-2xl mx-auto mb-6">
+              Explore todos os módulos e comece sua jornada criativa
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-6 md:py-8">
-        
-        {/* Featured Module - Vestidos de Crochê */}
-        <section className="mb-12 animate-fade-in">
-          <div className="text-center mb-6">
-            <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-3">
-              ⭐ Módulo em Destaque
-            </span>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-              Comece por aqui
-            </h2>
-          </div>
-          
-          <Link to={featuredModule.link} className="block group">
-            <div className="relative overflow-hidden rounded-2xl bg-card shadow-lg border border-border/50 hover:shadow-xl transition-all duration-500">
-              <div className="grid md:grid-cols-2 gap-0">
-                {/* Image Side */}
-                <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden">
-                  <img
-                    src={featuredModule.image}
-                    alt={featuredModule.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  {/* Play overlay */}
-                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-xl transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                      <Play className="w-9 h-9 text-primary-foreground fill-current ml-1" />
-                    </div>
-                  </div>
-                  {featuredModule.badge && (
-                    <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold shadow-lg">
-                      {featuredModule.badge}
-                    </div>
-                  )}
-                </div>
-                
-                {/* Content Side */}
-                <div className="p-6 md:p-8 flex flex-col justify-center">
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {featuredModule.title}
-                  </h3>
-                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
-                    {featuredModule.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-primary font-semibold">
-                    <span>Clique para acessar o módulo completo</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                  </div>
-                </div>
-              </div>
+
+        {/* Modules Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-scale-in">
+          {modules.map((module, index) => (
+            <div
+              key={module.id}
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <ModuleCard
+                title={module.title}
+                description={module.description}
+                image={module.image}
+                link={module.link}
+                badge={module.badge}
+              />
             </div>
-          </Link>
-        </section>
-
-        {/* Other Modules Section */}
-        <section className="animate-fade-in">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-              Mais Módulos
-            </h2>
-            <p className="text-muted-foreground">
-              Clique em cada card para acessar o conteúdo completo
-            </p>
-          </div>
-
-          {/* Modules Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {modules.map((module, index) => (
-              <div
-                key={module.id}
-                className="animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <ModuleCard
-                  title={module.title}
-                  description={module.description}
-                  image={module.image}
-                  link={module.link}
-                  badge={module.badge}
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+          ))}
+        </div>
       </main>
 
       {/* Footer */}
