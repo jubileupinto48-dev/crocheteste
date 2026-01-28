@@ -8,7 +8,7 @@ import bolsasCroche from "@/assets/bolsas-croche.jpg";
 import certificado from "@/assets/certificado.jpg";
 import maisModelos from "@/assets/mais-modelos.jpg";
 import heroBackground from "@/assets/hero-background.png";
-import { Sparkles, ChevronDown, Copy, Check } from "lucide-react";
+import { Sparkles, ChevronDown, Copy, Check, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -132,20 +132,23 @@ const Index = () => {
           </div>
 
           {/* PIX Section */}
-          <div className="bg-black/30 backdrop-blur-sm rounded-xl px-6 py-4 mb-8 max-w-xs mx-auto text-center">
-            <p className="text-white/90 text-sm mb-1">Chave Pix: <span className="font-medium">Celular</span></p>
-            <p className="text-white/80 text-sm mb-2">Nome: Lucas Morone (Meu filho)</p>
-            <code className="block text-white font-mono font-bold text-lg mb-3">{pixKey}</code>
+          <div className="bg-card/90 backdrop-blur-sm rounded-xl px-6 py-4 mb-8 max-w-xs mx-auto text-center border border-primary/20 shadow-card">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <Smartphone className="w-4 h-4 text-primary" />
+              <p className="text-foreground text-sm">Chave Pix: <span className="font-semibold text-primary">Celular</span></p>
+            </div>
+            <p className="text-muted-foreground text-sm mb-2">Nome: Lucas Morone (Meu filho)</p>
+            <code className="block text-foreground font-mono font-bold text-lg mb-3">{pixKey}</code>
             <Button 
               onClick={copyPixKey} 
-              variant="secondary"
+              variant="default"
               size="sm"
               className="gap-2 w-full mb-3"
             >
               {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               {copied ? "Copiado!" : "Copiar chave"}
             </Button>
-            <p className="text-white/70 text-xs">Conto com sua honestidade 🙏</p>
+            <p className="text-muted-foreground text-xs">Conto com sua honestidade 🙏</p>
           </div>
           
           {/* Módulos section inside hero */}
