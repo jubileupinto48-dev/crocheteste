@@ -131,26 +131,19 @@ const Index = () => {
             <ChevronDown className="w-8 h-8 md:w-10 md:h-10 text-white/60 mx-auto" />
           </div>
 
-          {/* PIX Section */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 mb-8 shadow-xl border border-white/20 max-w-md mx-auto">
-            <h3 className="text-lg font-bold text-foreground mb-3">💰 Chave PIX: <span className="text-muted-foreground font-normal">Celular</span></h3>
-            <div className="text-sm text-muted-foreground space-y-1 mb-4">
-              <p><strong>Nome:</strong> Lucas Morone (Meu filho)</p>
-              <p><strong>Banco:</strong> Cloudwalk IP LTDA</p>
-            </div>
-            <div className="flex items-center gap-3 bg-secondary/50 rounded-xl p-3">
-              <span className="text-xl">👇</span>
-              <code className="flex-1 text-lg font-mono font-bold text-foreground">{pixKey}</code>
-              <Button 
-                onClick={copyPixKey} 
-                variant="default"
-                size="sm"
-                className="gap-2"
-              >
-                {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                {copied ? "Copiado!" : "Copiar"}
-              </Button>
-            </div>
+          {/* PIX Section - Compact */}
+          <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-md mb-8">
+            <span className="text-sm text-muted-foreground">PIX:</span>
+            <code className="font-mono font-semibold text-foreground">{pixKey}</code>
+            <Button 
+              onClick={copyPixKey} 
+              variant="ghost"
+              size="sm"
+              className="h-7 px-2 gap-1 text-xs"
+            >
+              {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
+              {copied ? "Copiado" : "Copiar"}
+            </Button>
           </div>
           
           {/* Módulos section inside hero */}
