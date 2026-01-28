@@ -8,9 +8,26 @@ import bolsasCroche from "@/assets/bolsas-croche.jpg";
 import certificado from "@/assets/certificado.jpg";
 import maisModelos from "@/assets/mais-modelos.jpg";
 import heroBackground from "@/assets/hero-background.png";
-import { Sparkles, ChevronDown } from "lucide-react";
+import { Sparkles, ChevronDown, Copy, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
+  const [copied, setCopied] = useState(false);
+  const { toast } = useToast();
+  const pixKey = "21965328868";
+
+  const copyPixKey = () => {
+    navigator.clipboard.writeText(pixKey);
+    setCopied(true);
+    toast({
+      title: "Chave PIX copiada!",
+      description: "A chave foi copiada para a área de transferência.",
+    });
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   const modules = [
     {
       id: 1,
@@ -110,8 +127,30 @@ const Index = () => {
           </h2>
           
           {/* Scroll Indicator */}
-          <div className="animate-bounce mb-[100px]">
+          <div className="animate-bounce mb-6">
             <ChevronDown className="w-8 h-8 md:w-10 md:h-10 text-white/60 mx-auto" />
+          </div>
+
+          {/* PIX Section */}
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 mb-8 shadow-xl border border-white/20 max-w-md mx-auto">
+            <h3 className="text-lg font-bold text-foreground mb-3">💰 Chave PIX: <span className="text-muted-foreground font-normal">Celular</span></h3>
+            <div className="text-sm text-muted-foreground space-y-1 mb-4">
+              <p><strong>Nome:</strong> Lucas Morone (Meu filho)</p>
+              <p><strong>Banco:</strong> Cloudwalk IP LTDA</p>
+            </div>
+            <div className="flex items-center gap-3 bg-secondary/50 rounded-xl p-3">
+              <span className="text-xl">👇</span>
+              <code className="flex-1 text-lg font-mono font-bold text-foreground">{pixKey}</code>
+              <Button 
+                onClick={copyPixKey} 
+                variant="default"
+                size="sm"
+                className="gap-2"
+              >
+                {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                {copied ? "Copiado!" : "Copiar"}
+              </Button>
+            </div>
           </div>
           
           {/* Módulos section inside hero */}
