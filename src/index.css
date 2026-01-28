@@ -8,48 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Amarelo dourado aconchegante #ffefc1 como base */
-    --background: 45 100% 88%;
-    --foreground: 40 35% 20%;
+    /* Bege aconchegante #ded1bd como base */
+    --background: 36 26% 81%;
+    --foreground: 30 25% 20%;
 
     /* Cards com leve contraste - tom mais claro */
-    --card: 45 100% 92%;
-    --card-foreground: 40 35% 20%;
+    --card: 36 28% 88%;
+    --card-foreground: 30 25% 20%;
 
-    --popover: 45 100% 92%;
-    --popover-foreground: 40 35% 20%;
+    --popover: 36 28% 88%;
+    --popover-foreground: 30 25% 20%;
 
-    /* Laranja rosado coral como primary */
-    --primary: 12 85% 65%;
-    --primary-foreground: 45 25% 98%;
+    /* Terracota elegante como primary */
+    --primary: 18 55% 50%;
+    --primary-foreground: 36 25% 98%;
 
     /* Tons complementares */
-    --secondary: 45 50% 85%;
-    --secondary-foreground: 40 30% 22%;
+    --secondary: 36 20% 75%;
+    --secondary-foreground: 30 25% 22%;
 
-    --muted: 45 30% 88%;
-    --muted-foreground: 40 15% 45%;
+    --muted: 36 15% 78%;
+    --muted-foreground: 30 12% 45%;
 
-    /* Accent em tom coral mais suave */
-    --accent: 15 75% 75%;
-    --accent-foreground: 40 30% 22%;
+    /* Accent em tom terracota mais suave */
+    --accent: 24 45% 65%;
+    --accent-foreground: 30 25% 22%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 45 25% 98%;
+    --destructive-foreground: 36 25% 98%;
 
-    --border: 45 30% 85%;
-    --input: 45 30% 85%;
-    --ring: 12 85% 65%;
+    --border: 36 18% 75%;
+    --input: 36 18% 75%;
+    --ring: 18 55% 50%;
 
     --radius: 1rem;
     
     /* Gradientes personalizados */
-    --gradient-primary: linear-gradient(135deg, hsl(12 85% 65%), hsl(20 80% 70%));
-    --gradient-soft: linear-gradient(180deg, hsl(45 50% 94%), hsl(45 40% 90%));
+    --gradient-primary: linear-gradient(135deg, hsl(18 55% 50%), hsl(24 50% 55%));
+    --gradient-soft: linear-gradient(180deg, hsl(36 28% 90%), hsl(36 22% 85%));
     
     /* Sombras elegantes */
-    --shadow-soft: 0 4px 20px -4px hsl(12 85% 65% / 0.15);
-    --shadow-card: 0 2px 12px -2px hsl(40 30% 20% / 0.08);
+    --shadow-soft: 0 4px 20px -4px hsl(18 55% 50% / 0.2);
+    --shadow-card: 0 2px 12px -2px hsl(30 25% 20% / 0.1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -69,33 +69,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 25 20% 12%;
-    --foreground: 30 25% 95%;
+    --background: 30 15% 12%;
+    --foreground: 36 20% 95%;
 
-    --card: 25 18% 15%;
-    --card-foreground: 30 25% 95%;
+    --card: 30 12% 16%;
+    --card-foreground: 36 20% 95%;
 
-    --popover: 25 18% 15%;
-    --popover-foreground: 30 25% 95%;
+    --popover: 30 12% 16%;
+    --popover-foreground: 36 20% 95%;
 
-    --primary: 12 85% 65%;
-    --primary-foreground: 30 25% 98%;
+    --primary: 18 55% 55%;
+    --primary-foreground: 36 25% 98%;
 
-    --secondary: 25 15% 22%;
-    --secondary-foreground: 30 25% 95%;
+    --secondary: 30 12% 22%;
+    --secondary-foreground: 36 20% 95%;
 
-    --muted: 25 15% 22%;
-    --muted-foreground: 30 15% 65%;
+    --muted: 30 10% 22%;
+    --muted-foreground: 36 12% 65%;
 
-    --accent: 15 75% 75%;
-    --accent-foreground: 25 20% 12%;
+    --accent: 24 45% 60%;
+    --accent-foreground: 30 15% 12%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 30 25% 95%;
+    --destructive-foreground: 36 20% 95%;
 
-    --border: 25 15% 22%;
-    --input: 25 15% 22%;
-    --ring: 12 85% 65%;
+    --border: 30 10% 22%;
+    --input: 30 10% 22%;
+    --ring: 18 55% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
