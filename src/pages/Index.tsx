@@ -1,7 +1,6 @@
 import { ModuleCard } from "@/components/ModuleCard";
 import vestidosCroche from "@/assets/vestidos-croche-new.png";
 import certificado from "@/assets/certificado.jpg";
-import heroBackground from "@/assets/hero-background.png";
 import { Sparkles, ChevronDown, Copy, Check, Smartphone, Play, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -104,7 +103,7 @@ const Index = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBackground})` }}
+          style={{ backgroundImage: `url(https://res.cloudinary.com/dzetm6plq/image/upload/v1769728044/Que_a_integridade_e_a_retid%C3%A3o_me_protejam_porque_a_minha_esperan%C3%A7a_esta_em_ti_-_Salmos_2521_ow6jcl.png)` }}
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-background" />
@@ -130,22 +129,22 @@ const Index = () => {
           </div>
 
           {/* PIX Section */}
-          <div className="bg-black/40 backdrop-blur-md rounded-xl px-6 py-4 mb-8 max-w-xs mx-auto text-center border border-white/10">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <Smartphone className="w-4 h-4 text-white/80" />
-              <p className="text-white/90 text-sm">Chave Pix: <span className="font-semibold text-white">Celular</span></p>
+          <div className="bg-black/40 backdrop-blur-md rounded-lg px-4 py-3 mb-8 max-w-[200px] mx-auto text-center border border-white/10">
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              <Smartphone className="w-3 h-3 text-white/80" />
+              <p className="text-white/90 text-xs">Chave Pix: <span className="font-semibold text-white">Celular</span></p>
             </div>
-            <p className="text-white/70 text-sm mb-2">Nome: Lucas Morone (Meu filho)</p>
-            <code className="block text-white font-mono font-bold text-lg mb-3">{pixKey}</code>
+            <p className="text-white/70 text-[10px] mb-1">Nome: Lucas Morone (Meu filho)</p>
+            <code className="block text-white font-mono font-bold text-sm mb-2">{pixKey}</code>
             <Button 
               onClick={copyPixKey} 
               size="sm"
-              className="gap-2 w-full mb-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold shadow-lg"
+              className="gap-1.5 w-full mb-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold shadow-lg h-7 text-xs"
             >
-              {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+              {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
               {copied ? "Copiado!" : "Copiar chave"}
             </Button>
-            <p className="text-white/60 text-xs">Conto com sua honestidade 🙏</p>
+            <p className="text-white/60 text-[10px]">Conto com sua honestidade 🙏</p>
           </div>
         </div>
       </section>
