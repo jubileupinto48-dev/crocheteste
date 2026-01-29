@@ -139,9 +139,8 @@ const Index = () => {
             <code className="block text-white font-mono font-bold text-lg mb-3">{pixKey}</code>
             <Button 
               onClick={copyPixKey} 
-              variant="secondary"
               size="sm"
-              className="gap-2 w-full mb-3 bg-white/20 hover:bg-white/30 text-white border-white/20"
+              className="gap-2 w-full mb-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold shadow-lg"
             >
               {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               {copied ? "Copiado!" : "Copiar chave"}
