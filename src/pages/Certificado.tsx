@@ -1,12 +1,91 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Award, Download, Share2 } from "lucide-react";
+import { ArrowLeft, Award, Download, Eye, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import certificado from "@/assets/certificado.jpg";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useState, useRef } from "react";
+import { CertificateTemplate } from "@/components/CertificateTemplate";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+import { useToast } from "@/hooks/use-toast";
 
 const Certificado = () => {
+  const [name, setName] = useState("");
+  const [completionDate, setCompletionDate] = useState(
+    new Date().toLocaleDateString('pt-BR')
+  );
+  const [showPreview, setShowPreview] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const certificateRef = useRef<HTMLDivElement>(null);
+  const { toast } = useToast();
+
+  const handleGeneratePDF = async () => {
+    if (!name.trim()) {
+      toast({
+        title: "Nome obrigatório",
+        description: "Por favor, preencha seu nome completo.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsGenerating(true);
+    setShowPreview(true);
+
+    // Wait for render
+    await new Promise(resolve => setTimeout(resolve, 100));
+
+    try {
+      if (certificateRef.current) {
+        const canvas = await html2canvas(certificateRef.current, {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: null,
+        });
+
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jsPDF({
+          orientation: "landscape",
+          unit: "mm",
+          format: "a4",
+        });
+
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = pdf.internal.pageSize.getHeight();
+
+        pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+        pdf.save(`Certificado_${name.replace(/\s+/g, "_")}.pdf`);
+
+        toast({
+          title: "Certificado gerado!",
+          description: "O download do PDF foi iniciado.",
+        });
+      }
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+      toast({
+        title: "Erro ao gerar certificado",
+        description: "Tente novamente em alguns instantes.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  const handlePreview = () => {
+    if (!name.trim()) {
+      toast({
+        title: "Nome obrigatório",
+        description: "Por favor, preencha seu nome completo para visualizar.",
+        variant: "destructive",
+      });
+      return;
+    }
+    setShowPreview(true);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
       <div className="container mx-auto px-4 py-8">
@@ -26,16 +105,8 @@ const Certificado = () => {
               Emitir Certificado
             </h1>
             <p className="text-muted-foreground text-lg">
-              Parabéns por concluir o curso! Emita seu certificado oficial
+              Parabéns por concluir o curso! Preencha seus dados e gere seu certificado oficial
             </p>
-          </div>
-
-          <div className="relative mb-12 animate-scale-in">
-            <img
-              src={certificado}
-              alt="Certificado"
-              className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-card"
-            />
           </div>
 
           <Card className="mb-8 shadow-card animate-fade-in">
@@ -46,30 +117,27 @@ const Certificado = () => {
               
               <div className="space-y-6">
                 <div>
-                  <Label htmlFor="name" className="text-base">Nome Completo</Label>
+                  <Label htmlFor="name" className="text-base">Nome Completo *</Label>
                   <Input
                     id="name"
-                    placeholder="Digite seu nome completo"
+                    placeholder="Digite seu nome completo (como aparecerá no certificado)"
                     className="mt-2 h-12"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="cpf" className="text-base">CPF</Label>
+                  <Label htmlFor="date" className="text-base">Data de Conclusão</Label>
                   <Input
-                    id="cpf"
-                    placeholder="000.000.000-00"
+                    id="date"
+                    type="date"
                     className="mt-2 h-12"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="email" className="text-base">E-mail</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="seu@email.com"
-                    className="mt-2 h-12"
+                    value={completionDate.split('/').reverse().join('-')}
+                    onChange={(e) => {
+                      const date = new Date(e.target.value + 'T12:00:00');
+                      setCompletionDate(date.toLocaleDateString('pt-BR'));
+                    }}
                   />
                 </div>
 
@@ -88,15 +156,7 @@ const Certificado = () => {
                     </p>
                     <p className="flex justify-between">
                       <span>Data de Conclusão:</span>
-                      <span className="font-medium text-foreground">
-                        {new Date().toLocaleDateString('pt-BR')}
-                      </span>
-                    </p>
-                    <p className="flex justify-between">
-                      <span>Código de Validação:</span>
-                      <span className="font-medium text-foreground font-mono">
-                        CRC-{Math.random().toString(36).substring(2, 10).toUpperCase()}
-                      </span>
+                      <span className="font-medium text-foreground">{completionDate}</span>
                     </p>
                   </div>
                 </div>
@@ -104,18 +164,63 @@ const Certificado = () => {
             </CardContent>
           </Card>
 
-          <div className="grid md:grid-cols-2 gap-4 animate-scale-in">
-            <Button size="lg" className="shadow-soft h-14 text-base">
-              <Download className="mr-2 h-5 w-5" />
-              Gerar e Baixar Certificado
+          <div className="grid md:grid-cols-2 gap-4 animate-scale-in mb-8">
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="h-14 text-base"
+              onClick={handlePreview}
+            >
+              <Eye className="mr-2 h-5 w-5" />
+              Visualizar Certificado
             </Button>
-            <Button size="lg" variant="outline" className="h-14 text-base">
-              <Share2 className="mr-2 h-5 w-5" />
-              Compartilhar nas Redes
+            <Button 
+              size="lg" 
+              className="shadow-soft h-14 text-base"
+              onClick={handleGeneratePDF}
+              disabled={isGenerating}
+            >
+              {isGenerating ? (
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+              ) : (
+                <Download className="mr-2 h-5 w-5" />
+              )}
+              {isGenerating ? "Gerando..." : "Gerar e Baixar PDF"}
             </Button>
           </div>
 
-          <Card className="mt-8 shadow-card animate-fade-in">
+          {/* Certificate Preview */}
+          {showPreview && (
+            <Card className="mb-8 shadow-card animate-fade-in overflow-hidden">
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-foreground mb-4 text-center">
+                  Prévia do Certificado
+                </h3>
+                <div className="overflow-x-auto flex justify-center">
+                  <div className="transform scale-[0.35] md:scale-50 origin-top">
+                    <CertificateTemplate
+                      ref={certificateRef}
+                      name={name}
+                      completionDate={completionDate}
+                    />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Hidden certificate for PDF generation */}
+          {!showPreview && (
+            <div className="fixed -left-[9999px] top-0">
+              <CertificateTemplate
+                ref={certificateRef}
+                name={name}
+                completionDate={completionDate}
+              />
+            </div>
+          )}
+
+          <Card className="shadow-card animate-fade-in">
             <CardContent className="p-6">
               <h3 className="font-semibold text-foreground mb-3">
                 Sobre o Certificado
@@ -127,15 +232,15 @@ const Certificado = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-0.5">✓</span>
-                  <span>Reconhecido nacionalmente</span>
+                  <span>Design profissional e elegante</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-0.5">✓</span>
-                  <span>Código de validação único para verificação online</span>
+                  <span>Pronto para impressão em tamanho A4</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-0.5">✓</span>
-                  <span>Pode ser impresso em tamanho A4</span>
+                  <span>Personalizado com seu nome e data de conclusão</span>
                 </li>
               </ul>
             </CardContent>
