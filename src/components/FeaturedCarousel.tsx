@@ -1,6 +1,5 @@
-import { useState } from "react";
-import { Play, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Play } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import {
   Carousel,
   CarouselContent,
@@ -16,6 +15,7 @@ interface FeaturedVideo {
   videoId: string;
 }
 
+// Ordem: Destaque 1, Destaque 4, Destaque 5, Destaque 6, Destaque 7
 const featuredVideos: FeaturedVideo[] = [
   {
     id: "1",
@@ -24,67 +24,41 @@ const featuredVideos: FeaturedVideo[] = [
     videoId: "wa2xHd3ghg8",
   },
   {
-    id: "2",
-    title: "Vestido Destaque 2",
-    thumbnail: "https://img.youtube.com/vi/MqT6DfpAGfE/maxresdefault.jpg",
-    videoId: "MqT6DfpAGfE",
-  },
-  {
-    id: "3",
-    title: "Vestido Destaque 3",
-    thumbnail: "https://img.youtube.com/vi/T3mKfEMGzpE/maxresdefault.jpg",
-    videoId: "T3mKfEMGzpE",
-  },
-  {
     id: "4",
     title: "Vestido Destaque 4",
     thumbnail: "https://img.youtube.com/vi/7Ry1SQfBs-A/maxresdefault.jpg",
     videoId: "7Ry1SQfBs-A",
   },
+  {
+    id: "5",
+    title: "Vestido Destaque 5",
+    thumbnail: "https://img.youtube.com/vi/2QG0PHbGUsI/maxresdefault.jpg",
+    videoId: "2QG0PHbGUsI",
+  },
+  {
+    id: "6",
+    title: "Vestido Destaque 6",
+    thumbnail: "https://img.youtube.com/vi/y9C56mdmG6A/maxresdefault.jpg",
+    videoId: "y9C56mdmG6A",
+  },
+  {
+    id: "7",
+    title: "Vestido Destaque 7",
+    thumbnail: "https://img.youtube.com/vi/4y5JnM6CAKE/maxresdefault.jpg",
+    videoId: "4y5JnM6CAKE",
+  },
 ];
 
 export const FeaturedCarousel = () => {
-  const [playingVideo, setPlayingVideo] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const handlePlay = (videoId: string) => {
-    setPlayingVideo(videoId);
-  };
-
-  const handleClose = () => {
-    setPlayingVideo(null);
+    // Navega para o módulo com o vídeo selecionado em autoplay
+    navigate(`/vestidos-croche?video=${videoId}&autoplay=true`);
   };
 
   return (
     <div className="relative">
-      {/* Video Modal Overlay */}
-      {playingVideo && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-          onClick={handleClose}
-        >
-          <div 
-            className="relative w-full max-w-4xl aspect-video"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute -top-12 right-0 text-white hover:bg-white/20 z-10"
-              onClick={handleClose}
-            >
-              <X className="w-6 h-6" />
-            </Button>
-            <iframe
-              src={`https://www.youtube.com/embed/${playingVideo}?autoplay=1&rel=0&modestbranding=1`}
-              title="Video Player"
-              className="w-full h-full rounded-xl shadow-2xl"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
-
       {/* Carousel */}
       <Carousel
         opts={{
