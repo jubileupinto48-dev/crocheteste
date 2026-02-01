@@ -73,14 +73,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center overflow-hidden min-h-[280px] md:min-h-[350px]">
+      <section className="relative flex items-center justify-center overflow-hidden min-h-[180px] md:min-h-[220px]">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(https://res.cloudinary.com/dzetm6plq/image/upload/v1769728044/Que_a_integridade_e_a_retid%C3%A3o_me_protejam_porque_a_minha_esperan%C3%A7a_esta_em_ti_-_Salmos_2521_ow6jcl.png)` }}
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-background" />
         
         {/* PIX Card */}
         <div className="relative z-10 animate-fade-in">
