@@ -7,33 +7,7 @@ import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Smartphone, Copy, Check, Play } from "lucide-react";
-import vestidosCroche from "@/assets/destaque.png";
-import { Button } from "@/components/ui/button";
-
 const Index = () => {
-  const [copied, setCopied] = useState(false);
-  const { toast } = useToast();
-  const pixKey = "21965328868";
-
-  const copyPixKey = () => {
-    navigator.clipboard.writeText(pixKey);
-    setCopied(true);
-    toast({
-      title: "Chave PIX copiada!",
-      description: "A chave foi copiada para a área de transferência.",
-    });
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  // Módulo principal em destaque
-  const featuredModule = {
-    id: 1,
-    title: "Vestidos de Crochê",
-    description: "Modelos exclusivos de vestidos artesanais com receitas detalhadas passo a passo. Aprenda técnicas profissionais e crie peças incríveis.",
-    image: vestidosCroche,
-    link: "/vestidos-croche",
-    badge: "Novidade"
-  };
 
   // Outros módulos
   const modules = [
