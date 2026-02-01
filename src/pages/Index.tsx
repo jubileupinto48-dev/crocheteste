@@ -88,20 +88,20 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-contain bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(https://res.cloudinary.com/dzetm6plq/image/upload/v1769987936/ACESSE_O_MATERIAL_ABAIXO_2_wbkchb.png)` }}
-        />
-        {/* Dark Overlay - only at bottom for gradient transition */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
-        
-        {/* Spacer to show the background image with text visible */}
-        <div className="h-[65vw] max-h-[550px] min-h-[350px]" />
+      <section className="relative w-full">
+        {/* Background Image - aspect ratio container */}
+        <div className="relative w-full" style={{ aspectRatio: '1080/1080' }}>
+          <img 
+            src="https://res.cloudinary.com/dzetm6plq/image/upload/v1769987936/ACESSE_O_MATERIAL_ABAIXO_2_wbkchb.png"
+            alt="Acesse o material abaixo"
+            className="w-full h-full object-contain"
+          />
+          {/* Dark Overlay - only at bottom for gradient transition */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+        </div>
         
         {/* PIX Button - at bottom of hero after gradient */}
-        <div className="relative z-10 pb-6">
+        <div className="relative z-10 -mt-16 pb-6 flex justify-center">
           <Button 
             onClick={copyPixKey}
             className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-full shadow-lg"
