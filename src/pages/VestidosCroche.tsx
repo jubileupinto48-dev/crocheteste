@@ -29,16 +29,16 @@ const projectGraphics: Record<string, { preview: string; diagram: string }> = {
 const VestidosCroche = () => {
   const videos = [
     // ===== DESTAQUES PRINCIPAIS =====
-    { id: 1, title: "Vestido Destaque 1", videoId: "wa2xHd3ghg8", project: "Destaque", part: null },
-    { id: 2, title: "Vestido Destaque 2", videoId: "MqT6DfpAGfE", project: "Destaque", part: null },
-    { id: 3, title: "Vestido Destaque 3", videoId: "T3mKfEMGzpE", project: "Destaque", part: null },
-    { id: 4, title: "Vestido Destaque 4", videoId: "7Ry1SQfBs-A", project: "Destaque", part: null },
+    { id: 1, title: "Vestido Longo de Crochê", videoId: "wa2xHd3ghg8", project: "Destaque", part: null },
+    { id: 2, title: "Vestido Longo de Crochê 2", videoId: "MqT6DfpAGfE", project: "Destaque", part: null },
+    { id: 3, title: "Vestido Longo de Crochê 3", videoId: "T3mKfEMGzpE", project: "Destaque", part: null },
+    { id: 4, title: "Vestido Decote V", videoId: "7Ry1SQfBs-A", project: "Destaque", part: null },
     
     // ===== NOVOS VÍDEOS =====
-    { id: 200, title: "Vestido Destaque 5", videoId: "2QG0PHbGUsI", project: "Destaque", part: null },
-    { id: 201, title: "Vestido Destaque 6", videoId: "y9C56mdmG6A", project: "Destaque", part: null },
-    { id: 202, title: "Vestido Destaque 7", videoId: "4y5JnM6CAKE", project: "Destaque", part: null },
-    { id: 203, title: "Vestido Destaque 8", videoId: "CNe-elk8zm4", project: "Destaque", part: null },
+    { id: 200, title: "Vestido Ciganina", videoId: "2QG0PHbGUsI", project: "Destaque", part: null },
+    { id: 201, title: "Vestido Luxo", videoId: "y9C56mdmG6A", project: "Destaque", part: null },
+    { id: 202, title: "Vestido Cleópatra", videoId: "4y5JnM6CAKE", project: "Destaque", part: null },
+    { id: 203, title: "Vestido Longo Sereia", videoId: "CNe-elk8zm4", project: "Destaque", part: null },
     
     // ===== DESTAQUES =====
     // Vestido Angel (3 partes)
