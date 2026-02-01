@@ -8,10 +8,11 @@ interface CustomVideoPlayerProps {
   videoId: string;
   title: string;
   platform?: "youtube" | "vimeo" | "gdrive";
+  autoplay?: boolean;
 }
 
-export const CustomVideoPlayer = ({ videoId, title, platform = "youtube" }: CustomVideoPlayerProps) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autoplay = false }: CustomVideoPlayerProps) => {
+  const [isPlaying, setIsPlaying] = useState(autoplay);
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
 
   const getThumbnailUrl = () => {

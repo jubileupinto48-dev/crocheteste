@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { CustomVideoPlayer } from "@/components/CustomVideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
@@ -415,12 +415,35 @@ const VestidosCroche = () => {
   // Extrair projetos únicos para o filtro
   const uniqueProjects = [...new Set(videos.map(v => v.project))];
 
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [searchParams] = useSearchParams();
+  const autoplayVideoId = searchParams.get("video");
+  const shouldAutoplay = searchParams.get("autoplay") === "true";
+
+  // Encontrar índice do vídeo baseado na URL
+  const getInitialVideoIndex = () => {
+    if (autoplayVideoId) {
+      const index = videos.findIndex(v => v.videoId === autoplayVideoId);
+      return index >= 0 ? index : 0;
+    }
+    return 0;
+  };
+
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(getInitialVideoIndex);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterProject, setFilterProject] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const videoListRef = useRef<HTMLDivElement>(null);
   const videosPerPage = 12;
+
+  // Atualiza o índice quando a URL mudar
+  useEffect(() => {
+    if (autoplayVideoId) {
+      const index = videos.findIndex(v => v.videoId === autoplayVideoId);
+      if (index >= 0) {
+        setCurrentVideoIndex(index);
+      }
+    }
+  }, [autoplayVideoId]);
 
   const filteredVideos = videos.filter(video => {
     const matchesSearch = video.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -476,6 +499,7 @@ const VestidosCroche = () => {
                     videoId={currentVideo.videoId}
                     title={currentVideo.title}
                     platform="youtube"
+                    autoplay={shouldAutoplay && currentVideo.videoId === autoplayVideoId}
                   />
                 </div>
               </div>
@@ -484,6 +508,7 @@ const VestidosCroche = () => {
                   videoId={currentVideo.videoId}
                   title={currentVideo.title}
                   platform="youtube"
+                  autoplay={shouldAutoplay && currentVideo.videoId === autoplayVideoId}
                 />
               </div>
               
