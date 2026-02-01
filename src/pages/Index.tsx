@@ -76,8 +76,8 @@ const Index = () => {
       <section className="relative flex flex-col items-center overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(https://res.cloudinary.com/dzetm6plq/image/upload/v1769728044/Que_a_integridade_e_a_retid%C3%A3o_me_protejam_porque_a_minha_esperan%C3%A7a_esta_em_ti_-_Salmos_2521_ow6jcl.png)` }}
+          className="absolute inset-0 bg-cover bg-top bg-no-repeat"
+          style={{ backgroundImage: `url(https://res.cloudinary.com/dzetm6plq/image/upload/v1769727599/ChatGPT_Image_29_de_jan._de_2026_19_56_49_gispxg.png)` }}
         />
         {/* Dark Overlay - only at bottom for gradient transition */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
@@ -87,8 +87,8 @@ const Index = () => {
           <PixCard />
         </div>
         
-        {/* Spacer to show the background image text */}
-        <div className="h-[280px] md:h-[350px]" />
+        {/* Spacer to show the background image */}
+        <div className="h-[320px] md:h-[420px]" />
       </section>
 
       {/* Main Content */}
