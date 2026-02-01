@@ -98,7 +98,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
         
         {/* Spacer to show the background image with text visible */}
-        <div className="h-[50vw] max-h-[450px] min-h-[280px]" />
+        <div className="h-[65vw] max-h-[550px] min-h-[350px]" />
         
         {/* PIX Button - at bottom of hero after gradient */}
         <div className="relative z-10 pb-6">
