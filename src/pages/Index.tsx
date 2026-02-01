@@ -115,7 +115,7 @@ const Index = () => {
       <div className="relative z-20 -mt-4 h-16 bg-gradient-to-t from-background from-50% to-transparent pointer-events-none" />
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-6 md:py-8">
+      <main className="container mx-auto px-4 py-2 md:py-4">
 
         {/* Featured Module - Carousel */}
         <section className="mb-0 animate-fade-in">
