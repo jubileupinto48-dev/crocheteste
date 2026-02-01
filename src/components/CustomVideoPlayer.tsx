@@ -105,7 +105,7 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube" }: Cust
           
           {/* Play Button */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-red-600/90 flex items-center justify-center shadow-xl transform transition-all duration-300 group-hover:scale-110 group-hover:bg-red-600 group-hover:shadow-red-500/30 group-hover:shadow-2xl animate-[pulse_3s_ease-in-out_infinite]">
+            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-red-600/90 flex items-center justify-center shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-red-600 animate-pulse-slow">
               <Play className="w-5 h-5 md:w-6 md:h-6 text-white fill-current ml-0.5" />
             </div>
           </div>
