@@ -68,7 +68,7 @@ export const FeaturedCarousel = () => {
         }}
         plugins={[
           Autoplay({
-            delay: 1500,
+            delay: 2500,
             stopOnInteraction: false,
             stopOnMouseEnter: true,
           }),
