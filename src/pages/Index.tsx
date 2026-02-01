@@ -88,16 +88,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative w-full">
-        {/* Background Image - aspect ratio container */}
-        <div className="relative w-full" style={{ aspectRatio: '1080/1080' }}>
+      <section className="relative w-full overflow-hidden">
+        {/* Background Image - cropped to show top portion */}
+        <div className="relative w-full" style={{ height: 'calc(50vw)', maxHeight: '540px' }}>
           <img 
             src="https://res.cloudinary.com/dzetm6plq/image/upload/v1769987936/ACESSE_O_MATERIAL_ABAIXO_2_wbkchb.png"
             alt="Acesse o material abaixo"
-            className="w-full h-full object-contain"
+            className="w-full object-contain object-top"
           />
         </div>
-        
       </section>
 
       {/* Gradient overlay between hero and main - positioned to cover the junction */}
