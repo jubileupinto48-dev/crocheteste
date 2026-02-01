@@ -12,7 +12,9 @@ interface CustomVideoPlayerProps {
 }
 
 export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autoplay = false }: CustomVideoPlayerProps) => {
-  const [isPlaying, setIsPlaying] = useState(autoplay);
+  // Se autoplay=true, começa com vídeo inline (não modal)
+  const [isPlayingInline, setIsPlayingInline] = useState(autoplay);
+  const [isPlayingModal, setIsPlayingModal] = useState(false);
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
 
   const getThumbnailUrl = () => {
@@ -36,20 +38,42 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   };
 
   const handlePlay = () => {
-    setIsPlaying(true);
+    // Abre modal somente se não estiver em modo autoplay
+    if (autoplay) {
+      setIsPlayingInline(true);
+    } else {
+      setIsPlayingModal(true);
+    }
   };
 
-  const handleClose = () => {
-    setIsPlaying(false);
+  const handleCloseModal = () => {
+    setIsPlayingModal(false);
   };
+
+  // Se estiver em modo inline (autoplay ou clicou em play com autoplay ativo)
+  if (isPlayingInline) {
+    return (
+      <Card className="overflow-hidden shadow-card">
+        <div className="relative aspect-video bg-black">
+          <iframe
+            src={getEmbedUrl()}
+            title={title}
+            className="w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </Card>
+    );
+  }
 
   return (
     <>
-      {/* Video Modal Overlay */}
-      {isPlaying && (
+      {/* Video Modal Overlay - somente para modo não-autoplay */}
+      {isPlayingModal && (
         <div 
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
-          onClick={handleClose}
+          onClick={handleCloseModal}
         >
           <div 
             className="relative w-full max-w-5xl aspect-video"
@@ -59,7 +83,7 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
               variant="ghost"
               size="icon"
               className="absolute -top-12 right-0 text-white hover:bg-white/20 z-10"
-              onClick={handleClose}
+              onClick={handleCloseModal}
             >
               <X className="w-6 h-6" />
             </Button>
