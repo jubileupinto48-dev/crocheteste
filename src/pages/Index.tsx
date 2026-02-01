@@ -2,7 +2,6 @@ import { ModuleCard } from "@/components/ModuleCard";
 import certificado from "@/assets/certificado.jpg";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { PixCard } from "@/components/PixCard";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 const Index = () => {
 
@@ -77,15 +76,10 @@ const Index = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-top bg-no-repeat"
-          style={{ backgroundImage: `url(https://res.cloudinary.com/dzetm6plq/image/upload/v1769727599/ChatGPT_Image_29_de_jan._de_2026_19_56_49_gispxg.png)` }}
+          style={{ backgroundImage: `url(https://res.cloudinary.com/dzetm6plq/image/upload/v1769987101/ACESSE_O_MATERIAL_ABAIXO_jzhnru.png)` }}
         />
         {/* Dark Overlay - only at bottom for gradient transition */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
-        
-        {/* PIX Card at top */}
-        <div className="relative z-10 animate-fade-in pt-6 pb-4">
-          <PixCard />
-        </div>
         
         {/* Spacer to show the background image */}
         <div className="h-[320px] md:h-[420px]" />
