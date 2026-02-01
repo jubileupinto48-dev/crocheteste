@@ -1,5 +1,6 @@
 import { Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -65,6 +66,13 @@ export const FeaturedCarousel = () => {
           align: "center",
           loop: true,
         }}
+        plugins={[
+          Autoplay({
+            delay: 1500,
+            stopOnInteraction: false,
+            stopOnMouseEnter: true,
+          }),
+        ]}
         className="w-full"
       >
         <CarouselContent className="-ml-2 md:-ml-4">
