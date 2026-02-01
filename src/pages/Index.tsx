@@ -1,9 +1,25 @@
+import { useState } from "react";
 import { ModuleCard } from "@/components/ModuleCard";
 import certificado from "@/assets/certificado.jpg";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Copy, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 const Index = () => {
+  const [copied, setCopied] = useState(false);
+  const { toast } = useToast();
+  const pixKey = "21965328868";
+
+  const copyPixKey = () => {
+    navigator.clipboard.writeText(pixKey);
+    setCopied(true);
+    toast({
+      title: "Chave PIX copiada!",
+      description: "A chave foi copiada para a área de transferência.",
+    });
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   // Outros módulos
   const modules = [
@@ -88,6 +104,17 @@ const Index = () => {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-6 md:py-8">
         
+        {/* PIX Button */}
+        <div className="flex justify-center mb-6">
+          <Button 
+            onClick={copyPixKey}
+            className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-full shadow-lg"
+          >
+            {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
+            {copied ? "Copiado!" : "Copiar Chave PIX"}
+          </Button>
+        </div>
+
         {/* Featured Module - Carousel */}
         <section className="mb-12 animate-fade-in">
           <div className="text-center mb-6">
