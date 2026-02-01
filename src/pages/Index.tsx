@@ -75,14 +75,14 @@ const Index = () => {
       <section className="relative flex flex-col items-center overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-contain bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(https://res.cloudinary.com/dzetm6plq/image/upload/v1769987101/ACESSE_O_MATERIAL_ABAIXO_jzhnru.png)` }}
         />
         {/* Dark Overlay - only at bottom for gradient transition */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
         
-        {/* Spacer to show the background image */}
-        <div className="h-[400px] md:h-[500px]" />
+        {/* Spacer to show the background image with text visible */}
+        <div className="h-[50vw] max-h-[450px] min-h-[280px]" />
       </section>
 
       {/* Main Content */}
