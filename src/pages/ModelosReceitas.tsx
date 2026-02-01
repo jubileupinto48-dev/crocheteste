@@ -11,6 +11,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+// Imagens dos módulos
+import modelos2000 from "@/assets/modelos-receitas/modelos-2000.jpg";
+import roupasInfantis from "@/assets/modelos-receitas/roupas-infantis.jpg";
+import bolsasMochilas from "@/assets/modelos-receitas/bolsas-mochilas.jpg";
+import todasReceitas from "@/assets/modelos-receitas/todas-receitas.jpg";
+import modelosDiversificados from "@/assets/modelos-receitas/modelos-diversificados.jpg";
+import modelosEspeciais from "@/assets/modelos-receitas/modelos-especiais.jpg";
+
 interface ModuloItem {
   id: string;
   name: string;
@@ -26,42 +34,42 @@ const ModelosReceitas = () => {
       name: "+2000 MODELOS", 
       url: "https://drive.google.com/drive/folders/1KfInA9XDh1hu-MJN5bfxKKQYA2mSJSa1",
       description: "Acesso a mais de 2000 modelos exclusivos em PDF",
-      images: [] // Placeholder - adicione URLs de imagens aqui
+      images: [modelos2000]
     },
     { 
       id: "2",
       name: "RECEITAS ROUPAS INFANTIS", 
       url: "https://drive.google.com/drive/folders/1zhSu5deN1u0-pWXtsgkF3zzS4AgStLPt",
       description: "Receitas completas de roupinhas infantis",
-      images: []
+      images: [roupasInfantis]
     },
     { 
       id: "3",
       name: "BOLSAS E MOCHILAS", 
       url: "https://drive.google.com/drive/folders/1oZOb9pmaGRZq2sOuk7BHOgYIia2aqAuK",
       description: "Modelos de bolsas, mochilas e acessórios",
-      images: []
+      images: [bolsasMochilas]
     },
     { 
       id: "4",
       name: "TODAS AS RECEITAS", 
       url: "https://drive.google.com/drive/folders/1RFWmrjiWBZYuX4KX8bHnB__fFYkZi0RI",
       description: "Coleção completa de todas as receitas disponíveis",
-      images: []
+      images: [todasReceitas]
     },
     { 
       id: "5",
       name: "VÁRIOS MODELOS DIVERSIFICADOS", 
       url: "https://drive.google.com/drive/folders/15lHDk8fMxgeUVrkLqxLo-IcP3DQ0_EV_",
       description: "Modelos variados e diversificados para todos os gostos",
-      images: []
+      images: [modelosDiversificados]
     },
     { 
       id: "6",
       name: "MODELOS ESPECIAIS", 
       url: "https://drive.google.com/drive/folders/15lHDk8fMxgeUVrkLqxLo-IcP3DQ0_EV_",
       description: "Seleção especial de modelos únicos",
-      images: []
+      images: [modelosEspeciais]
     },
   ];
 
