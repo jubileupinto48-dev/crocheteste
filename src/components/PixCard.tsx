@@ -8,6 +8,7 @@ export const PixCard = () => {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
   const pixKey = "21965328868";
+  const pixName = "Lucas Morone (Meu filho)";
 
   const copyPixKey = () => {
     navigator.clipboard.writeText(pixKey);
@@ -20,33 +21,34 @@ export const PixCard = () => {
   };
 
   return (
-    <Card className="bg-card/90 backdrop-blur-md border-border/50 px-4 py-3 shadow-lg">
-      <div className="flex items-center gap-3">
-        {/* Offer Badge */}
-        <div className="flex items-center gap-1.5 text-primary">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span className="font-medium text-xs">
-            Oferta Especial
-          </span>
+    <Card className="bg-black/60 backdrop-blur-sm border-white/20 px-5 py-4 shadow-lg">
+      <div className="flex flex-col items-center gap-3">
+        {/* Header */}
+        <div className="flex items-center gap-2 text-primary">
+          <Sparkles className="w-4 h-4" />
+          <span className="font-semibold text-sm">Chave PIX: Celular</span>
         </div>
 
-        <div className="w-px h-4 bg-border" />
+        {/* Name */}
+        <p className="text-white/90 text-sm font-medium">
+          Nome: {pixName}
+        </p>
 
-        {/* PIX Info */}
-        <div className="flex items-center gap-2">
-          <code className="font-mono text-xs font-semibold text-foreground bg-muted px-2 py-1 rounded">
-            {pixKey}
-          </code>
-          <Button 
-            onClick={copyPixKey} 
-            size="sm"
-            variant="default"
-            className="gap-1.5 h-7 text-xs font-medium"
-          >
-            {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
-            {copied ? "Copiado!" : "Copiar"}
-          </Button>
-        </div>
+        {/* PIX Key */}
+        <code className="font-mono text-base font-bold text-white bg-white/10 px-4 py-2 rounded-lg">
+          {pixKey}
+        </code>
+
+        {/* Copy Button */}
+        <Button 
+          onClick={copyPixKey} 
+          size="sm"
+          variant="default"
+          className="gap-2 font-medium"
+        >
+          {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+          {copied ? "Copiado!" : "Copiar Chave PIX"}
+        </Button>
       </div>
     </Card>
   );

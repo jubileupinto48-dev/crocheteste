@@ -73,19 +73,22 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center overflow-hidden min-h-[180px] md:min-h-[220px]">
+      <section className="relative flex flex-col items-center overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(https://res.cloudinary.com/dzetm6plq/image/upload/v1769728044/Que_a_integridade_e_a_retid%C3%A3o_me_protejam_porque_a_minha_esperan%C3%A7a_esta_em_ti_-_Salmos_2521_ow6jcl.png)` }}
         />
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-background" />
+        {/* Dark Overlay - only at bottom for gradient transition */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
         
-        {/* PIX Card */}
-        <div className="relative z-10 animate-fade-in">
+        {/* PIX Card at top */}
+        <div className="relative z-10 animate-fade-in pt-6 pb-4">
           <PixCard />
         </div>
+        
+        {/* Spacer to show the background image text */}
+        <div className="h-[280px] md:h-[350px]" />
       </section>
 
       {/* Main Content */}
