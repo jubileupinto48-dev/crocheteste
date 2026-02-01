@@ -88,13 +88,13 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative w-full overflow-hidden">
-        {/* Background Image - cropped to show top portion */}
-        <div className="relative w-full" style={{ height: 'calc(50vw)', maxHeight: '540px' }}>
+      <section className="relative w-full">
+        {/* Background Image - full size container */}
+        <div className="relative w-full">
           <img 
             src="https://res.cloudinary.com/dzetm6plq/image/upload/v1769987936/ACESSE_O_MATERIAL_ABAIXO_2_wbkchb.png"
             alt="Acesse o material abaixo"
-            className="w-full object-contain object-top"
+            className="w-full h-auto"
           />
         </div>
       </section>
