@@ -111,7 +111,7 @@ const Index = () => {
       </div>
 
       {/* Gradient overlay between hero and main - positioned to cover the junction */}
-      <div className="relative z-20 -mt-4 h-16 bg-gradient-to-t from-background from-50% to-transparent pointer-events-none" />
+      <div className="relative z-20 -mt-4 h-32 bg-gradient-to-t from-background from-50% to-transparent pointer-events-none" />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-6 md:py-8">
