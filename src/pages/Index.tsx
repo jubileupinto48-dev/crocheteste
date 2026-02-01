@@ -17,6 +17,7 @@ const Index = () => {
     toast({
       title: "Chave PIX copiada!",
       description: "A chave foi copiada para a área de transferência.",
+      duration: 3000,
     });
     setTimeout(() => setCopied(false), 2000);
   };
