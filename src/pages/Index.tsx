@@ -99,13 +99,9 @@ const Index = () => {
         
         {/* Spacer to show the background image with text visible */}
         <div className="h-[50vw] max-h-[450px] min-h-[280px]" />
-      </section>
-
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-6 md:py-8">
         
-        {/* PIX Button */}
-        <div className="flex justify-center mb-6">
+        {/* PIX Button - at bottom of hero after gradient */}
+        <div className="relative z-10 pb-6">
           <Button 
             onClick={copyPixKey}
             className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-full shadow-lg"
@@ -114,6 +110,10 @@ const Index = () => {
             {copied ? "Copiado!" : "Copiar Chave PIX"}
           </Button>
         </div>
+      </section>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-6 md:py-8">
 
         {/* Featured Module - Carousel */}
         <section className="mb-12 animate-fade-in">
