@@ -19,31 +19,31 @@ interface FeaturedVideo {
 const featuredVideos: FeaturedVideo[] = [
   {
     id: "1",
-    title: "Vestido Destaque 1",
+    title: "Vestido Longo de Crochê",
     thumbnail: "https://img.youtube.com/vi/wa2xHd3ghg8/maxresdefault.jpg",
     videoId: "wa2xHd3ghg8",
   },
   {
     id: "4",
-    title: "Vestido Destaque 4",
+    title: "Vestido Decote V",
     thumbnail: "https://img.youtube.com/vi/7Ry1SQfBs-A/maxresdefault.jpg",
     videoId: "7Ry1SQfBs-A",
   },
   {
     id: "5",
-    title: "Vestido Destaque 5",
+    title: "Vestido Ciganina",
     thumbnail: "https://img.youtube.com/vi/2QG0PHbGUsI/maxresdefault.jpg",
     videoId: "2QG0PHbGUsI",
   },
   {
     id: "6",
-    title: "Vestido Destaque 6",
+    title: "Vestido Luxo",
     thumbnail: "https://img.youtube.com/vi/y9C56mdmG6A/maxresdefault.jpg",
     videoId: "y9C56mdmG6A",
   },
   {
     id: "7",
-    title: "Vestido Destaque 7",
+    title: "Vestido Cleópatra",
     thumbnail: "https://img.youtube.com/vi/4y5JnM6CAKE/maxresdefault.jpg",
     videoId: "4y5JnM6CAKE",
   },
