@@ -98,16 +98,6 @@ const Index = () => {
           />
         </div>
         
-        {/* PIX Button - at bottom of hero after gradient */}
-        <div className="relative z-30 -mt-16 pb-6 flex justify-center">
-          <Button 
-            onClick={copyPixKey}
-            className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-full shadow-lg"
-          >
-            {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
-            {copied ? "Copiado!" : "Copiar Chave PIX"}
-          </Button>
-        </div>
       </section>
 
       {/* Gradient overlay between hero and main - positioned to cover the junction */}
