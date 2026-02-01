@@ -1,12 +1,9 @@
 import { ModuleCard } from "@/components/ModuleCard";
 import certificado from "@/assets/certificado.jpg";
-import { Sparkles, ChevronDown, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { UrgentPixHeader } from "@/components/UrgentPixHeader";
+import { PixCard } from "@/components/PixCard";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
-import { useState } from "react";
-import { useToast } from "@/components/ui/use-toast";
-import { Smartphone, Copy, Check, Play } from "lucide-react";
 const Index = () => {
 
   // Outros módulos
@@ -75,11 +72,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
-      {/* Urgent PIX Header */}
-      <UrgentPixHeader />
-
       {/* Hero Section */}
-      <section className="relative flex items-start justify-center overflow-hidden pt-[25px]">
+      <section className="relative flex items-center justify-center overflow-hidden min-h-[280px] md:min-h-[350px]">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -88,25 +82,9 @@ const Index = () => {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-background" />
         
-        {/* Content */}
-        <div className="relative z-10 text-center px-6 animate-fade-in max-w-3xl mx-auto pb-8">
-          <div className="flex items-center justify-center gap-2 md:gap-3 mb-3 md:mb-4">
-            <Sparkles className="w-7 h-7 md:w-10 md:h-10 text-primary flex-shrink-0" />
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg leading-tight">
-              Crochê da Josi
-            </h1>
-          </div>
-          <p className="text-white/80 text-base md:text-xl lg:text-2xl mb-4 md:mb-6 font-light leading-relaxed">
-            Sua área exclusiva de conteúdos
-          </p>
-          <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-white/90 leading-snug px-2 mb-6">
-            Acesse sua área de membros abaixo
-          </h2>
-          
-          {/* Scroll Indicator */}
-          <div className="animate-bounce">
-            <ChevronDown className="w-8 h-8 md:w-10 md:h-10 text-white/60 mx-auto" />
-          </div>
+        {/* PIX Card */}
+        <div className="relative z-10 animate-fade-in">
+          <PixCard />
         </div>
       </section>
 
