@@ -96,8 +96,6 @@ const Index = () => {
             alt="Acesse o material abaixo"
             className="w-full h-full object-contain"
           />
-          {/* Dark Overlay - gradient transition to next section */}
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background from-5% to-transparent" />
         </div>
         
         {/* PIX Button - at bottom of hero after gradient */}
@@ -111,6 +109,9 @@ const Index = () => {
           </Button>
         </div>
       </section>
+
+      {/* Gradient overlay between hero and main - positioned to cover the junction */}
+      <div className="relative z-20 -mt-32 h-32 bg-gradient-to-t from-background from-50% to-transparent pointer-events-none" />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-6 md:py-8">
