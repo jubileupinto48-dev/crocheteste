@@ -76,7 +76,7 @@ const Index = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(https://res.cloudinary.com/dzetm6plq/image/upload/v1769987101/ACESSE_O_MATERIAL_ABAIXO_jzhnru.png)` }}
+          style={{ backgroundImage: `url(https://res.cloudinary.com/dzetm6plq/image/upload/v1769987312/ACESSE_O_MATERIAL_ABAIXO_1_n7emer.png)` }}
         />
         {/* Dark Overlay - only at bottom for gradient transition */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
