@@ -89,7 +89,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative w-full">
+      <section className="relative w-full bg-black">
         {/* Background Image - full size container */}
         <div className="relative w-full">
           <img 
