@@ -117,8 +117,8 @@ export const FeaturedCarousel = () => {
           ))}
         </CarouselContent>
         
-        <CarouselPrevious className="left-2 md:left-4 bg-white/90 hover:bg-white shadow-lg" />
-        <CarouselNext className="right-2 md:right-4 bg-white/90 hover:bg-white shadow-lg" />
+        <CarouselPrevious className="left-2 md:left-4 bg-black/60 hover:bg-black/80 border-white/20 text-white shadow-lg" />
+        <CarouselNext className="right-2 md:right-4 bg-black/60 hover:bg-black/80 border-white/20 text-white shadow-lg" />
       </Carousel>
 
       {/* Carousel Dots Indicator */}
