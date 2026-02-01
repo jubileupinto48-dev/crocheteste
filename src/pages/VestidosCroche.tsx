@@ -7,6 +7,7 @@ import { VideoCard } from "@/components/VideoCard";
 import { useState, useRef, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Import AI-generated dress images
 import vestidoAngelPreview from "@/assets/vestidos/vestido-angel-preview.jpg";
@@ -428,6 +429,7 @@ const VestidosCroche = () => {
     return 0;
   };
 
+  const isMobile = useIsMobile();
   const [currentVideoIndex, setCurrentVideoIndex] = useState(getInitialVideoIndex);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterProject, setFilterProject] = useState("all");
@@ -493,17 +495,7 @@ const VestidosCroche = () => {
           <div className="lg:col-span-2 space-y-6">
             {/* Mobile: Video player mais proeminente */}
             <div className="animate-fade-in">
-              <div className="md:hidden">
-                <div className="aspect-[4/3] sm:aspect-video">
-                  <CustomVideoPlayer
-                    videoId={currentVideo.videoId}
-                    title={currentVideo.title}
-                    platform="youtube"
-                    autoplay={shouldAutoplay && currentVideo.videoId === autoplayVideoId}
-                  />
-                </div>
-              </div>
-              <div className="hidden md:block">
+              <div className={isMobile ? "aspect-[4/3] sm:aspect-video" : ""}>
                 <CustomVideoPlayer
                   videoId={currentVideo.videoId}
                   title={currentVideo.title}
