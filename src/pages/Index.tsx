@@ -96,8 +96,8 @@ const Index = () => {
             alt="Acesse o material abaixo"
             className="w-full h-full object-contain"
           />
-          {/* Dark Overlay - only at bottom for gradient transition */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+          {/* Dark Overlay - gradient transition to next section */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-background" />
         </div>
         
         {/* PIX Button - at bottom of hero after gradient */}
