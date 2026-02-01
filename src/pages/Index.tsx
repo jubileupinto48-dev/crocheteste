@@ -118,7 +118,7 @@ const Index = () => {
       <main className="container mx-auto px-4 py-6 md:py-8">
 
         {/* Featured Module - Carousel */}
-        <section className="mb-12 animate-fade-in">
+        <section className="mb-0 animate-fade-in">
           <div className="text-center mb-6">
             <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-3">
               ⭐ Módulo em Destaque
