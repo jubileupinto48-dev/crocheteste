@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { VideoPlayer } from "@/components/VideoPlayer";
+import { CustomVideoPlayer } from "@/components/CustomVideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
 import { useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
@@ -32,6 +32,12 @@ const VestidosCroche = () => {
     { id: 2, title: "Vestido Destaque 2", videoId: "MqT6DfpAGfE", project: "Destaque", part: null },
     { id: 3, title: "Vestido Destaque 3", videoId: "T3mKfEMGzpE", project: "Destaque", part: null },
     { id: 4, title: "Vestido Destaque 4", videoId: "7Ry1SQfBs-A", project: "Destaque", part: null },
+    
+    // ===== NOVOS VÍDEOS =====
+    { id: 200, title: "Vestido Destaque 5", videoId: "2QG0PHbGUsI", project: "Destaque", part: null },
+    { id: 201, title: "Vestido Destaque 6", videoId: "y9C56mdmG6A", project: "Destaque", part: null },
+    { id: 202, title: "Vestido Destaque 7", videoId: "4y5JnM6CAKE", project: "Destaque", part: null },
+    { id: 203, title: "Vestido Destaque 8", videoId: "CNe-elk8zm4", project: "Destaque", part: null },
     
     // ===== DESTAQUES =====
     // Vestido Angel (3 partes)
@@ -466,7 +472,7 @@ const VestidosCroche = () => {
             <div className="animate-fade-in">
               <div className="md:hidden">
                 <div className="aspect-[4/3] sm:aspect-video">
-                  <VideoPlayer
+                  <CustomVideoPlayer
                     videoId={currentVideo.videoId}
                     title={currentVideo.title}
                     platform="youtube"
@@ -474,7 +480,7 @@ const VestidosCroche = () => {
                 </div>
               </div>
               <div className="hidden md:block">
-                <VideoPlayer
+                <CustomVideoPlayer
                   videoId={currentVideo.videoId}
                   title={currentVideo.title}
                   platform="youtube"

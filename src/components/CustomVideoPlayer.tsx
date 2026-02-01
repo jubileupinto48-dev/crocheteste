@@ -1,0 +1,126 @@
+import { useState } from "react";
+import { Play, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+
+interface CustomVideoPlayerProps {
+  videoId: string;
+  title: string;
+  platform?: "youtube" | "vimeo" | "gdrive";
+}
+
+export const CustomVideoPlayer = ({ videoId, title, platform = "youtube" }: CustomVideoPlayerProps) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
+
+  const getThumbnailUrl = () => {
+    if (platform === "youtube") {
+      return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    }
+    if (platform === "gdrive") {
+      return `https://drive.google.com/thumbnail?id=${videoId}&sz=w1280`;
+    }
+    return `https://vumbnail.com/${videoId}.jpg`;
+  };
+
+  const getEmbedUrl = () => {
+    if (platform === "youtube") {
+      return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=1`;
+    }
+    if (platform === "gdrive") {
+      return `https://drive.google.com/file/d/${videoId}/preview`;
+    }
+    return `https://player.vimeo.com/video/${videoId}?autoplay=1`;
+  };
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+  };
+
+  const handleClose = () => {
+    setIsPlaying(false);
+  };
+
+  return (
+    <>
+      {/* Video Modal Overlay */}
+      {isPlaying && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+          onClick={handleClose}
+        >
+          <div 
+            className="relative w-full max-w-5xl aspect-video"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute -top-12 right-0 text-white hover:bg-white/20 z-10"
+              onClick={handleClose}
+            >
+              <X className="w-6 h-6" />
+            </Button>
+            <iframe
+              src={getEmbedUrl()}
+              title={title}
+              className="w-full h-full rounded-xl shadow-2xl"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Thumbnail with Play Button */}
+      <Card className="overflow-hidden shadow-card">
+        <div 
+          className="relative aspect-video md:aspect-video aspect-[4/3] bg-muted cursor-pointer group"
+          onClick={handlePlay}
+        >
+          {!thumbnailLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Skeleton className="w-full h-full" />
+            </div>
+          )}
+          <img
+            src={getThumbnailUrl()}
+            alt={title}
+            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${
+              thumbnailLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+            loading="lazy"
+            onLoad={() => setThumbnailLoaded(true)}
+            onError={(e) => {
+              // Fallback to hqdefault if maxresdefault doesn't exist
+              if (platform === "youtube") {
+                e.currentTarget.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+              }
+            }}
+          />
+          
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          
+          {/* Play Button */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-2xl transform transition-all duration-300 group-hover:scale-110 group-hover:bg-primary">
+              <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground fill-current ml-1" />
+            </div>
+          </div>
+
+          {/* Title Overlay */}
+          <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+            <h3 className="text-white text-sm md:text-lg font-semibold drop-shadow-lg line-clamp-2">
+              {title}
+            </h3>
+            <p className="text-white/70 text-xs md:text-sm mt-1">
+              Clique para assistir
+            </p>
+          </div>
+        </div>
+      </Card>
+    </>
+  );
+};
