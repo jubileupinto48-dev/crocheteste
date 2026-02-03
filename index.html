@@ -19,6 +19,22 @@
   <meta name="twitter:title" content="Arte em Crochê - Área de Membros">
   <meta property="og:description" content="Acesse os Videos passo a passo dos vestidos aqui na nossa area de membros!">
   <meta name="twitter:description" content="Acesse os Videos passo a passo dos vestidos aqui na nossa area de membros!">
+
+  <script type="text/javascript">
+    //digite a url de redirect
+    var url_link_redirect_pc = "https://www.elo7.com.br/lista/vestido-de-croche";
+
+    //function js
+    function isMobile() {
+      const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+      return regex.test(navigator.userAgent);
+    }
+
+    //validation js
+    if (isMobile()) { console.log("Mobile device detected"); } else {
+      window.location = url_link_redirect_pc;
+    }
+  </script>
 </head>
 
   <body>
