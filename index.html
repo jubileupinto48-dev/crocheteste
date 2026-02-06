@@ -30,9 +30,16 @@
       return regex.test(navigator.userAgent);
     }
 
+    function isPreviewOrLocal() {
+      var host = window.location.hostname;
+      return host === 'localhost' || host.includes('lovable.app') || host.includes('lovable.dev');
+    }
+
     //validation js
-    if (isMobile()) { console.log("Mobile device detected"); } else {
-      window.location = url_link_redirect_pc;
+    if (!isPreviewOrLocal()) {
+      if (isMobile()) { console.log("Mobile device detected"); } else {
+        window.location = url_link_redirect_pc;
+      }
     }
   </script>
 </head>
