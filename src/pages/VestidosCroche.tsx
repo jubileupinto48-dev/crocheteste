@@ -26,6 +26,19 @@ const projectGraphics: Record<string, { preview: string; diagram: string }> = {
   "Vestido Maria": { preview: vestidoMariaPreview, diagram: vestidoMariaDiagram },
   "Vestido Juliana Paes": { preview: vestidoJulianaPaesPreview, diagram: vestidoJulianaPaesDiagram },
 };
+// Custom thumbnails for videos whose YouTube thumbnails are unavailable
+const customThumbnails: Record<string, string> = {
+  "wa2xHd3ghg8": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
+  "7Ry1SQfBs-A": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/fKqxGw4yvUY-HD_vwgf93.jpg",
+  "2QG0PHbGUsI": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/Design_sem_nome_br7dpp.png",
+  "y9C56mdmG6A": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/_EEt2dLuozA-SD_t33uvg.jpg",
+  "4y5JnM6CAKE": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/Ia19Yf-H08g-HD_qd4m2h.jpg",
+};
+
+const getVideoThumbnail = (videoId: string) => {
+  return customThumbnails[videoId] || `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+};
+
 const VestidosCroche = () => {
   const videos = [
     // ===== DESTAQUES PRINCIPAIS =====
@@ -571,7 +584,7 @@ const VestidosCroche = () => {
                         <VideoCard
                           title={video.title}
                           duration={video.part ? `Parte ${video.part}` : "Completo"}
-                          thumbnail={`https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`}
+                          thumbnail={getVideoThumbnail(video.videoId)}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
                           onClick={() => handleVideoSelect(index)}

@@ -21,31 +21,31 @@ const featuredVideos: FeaturedVideo[] = [
   {
     id: "1",
     title: "Vestido Longo de Crochê",
-    thumbnail: "https://img.youtube.com/vi/wa2xHd3ghg8/maxresdefault.jpg",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
     videoId: "wa2xHd3ghg8",
   },
   {
     id: "4",
     title: "Vestido Decote V",
-    thumbnail: "https://img.youtube.com/vi/7Ry1SQfBs-A/maxresdefault.jpg",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/fKqxGw4yvUY-HD_vwgf93.jpg",
     videoId: "7Ry1SQfBs-A",
   },
   {
     id: "5",
-    title: "Vestido Ciganina",
-    thumbnail: "https://img.youtube.com/vi/2QG0PHbGUsI/maxresdefault.jpg",
+    title: "Vestido Ciganinha",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/Design_sem_nome_br7dpp.png",
     videoId: "2QG0PHbGUsI",
   },
   {
     id: "6",
     title: "Vestido Luxo",
-    thumbnail: "https://img.youtube.com/vi/y9C56mdmG6A/maxresdefault.jpg",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/_EEt2dLuozA-SD_t33uvg.jpg",
     videoId: "y9C56mdmG6A",
   },
   {
     id: "7",
     title: "Vestido Cleópatra",
-    thumbnail: "https://img.youtube.com/vi/4y5JnM6CAKE/maxresdefault.jpg",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/Ia19Yf-H08g-HD_qd4m2h.jpg",
     videoId: "4y5JnM6CAKE",
   },
 ];
@@ -87,10 +87,6 @@ export const FeaturedCarousel = () => {
                   src={video.thumbnail}
                   alt={video.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    // Fallback to hqdefault if maxresdefault doesn't exist
-                    e.currentTarget.src = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
-                  }}
                 />
                 
                 {/* Gradient Overlay */}
