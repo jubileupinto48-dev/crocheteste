@@ -35,6 +35,51 @@ const customThumbnails: Record<string, string> = {
   "2QG0PHbGUsI": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/Design_sem_nome_br7dpp.png",
   "y9C56mdmG6A": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/_EEt2dLuozA-SD_t33uvg.jpg",
   "4y5JnM6CAKE": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/Ia19Yf-H08g-HD_qd4m2h.jpg",
+  // Vestido Virginia (ex-Sereia)
+  "CNe-elk8zm4": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108167/XuuJvrgxk-8-HD_a5fzw6.jpg",
+  // Vestido Angel
+  "QmMtlJu0cTI": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107928/aUpmBpUUsTQ-HD_nczglp.jpg",
+  "cCFOGukAh-Y": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107928/aUpmBpUUsTQ-HD_nczglp.jpg",
+  "1q8PAEcytMk": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107928/aUpmBpUUsTQ-HD_nczglp.jpg",
+  // Saída Mel Maia
+  "MV86APDdJrE": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/Pxiscx0QsCE-HD_vgc3vg.jpg",
+  "WPavNu7xI_o": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/Pxiscx0QsCE-HD_vgc3vg.jpg",
+  // Vestido Maria
+  "esZk0CWJPxw": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/VGPjnFo7eF4-HD_rxgvqu.jpg",
+  "RFPdFNMXSxo": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/VGPjnFo7eF4-HD_rxgvqu.jpg",
+  "d1DB5J1cHmk": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/VGPjnFo7eF4-HD_rxgvqu.jpg",
+  // Vestido Juliana Paes
+  "3GLLTdColiE": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/0AIYUTWzx9I-HD_oi4jxm.jpg",
+  "Mx4tkT0Qyew": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/0AIYUTWzx9I-HD_oi4jxm.jpg",
+  "g4oWC8uHiY4": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/0AIYUTWzx9I-HD_oi4jxm.jpg",
+  "RWGTCFU8GjM": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/0AIYUTWzx9I-HD_oi4jxm.jpg",
+  // Calça Crochê Correntinha
+  "23pELsHCpw0": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107928/ufx3WuaI9OA-HD_eqphem.jpg",
+  // Calça de Crochê Tela
+  "kEfX4uBE8_w": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107928/e7ud56CxnFg-HD_zkxaox.jpg",
+  // Conjunto Paetê
+  "QMuwadztjHk": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/vSmgk4ZLpnk-HD_pi9wvu.jpg",
+  // Cropped Ana Clara
+  "qTFQF2JuxMY": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107928/Kyx_qC1X7n8-HD_htvsx9.jpg",
+  // Conjunto Gabi
+  "fm3XUSkCy3c": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/D-bwdXeer-g-HD_uilfaz.jpg",
+  "5zNb43Hi7MQ": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/D-bwdXeer-g-HD_uilfaz.jpg",
+  "kUM9BDOY2B4": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/D-bwdXeer-g-HD_uilfaz.jpg",
+  // Conjunto Franjas
+  "7BuqNEXwXKw": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/751Ukhdt-ek-HD_oxpxw3.jpg",
+  "rhmemKGV9N8": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107929/751Ukhdt-ek-HD_oxpxw3.jpg",
+  // Saia Laura
+  "P0Emfo_2qsU": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108164/v-BUiu4uwg4-HD_waluwn.jpg",
+  // Vestido Patricia
+  "o0Txp_D4c1M": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108164/F-9MR785gNY-HD_kikzd5.jpg",
+  "gF4LIZrQIQw": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108164/F-9MR785gNY-HD_kikzd5.jpg",
+  // Vestido Sophia
+  "IXkkWfjBD_A": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108168/yZUAkvXZ4jc-HD_epymh7.jpg",
+  // Vestido Moana
+  "W6NReaWkX-4": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108168/Byf4O1RD65s-HD_fvvbon.jpg",
+  // Vestido Vanessa
+  "vygTLCKLTyI": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108168/ymNF5gXSCg0-HD_o5bvp3.jpg",
+  "vhJm0SkK0pI": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108168/ymNF5gXSCg0-HD_o5bvp3.jpg",
 };
 
 const getVideoThumbnail = (videoId: string) => {
@@ -53,7 +98,7 @@ const VestidosCroche = () => {
     { id: 5, title: "Vestido Ciganina", videoId: "2QG0PHbGUsI", project: "Destaque", part: null },
     { id: 6, title: "Vestido Luxo", videoId: "y9C56mdmG6A", project: "Destaque", part: null },
     { id: 7, title: "Vestido Cleópatra", videoId: "4y5JnM6CAKE", project: "Destaque", part: null },
-    { id: 8, title: "Vestido Longo Sereia", videoId: "CNe-elk8zm4", project: "Destaque", part: null },
+    { id: 8, title: "Vestido Virginia", videoId: "CNe-elk8zm4", project: "Destaque", part: null },
     
     // ===== DESTAQUES =====
     // Vestido Angel (3 partes)
@@ -516,7 +561,7 @@ const VestidosCroche = () => {
                   title={currentVideo.title}
                   platform="youtube"
                   autoplay={shouldAutoplay && currentVideo.videoId === autoplayVideoId}
-                  showPixMessage={shouldAutoplay && currentVideo.videoId === autoplayVideoId}
+                  showPixMessage={shouldAutoplay}
                 />
               </div>
               
