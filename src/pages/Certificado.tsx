@@ -33,18 +33,32 @@ const Certificado = () => {
     setIsGenerating(true);
     setShowPreview(true);
 
-    // Wait for render
-    await new Promise(resolve => setTimeout(resolve, 100));
+    // Wait for render and images to load
+    await new Promise(resolve => setTimeout(resolve, 500));
 
     try {
       if (certificateRef.current) {
-        const canvas = await html2canvas(certificateRef.current, {
+        // Temporarily make the certificate fully visible for capture
+        const el = certificateRef.current;
+        const originalStyle = el.style.cssText;
+        el.style.cssText = "position:fixed;top:0;left:0;z-index:-9999;opacity:1;pointer-events:none;";
+
+        await new Promise(resolve => setTimeout(resolve, 200));
+
+        const canvas = await html2canvas(el, {
           scale: 2,
           useCORS: true,
-          backgroundColor: null,
+          allowTaint: true,
+          backgroundColor: "#fff5f5",
+          width: 1123,
+          height: 794,
+          logging: false,
         });
 
-        const imgData = canvas.toDataURL("image/png");
+        // Restore original style
+        el.style.cssText = originalStyle;
+
+        const imgData = canvas.toDataURL("image/jpeg", 0.95);
         const pdf = new jsPDF({
           orientation: "landscape",
           unit: "mm",
@@ -54,8 +68,18 @@ const Certificado = () => {
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight = pdf.internal.pageSize.getHeight();
 
-        pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-        pdf.save(`Certificado_${name.replace(/\s+/g, "_")}.pdf`);
+        pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
+
+        // Mobile-compatible download
+        const pdfBlob = pdf.output("blob");
+        const blobUrl = URL.createObjectURL(pdfBlob);
+        const link = document.createElement("a");
+        link.href = blobUrl;
+        link.download = `Certificado_${name.replace(/\s+/g, "_")}.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
 
         toast({
           title: "Certificado gerado!",
@@ -211,7 +235,7 @@ const Certificado = () => {
 
           {/* Hidden certificate for PDF generation */}
           {!showPreview && (
-            <div className="fixed -left-[9999px] top-0">
+            <div className="absolute opacity-0 pointer-events-none overflow-hidden" style={{ width: 1123, height: 794, left: -9999 }}>
               <CertificateTemplate
                 ref={certificateRef}
                 name={name}
