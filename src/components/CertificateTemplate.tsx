@@ -13,9 +13,14 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
         className="w-[1123px] h-[794px] relative overflow-hidden"
         style={{ 
           fontFamily: "'Georgia', serif",
-          background: "linear-gradient(135deg, #fff5f5 0%, #ffe4e6 25%, #fef3c7 50%, #fed7aa 75%, #fecaca 100%)"
+          backgroundColor: "#fff0f0",
         }}
       >
+        {/* Gradient background layers instead of CSS gradient (html2canvas compatible) */}
+        <div className="absolute inset-0" style={{ backgroundColor: "#fff5f5" }} />
+        <div className="absolute inset-0" style={{ backgroundColor: "#ffe4e6", opacity: 0.5 }} />
+        <div className="absolute top-0 right-0 w-1/2 h-full" style={{ backgroundColor: "#fef3c7", opacity: 0.3 }} />
+        <div className="absolute bottom-0 right-0 w-1/3 h-1/2" style={{ backgroundColor: "#fed7aa", opacity: 0.3 }} />
         {/* Decorative yarn/crochet pattern borders */}
         <div className="absolute inset-0">
           {/* Wavy border pattern - top */}
