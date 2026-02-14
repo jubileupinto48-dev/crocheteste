@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Play, X, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -60,6 +60,12 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
   const [pixCopied, setPixCopied] = useState(false);
   const { toast } = useToast();
+
+  // Reset PIX overlay when video changes
+  useEffect(() => {
+    setShowingPixOverlay(false);
+    setPixCopied(false);
+  }, [videoId]);
 
   const pixKey = "21965328868";
 
@@ -200,7 +206,7 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
 
           {/* PIX Overlay - appears on top when user clicks play */}
           {showingPixOverlay && (
-            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center p-4 md:p-8 text-center z-10">
+            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center p-4 md:p-8 text-center z-10 animate-fade-in">
               <p className="text-white text-sm md:text-lg font-medium leading-relaxed max-w-md mb-4 md:mb-6">
                 Me envie o comprovante no WhatsApp para a liberação imediata dos vídeos ❤️
               </p>
@@ -215,9 +221,9 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
                   copyPixKey();
                 }}
                 size="sm"
-                className="gap-2 font-medium"
+                className="gap-2 font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30 active:scale-95"
               >
-                {pixCopied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                {pixCopied ? <Check className="w-4 h-4 animate-scale-in" /> : <Copy className="w-4 h-4" />}
                 {pixCopied ? "Copiado!" : "Copiar Chave PIX"}
               </Button>
             </div>
