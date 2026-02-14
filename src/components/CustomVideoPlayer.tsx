@@ -56,6 +56,7 @@ interface CustomVideoPlayerProps {
 export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autoplay = false, showPixMessage = false }: CustomVideoPlayerProps) => {
   const [isPlayingInline, setIsPlayingInline] = useState(autoplay && !showPixMessage);
   const [isPlayingModal, setIsPlayingModal] = useState(false);
+  const [showingPixOverlay, setShowingPixOverlay] = useState(false);
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
   const [pixCopied, setPixCopied] = useState(false);
   const { toast } = useToast();
@@ -96,7 +97,10 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   };
 
   const handlePlay = () => {
-    if (showPixMessage) return; // Don't play if showing PIX message
+    if (showPixMessage) {
+      setShowingPixOverlay(true);
+      return;
+    }
     if (autoplay) {
       setIsPlayingInline(true);
     } else {
@@ -107,41 +111,6 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   const handleCloseModal = () => {
     setIsPlayingModal(false);
   };
-
-  // PIX message overlay inside the player frame
-  if (showPixMessage) {
-    return (
-      <Card className="overflow-hidden shadow-card">
-        <div className="relative aspect-video md:aspect-video aspect-[4/3] bg-black">
-          {/* Background thumbnail with blur */}
-          <img
-            src={getThumbnailUrl()}
-            alt={title}
-            className="w-full h-full object-cover opacity-30 blur-sm"
-          />
-          {/* PIX Message Content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-8 text-center">
-            <p className="text-white text-sm md:text-lg font-medium leading-relaxed max-w-md mb-4 md:mb-6">
-              Me envie o comprovante no WhatsApp para a liberação imediata dos vídeos ❤️
-            </p>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-white/20 mb-3 md:mb-4">
-              <p className="text-white/80 text-xs md:text-sm mb-1">Pix: Celular</p>
-              <code className="font-mono text-base md:text-xl font-bold text-white">{pixKey}</code>
-              <p className="text-white/70 text-xs md:text-sm mt-1">Lucas Morone (Meu filho)</p>
-            </div>
-            <Button
-              onClick={copyPixKey}
-              size="sm"
-              className="gap-2 font-medium"
-            >
-              {pixCopied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-              {pixCopied ? "Copiado!" : "Copiar Chave PIX"}
-            </Button>
-          </div>
-        </div>
-      </Card>
-    );
-  }
 
   // Inline playing mode
   if (isPlayingInline) {
@@ -220,22 +189,51 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
           
-          {/* Play Button */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-destructive/90 flex items-center justify-center shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-destructive animate-pulse-slow">
-              <Play className="w-5 h-5 md:w-6 md:h-6 text-white fill-current ml-0.5" />
+          {/* Play Button - only show when NOT showing PIX overlay */}
+          {!showingPixOverlay && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-destructive/90 flex items-center justify-center shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-destructive animate-pulse-slow">
+                <Play className="w-5 h-5 md:w-6 md:h-6 text-white fill-current ml-0.5" />
+              </div>
             </div>
-          </div>
+          )}
 
-          {/* Title Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 text-center">
-            <h3 className="text-white text-xs md:text-sm font-medium drop-shadow-lg line-clamp-2">
-              {title}
-            </h3>
-            <p className="text-white/60 text-[10px] md:text-xs mt-0.5">
-              Clique para assistir
-            </p>
-          </div>
+          {/* PIX Overlay - appears on top when user clicks play */}
+          {showingPixOverlay && (
+            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center p-4 md:p-8 text-center z-10">
+              <p className="text-white text-sm md:text-lg font-medium leading-relaxed max-w-md mb-4 md:mb-6">
+                Me envie o comprovante no WhatsApp para a liberação imediata dos vídeos ❤️
+              </p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-white/20 mb-3 md:mb-4">
+                <p className="text-white/80 text-xs md:text-sm mb-1">Pix: Celular</p>
+                <code className="font-mono text-base md:text-xl font-bold text-white">{pixKey}</code>
+                <p className="text-white/70 text-xs md:text-sm mt-1">Lucas Morone (Meu filho)</p>
+              </div>
+              <Button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  copyPixKey();
+                }}
+                size="sm"
+                className="gap-2 font-medium"
+              >
+                {pixCopied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                {pixCopied ? "Copiado!" : "Copiar Chave PIX"}
+              </Button>
+            </div>
+          )}
+
+          {/* Title Overlay - only show when NOT showing PIX overlay */}
+          {!showingPixOverlay && (
+            <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 text-center">
+              <h3 className="text-white text-xs md:text-sm font-medium drop-shadow-lg line-clamp-2">
+                {title}
+              </h3>
+              <p className="text-white/60 text-[10px] md:text-xs mt-0.5">
+                Clique para assistir
+              </p>
+            </div>
+          )}
         </div>
       </Card>
     </>
