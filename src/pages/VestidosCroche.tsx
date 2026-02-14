@@ -18,6 +18,12 @@ import vestidoMariaPreview from "@/assets/vestidos/vestido-maria-preview.jpg";
 import vestidoMariaDiagram from "@/assets/vestidos/vestido-maria-diagram.jpg";
 import vestidoJulianaPaesPreview from "@/assets/vestidos/vestido-juliana-paes-preview.jpg";
 import vestidoJulianaPaesDiagram from "@/assets/vestidos/vestido-juliana-paes-diagram.jpg";
+import vestidoLongoDiagram from "@/assets/vestidos/vestido-longo-diagram.jpg";
+import vestidoDecoteVDiagram from "@/assets/vestidos/vestido-decote-v-diagram.jpg";
+import vestidoCiganinhaDiagram from "@/assets/vestidos/vestido-ciganinha-diagram.jpg";
+import vestidoLuxoDiagram from "@/assets/vestidos/vestido-luxo-diagram.jpg";
+import vestidoCleopatraDiagram from "@/assets/vestidos/vestido-cleopatra-diagram.jpg";
+import vestidoVirginiaDiagram from "@/assets/vestidos/vestido-virginia-diagram.jpg";
 
 // Map of project names to their graphics
 const projectGraphics: Record<string, { preview: string; diagram: string }> = {
@@ -25,6 +31,18 @@ const projectGraphics: Record<string, { preview: string; diagram: string }> = {
   "Saída Mel Maia": { preview: saidaMelMaiaPreview, diagram: saidaMelMaiaDiagram },
   "Vestido Maria": { preview: vestidoMariaPreview, diagram: vestidoMariaDiagram },
   "Vestido Juliana Paes": { preview: vestidoJulianaPaesPreview, diagram: vestidoJulianaPaesDiagram },
+};
+
+// Map of video IDs to their diagram images (for videos 1-8 that share "Destaque" project)
+const videoDiagrams: Record<string, string> = {
+  "wa2xHd3ghg8": vestidoLongoDiagram,
+  "MqT6DfpAGfE": vestidoLongoDiagram,
+  "T3mKfEMGzpE": vestidoLongoDiagram,
+  "7Ry1SQfBs-A": vestidoDecoteVDiagram,
+  "2QG0PHbGUsI": vestidoCiganinhaDiagram,
+  "y9C56mdmG6A": vestidoLuxoDiagram,
+  "4y5JnM6CAKE": vestidoCleopatraDiagram,
+  "CNe-elk8zm4": vestidoVirginiaDiagram,
 };
 // Custom thumbnails for videos whose YouTube thumbnails are unavailable
 const customThumbnails: Record<string, string> = {
@@ -694,7 +712,7 @@ const VestidosCroche = () => {
                     <span className="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs">IA</span>
                     Visualização do Projeto
                   </h4>
-                  <div className={`grid grid-cols-1 ${projectGraphics[currentVideo.project] ? 'sm:grid-cols-2' : ''} gap-4`}>
+                  <div className={`grid grid-cols-1 ${(projectGraphics[currentVideo.project] || videoDiagrams[currentVideo.videoId]) ? 'sm:grid-cols-2' : ''} gap-4`}>
                     <div className="space-y-2">
                       <p className="text-sm text-muted-foreground font-medium">Resultado Final</p>
                       <div className="relative overflow-hidden rounded-lg border border-border bg-muted/30">
@@ -706,13 +724,13 @@ const VestidosCroche = () => {
                         />
                       </div>
                     </div>
-                    {projectGraphics[currentVideo.project] && (
+                    {(projectGraphics[currentVideo.project] || videoDiagrams[currentVideo.videoId]) && (
                       <div className="space-y-2">
                         <p className="text-sm text-muted-foreground font-medium">Diagrama de Pontos</p>
                         <div className="relative overflow-hidden rounded-lg border border-border bg-white">
                           <img 
-                            src={projectGraphics[currentVideo.project].diagram} 
-                            alt={`Diagrama de pontos do ${currentVideo.project}`}
+                            src={videoDiagrams[currentVideo.videoId] || projectGraphics[currentVideo.project]?.diagram} 
+                            alt={`Diagrama de pontos do ${currentVideo.title}`}
                             className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
                             loading="lazy"
                           />
