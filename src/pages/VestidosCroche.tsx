@@ -560,8 +560,7 @@ const VestidosCroche = () => {
                   videoId={currentVideo.videoId}
                   title={currentVideo.title}
                   platform="youtube"
-                  autoplay={shouldAutoplay && currentVideo.videoId === autoplayVideoId}
-                  showPixMessage={shouldAutoplay}
+                  showPixMessage={true}
                 />
               </div>
               
@@ -689,25 +688,25 @@ const VestidosCroche = () => {
                   suas dúvidas nos comentários.
                 </p>
                 
-                {/* Gráficos AI - Imagem do projeto e diagrama de pontos */}
-                {projectGraphics[currentVideo.project] && (
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <span className="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs">IA</span>
-                      Visualização do Projeto
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <p className="text-sm text-muted-foreground font-medium">Resultado Final</p>
-                        <div className="relative overflow-hidden rounded-lg border border-border bg-muted/30">
-                          <img 
-                            src={projectGraphics[currentVideo.project].preview} 
-                            alt={`Preview do ${currentVideo.project}`}
-                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-                            loading="lazy"
-                          />
-                        </div>
+                {/* Visualização do Projeto - Thumbnail como Resultado Final */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <span className="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs">IA</span>
+                    Visualização do Projeto
+                  </h4>
+                  <div className={`grid grid-cols-1 ${projectGraphics[currentVideo.project] ? 'sm:grid-cols-2' : ''} gap-4`}>
+                    <div className="space-y-2">
+                      <p className="text-sm text-muted-foreground font-medium">Resultado Final</p>
+                      <div className="relative overflow-hidden rounded-lg border border-border bg-muted/30">
+                        <img 
+                          src={getVideoThumbnail(currentVideo.videoId)} 
+                          alt={`Preview do ${currentVideo.project}`}
+                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                        />
                       </div>
+                    </div>
+                    {projectGraphics[currentVideo.project] && (
                       <div className="space-y-2">
                         <p className="text-sm text-muted-foreground font-medium">Diagrama de Pontos</p>
                         <div className="relative overflow-hidden rounded-lg border border-border bg-white">
@@ -719,9 +718,9 @@ const VestidosCroche = () => {
                           />
                         </div>
                       </div>
-                    </div>
+                    )}
                   </div>
-                )}
+                </div>
                 
                 <div className="bg-accent/20 border border-accent rounded-lg p-4">
                   <h4 className="font-semibold text-foreground mb-2">Materiais Necessários:</h4>
