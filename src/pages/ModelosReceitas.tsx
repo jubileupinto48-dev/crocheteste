@@ -145,13 +145,17 @@ const ModelosReceitas = () => {
           {/* Grid de Módulos - 2 colunas */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {modulos.map((modulo, index) => (
-              <a
+              <div
                 key={modulo.id}
-                href={modulo.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block animate-fade-in"
+                className="block animate-fade-in cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => {
+                  const newWindow = window.open("", "_blank");
+                  if (newWindow) {
+                    newWindow.opener = null;
+                    newWindow.location.href = modulo.url;
+                  }
+                }}
               >
                 <Card className="h-full overflow-hidden hover-lift shadow-card group cursor-pointer transition-all border-border/50 hover:border-primary/50 bg-card">
                   <CardContent className="p-0">
@@ -179,7 +183,7 @@ const ModelosReceitas = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </a>
+              </div>
             ))}
           </div>
 
