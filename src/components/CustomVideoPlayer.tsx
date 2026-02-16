@@ -12,7 +12,7 @@ const customThumbnails: Record<string, string> = {
   "AtCZ86FDwS8": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
   "um0S-AKW1Bw": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/fKqxGw4yvUY-HD_vwgf93.jpg",
   "QsG22SVKa94": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/Design_sem_nome_br7dpp.png",
-  "y9C56mdmG6A": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/_EEt2dLuozA-SD_t33uvg.jpg",
+  "1165412197?h=0fa29c051a": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/_EEt2dLuozA-SD_t33uvg.jpg",
   "4y5JnM6CAKE": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/Ia19Yf-H08g-HD_qd4m2h.jpg",
   "CNe-elk8zm4": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108167/XuuJvrgxk-8-HD_a5fzw6.jpg",
   "QmMtlJu0cTI": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107928/aUpmBpUUsTQ-HD_nczglp.jpg",
@@ -89,7 +89,8 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
     if (platform === "gdrive") {
       return `https://drive.google.com/file/d/${videoId}/preview`;
     }
-    return `https://player.vimeo.com/video/${videoId}?autoplay=1`;
+    const separator = videoId.includes('?') ? '&' : '?';
+    return `https://player.vimeo.com/video/${videoId}${separator}autoplay=1`;
   };
 
   const copyPixKey = () => {

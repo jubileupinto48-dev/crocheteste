@@ -40,7 +40,7 @@ const videoDiagrams: Record<string, string> = {
   "AtCZ86FDwS8": vestidoLongoDiagram,
   "um0S-AKW1Bw": vestidoDecoteVDiagram,
   "QsG22SVKa94": vestidoCiganinhaDiagram,
-  "y9C56mdmG6A": vestidoLuxoDiagram,
+  "1165412197?h=0fa29c051a": vestidoLuxoDiagram,
   "4y5JnM6CAKE": vestidoCleopatraDiagram,
   "CNe-elk8zm4": vestidoVirginiaDiagram,
 };
@@ -51,7 +51,7 @@ const customThumbnails: Record<string, string> = {
   "AtCZ86FDwS8": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
   "um0S-AKW1Bw": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/fKqxGw4yvUY-HD_vwgf93.jpg",
   "QsG22SVKa94": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/Design_sem_nome_br7dpp.png",
-  "y9C56mdmG6A": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/_EEt2dLuozA-SD_t33uvg.jpg",
+  "1165412197?h=0fa29c051a": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/_EEt2dLuozA-SD_t33uvg.jpg",
   "4y5JnM6CAKE": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/Ia19Yf-H08g-HD_qd4m2h.jpg",
   // Vestido Virginia (ex-Sereia)
   "CNe-elk8zm4": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108167/XuuJvrgxk-8-HD_a5fzw6.jpg",
@@ -114,7 +114,7 @@ const VestidosCroche = () => {
     
     // ===== NOVOS VÍDEOS =====
     { id: 5, title: "Vestido Ciganinha", videoId: "QsG22SVKa94", project: "Destaque", part: null },
-    { id: 6, title: "Vestido Luxo", videoId: "1165412197", project: "Destaque", part: null, platform: "vimeo" as const },
+    { id: 6, title: "Vestido Luxo", videoId: "1165412197?h=0fa29c051a", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 7, title: "Vestido Cleópatra", videoId: "4y5JnM6CAKE", project: "Destaque", part: null },
     { id: 8, title: "Vestido Virginia", videoId: "CNe-elk8zm4", project: "Destaque", part: null },
     
@@ -578,7 +578,7 @@ const VestidosCroche = () => {
                   videoId={currentVideo.videoId}
                   title={currentVideo.title}
                   platform={currentVideo.platform || "youtube"}
-                  showPixMessage={!["FrF8zqjX9v0", "9v-7cZ090UQ", "AtCZ86FDwS8", "um0S-AKW1Bw", "QsG22SVKa94", "1165412197"].includes(currentVideo.videoId)}
+                  showPixMessage={!["FrF8zqjX9v0", "9v-7cZ090UQ", "AtCZ86FDwS8", "um0S-AKW1Bw", "QsG22SVKa94", "1165412197?h=0fa29c051a"].includes(currentVideo.videoId)}
                 />
               </div>
               

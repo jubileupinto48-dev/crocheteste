@@ -40,7 +40,7 @@ const featuredVideos: FeaturedVideo[] = [
     id: "6",
     title: "Vestido Luxo",
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/_EEt2dLuozA-SD_t33uvg.jpg",
-    videoId: "y9C56mdmG6A",
+    videoId: "1165412197?h=0fa29c051a",
   },
   {
     id: "7",
