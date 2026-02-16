@@ -114,7 +114,7 @@ const VestidosCroche = () => {
     
     // ===== NOVOS VÍDEOS =====
     { id: 5, title: "Vestido Ciganinha", videoId: "QsG22SVKa94", project: "Destaque", part: null },
-    { id: 6, title: "Vestido Luxo", videoId: "y9C56mdmG6A", project: "Destaque", part: null },
+    { id: 6, title: "Vestido Luxo", videoId: "1165412197", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 7, title: "Vestido Cleópatra", videoId: "4y5JnM6CAKE", project: "Destaque", part: null },
     { id: 8, title: "Vestido Virginia", videoId: "CNe-elk8zm4", project: "Destaque", part: null },
     
@@ -577,8 +577,8 @@ const VestidosCroche = () => {
                 <CustomVideoPlayer
                   videoId={currentVideo.videoId}
                   title={currentVideo.title}
-                  platform="youtube"
-                  showPixMessage={!["FrF8zqjX9v0", "9v-7cZ090UQ", "AtCZ86FDwS8", "um0S-AKW1Bw", "QsG22SVKa94"].includes(currentVideo.videoId)}
+                  platform={currentVideo.platform || "youtube"}
+                  showPixMessage={!["FrF8zqjX9v0", "9v-7cZ090UQ", "AtCZ86FDwS8", "um0S-AKW1Bw", "QsG22SVKa94", "1165412197"].includes(currentVideo.videoId)}
                 />
               </div>
               
