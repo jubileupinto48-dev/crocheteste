@@ -35,22 +35,17 @@ const projectGraphics: Record<string, { preview: string; diagram: string }> = {
 
 // Map of video IDs to their diagram images (for videos 1-8 that share "Destaque" project)
 const videoDiagrams: Record<string, string> = {
-  "wa2xHd3ghg8": vestidoLongoDiagram,
-  "MqT6DfpAGfE": vestidoLongoDiagram,
-  "T3mKfEMGzpE": vestidoLongoDiagram,
-  "7Ry1SQfBs-A": vestidoDecoteVDiagram,
-  "2QG0PHbGUsI": vestidoCiganinhaDiagram,
+  "FrF8zqjX9v0": vestidoLongoDiagram,
+  "9v-7cZ090UQ": vestidoLongoDiagram,
+  "AtCZ86FDwS8": vestidoLongoDiagram,
+  "um0S-AKW1Bw": vestidoDecoteVDiagram,
+  "QsG22SVKa94": vestidoCiganinhaDiagram,
   "y9C56mdmG6A": vestidoLuxoDiagram,
   "4y5JnM6CAKE": vestidoCleopatraDiagram,
   "CNe-elk8zm4": vestidoVirginiaDiagram,
 };
 // Custom thumbnails for videos whose YouTube thumbnails are unavailable
 const customThumbnails: Record<string, string> = {
-  "wa2xHd3ghg8": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
-  "MqT6DfpAGfE": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
-  "T3mKfEMGzpE": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
-  "7Ry1SQfBs-A": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/fKqxGw4yvUY-HD_vwgf93.jpg",
-  "2QG0PHbGUsI": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/Design_sem_nome_br7dpp.png",
   "y9C56mdmG6A": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/_EEt2dLuozA-SD_t33uvg.jpg",
   "4y5JnM6CAKE": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/Ia19Yf-H08g-HD_qd4m2h.jpg",
   // Vestido Virginia (ex-Sereia)
@@ -107,13 +102,13 @@ const getVideoThumbnail = (videoId: string) => {
 const VestidosCroche = () => {
   const videos = [
     // ===== DESTAQUES PRINCIPAIS =====
-    { id: 1, title: "Vestido Longo de Crochê", videoId: "wa2xHd3ghg8", project: "Destaque", part: null },
-    { id: 2, title: "Vestido Longo de Crochê 2", videoId: "MqT6DfpAGfE", project: "Destaque", part: null },
-    { id: 3, title: "Vestido Longo de Crochê 3", videoId: "T3mKfEMGzpE", project: "Destaque", part: null },
-    { id: 4, title: "Vestido Decote V", videoId: "7Ry1SQfBs-A", project: "Destaque", part: null },
+    { id: 1, title: "Vestido Longo de Crochê", videoId: "FrF8zqjX9v0", project: "Destaque", part: null },
+    { id: 2, title: "Vestido Longo de Crochê 2", videoId: "9v-7cZ090UQ", project: "Destaque", part: null },
+    { id: 3, title: "Vestido Longo de Crochê 3", videoId: "AtCZ86FDwS8", project: "Destaque", part: null },
+    { id: 4, title: "Vestido Decote V", videoId: "um0S-AKW1Bw", project: "Destaque", part: null },
     
     // ===== NOVOS VÍDEOS =====
-    { id: 5, title: "Vestido Ciganina", videoId: "2QG0PHbGUsI", project: "Destaque", part: null },
+    { id: 5, title: "Vestido Ciganinha", videoId: "QsG22SVKa94", project: "Destaque", part: null },
     { id: 6, title: "Vestido Luxo", videoId: "y9C56mdmG6A", project: "Destaque", part: null },
     { id: 7, title: "Vestido Cleópatra", videoId: "4y5JnM6CAKE", project: "Destaque", part: null },
     { id: 8, title: "Vestido Virginia", videoId: "CNe-elk8zm4", project: "Destaque", part: null },
@@ -578,7 +573,7 @@ const VestidosCroche = () => {
                   videoId={currentVideo.videoId}
                   title={currentVideo.title}
                   platform="youtube"
-                  showPixMessage={true}
+                  showPixMessage={!["FrF8zqjX9v0", "9v-7cZ090UQ", "AtCZ86FDwS8", "um0S-AKW1Bw", "QsG22SVKa94"].includes(currentVideo.videoId)}
                 />
               </div>
               
