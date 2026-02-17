@@ -25,16 +25,16 @@ const allFeaturedVideos: FeaturedVideo[] = [
     videoId: "wa2xHd3ghg8",
   },
   {
-    id: "star",
-    title: "Top Estrela Brasil",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771307351/S-Vp3QiN1Tk-HD_td6d0k.jpg",
-    videoId: "eULL4c7GCAs",
-  },
-  {
     id: "4",
     title: "Vestido Decote V",
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/fKqxGw4yvUY-HD_vwgf93.jpg",
     videoId: "7Ry1SQfBs-A",
+  },
+  {
+    id: "star",
+    title: "Top Estrela Brasil",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771307351/S-Vp3QiN1Tk-HD_td6d0k.jpg",
+    videoId: "eULL4c7GCAs",
   },
   {
     id: "5",
@@ -98,10 +98,10 @@ const allFeaturedVideos: FeaturedVideo[] = [
   },
 ];
 
-// Shuffle array using Fisher-Yates, keeping first two fixed (Vestido Longo + Top Estrela Brasil)
+// Shuffle array using Fisher-Yates, keeping first three fixed (Vestido Longo + Decote V + Top Estrela)
 function shuffleCarousel(videos: FeaturedVideo[]): FeaturedVideo[] {
-  const fixed = videos.slice(0, 2); // Vestido Longo + Top Estrela
-  const rest = [...videos.slice(2)];
+  const fixed = videos.slice(0, 3);
+  const rest = videos.slice(3);
   for (let i = rest.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [rest[i], rest[j]] = [rest[j], rest[i]];
