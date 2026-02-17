@@ -97,10 +97,12 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   const [pixCopied, setPixCopied] = useState(false);
   const { toast } = useToast();
 
-  // Reset PIX overlay when video changes
+  // Reset states when video changes
   useEffect(() => {
     setShowingPixOverlay(false);
     setPixCopied(false);
+    setIsPlayingInline(false);
+    setIsPlayingModal(false);
   }, [videoId]);
 
   const pixKey = "21965328868";
