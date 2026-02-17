@@ -150,11 +150,7 @@ const ModelosReceitas = () => {
                 className="block animate-fade-in cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => {
-                  const newWindow = window.open("", "_blank");
-                  if (newWindow) {
-                    newWindow.opener = null;
-                    newWindow.location.href = modulo.url;
-                  }
+                  window.open(modulo.url, "_blank", "noopener,noreferrer");
                 }}
               >
                 <Card className="h-full overflow-hidden hover-lift shadow-card group cursor-pointer transition-all border-border/50 hover:border-primary/50 bg-card">
