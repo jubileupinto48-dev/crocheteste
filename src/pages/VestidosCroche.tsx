@@ -513,6 +513,7 @@ const VestidosCroche = () => {
 
   const isMobile = useIsMobile();
   const [currentVideoIndex, setCurrentVideoIndex] = useState(getInitialVideoIndex);
+  const [cameFromCarousel, setCameFromCarousel] = useState(!!autoplayVideoId);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterProject, setFilterProject] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
@@ -525,6 +526,7 @@ const VestidosCroche = () => {
       const index = videos.findIndex(v => v.videoId === autoplayVideoId);
       if (index >= 0) {
         setCurrentVideoIndex(index);
+        setCameFromCarousel(true);
       }
     }
   }, [autoplayVideoId]);
@@ -543,11 +545,17 @@ const VestidosCroche = () => {
   const handleVideoSelect = (index: number) => {
     const actualIndex = videos.findIndex(v => v.id === filteredVideos[startIndex + index].id);
     setCurrentVideoIndex(actualIndex);
+    setCameFromCarousel(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleNext = () => {
-    if (currentVideoIndex < videos.length - 1) {
+    if (cameFromCarousel) {
+      // Ao clicar "Próximo" vindo do carrossel, vai para o primeiro vídeo
+      setCurrentVideoIndex(0);
+      setCameFromCarousel(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (currentVideoIndex < videos.length - 1) {
       setCurrentVideoIndex(currentVideoIndex + 1);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
