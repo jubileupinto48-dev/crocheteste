@@ -40,13 +40,13 @@ const featuredVideos: FeaturedVideo[] = [
     id: "6",
     title: "Vestido Luxo",
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/_EEt2dLuozA-SD_t33uvg.jpg",
-    videoId: "1165412197?h=0fa29c051a",
+    videoId: "Y1GzUp7eomU",
   },
   {
     id: "7",
     title: "Vestido Cleópatra",
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/Ia19Yf-H08g-HD_qd4m2h.jpg",
-    videoId: "4y5JnM6CAKE",
+    videoId: "BZmo7SG6Bhw",
   },
 ];
 
