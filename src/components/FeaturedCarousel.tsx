@@ -1,6 +1,7 @@
 import { Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Autoplay from "embla-carousel-autoplay";
+import { useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -16,13 +17,18 @@ interface FeaturedVideo {
   videoId: string;
 }
 
-// Ordem: Destaque 1, Destaque 4, Destaque 5, Destaque 6, Destaque 7
-const featuredVideos: FeaturedVideo[] = [
+const allFeaturedVideos: FeaturedVideo[] = [
   {
     id: "1",
     title: "Vestido Longo de Crochê",
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
     videoId: "wa2xHd3ghg8",
+  },
+  {
+    id: "star",
+    title: "Top Estrela Brasil",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771307351/S-Vp3QiN1Tk-HD_td6d0k.jpg",
+    videoId: "eULL4c7GCAs",
   },
   {
     id: "4",
@@ -54,10 +60,58 @@ const featuredVideos: FeaturedVideo[] = [
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771286572/vrCyt1O4SjU-HD_nti0w1.jpg",
     videoId: "45dtXS7wZJ8",
   },
+  {
+    id: "angel",
+    title: "Vestido Angel",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107928/aUpmBpUUsTQ-HD_nczglp.jpg",
+    videoId: "QmMtlJu0cTI",
+  },
+  {
+    id: "anaclara",
+    title: "Vestido Ana Clara",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/ana_clara_isprr9.jpg",
+    videoId: "7C6SfLQmt8Y",
+  },
+  {
+    id: "concha",
+    title: "Vestido Concha",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/Conchas_sobfyn.jpg",
+    videoId: "PW5hDw2nUtU",
+  },
+  {
+    id: "mocambique",
+    title: "Vestido Moçambique",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/mo%C3%A7ambique_wvuoup.jpg",
+    videoId: "L1krqeffIvw",
+  },
+  {
+    id: "sousplato",
+    title: "Sousplato Girafa",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/sousplate_u8qesy.jpg",
+    videoId: "ap1OEUJZ-S4",
+  },
+  {
+    id: "praiana",
+    title: "Conjunto Praiana",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/Praiana_r8wcy2.jpg",
+    videoId: "8-7-TAnZeTI",
+  },
 ];
+
+// Shuffle array using Fisher-Yates, keeping first two fixed (Vestido Longo + Top Estrela Brasil)
+function shuffleCarousel(videos: FeaturedVideo[]): FeaturedVideo[] {
+  const fixed = videos.slice(0, 2); // Vestido Longo + Top Estrela
+  const rest = [...videos.slice(2)];
+  for (let i = rest.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [rest[i], rest[j]] = [rest[j], rest[i]];
+  }
+  return [...fixed, ...rest];
+}
 
 export const FeaturedCarousel = () => {
   const navigate = useNavigate();
+  const [shuffledVideos] = useState(() => shuffleCarousel(allFeaturedVideos));
 
   const handlePlay = (videoId: string) => {
     // Navega para o módulo com o vídeo selecionado em autoplay
@@ -82,7 +136,7 @@ export const FeaturedCarousel = () => {
         className="w-full"
       >
         <CarouselContent className="-ml-2 md:-ml-4">
-          {featuredVideos.map((video) => (
+          {shuffledVideos.map((video) => (
             <CarouselItem key={video.id} className="pl-2 md:pl-4 basis-full md:basis-4/5 lg:basis-3/4">
               <div 
                 className="relative aspect-video rounded-2xl overflow-hidden cursor-pointer group shadow-xl"
@@ -125,7 +179,7 @@ export const FeaturedCarousel = () => {
 
       {/* Carousel Dots Indicator */}
       <div className="flex justify-center gap-2 mt-4">
-        {featuredVideos.map((video) => (
+        {shuffledVideos.map((video) => (
           <div
             key={video.id}
             className="w-2 h-2 rounded-full bg-primary/30 transition-colors"
