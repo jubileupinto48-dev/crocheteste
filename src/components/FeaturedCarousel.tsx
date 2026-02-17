@@ -48,6 +48,12 @@ const featuredVideos: FeaturedVideo[] = [
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/Ia19Yf-H08g-HD_qd4m2h.jpg",
     videoId: "BZmo7SG6Bhw",
   },
+  {
+    id: "8",
+    title: "Biquini Tomara que Caia",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771286572/vrCyt1O4SjU-HD_nti0w1.jpg",
+    videoId: "45dtXS7wZJ8",
+  },
 ];
 
 export const FeaturedCarousel = () => {
