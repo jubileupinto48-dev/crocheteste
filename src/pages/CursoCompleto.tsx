@@ -3,26 +3,47 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Progress } from "@/components/ui/progress";
-import { VideoPlayer } from "@/components/VideoPlayer";
+import { CustomVideoPlayer } from "@/components/CustomVideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useIsMobile } from "@/hooks/use-mobile";
 
+
+interface VideoItem {
+  id: number;
+  title: string;
+  duration: string;
+  videoId: string;
+  category: string;
+  completed: boolean;
+  platform?: "youtube" | "gdrive";
+}
 
 const CursoCompleto = () => {
-  const videos = [
-    // Mini Curso Iniciante - Aulas baseadas no Notion
-    { id: 1, title: "Como fazer a emenda nos Squares #3", duration: "15 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 2, title: "Como fazer um círculo com ponto alto", duration: "12 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 3, title: "Como segurar a agulha de crochê", duration: "10 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 4, title: "Ponto Alto de Crochê", duration: "18 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 5, title: "Ponto Baixo de Crochê", duration: "15 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 6, title: "Ponto de Picô de Crochê", duration: "12 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false },
-    { id: 7, title: "Linhas e Barbantes de Crochê", duration: "20 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Materiais", completed: false },
-    { id: 8, title: "Dicas para Iniciantes", duration: "25 min", thumbnail: "https://drive.google.com/thumbnail?id=1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", driveId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Dicas", completed: false },
+  const videos: VideoItem[] = [
+    // Novos vídeos do YouTube
+    { id: 1, title: "Como pegar na agulha", duration: "3 min", videoId: "0wt2jvL8v3w", category: "Técnicas Básicas", completed: false },
+    { id: 2, title: "Como fazer Correntinha", duration: "7 min", videoId: "p0RxYGFQE9A", category: "Técnicas Básicas", completed: false },
+    { id: 3, title: "Como fazer Ponto Baixissimo", duration: "5 min", videoId: "lGZjSlVvXAM", category: "Técnicas Básicas", completed: false },
+    { id: 4, title: "Como fazer Ponto Baixo", duration: "5 min", videoId: "rL7IwQmq9bs", category: "Técnicas Básicas", completed: false },
+    { id: 5, title: "Ponto Meio Alto", duration: "4 min", videoId: "Rj-McmK9zzQ", category: "Técnicas Básicas", completed: false },
+    { id: 6, title: "Ponto Alto", duration: "4 min", videoId: "FX-Yc66vzTA", category: "Técnicas Básicas", completed: false },
+    { id: 7, title: "Ponto Fantasia", duration: "7 min", videoId: "3eMbL0ysTsc", category: "Técnicas Básicas", completed: false },
+    // Vídeos existentes (Google Drive convertidos para manter compatibilidade)
+    { id: 8, title: "Como fazer a emenda nos Squares #3", duration: "15 min", videoId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false, platform: "gdrive" },
+    { id: 9, title: "Como fazer um círculo com ponto alto", duration: "12 min", videoId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false, platform: "gdrive" },
+    { id: 10, title: "Como segurar a agulha de crochê", duration: "10 min", videoId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false, platform: "gdrive" },
+    { id: 11, title: "Ponto Alto de Crochê", duration: "18 min", videoId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false, platform: "gdrive" },
+    { id: 12, title: "Ponto Baixo de Crochê", duration: "15 min", videoId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false, platform: "gdrive" },
+    { id: 13, title: "Ponto de Picô de Crochê", duration: "12 min", videoId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false, platform: "gdrive" },
+    { id: 14, title: "Linhas e Barbantes de Crochê", duration: "20 min", videoId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Materiais", completed: false, platform: "gdrive" },
+    { id: 15, title: "Dicas para Iniciantes", duration: "25 min", videoId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Dicas", completed: false, platform: "gdrive" },
   ];
 
+  const isMobile = useIsMobile();
+  const videoListRef = useRef<HTMLDivElement>(null);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("all");
@@ -51,10 +72,6 @@ const CursoCompleto = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
-
   const handleNext = () => {
     if (currentVideoIndex < videos.length - 1) {
       setCurrentVideoIndex(currentVideoIndex + 1);
@@ -67,6 +84,15 @@ const CursoCompleto = () => {
       setCurrentVideoIndex(currentVideoIndex - 1);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const currentVideo = videos[currentVideoIndex];
+
+  const getThumbnail = (video: typeof videos[0]) => {
+    if (video.platform === "gdrive") {
+      return `https://drive.google.com/thumbnail?id=${video.videoId}&sz=w640`;
+    }
+    return `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
   };
 
   return (
@@ -100,58 +126,35 @@ const CursoCompleto = () => {
           {/* Player Principal */}
           <div className="lg:col-span-2 space-y-6">
             <div className="animate-fade-in">
-              <VideoPlayer
-                videoId={videos[currentVideoIndex].driveId}
-                title={videos[currentVideoIndex].title}
-                platform="gdrive"
-              />
+              <div className={isMobile ? "aspect-[4/3] sm:aspect-video" : ""}>
+                <CustomVideoPlayer
+                  videoId={currentVideo.videoId}
+                  title={currentVideo.title}
+                  platform={currentVideo.platform || "youtube"}
+                />
+              </div>
+
+              {/* Botões de navegação abaixo do player */}
+              <div className="flex gap-3 mt-2">
+                <Button
+                  variant="outline"
+                  onClick={handlePrevious}
+                  disabled={currentVideoIndex === 0}
+                  className="flex-1"
+                >
+                  <ChevronLeft className="mr-2 h-4 w-4" />
+                  Anterior
+                </Button>
+                <Button
+                  onClick={handleNext}
+                  disabled={currentVideoIndex === videos.length - 1}
+                  className="flex-1"
+                >
+                  Próximo
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
             </div>
-
-            <Card className="shadow-card animate-scale-in">
-              <CardContent className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                        Aula {currentVideoIndex + 1} de {videos.length}
-                      </span>
-                      <span className="bg-accent/50 text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
-                        {videos[currentVideoIndex].category}
-                      </span>
-                      {videos[currentVideoIndex].completed && (
-                        <Award className="w-5 h-5 text-primary" />
-                      )}
-                    </div>
-                    <h2 className="text-2xl font-bold text-foreground mb-2">
-                      {videos[currentVideoIndex].title}
-                    </h2>
-                    <p className="text-muted-foreground">
-                      Duração: {videos[currentVideoIndex].duration}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-3 pt-4 border-t border-border">
-                  <Button
-                    variant="outline"
-                    onClick={handlePrevious}
-                    disabled={currentVideoIndex === 0}
-                    className="flex-1"
-                  >
-                    <ChevronLeft className="mr-2 h-4 w-4" />
-                    Anterior
-                  </Button>
-                  <Button
-                    onClick={handleNext}
-                    disabled={currentVideoIndex === videos.length - 1}
-                    className="flex-1"
-                  >
-                    Próximo
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
 
             {totalProgress >= 80 && (
               <Card className="shadow-card border-primary/50 bg-primary/5">
@@ -174,7 +177,7 @@ const CursoCompleto = () => {
 
           {/* Lista de Vídeos */}
           <div className="lg:col-span-1">
-            <Card className="sticky top-8 shadow-card animate-fade-in">
+            <Card className="lg:sticky lg:top-8 shadow-card animate-fade-in">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-4">
                   Todas as Aulas ({videos.length})
@@ -208,7 +211,7 @@ const CursoCompleto = () => {
                 </div>
 
                 {/* Lista com scroll */}
-                <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+                <div ref={videoListRef} className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
                   {paginatedVideos.map((video, index) => {
                     const actualIndex = videos.findIndex(v => v.id === video.id);
                     return (
@@ -216,7 +219,7 @@ const CursoCompleto = () => {
                         <VideoCard
                           title={video.title}
                           duration={video.duration}
-                          thumbnail={video.thumbnail}
+                          thumbnail={getThumbnail(video)}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
                           onClick={() => handleVideoSelect(index)}
@@ -232,7 +235,10 @@ const CursoCompleto = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                      onClick={() => {
+                        setCurrentPage(p => Math.max(1, p - 1));
+                        videoListRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
                       disabled={currentPage === 1}
                     >
                       <ChevronLeft className="h-4 w-4" />
@@ -243,7 +249,10 @@ const CursoCompleto = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                      onClick={() => {
+                        setCurrentPage(p => Math.min(totalPages, p + 1));
+                        videoListRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
                       disabled={currentPage === totalPages}
                     >
                       <ChevronRight className="h-4 w-4" />
