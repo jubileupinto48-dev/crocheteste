@@ -661,7 +661,7 @@ const VestidosCroche = () => {
                   videoId={currentVideo.videoId}
                   title={currentVideo.title}
                   platform="youtube"
-                  showPixMessage={!["FrF8zqjX9v0", "9v-7cZ090UQ", "AtCZ86FDwS8", "um0S-AKW1Bw", "QsG22SVKa94", "Y1GzUp7eomU", "BZmo7SG6Bhw", "NCqCYKbRFHc", "45dtXS7wZJ8"].includes(currentVideo.videoId)}
+                  showPixMessage={currentVideo.id > 43}
                 />
               </div>
               
