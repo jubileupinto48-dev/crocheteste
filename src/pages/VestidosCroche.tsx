@@ -661,6 +661,7 @@ const VestidosCroche = () => {
                   videoId={currentVideo.videoId}
                   title={currentVideo.title}
                   platform="youtube"
+                  autoplay={true}
                   showPixMessage={currentVideo.id > 43}
                 />
               </div>
