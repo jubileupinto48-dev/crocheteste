@@ -153,8 +153,8 @@ const VestidosCroche = () => {
     { id: 5, title: "Vestido Ciganinha", videoId: "QsG22SVKa94", project: "Destaque", part: null },
     { id: 6, title: "Vestido Luxo", videoId: "Y1GzUp7eomU", project: "Destaque", part: null },
     { id: 7, title: "Vestido Cleópatra", videoId: "BZmo7SG6Bhw", project: "Destaque", part: null },
-    { id: 8, title: "Biquini Rendado", videoId: "NCqCYKbRFHc", project: "Destaque", part: null },
-    { id: 9, title: "Biquini Tomara que Caia", videoId: "45dtXS7wZJ8", project: "Destaque", part: null },
+    { id: 8, title: "Conjunto Rosas", videoId: "XMJm74FZSlk", project: "Conjunto Rosas", part: null },
+    { id: 9, title: "Top Estrela Brasil", videoId: "eULL4c7GCAs", project: "Top Estrela Brasil", part: null },
     
     // ===== NOVOS VÍDEOS (após Biquini Tomara que Caia) =====
     { id: 10, title: "Conjunto Square", videoId: "a4lixrXFbRA", project: "Conjunto Square", part: null },
@@ -182,14 +182,14 @@ const VestidosCroche = () => {
     { id: 32, title: "Corset em V", videoId: "oO-1-Bx2_k4", project: "Corset em V", part: null },
     { id: 33, title: "Conjunto Tereza", videoId: "-Dqpc_vBDcE", project: "Conjunto Tereza", part: null },
     { id: 34, title: "Conjunto Tardezinha", videoId: "8G8KSbtb9AA", project: "Conjunto Tardezinha", part: null },
-    { id: 35, title: "Conjunto Rosas", videoId: "XMJm74FZSlk", project: "Conjunto Rosas", part: null },
+    { id: 35, title: "Biquini Rendado", videoId: "NCqCYKbRFHc", project: "Destaque", part: null },
     { id: 36, title: "Conjunto de Crochê Brilho", videoId: "t4PHjsA531c", project: "Conjunto Crochê Brilho", part: null },
     { id: 37, title: "Conjunto Praiana", videoId: "8-7-TAnZeTI", project: "Conjunto Praiana", part: null },
     { id: 38, title: "Conjunto Camila", videoId: "fqfFgB0VDE8", project: "Conjunto Camila", part: null },
     { id: 39, title: "Macacão Longo", videoId: "lG2KfsR4pts", project: "Macacão Longo", part: null },
     { id: 40, title: "Calça Thais", videoId: "3p8V_UJnQ7s", project: "Calça Thais", part: null },
     { id: 41, title: "Saida Brasil", videoId: "ow79AEL-HJ0", project: "Saida Brasil", part: null },
-    { id: 42, title: "Top Estrela Brasil", videoId: "eULL4c7GCAs", project: "Top Estrela Brasil", part: null },
+    { id: 42, title: "Biquini Tomara que Caia", videoId: "45dtXS7wZJ8", project: "Destaque", part: null },
     { id: 43, title: "Top Brasil", videoId: "AkMPZPYJxwY", project: "Top Brasil", part: null },
 
     { id: 44, title: "Vestido Virginia", videoId: "CNe-elk8zm4", project: "Destaque", part: null },
