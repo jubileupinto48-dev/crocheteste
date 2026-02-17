@@ -31,16 +31,16 @@ const allFeaturedVideos: FeaturedVideo[] = [
     videoId: "um0S-AKW1Bw",
   },
   {
-    id: "star",
-    title: "Top Estrela Brasil",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771307351/S-Vp3QiN1Tk-HD_td6d0k.jpg",
-    videoId: "eULL4c7GCAs",
-  },
-  {
     id: "5",
     title: "Vestido Ciganinha",
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/Design_sem_nome_br7dpp.png",
     videoId: "2QG0PHbGUsI",
+  },
+  {
+    id: "star",
+    title: "Top Estrela Brasil",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771307351/S-Vp3QiN1Tk-HD_td6d0k.jpg",
+    videoId: "eULL4c7GCAs",
   },
   {
     id: "6",
@@ -128,7 +128,7 @@ export const FeaturedCarousel = () => {
         }}
         plugins={[
           Autoplay({
-            delay: 2500,
+            delay: 3500,
             stopOnInteraction: false,
             stopOnMouseEnter: true,
           }),
