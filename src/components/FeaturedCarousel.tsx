@@ -28,7 +28,7 @@ const allFeaturedVideos: FeaturedVideo[] = [
     id: "4",
     title: "Vestido Decote V",
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/fKqxGw4yvUY-HD_vwgf93.jpg",
-    videoId: "7Ry1SQfBs-A",
+    videoId: "um0S-AKW1Bw",
   },
   {
     id: "star",
