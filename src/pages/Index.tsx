@@ -107,7 +107,7 @@ const Index = () => {
               ⭐ Videos em Destaque
             </span>
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-              Vestidos de Crochê
+              Modelos Exclusivos
             </h2>
             <p className="text-muted-foreground">
               Clique para assistir ou navegue pelo carrossel

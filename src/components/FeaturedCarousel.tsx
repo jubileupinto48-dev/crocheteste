@@ -61,10 +61,10 @@ const allFeaturedVideos: FeaturedVideo[] = [
     videoId: "45dtXS7wZJ8",
   },
   {
-    id: "angel",
-    title: "Vestido Angel",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771107928/aUpmBpUUsTQ-HD_nczglp.jpg",
-    videoId: "QmMtlJu0cTI",
+    id: "sereia",
+    title: "Vestido Sereia",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305377/Sereia_nqhrmj.jpg",
+    videoId: "nwxsLI9augM",
   },
   {
     id: "anaclara",
