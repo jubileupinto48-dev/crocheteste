@@ -28,27 +28,27 @@ const Index = () => {
     id: 2,
     title: "Mini Curso para Iniciante",
     description: "Aprenda do zero com técnicas fundamentais de crochê passo a passo.",
-    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589237/ChatGPT_Image_21_de_jan._de_2026_18_39_04_ktuyey.webp",
+    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771346857/ChatGPT_Image_17_de_fev._de_2026_13_39_09_iicrdm.png",
     link: "/curso-completo",
     badge: "Iniciante"
   }, {
     id: 3,
     title: "+2000 Modelos e Receitas",
     description: "Acesso completo a mais de 2000 modelos e receitas em PDF para todos os níveis.",
-    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589285/ChatGPT_Image_21_de_jan._de_2026_18_45_10_u80nde.webp",
+    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771346857/ChatGPT_Image_17_de_fev._de_2026_13_44_14_txia9b.png",
     link: "/modelos-receitas",
     badge: "Popular"
   }, {
     id: 4,
     title: "Roupinhas Infantil",
     description: "Coleção especial de roupinhas adoráveis para bebês e crianças.",
-    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589307/ChatGPT_Image_21_de_jan._de_2026_18_56_22_eobbgv.webp",
+    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771346857/ChatGPT_Image_17_de_fev._de_2026_13_47_14_yo3hgi.png",
     link: "/vestidos-infantis"
   }, {
     id: 5,
     title: "Sapatinhos de Crochê",
     description: "Modelos adoráveis de sapatinhos e botinhas para os pequenos.",
-    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589329/ChatGPT_Image_21_de_jan._de_2026_18_58_52_psqfqs.webp",
+    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771346857/ChatGPT_Image_17_de_fev._de_2026_13_47_12_w1iegs.png",
     link: "/sapatinhos-croche"
   }, {
     id: 6,
