@@ -1,13 +1,14 @@
 import { Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Autoplay from "embla-carousel-autoplay";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 
 interface FeaturedVideo {
@@ -124,9 +125,32 @@ function shuffleCarousel(videos: FeaturedVideo[]): FeaturedVideo[] {
 export const FeaturedCarousel = () => {
   const navigate = useNavigate();
   const [shuffledVideos] = useState(() => shuffleCarousel(allFeaturedVideos));
+  const [api, setApi] = useState<CarouselApi>();
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout>>();
+
+  // Retoma o autoplay 5s após o usuário parar de interagir
+  useEffect(() => {
+    if (!api) return;
+
+    const autoplayPlugin = api.plugins()?.autoplay as any;
+    if (!autoplayPlugin) return;
+
+    const onStop = () => {
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+      resumeTimerRef.current = setTimeout(() => {
+        autoplayPlugin.play();
+      }, 5000);
+    };
+
+    api.on("autoplay:stop", onStop);
+
+    return () => {
+      api.off("autoplay:stop", onStop);
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    };
+  }, [api]);
 
   const handlePlay = (videoId: string) => {
-    // Navega para o módulo com o vídeo selecionado em autoplay
     navigate(`/vestidos-croche?video=${encodeURIComponent(videoId)}&autoplay=true`);
   };
 
@@ -134,15 +158,17 @@ export const FeaturedCarousel = () => {
     <div className="relative">
       {/* Carousel */}
       <Carousel
+        setApi={setApi}
         opts={{
           align: "center",
           loop: true,
         }}
         plugins={[
           Autoplay({
-            delay: 3500,
-            stopOnInteraction: false,
+            delay: 3000,
+            stopOnInteraction: true,
             stopOnMouseEnter: true,
+            playOnInit: true,
           }),
         ]}
         className="w-full"
