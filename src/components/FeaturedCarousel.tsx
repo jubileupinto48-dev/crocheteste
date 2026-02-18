@@ -139,7 +139,7 @@ export const FeaturedCarousel = () => {
       if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
       resumeTimerRef.current = setTimeout(() => {
         autoplayPlugin.play();
-      }, 5000);
+      }, 3500);
     };
 
     // Para quando o usuário começa a arrastar
