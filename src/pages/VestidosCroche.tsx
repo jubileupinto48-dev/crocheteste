@@ -337,7 +337,6 @@ const VestidosCroche = () => {
     { id: 109, title: "Top Brasil", videoId: "AkMPZPYJxwY", project: "Top Brasil", part: null, platform: "youtube" as const },
 
     // ===== 110+: VÍDEOS ANTIGOS COM PIX (YouTube) =====
-    { id: 110, title: "Vestido Virginia", videoId: "CNe-elk8zm4", project: "Destaque", part: null, platform: "youtube" as const },
     
     // Vestido Patricia Poeta (3 partes)
     { id: 111, title: "Vestido Patricia Poeta - Parte 1", videoId: "9e8IMdIJWdE", project: "Vestido Patricia Poeta", part: 1, platform: "youtube" as const },
