@@ -210,26 +210,27 @@ const VestidosCroche = () => {
     { id: 2, title: "Vestido Longo de Crochê 2", videoId: "9v-7cZ090UQ", project: "Destaque", part: null, platform: "youtube" as const },
     { id: 3, title: "Vestido Longo de Crochê 3", videoId: "AtCZ86FDwS8", project: "Destaque", part: null, platform: "youtube" as const },
     { id: 4, title: "Vestido Decote V", videoId: "um0S-AKW1Bw", project: "Destaque", part: null, platform: "youtube" as const },
-    { id: 5, title: "Vestido Ciganinha", videoId: "QsG22SVKa94", project: "Destaque", part: null, platform: "youtube" as const },
-    { id: 6, title: "Vestido Luxo", videoId: "Y1GzUp7eomU", project: "Destaque", part: null, platform: "youtube" as const },
-    { id: 7, title: "Vestido Cleópatra", videoId: "BZmo7SG6Bhw", project: "Destaque", part: null, platform: "youtube" as const },
-    { id: 8, title: "Conjunto Rosas", videoId: "XMJm74FZSlk", project: "Conjunto Rosas", part: null, platform: "youtube" as const },
-    { id: 9, title: "Top Estrela Brasil", videoId: "eULL4c7GCAs", project: "Top Estrela Brasil", part: null, platform: "youtube" as const },
+    { id: 5, title: "Vestido Raquel", videoId: "1165877185?h=ce49de91b5", project: "Destaque", part: null, platform: "vimeo" as const },
+    { id: 6, title: "Vestido Ciganinha", videoId: "QsG22SVKa94", project: "Destaque", part: null, platform: "youtube" as const },
+    { id: 7, title: "Vestido Luxo", videoId: "Y1GzUp7eomU", project: "Destaque", part: null, platform: "youtube" as const },
+    { id: 8, title: "Vestido Cleópatra", videoId: "BZmo7SG6Bhw", project: "Destaque", part: null, platform: "youtube" as const },
+    { id: 9, title: "Conjunto Rosas", videoId: "XMJm74FZSlk", project: "Conjunto Rosas", part: null, platform: "youtube" as const },
+    { id: 10, title: "Top Estrela Brasil", videoId: "eULL4c7GCAs", project: "Top Estrela Brasil", part: null, platform: "youtube" as const },
     // Virginia logo abaixo do Top Estrela Brasil
-    { id: 10, title: "Vestido Virginia - Parte 1", videoId: "1165822436?h=73db5fd949", project: "Vestido Virginia", part: 1, platform: "vimeo" as const },
-    { id: 11, title: "Vestido Virginia - Parte 2", videoId: "1165822491?h=426a5c76b5", project: "Vestido Virginia", part: 2, platform: "vimeo" as const },
+    { id: 11, title: "Vestido Virginia - Parte 1", videoId: "1165822436?h=73db5fd949", project: "Vestido Virginia", part: 1, platform: "vimeo" as const },
+    { id: 12, title: "Vestido Virginia - Parte 2", videoId: "1165822491?h=426a5c76b5", project: "Vestido Virginia", part: 2, platform: "vimeo" as const },
     // Angel logo abaixo da Virginia
-    { id: 12, title: "Vestido Angel - Parte 1", videoId: "1165822536?h=494836d768", project: "Vestido Angel", part: 1, platform: "vimeo" as const },
-    { id: 13, title: "Vestido Angel - Parte 2", videoId: "1165822336?h=b2524c1a00", project: "Vestido Angel", part: 2, platform: "vimeo" as const },
-    { id: 14, title: "Vestido Angel - Parte 3", videoId: "1165822633?h=9a932be1b8", project: "Vestido Angel", part: 3, platform: "vimeo" as const },
+    { id: 13, title: "Vestido Angel - Parte 1", videoId: "1165822536?h=494836d768", project: "Vestido Angel", part: 1, platform: "vimeo" as const },
+    { id: 14, title: "Vestido Angel - Parte 2", videoId: "1165822336?h=b2524c1a00", project: "Vestido Angel", part: 2, platform: "vimeo" as const },
+    { id: 15, title: "Vestido Angel - Parte 3", videoId: "1165822633?h=9a932be1b8", project: "Vestido Angel", part: 3, platform: "vimeo" as const },
     // Saída Mel Maia logo abaixo do Angel
-    { id: 15, title: "Saída Mel Maia - Parte 1", videoId: "1165822238?h=798063ee5e", project: "Saída Mel Maia", part: 1, platform: "vimeo" as const },
-    { id: 16, title: "Saída Mel Maia - Parte 2", videoId: "1165822696?h=58d1366209", project: "Saída Mel Maia", part: 2, platform: "vimeo" as const },
+    { id: 16, title: "Saída Mel Maia - Parte 1", videoId: "1165822238?h=798063ee5e", project: "Saída Mel Maia", part: 1, platform: "vimeo" as const },
+    { id: 17, title: "Saída Mel Maia - Parte 2", videoId: "1165822696?h=58d1366209", project: "Saída Mel Maia", part: 2, platform: "vimeo" as const },
     // Conjunto Franja na página 1
-    { id: 17, title: "Conjunto Franja - Parte 1", videoId: "1165823586?h=95ae5df629", project: "Conjunto Franja", part: 1, platform: "vimeo" as const },
-    { id: 18, title: "Conjunto Franja - Parte 2", videoId: "1165823379?h=de1eeffff5", project: "Conjunto Franja", part: 2, platform: "vimeo" as const },
-    { id: 19, title: "Conjunto Square", videoId: "a4lixrXFbRA", project: "Conjunto Square", part: null, platform: "youtube" as const },
-    { id: 20, title: "Vestido Sereia", videoId: "nwxsLI9augM", project: "Vestido Sereia", part: null, platform: "youtube" as const },
+    { id: 18, title: "Conjunto Franja - Parte 1", videoId: "1165823586?h=95ae5df629", project: "Conjunto Franja", part: 1, platform: "vimeo" as const },
+    { id: 19, title: "Conjunto Franja - Parte 2", videoId: "1165823379?h=de1eeffff5", project: "Conjunto Franja", part: 2, platform: "vimeo" as const },
+    { id: 20, title: "Conjunto Square", videoId: "a4lixrXFbRA", project: "Conjunto Square", part: null, platform: "youtube" as const },
+    { id: 21, title: "Vestido Sereia", videoId: "nwxsLI9augM", project: "Vestido Sereia", part: null, platform: "youtube" as const },
 
     // ===== PÁGINA 2+ (21+): Ordem específica no início, depois embaralhados =====
     // Vestido Maria no começo da página 2
@@ -569,7 +570,7 @@ const VestidosCroche = () => {
     { id: 236, title: "Vestido Celeste - Parte 2", videoId: "mEq1bWNCW9Q", project: "Vestido Celeste", part: 2, platform: "youtube" as const },
     { id: 237, title: "Vestido Celeste - Parte 3", videoId: "BGEOGV6gz74", project: "Vestido Celeste", part: 3, platform: "youtube" as const },
     { id: 238, title: "Vestido Celeste - Parte 4", videoId: "k-d8mWx5j6o", project: "Vestido Celeste", part: 4, platform: "youtube" as const },
-  ];
+  ].map((v, i) => ({ ...v, id: i + 1 }));
 
   // Extrair projetos únicos para o filtro
   const uniqueProjects = [...new Set(videos.map(v => v.project))];
@@ -665,7 +666,7 @@ const VestidosCroche = () => {
                   title={currentVideo.title}
                   platform={currentVideo.platform as "youtube" | "vimeo"}
                   autoplay={true}
-                  showPixMessage={currentVideo.id >= 110}
+                  showPixMessage={currentVideo.id >= 111}
                 />
               </div>
               

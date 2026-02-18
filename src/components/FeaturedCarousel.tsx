@@ -25,6 +25,12 @@ const allFeaturedVideos: FeaturedVideo[] = [
     videoId: "wa2xHd3ghg8",
   },
   {
+    id: "raquel",
+    title: "Vestido Raquel",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771383895/VEERDE_VERTICAL_1_wzahng.png",
+    videoId: "1165877185?h=ce49de91b5",
+  },
+  {
     id: "4",
     title: "Vestido Decote V",
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/fKqxGw4yvUY-HD_vwgf93.jpg",

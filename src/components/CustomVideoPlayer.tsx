@@ -80,6 +80,7 @@ const customThumbnails: Record<string, string> = {
   "vygTLCKLTyI": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108168/ymNF5gXSCg0-HD_o5bvp3.jpg",
   "vhJm0SkK0pI": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108168/ymNF5gXSCg0-HD_o5bvp3.jpg",
   // === VIMEO THUMBNAILS ===
+  "1165877185?h=ce49de91b5": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771383895/VEERDE_VERTICAL_1_wzahng.png",
   "1165822436?h=73db5fd949": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381439/VESTIDO_VIRGINIA_y1pnbp.png",
   "1165822491?h=426a5c76b5": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381439/VESTIDO_VIRGINIA_y1pnbp.png",
   "1165822536?h=494836d768": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381438/VESTIDO_ANGEL_bxkj7y.png",
