@@ -330,7 +330,7 @@ const VestidosCroche = () => {
     { id: 102, title: "Conjunto de Crochê Brilho", videoId: "1165902686", project: "Conjunto Crochê Brilho", part: null, platform: "vimeo" as const },
     { id: 103, title: "Conjunto Praiana", videoId: "1165902854", project: "Conjunto Praiana", part: null, platform: "vimeo" as const },
     { id: 104, title: "Conjunto Camila", videoId: "1165905050", project: "Conjunto Camila", part: null, platform: "vimeo" as const },
-    { id: 105, title: "Macacão Longo", videoId: "lG2KfsR4pts", project: "Macacão Longo", part: null, platform: "youtube" as const },
+    
     { id: 106, title: "Calça Thais", videoId: "1165905314", project: "Calça Thais", part: null, platform: "vimeo" as const },
     { id: 107, title: "Saida Brasil", videoId: "1165908138?h=11ec544581", project: "Saida Brasil", part: null, platform: "vimeo" as const },
     { id: 108, title: "Biquini Tomara que Caia", videoId: "1165416602?h=239fa20e43", project: "Destaque", part: null, platform: "vimeo" as const },
