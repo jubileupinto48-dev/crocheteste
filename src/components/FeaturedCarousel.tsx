@@ -139,7 +139,7 @@ export const FeaturedCarousel = () => {
       if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
       resumeTimerRef.current = setTimeout(() => {
         autoplayPlugin.play();
-      }, 3000);
+      }, 5000);
     };
 
     api.on("autoplay:stop", onStop);
