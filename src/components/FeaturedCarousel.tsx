@@ -127,7 +127,7 @@ export const FeaturedCarousel = () => {
 
   const handlePlay = (videoId: string) => {
     // Navega para o módulo com o vídeo selecionado em autoplay
-    navigate(`/vestidos-croche?video=${videoId}&autoplay=true`);
+    navigate(`/vestidos-croche?video=${encodeURIComponent(videoId)}&autoplay=true`);
   };
 
   return (
