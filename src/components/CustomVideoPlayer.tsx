@@ -290,7 +290,7 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
             className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${
               thumbnailLoaded ? 'opacity-100' : 'opacity-0'
             }`}
-            loading="lazy"
+            loading="eager"
             onLoad={() => setThumbnailLoaded(true)}
             onError={(e) => {
               if (platform === "youtube" && !customThumbnails[videoId]) {

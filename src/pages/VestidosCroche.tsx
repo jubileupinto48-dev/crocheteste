@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { CustomVideoPlayer } from "@/components/CustomVideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -597,6 +597,26 @@ const VestidosCroche = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const videoListRef = useRef<HTMLDivElement>(null);
   const videosPerPage = 12;
+
+  // Helper para resolver URL da thumbnail
+  const getThumbnailUrl = useCallback((video: { videoId: string; platform: string }) => {
+    if (customThumbnails[video.videoId]) return customThumbnails[video.videoId];
+    if (video.platform === "youtube") return `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
+    if (video.platform === "gdrive") return `https://drive.google.com/thumbnail?id=${video.videoId}&sz=w640`;
+    return `https://vumbnail.com/${video.videoId}.jpg`;
+  }, []);
+
+  // Preload thumbnails dos próximos 3 vídeos para navegação instantânea
+  useEffect(() => {
+    const preloadCount = 3;
+    for (let i = 1; i <= preloadCount; i++) {
+      const nextIndex = currentVideoIndex + i;
+      if (nextIndex < videos.length) {
+        const img = new Image();
+        img.src = getThumbnailUrl(videos[nextIndex]);
+      }
+    }
+  }, [currentVideoIndex, getThumbnailUrl]);
 
   // Atualiza o índice quando a URL mudar
   useEffect(() => {
