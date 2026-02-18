@@ -128,24 +128,46 @@ export const FeaturedCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
   const resumeTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
-  // Retoma o autoplay 5s após o usuário parar de interagir
+  // Para o autoplay durante interação e retoma após 5s de inatividade
   useEffect(() => {
     if (!api) return;
 
     const autoplayPlugin = api.plugins()?.autoplay as any;
     if (!autoplayPlugin) return;
 
-    const onStop = () => {
+    const scheduleResume = () => {
       if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
       resumeTimerRef.current = setTimeout(() => {
         autoplayPlugin.play();
       }, 5000);
     };
 
-    api.on("autoplay:stop", onStop);
+    // Para quando o usuário começa a arrastar
+    const onPointerDown = () => {
+      autoplayPlugin.stop();
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    };
+
+    // Agenda retomada quando solta
+    const onPointerUp = () => {
+      scheduleResume();
+    };
+
+    const onSettle = () => {
+      if (!autoplayPlugin.isPlaying()) {
+        scheduleResume();
+      }
+    };
+
+    const rootNode = api.rootNode();
+    rootNode.addEventListener("pointerdown", onPointerDown);
+    rootNode.addEventListener("pointerup", onPointerUp);
+    api.on("settle", onSettle);
 
     return () => {
-      api.off("autoplay:stop", onStop);
+      rootNode.removeEventListener("pointerdown", onPointerDown);
+      rootNode.removeEventListener("pointerup", onPointerUp);
+      api.off("settle", onSettle);
       if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
     };
   }, [api]);
