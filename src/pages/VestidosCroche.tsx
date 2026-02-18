@@ -58,7 +58,7 @@ const customThumbnails: Record<string, string> = {
   "1165415971?h=dd327a58fb": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771286793/fKLX4pMjmck-SD_bnzvlf.jpg",
   "1165416602?h=239fa20e43": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771286572/vrCyt1O4SjU-HD_nti0w1.jpg",
   "1165896871?h=f4895dbef0": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/Square_lcapbv.jpg",
-  "1165908266": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305377/Sereia_nqhrmj.jpg",
+  "1165908266?h=61b6de8549": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305377/Sereia_nqhrmj.jpg",
   "1165898325?h=5af0c2457f": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/ana_clara_isprr9.jpg",
   "1165897115?h=2e6bdf5c09": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305845/vestido_camila_qd9qtd.jpg",
   "1165897327?h=bf84e16cb9": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/Conchas_sobfyn.jpg",
@@ -232,7 +232,7 @@ const VestidosCroche = () => {
     { id: 18, title: "Conjunto Franja - Parte 1", videoId: "1165823586?h=95ae5df629", project: "Conjunto Franja", part: 1, platform: "vimeo" as const },
     { id: 19, title: "Conjunto Franja - Parte 2", videoId: "1165823379?h=de1eeffff5", project: "Conjunto Franja", part: 2, platform: "vimeo" as const },
     { id: 20, title: "Conjunto Square", videoId: "1165896871?h=f4895dbef0", project: "Conjunto Square", part: null, platform: "vimeo" as const },
-    { id: 21, title: "Vestido Sereia", videoId: "1165908266", project: "Vestido Sereia", part: null, platform: "vimeo" as const },
+    { id: 21, title: "Vestido Sereia", videoId: "1165908266?h=61b6de8549", project: "Vestido Sereia", part: null, platform: "vimeo" as const },
 
     // ===== PÁGINA 2+ (21+): Ordem específica no início, depois embaralhados =====
     // Vestido Maria no começo da página 2
