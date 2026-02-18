@@ -61,22 +61,10 @@ const allFeaturedVideos: FeaturedVideo[] = [
     videoId: "45dtXS7wZJ8",
   },
   {
-    id: "sereia",
-    title: "Vestido Sereia",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305377/Sereia_nqhrmj.jpg",
-    videoId: "nwxsLI9augM",
-  },
-  {
     id: "anaclara",
     title: "Vestido Ana Clara",
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/ana_clara_isprr9.jpg",
     videoId: "7C6SfLQmt8Y",
-  },
-  {
-    id: "concha",
-    title: "Vestido Concha",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/Conchas_sobfyn.jpg",
-    videoId: "PW5hDw2nUtU",
   },
   {
     id: "mocambique",
@@ -85,16 +73,34 @@ const allFeaturedVideos: FeaturedVideo[] = [
     videoId: "L1krqeffIvw",
   },
   {
-    id: "sousplato",
-    title: "Sousplato Girafa",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/sousplate_u8qesy.jpg",
-    videoId: "ap1OEUJZ-S4",
+    id: "virginia",
+    title: "Vestido Virginia",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381439/VESTIDO_VIRGINIA_y1pnbp.png",
+    videoId: "1165822436?h=73db5fd949",
   },
   {
-    id: "praiana",
-    title: "Conjunto Praiana",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/Praiana_r8wcy2.jpg",
-    videoId: "8-7-TAnZeTI",
+    id: "franjas",
+    title: "Conjunto Franjas",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381443/CONJUNTO_FRANJAS_j12exw.png",
+    videoId: "1165823586?h=95ae5df629",
+  },
+  {
+    id: "lola",
+    title: "Cropped Lola",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/CROPPED_LOLA_hht4ad.png",
+    videoId: "1165828668?h=95dd4603c4",
+  },
+  {
+    id: "anapaula",
+    title: "Vestido Ana Paula",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381439/VESTIDO_ANA_PAULA_cqjakj.png",
+    videoId: "1165825235?h=e65562ca75",
+  },
+  {
+    id: "melmaia",
+    title: "Saída Mel Maia",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/SAIDA_MEL_MAIA_o6g04n.png",
+    videoId: "1165822238?h=798063ee5e",
   },
 ];
 
