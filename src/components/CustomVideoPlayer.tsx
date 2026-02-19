@@ -151,6 +151,101 @@ const customThumbnails: Record<string, string> = {
   "1166455223": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771531574/DOURADO_VERTICAL_12_tsvwke.png",
   "1166455407": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771531574/DOURADO_VERTICAL_12_tsvwke.png",
   "1166455304": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771531574/DOURADO_VERTICAL_12_tsvwke.png",
+  // Conjunto Zelly
+  "1166455028": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771534864/DOURADO_VERTICAL_13_uvutuc.png",
+  "1166455627": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771534864/DOURADO_VERTICAL_13_uvutuc.png",
+  "1166455708": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771534864/DOURADO_VERTICAL_13_uvutuc.png",
+  // Cropped Livia
+  "1166455527": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_QUADRADO_10_todh6i.png",
+  // Vestido Alice
+  "1166454267": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536733/VEERDE_VERTICAL_2_etei9u.png",
+  "1166454162": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536733/VEERDE_VERTICAL_2_etei9u.png",
+  // Conjunto Renata
+  "1166454958": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_VERTICAL_14_fhlkwi.png",
+  "1166454814": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_VERTICAL_14_fhlkwi.png",
+  // Vestido Lari
+  "1166454494": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_QUADRADO_11_ekraxt.png",
+  "1166454409": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_QUADRADO_11_ekraxt.png",
+  "1166454722": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_QUADRADO_11_ekraxt.png",
+  // Vestido Nay
+  "1166454610": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/ROSA_VERTICAL_4_fspwbl.png",
+  "1166454887": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/ROSA_VERTICAL_4_fspwbl.png",
+  // Conjunto Íris
+  "1166453580": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/ROSA_VERTICAL_9_hyzijd.png",
+  "1166453263": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/ROSA_VERTICAL_9_hyzijd.png",
+  // Conjunto Salles
+  "1166454066": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/VERDE_QUADRADO_5_fbhfbb.png",
+  "1166453471": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/VERDE_QUADRADO_5_fbhfbb.png",
+  "1166453995": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/VERDE_QUADRADO_5_fbhfbb.png",
+  // Conjunto Scheila
+  "1166453825": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/DOURADO_VERTICAL_15_yrmd1g.png",
+  "1166453931": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/DOURADO_VERTICAL_15_yrmd1g.png",
+  // Cropped Angel
+  "1166453227": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VERDE_QUADRADO_6_zggmaa.png",
+  // Cropped Anitta
+  "1166452434": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/ROSA_VERTICAL_5_mp2iog.png",
+  // Cropped Maré
+  "1166452773": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/DOURADO_QUADRADO_12_qqx4iv.png",
+  // Vestido Estrella
+  "1166452653": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/DOURADO_VERTICAL_16_imw3gz.png",
+  "1166453163": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/DOURADO_VERTICAL_16_imw3gz.png",
+  // Vestido Lore
+  "1166452912": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VERDE_QUADRADO_7_okwui3.png",
+  "1166452540": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VERDE_QUADRADO_7_okwui3.png",
+  "1166453001": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VERDE_QUADRADO_7_okwui3.png",
+  "1166453073": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VERDE_QUADRADO_7_okwui3.png",
+  // Vestido Gaia
+  "1166452269": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VEERDE_VERTICAL_4_o0ohfq.png",
+  "1166452022": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VEERDE_VERTICAL_4_o0ohfq.png",
+  // Vestido Yasmin
+  "1166451870": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/ROSA_VERTICAL_6_rqxlsp.png",
+  "1166452191": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/ROSA_VERTICAL_6_rqxlsp.png",
+  "1166451669": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/ROSA_VERTICAL_6_rqxlsp.png",
+  // Conjunto Suri
+  "1166451943": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VERDE_QUADRADO_8_fuufie.png",
+  "1166452358": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VERDE_QUADRADO_8_fuufie.png",
+  "1166451783": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VERDE_QUADRADO_8_fuufie.png",
+  "1166452111": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VERDE_QUADRADO_8_fuufie.png",
+  // Vestido Lorena
+  "1166451621": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_17_ewznou.png",
+  "1166451567": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_17_ewznou.png",
+  "1166451424": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_17_ewznou.png",
+  "1166451198": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_17_ewznou.png",
+  "1166451470": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_17_ewznou.png",
+  // Saída Rayssa
+  "1166450959": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/ROSA_VERTICAL_7_rv8n6f.png",
+  "1166451252": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/ROSA_VERTICAL_7_rv8n6f.png",
+  // Vestido Sol
+  "1166451054": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VEERDE_VERTICAL_5_wztowg.png",
+  "1166451321": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VEERDE_VERTICAL_5_wztowg.png",
+  "1166451140": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VEERDE_VERTICAL_5_wztowg.png",
+  // Vestido Abacaxi
+  "1166450255": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/ROSA_VERTICAL_8_glyikh.png",
+  "1166450136": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/ROSA_VERTICAL_8_glyikh.png",
+  // Vestido Bella
+  "1166450761": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_18_a28pri.png",
+  "1166450392": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_18_a28pri.png",
+  "1166450675": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_18_a28pri.png",
+  // Vestido e Cropped Julia
+  "1166450034": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/DOURADO_QUADRADO_13_mxrjei.png",
+  "1166456882": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/DOURADO_QUADRADO_13_mxrjei.png",
+  // Vestido Brunnet
+  "1166456663": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_19_wsj2pp.png",
+  "1166450509": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_19_wsj2pp.png",
+  "1166450892": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_19_wsj2pp.png",
+  // Conjunto Tamiris
+  "1166455789": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/VEERDE_VERTICAL_3_tsyag0.png",
+  "1166456097": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/VEERDE_VERTICAL_3_tsyag0.png",
+  // Cropped Amari
+  "1166456178": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/VERDE_QUADRADO_9_jt6pcq.png",
+  // Cropped Tati
+  "1166456612": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/VERDE_QUADRADO_10_xwdgjz.png",
+  // Vestido Dubai
+  "1166456435": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/ROSA_VERTICAL_10_n9sspq.png",
+  // Vestido Laís
+  "1166456340": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_VERTICAL_20_wqpgih.png",
+  "1166456535": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_VERTICAL_20_wqpgih.png",
+  "1166456240": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_VERTICAL_20_wqpgih.png",
 };
 
 interface CustomVideoPlayerProps {
