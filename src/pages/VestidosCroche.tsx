@@ -458,9 +458,6 @@ const VestidosCroche = () => {
     { id: 120, title: "Conjunto Renata - Parte 1", videoId: "1166454958", project: "Conjunto Renata", part: 1, platform: "vimeo" as const },
     { id: 121, title: "Conjunto Renata - Parte 2", videoId: "1166454814", project: "Conjunto Renata", part: 2, platform: "vimeo" as const },
     
-    // Vestido Ana II
-    { id: 122, title: "Vestido Ana II", videoId: "EBHjI1mVKxA", project: "Vestido Ana II", part: null, platform: "youtube" as const },
-    
     // Vestido Lari (3 partes)
     { id: 123, title: "Vestido Lari - Parte 1", videoId: "1166454494", project: "Vestido Lari", part: 1, platform: "vimeo" as const },
     { id: 124, title: "Vestido Lari - Parte 2", videoId: "1166454409", project: "Vestido Lari", part: 2, platform: "vimeo" as const },
@@ -470,8 +467,6 @@ const VestidosCroche = () => {
     { id: 126, title: "Vestido Nay - Parte 1", videoId: "1166454610", project: "Vestido Nay", part: 1, platform: "vimeo" as const },
     { id: 127, title: "Vestido Nay - Parte 2", videoId: "1166454887", project: "Vestido Nay", part: 2, platform: "vimeo" as const },
     
-    // Vestido Yara II
-    { id: 128, title: "Vestido Yara II", videoId: "ORapj3rePNs", project: "Vestido Yara II", part: null, platform: "youtube" as const },
     
     // Conjunto Íris (2 partes)
     { id: 129, title: "Conjunto Íris - Parte 1", videoId: "1166453580", project: "Conjunto Íris", part: 1, platform: "vimeo" as const },
