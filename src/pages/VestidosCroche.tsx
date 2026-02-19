@@ -197,6 +197,10 @@ const customThumbnails: Record<string, string> = {
   "1165828605?h=58d11062d4": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381437/CONJJUNTO_CALI_vv1sqv.png",
   "1165828438?h=456ae1cdb5": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381437/CONJJUNTO_CALI_vv1sqv.png",
   "1165828229?h=4acb08a378": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381437/CONJJUNTO_CALI_vv1sqv.png",
+  // Vestido Patricia Poeta
+  "1166455223": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771531574/DOURADO_VERTICAL_12_tsvwke.png",
+  "1166455407": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771531574/DOURADO_VERTICAL_12_tsvwke.png",
+  "1166455304": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771531574/DOURADO_VERTICAL_12_tsvwke.png",
 };
 
 const getVideoThumbnail = (videoId: string, platform?: string) => {
@@ -339,9 +343,9 @@ const VestidosCroche = () => {
     // ===== 110+: VÍDEOS ANTIGOS COM PIX (YouTube) =====
     
     // Vestido Patricia Poeta (3 partes)
-    { id: 111, title: "Vestido Patricia Poeta - Parte 1", videoId: "9e8IMdIJWdE", project: "Vestido Patricia Poeta", part: 1, platform: "youtube" as const },
-    { id: 112, title: "Vestido Patricia Poeta - Parte 2", videoId: "yU5TkTe5m1Y", project: "Vestido Patricia Poeta", part: 2, platform: "youtube" as const },
-    { id: 113, title: "Vestido Patricia Poeta - Parte 3", videoId: "OhMGhWsXxok", project: "Vestido Patricia Poeta", part: 3, platform: "youtube" as const },
+    { id: 111, title: "Vestido Patricia Poeta - Parte 1", videoId: "1166455223", project: "Vestido Patricia Poeta", part: 1, platform: "vimeo" as const },
+    { id: 112, title: "Vestido Patricia Poeta - Parte 2", videoId: "1166455407", project: "Vestido Patricia Poeta", part: 2, platform: "vimeo" as const },
+    { id: 113, title: "Vestido Patricia Poeta - Parte 3", videoId: "1166455304", project: "Vestido Patricia Poeta", part: 3, platform: "vimeo" as const },
     
     // Conjunto Zelly (3 partes)
     { id: 114, title: "Conjunto Zelly - Parte 1", videoId: "jxe4-eZwGwQ", project: "Conjunto Zelly", part: 1, platform: "youtube" as const },
