@@ -691,7 +691,7 @@ const VestidosCroche = () => {
                   title={currentVideo.title}
                   platform={currentVideo.platform as "youtube" | "vimeo"}
                   autoplay={true}
-                  showPixMessage={currentVideo.id >= 111}
+                  showPixMessage={false}
                 />
               </div>
               
