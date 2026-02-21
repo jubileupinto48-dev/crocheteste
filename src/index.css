@@ -159,3 +159,10 @@ All colors MUST be HSL.
 #lovable-badge {
 display: none !important;
 }
+
+/* Export mode: strip complex backgrounds for html2canvas compatibility */
+.exporting-pdf .certificate-root,
+.exporting-pdf .certificate-root * {
+  background-image: none !important;
+  filter: none !important;
+}

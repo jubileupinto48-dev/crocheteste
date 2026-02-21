@@ -10,7 +10,7 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
     return (
       <div
         ref={ref}
-        className="w-[1123px] h-[794px] relative overflow-hidden"
+        className="certificate-root w-[1123px] h-[794px] relative overflow-hidden"
         style={{ 
           fontFamily: "'Georgia', serif",
           backgroundColor: "#fff0f0",
