@@ -77,9 +77,7 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
                 Crochê da Josi
               </div>
               <h1 className="text-4xl font-bold tracking-wide" style={{ 
-                background: "linear-gradient(135deg, #ec4899, #f97316)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent"
+                color: "#be185d",
               }}>
                 CERTIFICADO
               </h1>
@@ -112,13 +110,11 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
           {/* Name */}
           <div className="relative mb-4">
             <h2 className="text-3xl font-bold px-8 py-2" style={{ 
-              background: "linear-gradient(135deg, #be185d, #ea580c)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent"
+              color: "#9f1239",
             }}>
               {name || "Nome do Aluno"}
             </h2>
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-pink-400 to-transparent rounded-full" />
+            <div style={{ height: 2, borderTop: "2px solid rgba(236, 72, 153, 0.5)", margin: "0 auto" }} />
           </div>
 
           {/* Description */}
@@ -148,12 +144,12 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
           {/* Signature Area */}
           <div className="flex items-end gap-20">
             <div className="text-center">
-              <div className="w-44 h-0.5 bg-gradient-to-r from-pink-400 to-orange-400 mb-2 rounded-full" />
+              <div style={{ width: 220, height: 0, borderTop: "1.5px solid rgba(194, 24, 91, 0.55)", margin: "0 auto 8px auto" }} />
               <p className="text-pink-700 text-sm font-medium">Josi Morone</p>
               <p className="text-orange-500 text-xs">Instrutora</p>
             </div>
             <div className="text-center">
-              <div className="w-44 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 mb-2 rounded-full" />
+              <div style={{ width: 220, height: 0, borderTop: "1.5px solid rgba(194, 24, 91, 0.55)", margin: "0 auto 8px auto" }} />
               <p className="text-pink-700 text-sm font-medium">Crochê da Josi</p>
               <p className="text-orange-500 text-xs">Escola de Artesanato</p>
             </div>
