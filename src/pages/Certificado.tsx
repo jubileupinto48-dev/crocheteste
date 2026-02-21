@@ -4,7 +4,7 @@ import { ArrowLeft, Award, Download, Eye, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import { CertificateTemplate } from "@/components/CertificateTemplate";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -17,7 +17,7 @@ const Certificado = () => {
   );
   const [showPreview, setShowPreview] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
-  const certificateRef = useRef<HTMLDivElement>(null);
+  const exportRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
   const waitForImages = (root: HTMLElement): Promise<void> => {
@@ -32,7 +32,7 @@ const Certificado = () => {
     return Promise.all(promises).then(() => {});
   };
 
-  const handleGeneratePDF = async () => {
+  const handleGeneratePDF = useCallback(async () => {
     if (!name.trim()) {
       toast({
         title: "Nome obrigatório",
@@ -43,27 +43,21 @@ const Certificado = () => {
     }
 
     setIsGenerating(true);
-    setShowPreview(true);
-
-    // Wait for render
-    await new Promise(resolve => setTimeout(resolve, 500));
 
     try {
-      const el = certificateRef.current;
+      // Use the always-mounted hidden export container
+      const el = exportRef.current;
       if (!el) {
-        throw new Error("Certificate element not found");
+        throw new Error("Export element not found");
       }
 
-      // Position off-screen but with real dimensions
-      const originalStyle = el.style.cssText;
-      el.style.cssText = "position:fixed;top:0;left:0;z-index:-9999;opacity:1;pointer-events:none;";
+      // The export container is always off-screen with fixed 1123x794 size
+      // Wait a tick for React to flush any pending state into it
+      await new Promise(resolve => setTimeout(resolve, 300));
 
-      await new Promise(resolve => setTimeout(resolve, 200));
-
-      // Validate element has dimensions
+      // Validate dimensions
       const rect = el.getBoundingClientRect();
       if (rect.width <= 0 || rect.height <= 0) {
-        el.style.cssText = originalStyle;
         toast({
           title: "Erro ao gerar certificado",
           description: "Não foi possível gerar o PDF agora. Recarregue a página e tente novamente.",
@@ -72,15 +66,14 @@ const Certificado = () => {
         return;
       }
 
-      // Wait for images and fonts
-      await waitForImages(el);
+      // Wait for fonts and images
       if (document.fonts?.ready) {
         await document.fonts.ready;
       }
+      await waitForImages(el);
 
-      // Enable export mode - strips complex backgrounds
+      // Add export mode class
       document.body.classList.add("exporting-pdf");
-
       await new Promise(resolve => setTimeout(resolve, 100));
 
       const canvas = await html2canvas(el, {
@@ -90,14 +83,14 @@ const Certificado = () => {
         backgroundColor: "#ffffff",
         width: 1123,
         height: 794,
+        windowWidth: 1123,
+        windowHeight: 794,
         logging: false,
       });
 
-      // Restore styles
-      el.style.cssText = originalStyle;
       document.body.classList.remove("exporting-pdf");
 
-      const imgData = canvas.toDataURL("image/jpeg", 0.95);
+      const imgData = canvas.toDataURL("image/jpeg", 0.98);
       const pdf = new jsPDF({
         orientation: "landscape",
         unit: "mm",
@@ -109,7 +102,6 @@ const Certificado = () => {
 
       pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
 
-      // Mobile-compatible download
       const pdfBlob = pdf.output("blob");
       const blobUrl = URL.createObjectURL(pdfBlob);
       const link = document.createElement("a");
@@ -135,7 +127,7 @@ const Certificado = () => {
     } finally {
       setIsGenerating(false);
     }
-  };
+  }, [name, toast]);
 
   const handlePreview = () => {
     if (!name.trim()) {
@@ -252,7 +244,7 @@ const Certificado = () => {
             </Button>
           </div>
 
-          {/* Certificate Preview */}
+          {/* Certificate Preview (visual only, not used for export) */}
           {showPreview && (
             <Card className="mb-8 shadow-card animate-fade-in overflow-hidden">
               <CardContent className="p-4">
@@ -262,7 +254,6 @@ const Certificado = () => {
                 <div className="overflow-x-auto flex justify-center">
                   <div className="transform scale-[0.35] md:scale-50 origin-top">
                     <CertificateTemplate
-                      ref={certificateRef}
                       name={name}
                       completionDate={completionDate}
                     />
@@ -272,16 +263,24 @@ const Certificado = () => {
             </Card>
           )}
 
-          {/* Hidden certificate for PDF generation */}
-          {!showPreview && (
-            <div className="absolute opacity-0 pointer-events-none overflow-hidden" style={{ width: 1123, height: 794, left: -9999 }}>
-              <CertificateTemplate
-                ref={certificateRef}
-                name={name}
-                completionDate={completionDate}
-              />
-            </div>
-          )}
+          {/* Hidden fixed-size certificate for PDF export - always mounted, no transforms */}
+          <div 
+            style={{ 
+              position: "fixed", 
+              left: "-99999px", 
+              top: 0, 
+              width: 1123, 
+              height: 794,
+              overflow: "hidden",
+              zIndex: -9999,
+            }}
+          >
+            <CertificateTemplate
+              ref={exportRef}
+              name={name}
+              completionDate={completionDate}
+            />
+          </div>
 
           <Card className="shadow-card animate-fade-in">
             <CardContent className="p-6">

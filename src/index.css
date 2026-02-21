@@ -160,9 +160,10 @@ All colors MUST be HSL.
 display: none !important;
 }
 
-/* Export mode: strip complex backgrounds for html2canvas compatibility */
+/* Export mode: strip complex backgrounds and neutralize transforms for html2canvas */
 .exporting-pdf .certificate-root,
 .exporting-pdf .certificate-root * {
   background-image: none !important;
   filter: none !important;
+  transform: none !important;
 }
