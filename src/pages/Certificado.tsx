@@ -20,6 +20,18 @@ const Certificado = () => {
   const certificateRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
+  const waitForImages = (root: HTMLElement): Promise<void> => {
+    const images = root.querySelectorAll("img");
+    const promises = Array.from(images).map((img) => {
+      if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+      return new Promise<void>((resolve) => {
+        img.onload = () => resolve();
+        img.onerror = () => resolve(); // Don't block on failed images
+      });
+    });
+    return Promise.all(promises).then(() => {});
+  };
+
   const handleGeneratePDF = async () => {
     if (!name.trim()) {
       toast({
@@ -33,64 +45,91 @@ const Certificado = () => {
     setIsGenerating(true);
     setShowPreview(true);
 
-    // Wait for render and images to load
+    // Wait for render
     await new Promise(resolve => setTimeout(resolve, 500));
 
     try {
-      if (certificateRef.current) {
-        // Temporarily make the certificate fully visible for capture
-        const el = certificateRef.current;
-        const originalStyle = el.style.cssText;
-        el.style.cssText = "position:fixed;top:0;left:0;z-index:-9999;opacity:1;pointer-events:none;";
-
-        await new Promise(resolve => setTimeout(resolve, 200));
-
-        const canvas = await html2canvas(el, {
-          scale: 2,
-          useCORS: true,
-          allowTaint: true,
-          backgroundColor: "#fff5f5",
-          width: 1123,
-          height: 794,
-          logging: false,
-        });
-
-        // Restore original style
-        el.style.cssText = originalStyle;
-
-        const imgData = canvas.toDataURL("image/jpeg", 0.95);
-        const pdf = new jsPDF({
-          orientation: "landscape",
-          unit: "mm",
-          format: "a4",
-        });
-
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = pdf.internal.pageSize.getHeight();
-
-        pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
-
-        // Mobile-compatible download
-        const pdfBlob = pdf.output("blob");
-        const blobUrl = URL.createObjectURL(pdfBlob);
-        const link = document.createElement("a");
-        link.href = blobUrl;
-        link.download = `Certificado_${name.replace(/\s+/g, "_")}.pdf`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
-
-        toast({
-          title: "Certificado gerado!",
-          description: "O download do PDF foi iniciado.",
-        });
+      const el = certificateRef.current;
+      if (!el) {
+        throw new Error("Certificate element not found");
       }
+
+      // Position off-screen but with real dimensions
+      const originalStyle = el.style.cssText;
+      el.style.cssText = "position:fixed;top:0;left:0;z-index:-9999;opacity:1;pointer-events:none;";
+
+      await new Promise(resolve => setTimeout(resolve, 200));
+
+      // Validate element has dimensions
+      const rect = el.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) {
+        el.style.cssText = originalStyle;
+        toast({
+          title: "Erro ao gerar certificado",
+          description: "Não foi possível gerar o PDF agora. Recarregue a página e tente novamente.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Wait for images and fonts
+      await waitForImages(el);
+      if (document.fonts?.ready) {
+        await document.fonts.ready;
+      }
+
+      // Enable export mode - strips complex backgrounds
+      document.body.classList.add("exporting-pdf");
+
+      await new Promise(resolve => setTimeout(resolve, 100));
+
+      const canvas = await html2canvas(el, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: "#ffffff",
+        width: 1123,
+        height: 794,
+        logging: false,
+      });
+
+      // Restore styles
+      el.style.cssText = originalStyle;
+      document.body.classList.remove("exporting-pdf");
+
+      const imgData = canvas.toDataURL("image/jpeg", 0.95);
+      const pdf = new jsPDF({
+        orientation: "landscape",
+        unit: "mm",
+        format: "a4",
+      });
+
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+
+      pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
+
+      // Mobile-compatible download
+      const pdfBlob = pdf.output("blob");
+      const blobUrl = URL.createObjectURL(pdfBlob);
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = `Certificado_${name.replace(/\s+/g, "_")}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+
+      toast({
+        title: "Certificado gerado!",
+        description: "O download do PDF foi iniciado.",
+      });
     } catch (error) {
       console.error("Error generating PDF:", error);
+      document.body.classList.remove("exporting-pdf");
       toast({
         title: "Erro ao gerar certificado",
-        description: "Tente novamente em alguns instantes.",
+        description: "Não foi possível gerar o PDF agora. Recarregue a página e tente novamente.",
         variant: "destructive",
       });
     } finally {
