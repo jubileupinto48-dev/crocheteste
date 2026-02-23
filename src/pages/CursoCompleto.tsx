@@ -18,19 +18,19 @@ interface VideoItem {
   videoId: string;
   category: string;
   completed: boolean;
-  platform?: "youtube" | "gdrive";
+  platform?: "youtube" | "gdrive" | "vimeo";
 }
 
 const CursoCompleto = () => {
   const videos: VideoItem[] = [
     // Novos vídeos do YouTube
-    { id: 1, title: "Como pegar na agulha", duration: "3 min", videoId: "0wt2jvL8v3w", category: "Técnicas Básicas", completed: false },
-    { id: 2, title: "Como fazer Correntinha", duration: "7 min", videoId: "p0RxYGFQE9A", category: "Técnicas Básicas", completed: false },
-    { id: 3, title: "Como fazer Ponto Baixissimo", duration: "5 min", videoId: "lGZjSlVvXAM", category: "Técnicas Básicas", completed: false },
-    { id: 4, title: "Como fazer Ponto Baixo", duration: "5 min", videoId: "rL7IwQmq9bs", category: "Técnicas Básicas", completed: false },
-    { id: 5, title: "Ponto Meio Alto", duration: "4 min", videoId: "Rj-McmK9zzQ", category: "Técnicas Básicas", completed: false },
-    { id: 6, title: "Ponto Alto", duration: "4 min", videoId: "FX-Yc66vzTA", category: "Técnicas Básicas", completed: false },
-    { id: 7, title: "Ponto Fantasia", duration: "7 min", videoId: "3eMbL0ysTsc", category: "Técnicas Básicas", completed: false },
+    { id: 1, title: "Como pegar na agulha", duration: "3 min", videoId: "1167451333", category: "Técnicas Básicas", completed: false, platform: "vimeo" },
+    { id: 2, title: "Como fazer Correntinha", duration: "7 min", videoId: "1167451433", category: "Técnicas Básicas", completed: false, platform: "vimeo" },
+    { id: 3, title: "Como fazer Ponto Baixissimo", duration: "5 min", videoId: "1167451668", category: "Técnicas Básicas", completed: false, platform: "vimeo" },
+    { id: 4, title: "Como fazer Ponto Baixo", duration: "5 min", videoId: "1167451940", category: "Técnicas Básicas", completed: false, platform: "vimeo" },
+    { id: 5, title: "Ponto Meio Alto", duration: "4 min", videoId: "1167452177", category: "Técnicas Básicas", completed: false, platform: "vimeo" },
+    { id: 6, title: "Ponto Alto", duration: "4 min", videoId: "1167452407", category: "Técnicas Básicas", completed: false, platform: "vimeo" },
+    { id: 7, title: "Ponto Fantasia", duration: "7 min", videoId: "1167452622", category: "Técnicas Básicas", completed: false, platform: "vimeo" },
     // Vídeos existentes (Google Drive convertidos para manter compatibilidade)
     { id: 8, title: "Como fazer a emenda nos Squares #3", duration: "15 min", videoId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false, platform: "gdrive" },
     { id: 9, title: "Como fazer um círculo com ponto alto", duration: "12 min", videoId: "1aZx397mYYgkX1jUuUO3dEzlf-0hEjWUI", category: "Técnicas Básicas", completed: false, platform: "gdrive" },
@@ -91,6 +91,9 @@ const CursoCompleto = () => {
   const getThumbnail = (video: typeof videos[0]) => {
     if (video.platform === "gdrive") {
       return `https://drive.google.com/thumbnail?id=${video.videoId}&sz=w640`;
+    }
+    if (video.platform === "vimeo") {
+      return `https://vumbnail.com/${video.videoId}.jpg`;
     }
     return `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
   };
