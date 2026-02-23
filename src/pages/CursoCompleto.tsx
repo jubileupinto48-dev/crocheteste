@@ -134,6 +134,7 @@ const CursoCompleto = () => {
                   videoId={currentVideo.videoId}
                   title={currentVideo.title}
                   platform={currentVideo.platform || "youtube"}
+                  autoplay={true}
                 />
               </div>
 
