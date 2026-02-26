@@ -715,7 +715,7 @@ const VestidosCroche = () => {
             <Card className="lg:sticky lg:top-8 shadow-card animate-fade-in">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Todas as Aulas ({videos.length})
+                  Todas as Aulas (256)
                 </h3>
 
                 {/* Filtros */}
