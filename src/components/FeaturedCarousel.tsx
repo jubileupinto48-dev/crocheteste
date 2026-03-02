@@ -32,6 +32,12 @@ const allFeaturedVideos: FeaturedVideo[] = [
     videoId: "1165877185?h=ce49de91b5",
   },
   {
+    id: "renata",
+    title: "Saída Renata",
+    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/renata_h8xajx.jpg",
+    videoId: "1165899950?h=65fb9d0fc3",
+  },
+  {
     id: "4",
     title: "Vestido Decote V",
     thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/fKqxGw4yvUY-HD_vwgf93.jpg",
