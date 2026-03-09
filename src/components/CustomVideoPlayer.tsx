@@ -254,9 +254,10 @@ interface CustomVideoPlayerProps {
   platform?: "youtube" | "vimeo" | "gdrive";
   autoplay?: boolean;
   showPixMessage?: boolean;
+  customThumbnail?: string;
 }
 
-export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autoplay = false, showPixMessage = false }: CustomVideoPlayerProps) => {
+export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autoplay = false, showPixMessage = false, customThumbnail }: CustomVideoPlayerProps) => {
   const [isPlayingInline, setIsPlayingInline] = useState(false);
   const [isPlayingModal, setIsPlayingModal] = useState(false);
   const [showingPixOverlay, setShowingPixOverlay] = useState(false);
