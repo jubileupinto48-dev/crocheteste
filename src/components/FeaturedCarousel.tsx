@@ -94,7 +94,7 @@ const allFeaturedVideos: FeaturedVideo[] = [
   {
     id: "franjas",
     title: "Conjunto Franjas",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381443/CONJUNTO_FRANJAS_j12exw.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/CONJUNTO_FRANJAS_h1ftat.png",
     videoId: "1165823586?h=95ae5df629",
   },
   {
