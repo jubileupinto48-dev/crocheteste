@@ -82,7 +82,7 @@ const Index = () => {
       <section className="relative w-full">
         {/* Background Image - full size container */}
         <div className="relative w-full">
-          <img src="https://res.cloudinary.com/dzetm6plq/image/upload/v1769987936/ACESSE_O_MATERIAL_ABAIXO_2_wbkchb.png" alt="Acesse o material abaixo" className="w-full h-auto" />
+          <img src="https://res.cloudinary.com/dmwuhogih/image/upload/v1773049980/197ab283-abea-4bbf-9704-f02052746307_bm4fgp.jpg" alt="Acesse o material abaixo" className="w-full h-auto" />
         </div>
       </section>
 
