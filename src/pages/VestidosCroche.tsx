@@ -677,6 +677,7 @@ const VestidosCroche = () => {
                   platform={currentVideo.platform as "youtube" | "vimeo"}
                   autoplay={true}
                   showPixMessage={false}
+                  customThumbnail={getVideoThumbnail(currentVideo.videoId, currentVideo.platform)}
                 />
               </div>
               

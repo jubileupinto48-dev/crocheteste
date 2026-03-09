@@ -392,7 +392,7 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
             loading="eager"
             onLoad={() => setThumbnailLoaded(true)}
             onError={(e) => {
-              if (platform === "youtube" && !customThumbnails[videoId]) {
+              if (platform === "youtube" && !customThumbnail && !customThumbnails[videoId]) {
                 e.currentTarget.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
               }
             }}
