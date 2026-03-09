@@ -276,6 +276,9 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   const pixKey = "21965328868";
 
   const getThumbnailUrl = () => {
+    if (customThumbnail) {
+      return customThumbnail;
+    }
     if (customThumbnails[videoId]) {
       return customThumbnails[videoId];
     }
