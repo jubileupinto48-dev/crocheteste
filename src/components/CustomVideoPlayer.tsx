@@ -254,9 +254,10 @@ interface CustomVideoPlayerProps {
   platform?: "youtube" | "vimeo" | "gdrive";
   autoplay?: boolean;
   showPixMessage?: boolean;
+  customThumbnail?: string;
 }
 
-export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autoplay = false, showPixMessage = false }: CustomVideoPlayerProps) => {
+export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autoplay = false, showPixMessage = false, customThumbnail }: CustomVideoPlayerProps) => {
   const [isPlayingInline, setIsPlayingInline] = useState(false);
   const [isPlayingModal, setIsPlayingModal] = useState(false);
   const [showingPixOverlay, setShowingPixOverlay] = useState(false);
@@ -275,6 +276,9 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   const pixKey = "21965328868";
 
   const getThumbnailUrl = () => {
+    if (customThumbnail) {
+      return customThumbnail;
+    }
     if (customThumbnails[videoId]) {
       return customThumbnails[videoId];
     }
@@ -388,7 +392,7 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
             loading="eager"
             onLoad={() => setThumbnailLoaded(true)}
             onError={(e) => {
-              if (platform === "youtube" && !customThumbnails[videoId]) {
+              if (platform === "youtube" && !customThumbnail && !customThumbnails[videoId]) {
                 e.currentTarget.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
               }
             }}

@@ -22,13 +22,13 @@ const allFeaturedVideos: FeaturedVideo[] = [
   {
     id: "1",
     title: "Vestido Longo de Crochê",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773046623/SCgWr3Kv-pI-HD_eko3j4.jpg",
     videoId: "1165908032?h=4e8257a515",
   },
   {
     id: "raquel",
     title: "Vestido Raquel",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771383895/VEERDE_VERTICAL_1_wzahng.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773051517/VEERDE_VERTICAL_1_lbzzfr.png",
     videoId: "1165877185?h=ce49de91b5",
   },
   {
