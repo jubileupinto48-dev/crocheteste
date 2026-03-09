@@ -48,13 +48,13 @@ const videoDiagrams: Record<string, string> = {
 // Custom thumbnails for videos
 const customThumbnails: Record<string, string> = {
   // Vestido Longo de Crochê (1, 2, 3)
-  "1165908032?h=4e8257a515": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
+  "1165908032?h=4e8257a515": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773046623/SCgWr3Kv-pI-HD_eko3j4.jpg",
   "1165906778?h=ca85d54254": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773046623/SCgWr3Kv-pI-HD_eko3j4.jpg",
   "1165907172?h=5916a23185": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773046623/SCgWr3Kv-pI-HD_eko3j4.jpg",
   // Vestido Decote V
   "1165903186?h=bb7c0e0908": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047750/ozGPS_H5J44-HD_sw9j84.jpg",
   // Vestido Raquel
-  "1165877185?h=ce49de91b5": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771383895/VEERDE_VERTICAL_1_wzahng.png",
+  "1165877185?h=ce49de91b5": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773051517/VEERDE_VERTICAL_1_lbzzfr.png",
   // Saída Renata
   "1165899950?h=65fb9d0fc3": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/renata_s8onby.jpg",
   // Vestido Ciganinha
