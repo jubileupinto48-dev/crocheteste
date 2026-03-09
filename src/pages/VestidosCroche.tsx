@@ -240,10 +240,10 @@ const customThumbnails: Record<string, string> = {
   "1166452653": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/DOURADO_VERTICAL_16_imw3gz.png",
   "1166453163": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/DOURADO_VERTICAL_16_imw3gz.png",
   // Vestido Lore
-  "1166452912": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VERDE_QUADRADO_7_okwui3.png",
-  "1166452540": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VERDE_QUADRADO_7_okwui3.png",
-  "1166453001": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VERDE_QUADRADO_7_okwui3.png",
-  "1166453073": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VERDE_QUADRADO_7_okwui3.png",
+  "1166452912": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
+  "1166452540": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
+  "1166453001": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
+  "1166453073": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
   // Vestido Gaia
   "1166452269": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VEERDE_VERTICAL_4_o0ohfq.png",
   "1166452022": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VEERDE_VERTICAL_4_o0ohfq.png",

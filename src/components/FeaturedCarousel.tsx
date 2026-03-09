@@ -112,7 +112,7 @@ const allFeaturedVideos: FeaturedVideo[] = [
   {
     id: "melmaia",
     title: "Saída Mel Maia",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/SAIDA_MEL_MAIA_o6g04n.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043462/SAIDA_MEL_MAIA_o7cdcq.png",
     videoId: "1165822238?h=798063ee5e",
   },
 ];
