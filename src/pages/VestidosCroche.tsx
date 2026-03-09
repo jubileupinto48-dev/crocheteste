@@ -47,55 +47,84 @@ const videoDiagrams: Record<string, string> = {
 
 // Custom thumbnails for videos
 const customThumbnails: Record<string, string> = {
-  // === Vimeo thumbnails (migrated from YouTube) ===
+  // Vestido Longo de Crochê (1, 2, 3)
   "1165908032?h=4e8257a515": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
-  "1165906778?h=ca85d54254": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
-  "1165907172?h=5916a23185": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
-  "1165903186?h=bb7c0e0908": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/fKqxGw4yvUY-HD_vwgf93.jpg",
-  "1165905541?h=441d91f0bc": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770811985/Design_sem_nome_br7dpp.png",
-  "1165412197?h=0fa29c051a": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/_EEt2dLuozA-SD_t33uvg.jpg",
-  "1165896182?h=2ff4b53004": "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812329/Ia19Yf-H08g-HD_qd4m2h.jpg",
-  "1165415971?h=dd327a58fb": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771286793/fKLX4pMjmck-SD_bnzvlf.jpg",
-  "1165416602?h=239fa20e43": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771286572/vrCyt1O4SjU-HD_nti0w1.jpg",
-  "1165896871?h=f4895dbef0": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/Square_lcapbv.jpg",
-  "1165908266?h=61b6de8549": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305377/Sereia_nqhrmj.jpg",
-  "1165898325?h=5af0c2457f": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/ana_clara_isprr9.jpg",
-  "1165897115?h=2e6bdf5c09": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305845/vestido_camila_qd9qtd.jpg",
-  "1165897327?h=bf84e16cb9": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/Conchas_sobfyn.jpg",
-  "1165907603?h=bccb08fbbc": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/darlene_lsmigi.jpg",
-  "1165897423?h=6d46bec5f5": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305962/Vestido_Croch%C3%AA_Saida_recu1m.jpg",
-  "1165897740?h=21a8c932d8": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305377/Evelyne_vgpz1r.jpg",
-  "1165897922?h=83924a6988": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771306272/Vestido_Flavia_s2dixj.jpg",
-  "1165417274?h=8e8af3b41e": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305377/Longo_Noiva_c1p5t8.jpg",
-  "hV4_YNI4fp0": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771387377/DOURADO_QUADRADO_9_dlvqnp.png",
-  "1165898928?h=ce0edc64ab": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/mo%C3%A7ambique_wvuoup.jpg",
-  "1165899486?h=7759bd5d46": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771306403/Design_sem_nome_6_d73xyh.png",
-  "1165898764?h=290f75b513": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/sousplate_u8qesy.jpg",
-  "1165899713?h=063db9139d": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305377/tereza_fyt2v7.jpg",
-  "1165908374?h=954ee77336": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771306716/iU1sYamfIVk-HD_ibcrxn.jpg",
-  "1165899950?h=65fb9d0fc3": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/renata_h8xajx.jpg",
-  "1165900227?h=ab8c1eb8e3": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/betania_xcfpnn.jpg",
-  "1165900453?h=3a7d240268": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/saia_midi_rws7jx.png",
-  "1165900701?h=fc8686d056": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/Gardeen_bydvt2.jpg",
-  "1165900912?h=25ab81c66e": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/corset_de_croche_ngaefh.jpg",
-  "1165901257?h=ba7889f004": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/corset_angel_g6z2jg.jpg",
-  "1165901491?h=5bf59bc49e": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/corset_em_v_kwwode.jpg",
-  "1165901832?h=5c0b941af2": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/Conjunto_svaxry.jpg",
-  "1165902033?h=67a0e24c41": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/tardezinha_ogtoie.jpg",
-  "1165896656?h=71c1d6054e": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/conjunto_rosas_otscb3.jpg",
-  "1165902686?h=192b4bb0cb": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/conjunto_brilho_hrkbp0.jpg",
-  "1165902854?h=c106849f13": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/Praiana_r8wcy2.jpg",
-  "1165905050?h=ddfb626d58": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/camila_euvcxi.jpg",
-  "lG2KfsR4pts": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/macac%C3%A3o_qidwbc.jpg",
-  "1165905314?h=0abf93f051": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/cal%C3%A7a_thais_wmf6np.jpg",
-  "1165908138?h=11ec544581": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771307351/DxUeSn4p-Rg-HD_eodqdw.jpg",
-  "1165908076?h=3b842fbf9d": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771307351/S-Vp3QiN1Tk-HD_td6d0k.jpg",
-  "1165908193?h=44ce060d5e": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771307351/IRnqSP9VCsg-HD_ixsndz.jpg",
-  "CNe-elk8zm4": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771108167/XuuJvrgxk-8-HD_a5fzw6.jpg",
-
-  // === VIMEO THUMBNAILS (updated videos) ===
+  "1165906778?h=ca85d54254": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773046623/SCgWr3Kv-pI-HD_eko3j4.jpg",
+  "1165907172?h=5916a23185": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773046623/SCgWr3Kv-pI-HD_eko3j4.jpg",
+  // Vestido Decote V
+  "1165903186?h=bb7c0e0908": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047750/ozGPS_H5J44-HD_sw9j84.jpg",
   // Vestido Raquel
   "1165877185?h=ce49de91b5": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771383895/VEERDE_VERTICAL_1_wzahng.png",
+  // Saída Renata
+  "1165899950?h=65fb9d0fc3": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/renata_s8onby.jpg",
+  // Vestido Ciganinha
+  "1165905541?h=441d91f0bc": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047763/ra2ZISYUD0c-HD_imdon6.jpg",
+  // Vestido Luxo
+  "1165412197?h=0fa29c051a": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047762/_EEt2dLuozA-SD_mtvjdh.jpg",
+  // Vestido Cleópatra
+  "1165896182?h=2ff4b53004": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047761/Ia19Yf-H08g-HD_hte8dw.jpg",
+  // Conjunto Rosas
+  "1165896656?h=71c1d6054e": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045923/conjunto_rosas_soqjqj.jpg",
+  // Top Estrela Brasil
+  "1165908076?h=3b842fbf9d": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047760/S-Vp3QiN1Tk-HD_ri9ivl.jpg",
+  // Conjunto Square
+  "1165896871?h=f4895dbef0": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045933/Square_rhpjpk.jpg",
+  // Vestido Sereia
+  "1165908266?h=61b6de8549": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045933/Sereia_atfalv.jpg",
+  // Vestido Ana Clara
+  "1165898325?h=5af0c2457f": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045933/ana_clara_wljb8z.jpg",
+  // Vestido Camila
+  "1165897115?h=2e6bdf5c09": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045933/vestido_camila_kxtbf2.jpg",
+  // Vestido Concha
+  "1165897327?h=bf84e16cb9": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045932/Conchas_tr07gp.jpg",
+  // Vestido Darlene
+  "1165907603?h=bccb08fbbc": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045933/darlene_x34xoj.jpg",
+  // Vestido Crochê Saída
+  "1165897423?h=6d46bec5f5": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045934/Vestido_Croch%C3%AA_Saida_bcziqy.jpg",
+  // Vestido Evelyne
+  "1165897740?h=21a8c932d8": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045932/Evelyne_i74mfw.jpg",
+  // Vestido Flávia
+  "1165897922?h=83924a6988": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045934/Vestido_Flavia_nbarqa.jpg",
+  // Vestido Noiva Longo
+  "1165417274?h=8e8af3b41e": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/Longo_Noiva_xcsavk.jpg",
+  // Vestido Moçambique
+  "1165898928?h=ce0edc64ab": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/mo%C3%A7ambique_ijbk2n.jpg",
+  // Sousplato Girafa
+  "1165898764?h=290f75b513": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/sousplate_r6c5il.jpg",
+  // Saída Tereza
+  "1165899713?h=063db9139d": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045924/tereza_k5tibo.jpg",
+  // Saída Betânia
+  "1165900227?h=ab8c1eb8e3": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/betania_vkoiiz.jpg",
+  // Saída Mídi
+  "1165900453?h=3a7d240268": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045924/saia_midi_g8vdas.png",
+  // Cropped Garden
+  "1165900701?h=fc8686d056": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045924/Gardeen_secuhp.jpg",
+  // Corset de Crochê
+  "1165900912?h=25ab81c66e": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045923/corset_de_croche_sncoso.jpg",
+  // Corset Angel
+  "1165901257?h=ba7889f004": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045924/corset_angel_sufv2t.jpg",
+  // Corset em V
+  "1165901491?h=5bf59bc49e": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045923/corset_em_v_xqkgcd.jpg",
+  // Conjunto Tereza
+  "1165901832?h=5c0b941af2": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045924/Conjunto_Tereeza_uhatth.jpg",
+  // Conjunto Tardezinha
+  "1165902033?h=67a0e24c41": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045939/tardezinha_cbzmqw.jpg",
+  // Conjunto de Crochê Brilho
+  "1165902686?h=192b4bb0cb": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045940/conjunto_brilho_faosa4.jpg",
+  // Conjunto Praiana
+  "1165902854?h=c106849f13": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045940/Praiana_obj44o.jpg",
+  // Conjunto Camila
+  "1165905050?h=ddfb626d58": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045938/camila_hnnj1k.jpg",
+  // Calça Thais
+  "1165905314?h=0abf93f051": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045935/cal%C3%A7a_thais_jcfhxl.jpg",
+  // Saída Brasil
+  "1165908138?h=11ec544581": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049577/DxUeSn4p-Rg-HD_oq7myk.jpg",
+  // Biquíni Tomara que Caia
+  "1165416602?h=239fa20e43": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049602/vrCyt1O4SjU-HD_gbgsdl.jpg",
+  // Top Brasil
+  "1165908193?h=44ce060d5e": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049580/IRnqSP9VCsg-HD_gxyv5p.jpg",
+
+  // === VIMEO THUMBNAILS (Página 2+) ===
   // Vestido Virginia
   "1165822436?h=73db5fd949": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/VESTIDO_VIRGINIA_n9udlg.png",
   "1165822491?h=426a5c76b5": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/VESTIDO_VIRGINIA_n9udlg.png",
@@ -106,196 +135,159 @@ const customThumbnails: Record<string, string> = {
   // Saída Mel Maia
   "1165822238?h=798063ee5e": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043462/SAIDA_MEL_MAIA_o7cdcq.png",
   "1165822696?h=58d1366209": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043462/SAIDA_MEL_MAIA_o7cdcq.png",
+  // Conjunto Franja
+  "1165823586?h=95ae5df629": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/CONJUNTO_FRANJAS_h1ftat.png",
+  "1165823379?h=de1eeffff5": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/CONJUNTO_FRANJAS_h1ftat.png",
   // Vestido Maria
   "1165822301?h=88af25dec4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/VESTIDO_MARIA_dhx6ur.png",
   "1165822154?h=5ec6b1f8af": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/VESTIDO_MARIA_dhx6ur.png",
   "1165822389?h=7d4dceda8d": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/VESTIDO_MARIA_dhx6ur.png",
+  // Cropped Duda
+  "1165825953?h=b67785daa5": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CROPPED_DUDA_spalfj.png",
+  // Vestido Nala
+  "1165828828?h=a4c932ccd4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/VESTIDO_NALA_ak8txp.png",
+  "1165829077?h=2e1fffbb63": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/VESTIDO_NALA_ak8txp.png",
+  // Cropped Lola
+  "1165828668?h=95dd4603c4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/CROPPED_LOLA_ydkvxo.png",
+  // Vestido Ana Paula
+  "1165825235?h=e65562ca75": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_ANA_PAULA_hltiko.png",
+  "1165825126?h=78b247f600": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_ANA_PAULA_hltiko.png",
+  "1165825817?h=a8a15760a4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_ANA_PAULA_hltiko.png",
+  // Vestido Sophia
+  "1165826517?h=288eec92f1": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043454/VESTIDO_SOPHIA_rtsfgq.png",
   // Vestido Juliana Paes
   "1165823703?h=f2563c95af": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/VESTIDO_JULIANA_PAES_y312fp.png",
   "1165823637?h=be2694c569": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/VESTIDO_JULIANA_PAES_y312fp.png",
   "1165823010?h=773cd6f91e": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/VESTIDO_JULIANA_PAES_y312fp.png",
   "1165824039?h=b270eff1a3": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/VESTIDO_JULIANA_PAES_y312fp.png",
-  // Calça Correntinha
-  "1165823422?h=3bad21440c": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/CAL%C3%87A_CORRENTINHA_rzigbd.png",
-  // Calça Tela
-  "1165823210?h=b5372b698b": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/CAL%C3%87A_TELA_pqnflb.png",
-  // Conjunto com Paetê Acrílico
-  "1165823127?h=80846c06c2": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043456/CONJUNTO_PAETE_zkywnw.png",
-  // Cropped Ana Clara
-  "1165823296?h=588db44c04": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043456/CROPPED_ANNA_CLARA_xiipsc.png",
-  // Conjunto Gabi
-  "1165823492?h=049b68c02a": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CONJUNTO_GABI_krxgin.png",
-  "1165823953?h=6133197ea0": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CONJUNTO_GABI_krxgin.png",
-  "1165823551?h=e845f3f59b": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CONJUNTO_GABI_krxgin.png",
-  // Conjunto Franja
-  "1165823586?h=95ae5df629": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/CONJUNTO_FRANJAS_h1ftat.png",
-  "1165823379?h=de1eeffff5": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/CONJUNTO_FRANJAS_h1ftat.png",
-  // Saia Laura
-  "1165823777?h=2148619f8b": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/SAIA_LAURA_xbzaga.png",
-  // Vestido Patricia
-  "1165823890?h=8a3a44f1d3": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/VESTIDO_PATRICIA_s0vtql.png",
-  "1165823819?h=d5bbc1ab0f": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/VESTIDO_PATRICIA_s0vtql.png",
-  // Vestido Sophia
-  "1165826517?h=288eec92f1": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043454/VESTIDO_SOPHIA_rtsfgq.png",
-  // Vestido Moana
-  "1165826035?h=8dbfaef2b0": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043454/VESTIDO_MOANA_zy6qa6.png",
-  // Vestido Vanessa
-  "1165827065?h=0540e2af34": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_VANESSA_zzralg.png",
-  "1165826296?h=8c5f4f7cfb": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_VANESSA_zzralg.png",
-  "1165826387?h=9cf52087de": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_VANESSA_zzralg.png",
-  // Vestido Vanda
-  "1165826807?h=56f86f1de4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_VANDA_hxtzkf.png",
-  // Biquini Eva
-  "1165826908?h=cf3b0678ab": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/BIQUINI_EVA_cysjja.png",
-  // Saia Amanda
-  "1165826996?h=639389fcf0": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SAIA_AMANDA_bkehf3.png",
-  // Vestido Bel
-  "1165826717?h=fd78660abf": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_BEL_nrxuwc.png",
-  "1165826152?h=d563f325dc": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_BEL_nrxuwc.png",
-  // Cropped Duda
-  "1165825953?h=b67785daa5": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CROPPED_DUDA_spalfj.png",
-  // Vestido Marina
-  "1165826240?h=bb6309f319": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_MARINA_upet9y.png",
-  "1165825869?h=8858cf55a6": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_MARINA_upet9y.png",
-  // Vestido Ana Paula
-  "1165825235?h=e65562ca75": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_ANA_PAULA_hltiko.png",
-  "1165825126?h=78b247f600": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_ANA_PAULA_hltiko.png",
-  "1165825817?h=a8a15760a4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_ANA_PAULA_hltiko.png",
-  // Conjunto Lisi
-  "1165825489?h=4953414a7c": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043454/CONJUNTO_LISI_j8klpy.png",
-  "1165825673?h=fb8f804677": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043454/CONJUNTO_LISI_j8klpy.png",
-  // Saia Nina
-  "1165825423?h=8cfc5ddc23": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SAIA_NINA_vejuo5.png",
-  // Vestido Ana
-  "1165825582?h=f833fa35d1": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_ANA_izi5dr.png",
-  // Vestido Yara
-  "1165825327?h=6fcce5e502": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_YARA_ixqpwc.png",
-  "1165825757?h=00739caa67": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_YARA_ixqpwc.png",
-  // Conjunto Leticia
-  "1165867234?h=6e2eed84e2": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/CONJUNTO_LETICIA_hrsn9n.png",
-  // Conjunto Lore
-  "1165827131?h=c55fa2bddb": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
-  "1165827332?h=75278547ee": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
-  "1165824975?h=29ac896d60": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
-  // Vestido Nala
-  "1165828828?h=a4c932ccd4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/VESTIDO_NALA_ak8txp.png",
-  "1165829077?h=2e1fffbb63": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/VESTIDO_NALA_ak8txp.png",
-  // Macacão Grassi
-  "1165828975?h=b2f003a62f": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/MACAC%C3%83O_GRASSI_wvr8fn.png",
-  "1165829345?h=67f801752d": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/MACAC%C3%83O_GRASSI_wvr8fn.png",
-  // Suéter Sofia
-  "1165829840?h=bda1e8e5be": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SU%C3%89TER_SOFIA_v1ku1h.png",
-  "1165828330?h=b9b9868fd2": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SU%C3%89TER_SOFIA_v1ku1h.png",
-  // Vestido Larissa
-  "1165829701?h=c3dde6b38a": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043460/VESTIDO_LARISSA_p5z5hd.png",
-  "1165829124?h=f7f7193ac1": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043460/VESTIDO_LARISSA_p5z5hd.png",
-  "1165829571?h=8d15bdff7a": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043460/VESTIDO_LARISSA_p5z5hd.png",
-  // Cropped Lola
-  "1165828668?h=95dd4603c4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/CROPPED_LOLA_ydkvxo.png",
   // Conjunto Cali
   "1165828774?h=0add065419": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/CONJJUNTO_CALI_upmtoq.png",
   "1165828605?h=58d11062d4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/CONJJUNTO_CALI_upmtoq.png",
   "1165828438?h=456ae1cdb5": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/CONJJUNTO_CALI_upmtoq.png",
   "1165828229?h=4acb08a378": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/CONJJUNTO_CALI_upmtoq.png",
-  // Vestido Patricia Poeta
-  "1166455223": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771531574/DOURADO_VERTICAL_12_tsvwke.png",
-  "1166455407": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771531574/DOURADO_VERTICAL_12_tsvwke.png",
-  "1166455304": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771531574/DOURADO_VERTICAL_12_tsvwke.png",
+  // Vestido Moana
+  "1165826035?h=8dbfaef2b0": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043454/VESTIDO_MOANA_zy6qa6.png",
+  // Vestido Larissa
+  "1165829701?h=c3dde6b38a": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043460/VESTIDO_LARISSA_p5z5hd.png",
+  "1165829124?h=f7f7193ac1": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043460/VESTIDO_LARISSA_p5z5hd.png",
+  "1165829571?h=8d15bdff7a": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043460/VESTIDO_LARISSA_p5z5hd.png",
+  // Calça Correntinha
+  "1165823422?h=3bad21440c": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/CAL%C3%87A_CORRENTINHA_rzigbd.png",
+  // Vestido Vanessa
+  "1165827065?h=0540e2af34": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_VANESSA_zzralg.png",
+  "1165826296?h=8c5f4f7cfb": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_VANESSA_zzralg.png",
+  "1165826387?h=9cf52087de": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_VANESSA_zzralg.png",
+  // Conjunto Lore
+  "1165827131?h=c55fa2bddb": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
+  "1165827332?h=75278547ee": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
+  "1165824975?h=29ac896d60": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
+  // Saia Laura
+  "1165823777?h=2148619f8b": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/SAIA_LAURA_xbzaga.png",
+  // Vestido Bel
+  "1165826717?h=fd78660abf": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_BEL_nrxuwc.png",
+  "1165826152?h=d563f325dc": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_BEL_nrxuwc.png",
+  // Conjunto Gabi
+  "1165823492?h=049b68c02a": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CONJUNTO_GABI_krxgin.png",
+  "1165823953?h=6133197ea0": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CONJUNTO_GABI_krxgin.png",
+  "1165823551?h=e845f3f59b": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CONJUNTO_GABI_krxgin.png",
+  // Macacão Grassi
+  "1165828975?h=b2f003a62f": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/MACAC%C3%83O_GRASSI_wvr8fn.png",
+  "1165829345?h=67f801752d": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/MACAC%C3%83O_GRASSI_wvr8fn.png",
+  // Calça Tela
+  "1165823210?h=b5372b698b": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/CAL%C3%87A_TELA_pqnflb.png",
+  // Vestido Yara
+  "1165825327?h=6fcce5e502": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_YARA_ixqpwc.png",
+  "1165825757?h=00739caa67": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_YARA_ixqpwc.png",
+  // Conjunto com Paetê Acrílico
+  "1165823127?h=80846c06c2": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043456/CONJUNTO_PAETE_zkywnw.png",
+  // Cropped Ana Clara
+  "1165823296?h=588db44c04": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043456/CROPPED_ANNA_CLARA_xiipsc.png",
+  // Vestido Vanda
+  "1165826807?h=56f86f1de4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/VESTIDO_VANDA_hxtzkf.png",
+  // Suéter Sofia
+  "1165829840?h=bda1e8e5be": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SU%C3%89TER_SOFIA_v1ku1h.png",
+  "1165828330?h=b9b9868fd2": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SU%C3%89TER_SOFIA_v1ku1h.png",
+  // Vestido Patricia
+  "1165823890?h=8a3a44f1d3": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/VESTIDO_PATRICIA_s0vtql.png",
+  "1165823819?h=d5bbc1ab0f": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/VESTIDO_PATRICIA_s0vtql.png",
+  // Conjunto Lisi
+  "1165825489?h=4953414a7c": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043454/CONJUNTO_LISI_j8klpy.png",
+  "1165825673?h=fb8f804677": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043454/CONJUNTO_LISI_j8klpy.png",
+  // Biquíni Eva
+  "1165826908?h=cf3b0678ab": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/BIQUINI_EVA_cysjja.png",
+  // Saia Amanda
+  "1165826996?h=639389fcf0": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SAIA_AMANDA_bkehf3.png",
+  // Saia Nina
+  "1165825423?h=8cfc5ddc23": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SAIA_NINA_vejuo5.png",
+  // Vestido Ana
+  "1165825582?h=f833fa35d1": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_ANA_izi5dr.png",
+  // Vestido Marina
+  "1165826240?h=bb6309f319": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_MARINA_upet9y.png",
+  "1165825869?h=8858cf55a6": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_MARINA_upet9y.png",
+  // Conjunto Letícia
+  "1165867234?h=6e2eed84e2": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/CONJUNTO_LETICIA_hrsn9n.png",
+
+  // === Vestido Patricia Poeta ===
+  "1166455223": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049582/ROSA_VERTICAL_1_bdwlgf.png",
+  "1166455407": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049582/ROSA_VERTICAL_1_bdwlgf.png",
+  "1166455304": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049582/ROSA_VERTICAL_1_bdwlgf.png",
   // Conjunto Zelly
-  "1166455028": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771534864/DOURADO_VERTICAL_13_uvutuc.png",
-  "1166455627": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771534864/DOURADO_VERTICAL_13_uvutuc.png",
-  "1166455708": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771534864/DOURADO_VERTICAL_13_uvutuc.png",
-  // Cropped Livia
-  "1166455527": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_QUADRADO_10_todh6i.png",
+  "1166455028": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049583/DOURADO_QUADRADO_1_ylbpz1.png",
+  "1166455627": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049583/DOURADO_QUADRADO_1_ylbpz1.png",
+  "1166455708": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049583/DOURADO_QUADRADO_1_ylbpz1.png",
   // Vestido Alice
-  "1166454267": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536733/VEERDE_VERTICAL_2_etei9u.png",
-  "1166454162": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536733/VEERDE_VERTICAL_2_etei9u.png",
+  "1166454267": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049586/DOURADO_QUADRADO_2_qezlnx.png",
+  "1166454162": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049586/DOURADO_QUADRADO_2_qezlnx.png",
   // Conjunto Renata
-  "1166454958": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_VERTICAL_14_fhlkwi.png",
-  "1166454814": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_VERTICAL_14_fhlkwi.png",
+  "1166454958": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049587/CONJUNTO_RENATA_vxtxcm.png",
+  "1166454814": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049587/CONJUNTO_RENATA_vxtxcm.png",
   // Vestido Lari
-  "1166454494": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_QUADRADO_11_ekraxt.png",
-  "1166454409": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_QUADRADO_11_ekraxt.png",
-  "1166454722": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_QUADRADO_11_ekraxt.png",
+  "1166454494": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049589/DOURADO_QUADRADO_3_wfwr2v.png",
+  "1166454409": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049589/DOURADO_QUADRADO_3_wfwr2v.png",
+  "1166454722": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049589/DOURADO_QUADRADO_3_wfwr2v.png",
   // Vestido Nay
-  "1166454610": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/ROSA_VERTICAL_4_fspwbl.png",
-  "1166454887": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/ROSA_VERTICAL_4_fspwbl.png",
+  "1166454610": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049590/VERDE_QUADRADO_1_k0tfrt.png",
+  "1166454887": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049590/VERDE_QUADRADO_1_k0tfrt.png",
   // Conjunto Íris
-  "1166453580": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/ROSA_VERTICAL_9_hyzijd.png",
-  "1166453263": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/ROSA_VERTICAL_9_hyzijd.png",
+  "1166453580": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049592/CONJUNTO_RENATA_1_uu065u.png",
+  "1166453263": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049592/CONJUNTO_RENATA_1_uu065u.png",
   // Conjunto Salles
-  "1166454066": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/VERDE_QUADRADO_5_fbhfbb.png",
-  "1166453471": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/VERDE_QUADRADO_5_fbhfbb.png",
-  "1166453995": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/VERDE_QUADRADO_5_fbhfbb.png",
+  "1166454066": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049593/DOURADO_QUADRADO_4_hvvt38.png",
+  "1166453471": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049593/DOURADO_QUADRADO_4_hvvt38.png",
+  "1166453995": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049593/DOURADO_QUADRADO_4_hvvt38.png",
   // Conjunto Scheila
-  "1166453825": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/DOURADO_VERTICAL_15_yrmd1g.png",
-  "1166453931": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/DOURADO_VERTICAL_15_yrmd1g.png",
-  // Cropped Angel
-  "1166453227": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VERDE_QUADRADO_6_zggmaa.png",
+  "1166453825": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049594/CONJUNTO_RENATA_2_lzujon.png",
+  "1166453931": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049594/CONJUNTO_RENATA_2_lzujon.png",
   // Cropped Anitta
-  "1166452434": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/ROSA_VERTICAL_5_mp2iog.png",
+  "1166452434": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049596/DOURADO_QUADRADO_5_c2elvl.png",
   // Cropped Maré
-  "1166452773": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/DOURADO_QUADRADO_12_qqx4iv.png",
+  "1166452773": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049597/CONJUNTO_RENATA_3_bu0xjs.png",
   // Vestido Estrella
-  "1166452653": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/DOURADO_VERTICAL_16_imw3gz.png",
-  "1166453163": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/DOURADO_VERTICAL_16_imw3gz.png",
-  // Vestido Lore
+  "1166452653": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049600/CONJUNTO_RENATA_4_wwqng8.png",
+  "1166453163": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049600/CONJUNTO_RENATA_4_wwqng8.png",
+  // Vestido Lore (4 partes)
   "1166452912": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
   "1166452540": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
   "1166453001": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
   "1166453073": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
-  // Vestido Gaia
-  "1166452269": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VEERDE_VERTICAL_4_o0ohfq.png",
-  "1166452022": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/VEERDE_VERTICAL_4_o0ohfq.png",
-  // Vestido Yasmin
-  "1166451870": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/ROSA_VERTICAL_6_rqxlsp.png",
-  "1166452191": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/ROSA_VERTICAL_6_rqxlsp.png",
-  "1166451669": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536730/ROSA_VERTICAL_6_rqxlsp.png",
-  // Conjunto Suri
-  "1166451943": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VERDE_QUADRADO_8_fuufie.png",
-  "1166452358": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VERDE_QUADRADO_8_fuufie.png",
-  "1166451783": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VERDE_QUADRADO_8_fuufie.png",
-  "1166452111": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VERDE_QUADRADO_8_fuufie.png",
   // Vestido Lorena
-  "1166451621": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_17_ewznou.png",
-  "1166451567": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_17_ewznou.png",
-  "1166451424": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_17_ewznou.png",
-  "1166451198": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_17_ewznou.png",
-  "1166451470": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_17_ewznou.png",
-  // Saída Rayssa
-  "1166450959": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/ROSA_VERTICAL_7_rv8n6f.png",
-  "1166451252": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/ROSA_VERTICAL_7_rv8n6f.png",
+  "1166451621": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/lore_gs8pyo.jpg",
+  "1166451567": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/lore_gs8pyo.jpg",
+  "1166451424": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/lore_gs8pyo.jpg",
+  "1166451198": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/lore_gs8pyo.jpg",
+  "1166451470": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/lore_gs8pyo.jpg",
   // Vestido Sol
-  "1166451054": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VEERDE_VERTICAL_5_wztowg.png",
-  "1166451321": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VEERDE_VERTICAL_5_wztowg.png",
-  "1166451140": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/VEERDE_VERTICAL_5_wztowg.png",
-  // Vestido Abacaxi
-  "1166450255": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/ROSA_VERTICAL_8_glyikh.png",
-  "1166450136": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/ROSA_VERTICAL_8_glyikh.png",
-  // Vestido Bella
-  "1166450761": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_18_a28pri.png",
-  "1166450392": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_18_a28pri.png",
-  "1166450675": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_18_a28pri.png",
-  // Vestido e Cropped Julia
-  "1166450034": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/DOURADO_QUADRADO_13_mxrjei.png",
-  "1166456882": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/DOURADO_QUADRADO_13_mxrjei.png",
-  // Vestido Brunnet
-  "1166456663": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_19_wsj2pp.png",
-  "1166450509": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_19_wsj2pp.png",
-  "1166450892": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536729/DOURADO_VERTICAL_19_wsj2pp.png",
-  // Conjunto Tamiris
-  "1166455789": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/VEERDE_VERTICAL_3_tsyag0.png",
-  "1166456097": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536731/VEERDE_VERTICAL_3_tsyag0.png",
-  // Cropped Amari
-  "1166456178": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/VERDE_QUADRADO_9_jt6pcq.png",
+  "1166451054": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047756/VEERDE_VERTICAL_pfatc6.png",
+  "1166451321": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047756/VEERDE_VERTICAL_pfatc6.png",
+  "1166451140": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047756/VEERDE_VERTICAL_pfatc6.png",
   // Cropped Tati
-  "1166456612": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/VERDE_QUADRADO_10_xwdgjz.png",
+  "1166456612": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047758/VERDE_QUADRADO_yqzhxu.png",
   // Vestido Dubai
-  "1166456435": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536728/ROSA_VERTICAL_10_n9sspq.png",
+  "1166456435": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047755/ROSA_VERTICAL_htrc2x.png",
   // Vestido Laís
-  "1166456340": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_VERTICAL_20_wqpgih.png",
-  "1166456535": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_VERTICAL_20_wqpgih.png",
-  "1166456240": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771536732/DOURADO_VERTICAL_20_wqpgih.png",
+  "1166456340": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047757/DOURADO_VERTICAL_rd6bem.png",
+  "1166456535": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047757/DOURADO_VERTICAL_rd6bem.png",
+  "1166456240": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047757/DOURADO_VERTICAL_rd6bem.png",
 };
 
 const getVideoThumbnail = (videoId: string, platform?: string) => {

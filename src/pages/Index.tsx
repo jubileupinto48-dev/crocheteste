@@ -28,46 +28,46 @@ const Index = () => {
     id: 2,
     title: "Mini Curso para Iniciante",
     description: "Aprenda do zero com técnicas fundamentais de crochê passo a passo.",
-    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771346857/ChatGPT_Image_17_de_fev._de_2026_13_39_09_iicrdm.png",
+    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050451/WhatsApp_Image_2026-03-09_at_07.00.01_xsovpz.jpg",
     link: "/curso-completo",
     badge: "Iniciante"
   }, {
     id: 3,
     title: "+2000 Modelos e Receitas",
     description: "Acesso completo a mais de 2000 modelos e receitas em PDF para todos os níveis.",
-    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771346857/ChatGPT_Image_17_de_fev._de_2026_13_44_14_txia9b.png",
+    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050457/WhatsApp_Image_2026-03-09_at_07.00.02_dio5vz.jpg",
     link: "/modelos-receitas",
     badge: "Popular"
   }, {
     id: 4,
     title: "Roupinhas Infantil",
     description: "Coleção especial de roupinhas adoráveis para bebês e crianças.",
-    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771346857/ChatGPT_Image_17_de_fev._de_2026_13_47_14_yo3hgi.png",
+    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050458/WhatsApp_Image_2026-03-09_at_07.00.02_1_llwiwx.jpg",
     link: "/vestidos-infantis"
   }, {
     id: 5,
     title: "Sapatinhos de Crochê",
     description: "Modelos adoráveis de sapatinhos e botinhas para os pequenos.",
-    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771346857/ChatGPT_Image_17_de_fev._de_2026_13_47_12_w1iegs.png",
+    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050476/WhatsApp_Image_2026-03-09_at_07.00.02_2_bcm2vq.jpg",
     link: "/sapatinhos-croche"
   }, {
     id: 6,
     title: "Chapéus de Crochê",
     description: "Bucket hats, toucas e chapéus lindos para todas as idades.",
-    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589391/ChatGPT_Image_21_de_jan._de_2026_18_54_42_szutmx.webp",
+    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050477/WhatsApp_Image_2026-03-09_at_07.00.02_3_t6jlp8.jpg",
     link: "/chapeu-croche",
     badge: "Novo"
   }, {
     id: 7,
     title: "Bolsas de Crochê",
     description: "Designs modernos e elegantes de bolsas, carteiras e acessórios.",
-    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589485/ChatGPT_Image_21_de_jan._de_2026_18_52_57_ib52kw.webp",
+    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050479/WhatsApp_Image_2026-03-09_at_07.00.02_4_eorhcd.jpg",
     link: "/bolsas-croche"
   }, {
     id: 8,
     title: "Modelos Adulto",
     description: "Croppeds, biquínis, tops e peças estilosas para você arrasar.",
-    image: "https://res.cloudinary.com/dzetm6plq/image/upload/v1769589503/ChatGPT_Image_21_de_jan._de_2026_18_50_05_qj04ps.webp",
+    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050611/WhatsApp_Image_2026-03-09_at_07.03.15_sbj7tw.jpg",
     link: "/mais-modelos"
   }, {
     id: 9,
