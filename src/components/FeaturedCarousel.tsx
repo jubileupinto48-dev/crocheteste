@@ -88,7 +88,7 @@ const allFeaturedVideos: FeaturedVideo[] = [
   {
     id: "virginia",
     title: "Vestido Virginia",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381439/VESTIDO_VIRGINIA_y1pnbp.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/VESTIDO_VIRGINIA_n9udlg.png",
     videoId: "1165822436?h=73db5fd949",
   },
   {
