@@ -106,7 +106,7 @@ const allFeaturedVideos: FeaturedVideo[] = [
   {
     id: "anapaula",
     title: "Vestido Ana Paula",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381439/VESTIDO_ANA_PAULA_cqjakj.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_ANA_PAULA_hltiko.png",
     videoId: "1165825235?h=e65562ca75",
   },
   {
