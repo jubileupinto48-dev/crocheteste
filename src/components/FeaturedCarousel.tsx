@@ -28,7 +28,7 @@ const allFeaturedVideos: FeaturedVideo[] = [
   {
     id: "raquel",
     title: "Vestido Raquel",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771383895/VEERDE_VERTICAL_1_wzahng.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773051517/VEERDE_VERTICAL_1_lbzzfr.png",
     videoId: "1165877185?h=ce49de91b5",
   },
   {

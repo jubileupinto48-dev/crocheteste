@@ -193,6 +193,7 @@ const MaisModelos = () => {
                   platform={currentVideo.platform}
                   autoplay={true}
                   showPixMessage={false}
+                  customThumbnail={getVideoThumbnail(currentVideo.videoId, currentVideo.platform)}
                 />
               </div>
               
