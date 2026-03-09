@@ -22,7 +22,7 @@ const allFeaturedVideos: FeaturedVideo[] = [
   {
     id: "1",
     title: "Vestido Longo de Crochê",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1770812425/SCgWr3Kv-pI-HD_ruuvgs.jpg",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773046623/SCgWr3Kv-pI-HD_eko3j4.jpg",
     videoId: "1165908032?h=4e8257a515",
   },
   {
