@@ -100,7 +100,7 @@ const allFeaturedVideos: FeaturedVideo[] = [
   {
     id: "lola",
     title: "Cropped Lola",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/CROPPED_LOLA_hht4ad.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/CROPPED_LOLA_ydkvxo.png",
     videoId: "1165828668?h=95dd4603c4",
   },
   {
