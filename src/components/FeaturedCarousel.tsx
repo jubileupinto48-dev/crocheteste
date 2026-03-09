@@ -88,31 +88,31 @@ const allFeaturedVideos: FeaturedVideo[] = [
   {
     id: "virginia",
     title: "Vestido Virginia",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381439/VESTIDO_VIRGINIA_y1pnbp.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/VESTIDO_VIRGINIA_n9udlg.png",
     videoId: "1165822436?h=73db5fd949",
   },
   {
     id: "franjas",
     title: "Conjunto Franjas",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381443/CONJUNTO_FRANJAS_j12exw.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/CONJUNTO_FRANJAS_h1ftat.png",
     videoId: "1165823586?h=95ae5df629",
   },
   {
     id: "lola",
     title: "Cropped Lola",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/CROPPED_LOLA_hht4ad.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/CROPPED_LOLA_ydkvxo.png",
     videoId: "1165828668?h=95dd4603c4",
   },
   {
     id: "anapaula",
     title: "Vestido Ana Paula",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381439/VESTIDO_ANA_PAULA_cqjakj.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_ANA_PAULA_hltiko.png",
     videoId: "1165825235?h=e65562ca75",
   },
   {
     id: "melmaia",
     title: "Saída Mel Maia",
-    thumbnail: "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/SAIDA_MEL_MAIA_o6g04n.png",
+    thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043462/SAIDA_MEL_MAIA_o7cdcq.png",
     videoId: "1165822238?h=798063ee5e",
   },
 ];
