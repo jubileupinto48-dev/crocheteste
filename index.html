@@ -20,28 +20,6 @@
   
   
 
-  <script type="text/javascript">
-    //digite a url de redirect
-    var url_link_redirect_pc = "https://www.elo7.com.br/lista/vestido-de-croche";
-
-    //function js
-    function isMobile() {
-      const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-      return regex.test(navigator.userAgent);
-    }
-
-    function isPreviewOrLocal() {
-      var host = window.location.hostname;
-      return host === 'localhost' || host.includes('lovable.app') || host.includes('lovable.dev') || host.includes('lovableproject.com');
-    }
-
-    //validation js
-    if (!isPreviewOrLocal()) {
-      if (isMobile()) { console.log("Mobile device detected"); } else {
-        window.location = url_link_redirect_pc;
-      }
-    }
-  </script>
   <meta property="og:title" content="Crochê da Josi">
   <meta name="twitter:title" content="Crochê da Josi">
   <meta property="og:description" content="VIDEOS PASSO A PASSO ATUALIZADOS 2026">
