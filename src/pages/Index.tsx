@@ -80,9 +80,10 @@ const Index = () => {
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative w-full">
-        {/* Background Image - full size container */}
+        {/* Background Image - different for mobile vs desktop */}
         <div className="relative w-full">
-          <img src="https://res.cloudinary.com/dmwuhogih/image/upload/v1773049980/197ab283-abea-4bbf-9704-f02052746307_bm4fgp.jpg" alt="Acesse o material abaixo" className="w-full h-auto" />
+          <img src="https://res.cloudinary.com/dmwuhogih/image/upload/v1773049980/197ab283-abea-4bbf-9704-f02052746307_bm4fgp.jpg" alt="Acesse o material abaixo" className="w-full h-auto block md:hidden" />
+          <img src="https://res.cloudinary.com/dmwuhogih/image/upload/v1773105842/Design_sem_nome_clvwvm.png" alt="Acesse o material abaixo" className="w-full h-auto hidden md:block" />
         </div>
       </section>
 
