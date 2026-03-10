@@ -288,6 +288,48 @@ const customThumbnails: Record<string, string> = {
   "1166456340": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047757/DOURADO_VERTICAL_rd6bem.png",
   "1166456535": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047757/DOURADO_VERTICAL_rd6bem.png",
   "1166456240": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047757/DOURADO_VERTICAL_rd6bem.png",
+  // Vestido Abacaxi
+  "1166450255": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103643/CONJUNTO_RENATA_9_vdmbl1.png",
+  "1166450136": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103643/CONJUNTO_RENATA_9_vdmbl1.png",
+  // Vestido Bella
+  "1166450761": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/CONJUNTO_RENATA_10_xqzj0s.png",
+  "1166450392": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/CONJUNTO_RENATA_10_xqzj0s.png",
+  "1166450675": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/CONJUNTO_RENATA_10_xqzj0s.png",
+  // Vestido e Cropped Julia
+  "1166450034": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/VERDE_QUADRADO_2_wr2kxd.png",
+  "1166456882": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/VERDE_QUADRADO_2_wr2kxd.png",
+  // Vestido Brunnet
+  "1166456663": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/CONJUNTO_RENATA_11_u3f0vl.png",
+  "1166450509": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/CONJUNTO_RENATA_11_u3f0vl.png",
+  "1166450892": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/CONJUNTO_RENATA_11_u3f0vl.png",
+  // Conjunto Tamiris
+  "1166455789": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/VERDE_QUADRADO_3_k684sj.png",
+  "1166456097": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/VERDE_QUADRADO_3_k684sj.png",
+  // Cropped Amari
+  "1166456178": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103643/VERDE_QUADRADO_4_zd2b9a.png",
+  // Vestido Gaia
+  "1166452269": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/CONJUNTO_RENATA_6_srqfzr.png",
+  "1166452022": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/CONJUNTO_RENATA_6_srqfzr.png",
+  // Vestido Yasmin
+  "1166451870": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/CONJUNTO_RENATA_7_uo4ucb.png",
+  "1166452191": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/CONJUNTO_RENATA_7_uo4ucb.png",
+  "1166451669": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/CONJUNTO_RENATA_7_uo4ucb.png",
+  // Conjunto Suri
+  "1166451943": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/DOURADO_QUADRADO_8_oxelic.png",
+  "1166452358": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/DOURADO_QUADRADO_8_oxelic.png",
+  "1166451783": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/DOURADO_QUADRADO_8_oxelic.png",
+  "1166452111": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/DOURADO_QUADRADO_8_oxelic.png",
+  // Cropped Angel
+  "1166453227": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103646/DOURADO_QUADRADO_7_s7yqag.png",
+  // Cropped Livia
+  "1166455527": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/DOURADO_QUADRADO_6_f8xvnv.png",
+  // Saida Shirley
+  "1165908374?h=954ee77336": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103640/XReZUJvzft0-HD_xd8fk4.jpg",
+  // Vestido Raira
+  "1165899486?h=7759bd5d46": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103640/CONJUNTO_RENATA_5_jion0k.png",
+  // Saída Rayssa
+  "1166450959": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103658/CONJUNTO_RENATA_8_wffvn9.png",
+  "1166451252": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103658/CONJUNTO_RENATA_8_wffvn9.png",
 };
 
 const getVideoThumbnail = (videoId: string, platform?: string) => {
