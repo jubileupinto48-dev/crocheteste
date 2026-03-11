@@ -170,6 +170,8 @@ const SapatinhosCroche = () => {
                           thumbnail={video.thumbnail}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.driveId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.driveId, title: video.title, thumbnail: video.thumbnail, module: "Sapatinhos de Crochê", modulePath: "/sapatinhos-croche" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       );
