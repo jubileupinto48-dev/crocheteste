@@ -8,6 +8,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useFavorites } from "@/hooks/use-favorites";
 
 // Import AI-generated dress images
 import vestidoAngelPreview from "@/assets/vestidos/vestido-angel-preview.jpg";
