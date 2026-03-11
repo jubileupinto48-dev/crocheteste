@@ -127,6 +127,9 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Favorites Section */}
+        <FavoritesSection />
+
         {/* Other Modules Section */}
         <section className="animate-fade-in">
           <div className="text-center mb-8">
