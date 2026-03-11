@@ -7,6 +7,7 @@ import { VideoPlayer } from "@/components/VideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
 import { Input } from "@/components/ui/input";
 import bolsasCroche from "@/assets/bolsas-croche.jpg";
+import { useFavorites } from "@/hooks/use-favorites";
 
 const BolsasCroche = () => {
   const videos = [

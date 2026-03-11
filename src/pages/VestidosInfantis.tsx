@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Heart, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Heart as HeartIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
 import { Input } from "@/components/ui/input";
 import vestidosInfantis from "@/assets/vestidos-infantis.jpg";
+import { useFavorites } from "@/hooks/use-favorites";
 
 const VestidosInfantis = () => {
   const videos = [

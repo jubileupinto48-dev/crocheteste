@@ -794,6 +794,8 @@ const VestidosCroche = () => {
                           thumbnail={getVideoThumbnail(video.videoId, video.platform)}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.videoId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.videoId, title: video.title, thumbnail: getVideoThumbnail(video.videoId, video.platform), module: "Vestidos de Crochê", modulePath: "/vestidos-croche" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       </div>

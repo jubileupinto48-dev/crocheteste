@@ -8,6 +8,7 @@ import { VideoCard } from "@/components/VideoCard";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useFavorites } from "@/hooks/use-favorites";
 
 const customThumbnails: Record<string, string> = {
   "1165896656?h=71c1d6054e": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/conjunto_rosas_otscb3.jpg",
