@@ -137,6 +137,7 @@ const MaisModelos = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const videoListRef = useRef<HTMLDivElement>(null);
   const videosPerPage = 8;
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   const uniqueProjects = [...new Set(videos.map(v => v.project))].sort();
 
