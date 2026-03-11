@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ShoppingBag, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ShoppingBag, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { VideoPlayer } from "@/components/VideoPlayer";
@@ -116,6 +116,15 @@ const BolsasCroche = () => {
                       Duração: {videos[currentVideoIndex].duration}
                     </p>
                   </div>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => toggleFavorite({ videoId: videos[currentVideoIndex].driveId, title: videos[currentVideoIndex].title, thumbnail: videos[currentVideoIndex].thumbnail, module: "Bolsas de Crochê", modulePath: "/bolsas-croche" })}
+                    className={`shrink-0 ml-2 ${isFavorite(videos[currentVideoIndex].driveId) ? 'text-primary' : 'text-muted-foreground'}`}
+                    aria-label="Favoritar"
+                  >
+                    <Heart className={`h-5 w-5 ${isFavorite(videos[currentVideoIndex].driveId) ? 'fill-current' : ''}`} />
+                  </Button>
                 </div>
 
                 <div className="flex gap-3 pt-4 border-t border-border">

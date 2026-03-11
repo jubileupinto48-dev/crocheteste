@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Award, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Award, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Progress } from "@/components/ui/progress";
 import { CustomVideoPlayer } from "@/components/CustomVideoPlayer";
@@ -150,6 +150,15 @@ const CursoCompleto = () => {
                 >
                   <ChevronLeft className="mr-2 h-4 w-4" />
                   Anterior
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => toggleFavorite({ videoId: videos[currentVideoIndex].videoId, title: videos[currentVideoIndex].title, thumbnail: getThumbnail(videos[currentVideoIndex]), module: "Mini Curso para Iniciante", modulePath: "/curso-completo" })}
+                  className={`shrink-0 ${isFavorite(videos[currentVideoIndex].videoId) ? 'text-primary border-primary/50 bg-primary/10' : ''}`}
+                  aria-label="Favoritar"
+                >
+                  <Heart className={`h-4 w-4 ${isFavorite(videos[currentVideoIndex].videoId) ? 'fill-current' : ''}`} />
                 </Button>
                 <Button
                   onClick={handleNext}

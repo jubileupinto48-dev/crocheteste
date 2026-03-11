@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Heart as HeartIcon, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { VideoPlayer } from "@/components/VideoPlayer";
@@ -67,7 +67,7 @@ const VestidosInfantis = () => {
         {/* Header */}
         <div className="text-center mb-8 animate-fade-in">
           <div className="inline-flex items-center gap-2 mb-4">
-            <HeartIcon className="w-8 h-8 text-primary fill-primary" />
+            <Heart className="w-8 h-8 text-primary fill-primary" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Roupinhas Infantil
@@ -107,6 +107,15 @@ const VestidosInfantis = () => {
                       Duração: {videos[currentVideoIndex].duration}
                     </p>
                   </div>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => toggleFavorite({ videoId: videos[currentVideoIndex].driveId, title: videos[currentVideoIndex].title, thumbnail: videos[currentVideoIndex].thumbnail, module: "Roupinhas Infantil", modulePath: "/vestidos-infantis" })}
+                    className={`shrink-0 ml-2 ${isFavorite(videos[currentVideoIndex].driveId) ? 'text-primary' : 'text-muted-foreground'}`}
+                    aria-label="Favoritar"
+                  >
+                    <Heart className={`h-5 w-5 ${isFavorite(videos[currentVideoIndex].driveId) ? 'fill-current' : ''}`} />
+                  </Button>
                 </div>
 
                 <div className="flex gap-3 pt-4 border-t border-border">

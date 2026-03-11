@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { CustomVideoPlayer } from "@/components/CustomVideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
@@ -735,6 +735,15 @@ const VestidosCroche = () => {
                 >
                   <ChevronLeft className="mr-2 h-4 w-4" />
                   Anterior
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => toggleFavorite({ videoId: currentVideo.videoId, title: currentVideo.title, thumbnail: getVideoThumbnail(currentVideo.videoId, currentVideo.platform), module: "Vestidos de Crochê", modulePath: "/vestidos-croche" })}
+                  className={`shrink-0 ${isFavorite(currentVideo.videoId) ? 'text-primary border-primary/50 bg-primary/10' : ''}`}
+                  aria-label="Favoritar"
+                >
+                  <Heart className={`h-4 w-4 ${isFavorite(currentVideo.videoId) ? 'fill-current' : ''}`} />
                 </Button>
                 <Button
                   onClick={handleNext}
