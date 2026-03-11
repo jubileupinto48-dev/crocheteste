@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Crown, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Crown, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { VideoPlayer } from "@/components/VideoPlayer";

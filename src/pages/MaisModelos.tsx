@@ -211,6 +211,15 @@ const MaisModelos = () => {
                   Anterior
                 </Button>
                 <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => toggleFavorite({ videoId: currentVideo.videoId, title: currentVideo.title, thumbnail: getVideoThumbnail(currentVideo.videoId, currentVideo.platform), module: "Modelos Adulto", modulePath: "/mais-modelos" })}
+                  className={`shrink-0 ${isFavorite(currentVideo.videoId) ? 'text-primary border-primary/50 bg-primary/10' : ''}`}
+                  aria-label="Favoritar"
+                >
+                  <Heart className={`h-4 w-4 ${isFavorite(currentVideo.videoId) ? 'fill-current' : ''}`} />
+                </Button>
+                <Button
                   onClick={handleNext}
                   disabled={currentVideoIndex === videos.length - 1}
                   className="flex-1"

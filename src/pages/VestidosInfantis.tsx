@@ -107,6 +107,15 @@ const VestidosInfantis = () => {
                       Duração: {videos[currentVideoIndex].duration}
                     </p>
                   </div>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => toggleFavorite({ videoId: videos[currentVideoIndex].driveId, title: videos[currentVideoIndex].title, thumbnail: videos[currentVideoIndex].thumbnail, module: "Roupinhas Infantil", modulePath: "/vestidos-infantis" })}
+                    className={`shrink-0 ml-2 ${isFavorite(videos[currentVideoIndex].driveId) ? 'text-primary' : 'text-muted-foreground'}`}
+                    aria-label="Favoritar"
+                  >
+                    <Heart className={`h-5 w-5 ${isFavorite(videos[currentVideoIndex].driveId) ? 'fill-current' : ''}`} />
+                  </Button>
                 </div>
 
                 <div className="flex gap-3 pt-4 border-t border-border">

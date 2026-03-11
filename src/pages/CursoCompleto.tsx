@@ -152,6 +152,15 @@ const CursoCompleto = () => {
                   Anterior
                 </Button>
                 <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => toggleFavorite({ videoId: videos[currentVideoIndex].videoId, title: videos[currentVideoIndex].title, thumbnail: getThumbnail(videos[currentVideoIndex]), module: "Mini Curso para Iniciante", modulePath: "/curso-completo" })}
+                  className={`shrink-0 ${isFavorite(videos[currentVideoIndex].videoId) ? 'text-primary border-primary/50 bg-primary/10' : ''}`}
+                  aria-label="Favoritar"
+                >
+                  <Heart className={`h-4 w-4 ${isFavorite(videos[currentVideoIndex].videoId) ? 'fill-current' : ''}`} />
+                </Button>
+                <Button
                   onClick={handleNext}
                   disabled={currentVideoIndex === videos.length - 1}
                   className="flex-1"
