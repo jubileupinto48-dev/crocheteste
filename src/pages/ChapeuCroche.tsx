@@ -28,6 +28,7 @@ const ChapeuCroche = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const videosPerPage = 6;
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   const filteredVideos = videos.filter(video =>
     video.title.toLowerCase().includes(searchTerm.toLowerCase())
