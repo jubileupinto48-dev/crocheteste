@@ -67,7 +67,7 @@ const VestidosInfantis = () => {
         {/* Header */}
         <div className="text-center mb-8 animate-fade-in">
           <div className="inline-flex items-center gap-2 mb-4">
-            <HeartIcon className="w-8 h-8 text-primary fill-primary" />
+            <Heart className="w-8 h-8 text-primary fill-primary" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Roupinhas Infantil
