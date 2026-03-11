@@ -6,6 +6,7 @@ import { useState } from "react";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
 import { Input } from "@/components/ui/input";
+import { useFavorites } from "@/hooks/use-favorites";
 
 const ChapeuCroche = () => {
   const videos = [
