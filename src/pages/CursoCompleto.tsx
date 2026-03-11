@@ -228,6 +228,8 @@ const CursoCompleto = () => {
                           thumbnail={getThumbnail(video)}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.videoId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.videoId, title: video.title, thumbnail: getThumbnail(video), module: "Mini Curso para Iniciante", modulePath: "/curso-completo" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       </div>

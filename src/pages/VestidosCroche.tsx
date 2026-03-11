@@ -629,6 +629,7 @@ const VestidosCroche = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const videoListRef = useRef<HTMLDivElement>(null);
   const videosPerPage = 12;
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   // Helper para resolver URL da thumbnail
   const getThumbnailUrl = useCallback((video: { videoId: string; platform: string }) => {

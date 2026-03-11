@@ -269,6 +269,8 @@ const MaisModelos = () => {
                           thumbnail={getVideoThumbnail(video.videoId, video.platform)}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.videoId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.videoId, title: video.title, thumbnail: getVideoThumbnail(video.videoId, video.platform), module: "Modelos Adulto", modulePath: "/mais-modelos" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       </div>
