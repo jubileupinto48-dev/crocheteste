@@ -6,6 +6,7 @@ import { useState } from "react";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
 import { Input } from "@/components/ui/input";
+import { useFavorites } from "@/hooks/use-favorites";
 
 const ChapeuCroche = () => {
   const videos = [
@@ -27,6 +28,7 @@ const ChapeuCroche = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const videosPerPage = 6;
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   const filteredVideos = videos.filter(video =>
     video.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -160,6 +162,8 @@ const ChapeuCroche = () => {
                           thumbnail={video.thumbnail}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.driveId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.driveId, title: video.title, thumbnail: video.thumbnail, module: "Chapéus de Crochê", modulePath: "/chapeu-croche" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       );
@@ -227,6 +231,8 @@ const ChapeuCroche = () => {
                           thumbnail={video.thumbnail}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.driveId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.driveId, title: video.title, thumbnail: video.thumbnail, module: "Chapéus de Crochê", modulePath: "/chapeu-croche" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       </div>

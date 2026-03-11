@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Heart, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Heart as HeartIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
 import { Input } from "@/components/ui/input";
 import vestidosInfantis from "@/assets/vestidos-infantis.jpg";
+import { useFavorites } from "@/hooks/use-favorites";
 
 const VestidosInfantis = () => {
   const videos = [
@@ -23,6 +24,7 @@ const VestidosInfantis = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const videosPerPage = 6;
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   const filteredVideos = videos.filter(video =>
     video.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -65,7 +67,7 @@ const VestidosInfantis = () => {
         {/* Header */}
         <div className="text-center mb-8 animate-fade-in">
           <div className="inline-flex items-center gap-2 mb-4">
-            <Heart className="w-8 h-8 text-primary fill-primary" />
+            <HeartIcon className="w-8 h-8 text-primary fill-primary" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Roupinhas Infantil
@@ -156,6 +158,8 @@ const VestidosInfantis = () => {
                           thumbnail={video.thumbnail}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.driveId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.driveId, title: video.title, thumbnail: video.thumbnail, module: "Roupinhas Infantil", modulePath: "/vestidos-infantis" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       );
@@ -225,6 +229,8 @@ const VestidosInfantis = () => {
                           thumbnail={video.thumbnail}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.driveId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.driveId, title: video.title, thumbnail: video.thumbnail, module: "Roupinhas Infantil", modulePath: "/vestidos-infantis" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       </div>

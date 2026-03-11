@@ -7,6 +7,7 @@ import { VideoPlayer } from "@/components/VideoPlayer";
 import { VideoCard } from "@/components/VideoCard";
 import { Input } from "@/components/ui/input";
 import bolsasCroche from "@/assets/bolsas-croche.jpg";
+import { useFavorites } from "@/hooks/use-favorites";
 
 const BolsasCroche = () => {
   const videos = [
@@ -32,6 +33,7 @@ const BolsasCroche = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const videosPerPage = 6;
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   const filteredVideos = videos.filter(video =>
     video.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -165,6 +167,8 @@ const BolsasCroche = () => {
                           thumbnail={video.thumbnail}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.driveId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.driveId, title: video.title, thumbnail: video.thumbnail, module: "Bolsas de Crochê", modulePath: "/bolsas-croche" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       );
@@ -233,6 +237,8 @@ const BolsasCroche = () => {
                           thumbnail={video.thumbnail}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.driveId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.driveId, title: video.title, thumbnail: video.thumbnail, module: "Bolsas de Crochê", modulePath: "/bolsas-croche" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       </div>

@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { PlayCircle, Clock } from "lucide-react";
+import { PlayCircle, Clock, Heart } from "lucide-react";
 import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -9,6 +9,8 @@ interface VideoCardProps {
   thumbnail: string;
   videoNumber: number;
   isActive?: boolean;
+  isFavorite?: boolean;
+  onToggleFavorite?: (e: React.MouseEvent) => void;
   onClick: () => void;
 }
 
@@ -18,6 +20,8 @@ export const VideoCard = ({
   thumbnail, 
   videoNumber, 
   isActive = false,
+  isFavorite = false,
+  onToggleFavorite,
   onClick 
 }: VideoCardProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -50,6 +54,22 @@ export const VideoCard = ({
             <div className="absolute top-2 right-2 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-medium">
               Assistindo
             </div>
+          )}
+          {onToggleFavorite && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onToggleFavorite(e);
+              }}
+              className={`absolute top-2 left-2 p-1.5 rounded-full transition-all duration-200 ${
+                isFavorite
+                  ? 'bg-primary/90 text-primary-foreground shadow-md'
+                  : 'bg-black/30 text-white/80 hover:bg-black/50 hover:text-white opacity-0 group-hover:opacity-100'
+              } ${isFavorite ? 'opacity-100' : ''}`}
+              aria-label={isFavorite ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+            >
+              <Heart className={`w-4 h-4 ${isFavorite ? 'fill-current' : ''}`} />
+            </button>
           )}
         </div>
         <div className="p-4">

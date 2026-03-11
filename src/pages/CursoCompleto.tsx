@@ -9,6 +9,7 @@ import { useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useFavorites } from "@/hooks/use-favorites";
 
 
 interface VideoItem {
@@ -48,6 +49,7 @@ const CursoCompleto = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
+  const { isFavorite, toggleFavorite } = useFavorites();
   
   const videosPerPage = 4;
 
@@ -226,6 +228,8 @@ const CursoCompleto = () => {
                           thumbnail={getThumbnail(video)}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.videoId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.videoId, title: video.title, thumbnail: getThumbnail(video), module: "Mini Curso para Iniciante", modulePath: "/curso-completo" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       </div>

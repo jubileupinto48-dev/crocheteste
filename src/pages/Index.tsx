@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { FavoritesSection } from "@/components/FavoritesSection";
 const Index = () => {
   const [copied, setCopied] = useState(false);
   const {
@@ -125,6 +126,9 @@ const Index = () => {
             </Link>
           </div>
         </section>
+
+        {/* Favorites Section */}
+        <FavoritesSection />
 
         {/* Other Modules Section */}
         <section className="animate-fade-in">

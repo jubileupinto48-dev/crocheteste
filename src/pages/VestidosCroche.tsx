@@ -8,6 +8,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useFavorites } from "@/hooks/use-favorites";
 
 // Import AI-generated dress images
 import vestidoAngelPreview from "@/assets/vestidos/vestido-angel-preview.jpg";
@@ -628,6 +629,7 @@ const VestidosCroche = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const videoListRef = useRef<HTMLDivElement>(null);
   const videosPerPage = 12;
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   // Helper para resolver URL da thumbnail
   const getThumbnailUrl = useCallback((video: { videoId: string; platform: string }) => {
@@ -793,6 +795,8 @@ const VestidosCroche = () => {
                           thumbnail={getVideoThumbnail(video.videoId, video.platform)}
                           videoNumber={video.id}
                           isActive={actualIndex === currentVideoIndex}
+                          isFavorite={isFavorite(video.videoId)}
+                          onToggleFavorite={() => toggleFavorite({ videoId: video.videoId, title: video.title, thumbnail: getVideoThumbnail(video.videoId, video.platform), module: "Vestidos de Crochê", modulePath: "/vestidos-croche" })}
                           onClick={() => handleVideoSelect(index)}
                         />
                       </div>
