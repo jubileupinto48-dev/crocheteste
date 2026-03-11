@@ -49,6 +49,7 @@ const CursoCompleto = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
+  const { isFavorite, toggleFavorite } = useFavorites();
   
   const videosPerPage = 4;
 
