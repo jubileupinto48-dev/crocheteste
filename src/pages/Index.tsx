@@ -83,8 +83,8 @@ const Index = () => {
       <section className="relative w-full">
         {/* Background Image - different for mobile vs desktop */}
         <div className="relative w-full">
-          <img src="https://res.cloudinary.com/dmwuhogih/image/upload/v1773049980/197ab283-abea-4bbf-9704-f02052746307_bm4fgp.jpg" alt="Acesse o material abaixo" className="w-full h-auto block md:hidden" />
-          <img src="https://res.cloudinary.com/dmwuhogih/image/upload/v1773106265/Design_sem_nome_1_qppawg_huebc0.png" alt="Acesse o material abaixo" className="w-full h-auto hidden md:block" />
+          <img src="https://res.cloudinary.com/dmwuhogih/image/upload/v1773430965/Lucas_Morone_Meu_filho_1_zhitdu.png" alt="Acesse o material abaixo" className="w-full h-auto block md:hidden" />
+          <img src="https://res.cloudinary.com/dmwuhogih/image/upload/v1773430969/Lucas_Morone_Meu_filho_hlmk6p.png" alt="Acesse o material abaixo" className="w-full h-auto hidden md:block" />
         </div>
       </section>
 
