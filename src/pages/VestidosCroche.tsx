@@ -669,9 +669,7 @@ const VestidosCroche = () => {
     return matchesSearch && matchesProject;
   });
 
-  const totalPages = Math.ceil(filteredVideos.length / videosPerPage);
-  const startIndex = (currentPage - 1) * videosPerPage;
-  const paginatedVideos = filteredVideos.slice(startIndex, startIndex + videosPerPage);
+  const displayedVideos = filteredVideos;
 
   const handleVideoSelect = (index: number) => {
     const actualIndex = videos.findIndex(v => v.id === filteredVideos[startIndex + index].id);
