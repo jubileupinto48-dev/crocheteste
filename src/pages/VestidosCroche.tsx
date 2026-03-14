@@ -768,7 +768,6 @@ const VestidosCroche = () => {
                     value={searchTerm}
                     onChange={(e) => {
                       setSearchTerm(e.target.value);
-                      setCurrentPage(1);
                     }}
                     className="h-10"
                   />
