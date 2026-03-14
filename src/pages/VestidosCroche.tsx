@@ -792,10 +792,10 @@ const VestidosCroche = () => {
 
                 {/* Lista com scroll */}
                 <div ref={videoListRef} className="space-y-3 max-h-[400px] lg:max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
-                  {paginatedVideos.map((video, index) => {
+                  {displayedVideos.map((video, index) => {
                     const actualIndex = videos.findIndex(v => v.id === video.id);
                     return (
-                      <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
+                      <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${Math.min(index, 10) * 0.03}s` }}>
                         <VideoCard
                           title={video.title}
                           duration={video.part ? `Parte ${video.part}` : "Completo"}
