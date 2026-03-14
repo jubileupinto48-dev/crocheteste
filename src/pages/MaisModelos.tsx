@@ -11,59 +11,137 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useFavorites } from "@/hooks/use-favorites";
 
 const customThumbnails: Record<string, string> = {
-  "1165896656?h=71c1d6054e": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/conjunto_rosas_otscb3.jpg",
-  "1165908076?h=3b842fbf9d": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771307351/S-Vp3QiN1Tk-HD_td6d0k.jpg",
-  "1165823586?h=95ae5df629": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381443/CONJUNTO_FRANJAS_j12exw.png",
-  "1165823379?h=de1eeffff5": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381443/CONJUNTO_FRANJAS_j12exw.png",
-  "1165896871?h=f4895dbef0": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/Square_lcapbv.jpg",
-  "1165825953?h=b67785daa5": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381437/CROPPED_DUDA_thz0po.png",
-  "1165828668?h=95dd4603c4": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/CROPPED_LOLA_hht4ad.png",
-  "1165828774?h=0add065419": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381437/CONJJUNTO_CALI_vv1sqv.png",
-  "1165828605?h=58d11062d4": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381437/CONJJUNTO_CALI_vv1sqv.png",
-  "1165828438?h=456ae1cdb5": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381437/CONJJUNTO_CALI_vv1sqv.png",
-  "1165828229?h=4acb08a378": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381437/CONJJUNTO_CALI_vv1sqv.png",
-  "1165823422?h=3bad21440c": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381438/CAL%C3%87A_CORRENTINHA_gfgtky.png",
-  "1165827131?h=c55fa2bddb": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771387377/DOURADO_QUADRADO_9_dlvqnp.png",
-  "1165827332?h=75278547ee": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771387377/DOURADO_QUADRADO_9_dlvqnp.png",
-  "1165824975?h=29ac896d60": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771387377/DOURADO_QUADRADO_9_dlvqnp.png",
-  "1165823777?h=2148619f8b": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381442/SAIA_LAURA_ijd79k.png",
-  "1165823492?h=049b68c02a": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/CONJUNTO_GABI_xdph48.png",
-  "1165823953?h=6133197ea0": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/CONJUNTO_GABI_xdph48.png",
-  "1165823551?h=e845f3f59b": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/CONJUNTO_GABI_xdph48.png",
-  "1165828975?h=b2f003a62f": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381436/MACAC%C3%83O_GRASSI_v5fawd.png",
-  "1165829345?h=67f801752d": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381436/MACAC%C3%83O_GRASSI_v5fawd.png",
-  "1165823210?h=b5372b698b": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381437/CAL%C3%87A_TELA_iqybjm.png",
-  "1165823127?h=80846c06c2": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/CONJUNTO_PAETE_revqdb.png",
-  "1165823296?h=588db44c04": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/CROPPED_ANNA_CLARA_x9vxf8.png",
-  "1165829840?h=bda1e8e5be": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/SU%C3%89TER_SOFIA_zrjpji.png",
-  "1165828330?h=b9b9868fd2": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381441/SU%C3%89TER_SOFIA_zrjpji.png",
-  "1165825489?h=4953414a7c": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381440/CONJUNTO_LISI_h1slto.png",
-  "1165825673?h=fb8f804677": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381440/CONJUNTO_LISI_h1slto.png",
-  "1165826908?h=cf3b0678ab": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381439/BIQUINI_EVA_crun7w.png",
-  "1165826996?h=639389fcf0": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381439/SAIA_AMANDA_xo6sar.png",
-  "1165825423?h=8cfc5ddc23": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381442/SAIA_NINA_nughgu.png",
-  "1165867234?h=6e2eed84e2": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771381443/CONJUNTO_LETICIA_rtxkh0.png",
-  "1165898764?h=290f75b513": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/sousplate_u8qesy.jpg",
-  "1165899713?h=063db9139d": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305377/tereza_fyt2v7.jpg",
-  "1165908374?h=954ee77336": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771306716/iU1sYamfIVk-HD_ibcrxn.jpg",
-  "1165899950?h=65fb9d0fc3": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/renata_h8xajx.jpg",
-  "1165900227?h=ab8c1eb8e3": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/betania_xcfpnn.jpg",
-  "1165900453?h=3a7d240268": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/saia_midi_rws7jx.png",
-  "1165900701?h=fc8686d056": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/Gardeen_bydvt2.jpg",
-  "1165900912?h=25ab81c66e": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/corset_de_croche_ngaefh.jpg",
-  "1165901257?h=ba7889f004": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/corset_angel_g6z2jg.jpg",
-  "1165901491?h=5bf59bc49e": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/corset_em_v_kwwode.jpg",
-  "1165901832?h=5c0b941af2": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/Conjunto_svaxry.jpg",
-  "1165902033?h=67a0e24c41": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305380/tardezinha_ogtoie.jpg",
+  // Conjunto Rosas
+  "1165896656?h=71c1d6054e": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045923/conjunto_rosas_soqjqj.jpg",
+  // Top Estrela Brasil
+  "1165908076?h=3b842fbf9d": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047760/S-Vp3QiN1Tk-HD_ri9ivl.jpg",
+  // Conjunto Franja
+  "1165823586?h=95ae5df629": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/CONJUNTO_FRANJAS_h1ftat.png",
+  "1165823379?h=de1eeffff5": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/CONJUNTO_FRANJAS_h1ftat.png",
+  // Conjunto Square
+  "1165896871?h=f4895dbef0": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045933/Square_rhpjpk.jpg",
+  // Cropped Duda
+  "1165825953?h=b67785daa5": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CROPPED_DUDA_spalfj.png",
+  // Cropped Lola
+  "1165828668?h=95dd4603c4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/CROPPED_LOLA_ydkvxo.png",
+  // Conjunto Cali
+  "1165828774?h=0add065419": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/CONJJUNTO_CALI_upmtoq.png",
+  "1165828605?h=58d11062d4": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/CONJJUNTO_CALI_upmtoq.png",
+  "1165828438?h=456ae1cdb5": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/CONJJUNTO_CALI_upmtoq.png",
+  "1165828229?h=4acb08a378": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/CONJJUNTO_CALI_upmtoq.png",
+  // Calça Correntinha
+  "1165823422?h=3bad21440c": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/CAL%C3%87A_CORRENTINHA_rzigbd.png",
+  // Conjunto Lore
+  "1165827131?h=c55fa2bddb": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
+  "1165827332?h=75278547ee": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
+  "1165824975?h=29ac896d60": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/VESTIDO_LORE_lxfjfq.png",
+  // Saia Laura
+  "1165823777?h=2148619f8b": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043459/SAIA_LAURA_xbzaga.png",
+  // Conjunto Gabi
+  "1165823492?h=049b68c02a": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CONJUNTO_GABI_krxgin.png",
+  "1165823953?h=6133197ea0": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CONJUNTO_GABI_krxgin.png",
+  "1165823551?h=e845f3f59b": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043455/CONJUNTO_GABI_krxgin.png",
+  // Macacão Grassi
+  "1165828975?h=b2f003a62f": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/MACAC%C3%83O_GRASSI_wvr8fn.png",
+  "1165829345?h=67f801752d": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/MACAC%C3%83O_GRASSI_wvr8fn.png",
+  // Calça Tela
+  "1165823210?h=b5372b698b": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043457/CAL%C3%87A_TELA_pqnflb.png",
+  // Conjunto com Paetê Acrílico
+  "1165823127?h=80846c06c2": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043456/CONJUNTO_PAETE_zkywnw.png",
+  // Cropped Ana Clara
+  "1165823296?h=588db44c04": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043456/CROPPED_ANNA_CLARA_xiipsc.png",
+  // Suéter Sofia
+  "1165829840?h=bda1e8e5be": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SU%C3%89TER_SOFIA_v1ku1h.png",
+  "1165828330?h=b9b9868fd2": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SU%C3%89TER_SOFIA_v1ku1h.png",
+  // Conjunto Lisi
+  "1165825489?h=4953414a7c": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043454/CONJUNTO_LISI_j8klpy.png",
+  "1165825673?h=fb8f804677": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043454/CONJUNTO_LISI_j8klpy.png",
+  // Biquíni Eva
+  "1165826908?h=cf3b0678ab": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/BIQUINI_EVA_cysjja.png",
+  // Saia Amanda
+  "1165826996?h=639389fcf0": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SAIA_AMANDA_bkehf3.png",
+  // Saia Nina
+  "1165825423?h=8cfc5ddc23": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043458/SAIA_NINA_vejuo5.png",
+  // Conjunto Letícia
+  "1165867234?h=6e2eed84e2": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773043453/CONJUNTO_LETICIA_hrsn9n.png",
+  // Sousplato Girafa
+  "1165898764?h=290f75b513": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/sousplate_r6c5il.jpg",
+  // Saida Tereza
+  "1165899713?h=063db9139d": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045924/tereza_k5tibo.jpg",
+  // Saida Shirley
+  "1165908374?h=954ee77336": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103640/XReZUJvzft0-HD_xd8fk4.jpg",
+  // Saida Renata
+  "1165899950?h=65fb9d0fc3": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/renata_s8onby.jpg",
+  // Saida Betania
+  "1165900227?h=ab8c1eb8e3": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/betania_vkoiiz.jpg",
+  // Saida Midi
+  "1165900453?h=3a7d240268": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045924/saia_midi_g8vdas.png",
+  // Cropped Garden
+  "1165900701?h=fc8686d056": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045924/Gardeen_secuhp.jpg",
+  // Corset de Crochê
+  "1165900912?h=25ab81c66e": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045923/corset_de_croche_sncoso.jpg",
+  // Corset Angel
+  "1165901257?h=ba7889f004": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045924/corset_angel_sufv2t.jpg",
+  // Corset em V
+  "1165901491?h=5bf59bc49e": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045923/corset_em_v_xqkgcd.jpg",
+  // Conjunto Tereza
+  "1165901832?h=5c0b941af2": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045924/Conjunto_Tereeza_uhatth.jpg",
+  // Conjunto Tardezinha
+  "1165902033?h=67a0e24c41": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045939/tardezinha_cbzmqw.jpg",
+  // Biquini Rendado
   "1165415971?h=dd327a58fb": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771286793/fKLX4pMjmck-SD_bnzvlf.jpg",
-  "1165902686?h=192b4bb0cb": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305379/conjunto_brilho_hrkbp0.jpg",
-  "1165902854?h=c106849f13": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/Praiana_r8wcy2.jpg",
-  "1165905050?h=ddfb626d58": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/camila_euvcxi.jpg",
-  "lG2KfsR4pts": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/macac%C3%A3o_qidwbc.jpg",
-  "1165905314?h=0abf93f051": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771305378/cal%C3%A7a_thais_wmf6np.jpg",
-  "1165908138?h=11ec544581": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771307351/DxUeSn4p-Rg-HD_eodqdw.jpg",
-  "1165416602?h=239fa20e43": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771286572/vrCyt1O4SjU-HD_nti0w1.jpg",
-  "1165908193?h=44ce060d5e": "https://res.cloudinary.com/dzetm6plq/image/upload/v1771307351/IRnqSP9VCsg-HD_ixsndz.jpg",
+  // Conjunto Crochê Brilho
+  "1165902686?h=192b4bb0cb": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045940/conjunto_brilho_faosa4.jpg",
+  // Conjunto Praiana
+  "1165902854?h=c106849f13": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045940/Praiana_obj44o.jpg",
+  // Conjunto Camila
+  "1165905050?h=ddfb626d58": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045938/camila_hnnj1k.jpg",
+  // Calça Thais
+  "1165905314?h=0abf93f051": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045935/cal%C3%A7a_thais_jcfhxl.jpg",
+  // Saida Brasil
+  "1165908138?h=11ec544581": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049577/DxUeSn4p-Rg-HD_oq7myk.jpg",
+  // Biquini Tomara que Caia
+  "1165416602?h=239fa20e43": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049602/vrCyt1O4SjU-HD_gbgsdl.jpg",
+  // Top Brasil
+  "1165908193?h=44ce060d5e": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049580/IRnqSP9VCsg-HD_gxyv5p.jpg",
+  // === Novos vídeos do módulo de vestidos ===
+  // Conjunto Zelly
+  "1166455028": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049583/DOURADO_QUADRADO_1_ylbpz1.png",
+  "1166455627": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049583/DOURADO_QUADRADO_1_ylbpz1.png",
+  "1166455708": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049583/DOURADO_QUADRADO_1_ylbpz1.png",
+  // Cropped Livia
+  "1166455527": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/DOURADO_QUADRADO_6_f8xvnv.png",
+  // Conjunto Renata
+  "1166454958": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049587/CONJUNTO_RENATA_vxtxcm.png",
+  "1166454814": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049587/CONJUNTO_RENATA_vxtxcm.png",
+  // Conjunto Íris
+  "1166453580": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049592/CONJUNTO_RENATA_1_uu065u.png",
+  "1166453263": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049592/CONJUNTO_RENATA_1_uu065u.png",
+  // Conjunto Salles
+  "1166454066": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049593/DOURADO_QUADRADO_4_hvvt38.png",
+  "1166453471": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049593/DOURADO_QUADRADO_4_hvvt38.png",
+  "1166453995": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049593/DOURADO_QUADRADO_4_hvvt38.png",
+  // Conjunto Scheila
+  "1166453825": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049594/CONJUNTO_RENATA_2_lzujon.png",
+  "1166453931": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049594/CONJUNTO_RENATA_2_lzujon.png",
+  // Cropped Angel
+  "1166453227": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103646/DOURADO_QUADRADO_7_s7yqag.png",
+  // Cropped Anitta
+  "1166452434": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049596/DOURADO_QUADRADO_5_c2elvl.png",
+  // Cropped Maré
+  "1166452773": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773049597/CONJUNTO_RENATA_3_bu0xjs.png",
+  // Conjunto Suri
+  "1166451943": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/DOURADO_QUADRADO_8_oxelic.png",
+  "1166452358": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/DOURADO_QUADRADO_8_oxelic.png",
+  "1166451783": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/DOURADO_QUADRADO_8_oxelic.png",
+  "1166452111": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103641/DOURADO_QUADRADO_8_oxelic.png",
+  // Conjunto Tamiris
+  "1166455789": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/VERDE_QUADRADO_3_k684sj.png",
+  "1166456097": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/VERDE_QUADRADO_3_k684sj.png",
+  // Cropped Amari
+  "1166456178": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103643/VERDE_QUADRADO_4_zd2b9a.png",
+  // Cropped Tati
+  "1166456612": "https://res.cloudinary.com/dmwuhogih/image/upload/v1773047758/VERDE_QUADRADO_yqzhxu.png",
 };
 
 const getVideoThumbnail = (videoId: string, platform?: string) => {
@@ -124,11 +202,35 @@ const MaisModelos = () => {
     { id: 46, title: "Conjunto de Crochê Brilho", videoId: "1165902686?h=192b4bb0cb", project: "Conjunto Crochê Brilho", part: null, platform: "vimeo" as const },
     { id: 47, title: "Conjunto Praiana", videoId: "1165902854?h=c106849f13", project: "Conjunto Praiana", part: null, platform: "vimeo" as const },
     { id: 48, title: "Conjunto Camila", videoId: "1165905050?h=ddfb626d58", project: "Conjunto Camila", part: null, platform: "vimeo" as const },
-    { id: 49, title: "Macacão Longo", videoId: "lG2KfsR4pts", project: "Macacão Longo", part: null, platform: "youtube" as const },
-    { id: 50, title: "Calça Thais", videoId: "1165905314?h=0abf93f051", project: "Calça Thais", part: null, platform: "vimeo" as const },
-    { id: 51, title: "Saida Brasil", videoId: "1165908138?h=11ec544581", project: "Saida Brasil", part: null, platform: "vimeo" as const },
-    { id: 52, title: "Biquini Tomara que Caia", videoId: "1165416602?h=239fa20e43", project: "Biquini Tomara que Caia", part: null, platform: "vimeo" as const },
-    { id: 53, title: "Top Brasil", videoId: "1165908193?h=44ce060d5e", project: "Top Brasil", part: null, platform: "vimeo" as const },
+    { id: 49, title: "Calça Thais", videoId: "1165905314?h=0abf93f051", project: "Calça Thais", part: null, platform: "vimeo" as const },
+    { id: 50, title: "Saida Brasil", videoId: "1165908138?h=11ec544581", project: "Saida Brasil", part: null, platform: "vimeo" as const },
+    { id: 51, title: "Biquini Tomara que Caia", videoId: "1165416602?h=239fa20e43", project: "Biquini Tomara que Caia", part: null, platform: "vimeo" as const },
+    { id: 52, title: "Top Brasil", videoId: "1165908193?h=44ce060d5e", project: "Top Brasil", part: null, platform: "vimeo" as const },
+    // === Novos vídeos do módulo de vestidos ===
+    { id: 53, title: "Conjunto Zelly - Parte 1", videoId: "1166455028", project: "Conjunto Zelly", part: 1, platform: "vimeo" as const },
+    { id: 54, title: "Conjunto Zelly - Parte 2", videoId: "1166455627", project: "Conjunto Zelly", part: 2, platform: "vimeo" as const },
+    { id: 55, title: "Conjunto Zelly - Parte 3", videoId: "1166455708", project: "Conjunto Zelly", part: 3, platform: "vimeo" as const },
+    { id: 56, title: "Cropped Livia", videoId: "1166455527", project: "Cropped Livia", part: null, platform: "vimeo" as const },
+    { id: 57, title: "Conjunto Renata - Parte 1", videoId: "1166454958", project: "Conjunto Renata", part: 1, platform: "vimeo" as const },
+    { id: 58, title: "Conjunto Renata - Parte 2", videoId: "1166454814", project: "Conjunto Renata", part: 2, platform: "vimeo" as const },
+    { id: 59, title: "Conjunto Íris - Parte 1", videoId: "1166453580", project: "Conjunto Íris", part: 1, platform: "vimeo" as const },
+    { id: 60, title: "Conjunto Íris - Parte 2", videoId: "1166453263", project: "Conjunto Íris", part: 2, platform: "vimeo" as const },
+    { id: 61, title: "Conjunto Salles - Parte 1", videoId: "1166454066", project: "Conjunto Salles", part: 1, platform: "vimeo" as const },
+    { id: 62, title: "Conjunto Salles - Parte 2", videoId: "1166453471", project: "Conjunto Salles", part: 2, platform: "vimeo" as const },
+    { id: 63, title: "Conjunto Salles - Parte 3", videoId: "1166453995", project: "Conjunto Salles", part: 3, platform: "vimeo" as const },
+    { id: 64, title: "Conjunto Scheila - Parte 1", videoId: "1166453825", project: "Conjunto Scheila", part: 1, platform: "vimeo" as const },
+    { id: 65, title: "Conjunto Scheila - Parte 2", videoId: "1166453931", project: "Conjunto Scheila", part: 2, platform: "vimeo" as const },
+    { id: 66, title: "Cropped Angel", videoId: "1166453227", project: "Cropped Angel", part: null, platform: "vimeo" as const },
+    { id: 67, title: "Cropped Anitta", videoId: "1166452434", project: "Cropped Anitta", part: null, platform: "vimeo" as const },
+    { id: 68, title: "Cropped Maré", videoId: "1166452773", project: "Cropped Maré", part: null, platform: "vimeo" as const },
+    { id: 69, title: "Conjunto Suri - Parte 1", videoId: "1166451943", project: "Conjunto Suri", part: 1, platform: "vimeo" as const },
+    { id: 70, title: "Conjunto Suri - Parte 2", videoId: "1166452358", project: "Conjunto Suri", part: 2, platform: "vimeo" as const },
+    { id: 71, title: "Conjunto Suri - Parte 3", videoId: "1166451783", project: "Conjunto Suri", part: 3, platform: "vimeo" as const },
+    { id: 72, title: "Conjunto Suri - Parte 4", videoId: "1166452111", project: "Conjunto Suri", part: 4, platform: "vimeo" as const },
+    { id: 73, title: "Conjunto Tamiris - Parte 1", videoId: "1166455789", project: "Conjunto Tamiris", part: 1, platform: "vimeo" as const },
+    { id: 74, title: "Conjunto Tamiris - Parte 2", videoId: "1166456097", project: "Conjunto Tamiris", part: 2, platform: "vimeo" as const },
+    { id: 75, title: "Cropped Amari", videoId: "1166456178", project: "Cropped Amari", part: null, platform: "vimeo" as const },
+    { id: 76, title: "Cropped Tati", videoId: "1166456612", project: "Cropped Tati", part: null, platform: "vimeo" as const },
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
