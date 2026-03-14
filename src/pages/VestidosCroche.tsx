@@ -750,64 +750,6 @@ const VestidosCroche = () => {
               </Button>
             </div>
           </div>
-
-          {/* Sobre esta Aula */}
-          <Card className="shadow-card">
-            <CardContent className="p-4 sm:p-6">
-              <h3 className="text-xl font-semibold text-foreground mb-4">
-                Sobre esta Aula
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Neste tutorial completo, você aprenderá todas as técnicas necessárias para 
-                criar este lindo {currentVideo.project.toLowerCase()}. Siga o passo a passo com atenção e tire 
-                suas dúvidas nos comentários.
-              </p>
-              
-              {/* Visualização do Projeto */}
-              <div className="mb-6">
-                <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs">IA</span>
-                  Visualização do Projeto
-                </h4>
-                <div className={`grid grid-cols-1 ${(projectGraphics[currentVideo.project] || videoDiagrams[currentVideo.videoId]) ? 'sm:grid-cols-2' : ''} gap-4`}>
-                  <div className="space-y-2">
-                    <p className="text-sm text-muted-foreground font-medium">Resultado Final</p>
-                    <div className="relative overflow-hidden rounded-lg border border-border bg-muted/30">
-                      <img 
-                        src={getVideoThumbnail(currentVideo.videoId, currentVideo.platform)} 
-                        alt={`Preview do ${currentVideo.project}`}
-                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                  {(projectGraphics[currentVideo.project] || videoDiagrams[currentVideo.videoId]) && (
-                    <div className="space-y-2">
-                      <p className="text-sm text-muted-foreground font-medium">Diagrama de Pontos</p>
-                      <div className="relative overflow-hidden rounded-lg border border-border bg-white">
-                        <img 
-                          src={videoDiagrams[currentVideo.videoId] || projectGraphics[currentVideo.project]?.diagram} 
-                          alt={`Diagrama de pontos do ${currentVideo.title}`}
-                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-                          loading="lazy"
-                        />
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-              
-              <div className="bg-accent/20 border border-accent rounded-lg p-4">
-                <h4 className="font-semibold text-foreground mb-2">Materiais Necessários:</h4>
-                <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>• Linha de sua preferência (quantidade varia por projeto)</li>
-                  <li>• Agulha de crochê adequada para a linha</li>
-                  <li>• Tesoura e agulha de tapeçaria</li>
-                  <li>• Marcadores de ponto (opcional)</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
         </div>
 
         {/* Todas as Aulas - Full Width */}
