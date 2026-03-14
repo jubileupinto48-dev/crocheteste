@@ -773,7 +773,6 @@ const VestidosCroche = () => {
                   />
                   <Select value={filterProject} onValueChange={(value) => {
                     setFilterProject(value);
-                    setCurrentPage(1);
                   }}>
                     <SelectTrigger className="h-10">
                       <SelectValue placeholder="Filtrar por projeto" />
