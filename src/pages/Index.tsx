@@ -29,7 +29,7 @@ const Index = () => {
     id: 1,
     title: "Vestidos de Crochê",
     description: "Acesse todas as aulas exclusivas de vestidos de crochê com passo a passo completo.",
-    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050611/WhatsApp_Image_2026-03-09_at_07.03.15_sbj7tw.jpg",
+    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773516061/Design_sem_nome_3_kiedr8.png",
     link: "/vestidos-croche",
     badge: "Destaque"
   }, {
