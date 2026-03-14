@@ -706,171 +706,161 @@ const VestidosCroche = () => {
           </Button>
         </Link>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Player Principal + Info */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="animate-fade-in">
-              <div className={isMobile ? "aspect-[4/3] sm:aspect-video" : ""}>
-                <CustomVideoPlayer
-                  videoId={currentVideo.videoId}
-                  title={currentVideo.title}
-                  platform={currentVideo.platform as "youtube" | "vimeo"}
-                  autoplay={true}
-                  showPixMessage={false}
-                  customThumbnail={getVideoThumbnail(currentVideo.videoId, currentVideo.platform)}
-                />
-              </div>
-              
-              {/* Botões de navegação abaixo do player */}
-              <div className="flex gap-3 mt-2">
-                <Button
-                  variant="outline"
-                  onClick={handlePrevious}
-                  disabled={currentVideoIndex === 0}
-                  className="flex-1"
-                >
-                  <ChevronLeft className="mr-2 h-4 w-4" />
-                  Anterior
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => toggleFavorite({ videoId: currentVideo.videoId, title: currentVideo.title, thumbnail: getVideoThumbnail(currentVideo.videoId, currentVideo.platform), module: "Vestidos de Crochê", modulePath: "/vestidos-croche" })}
-                  className={`shrink-0 ${isFavorite(currentVideo.videoId) ? 'text-primary border-primary/50 bg-primary/10' : ''}`}
-                  aria-label="Favoritar"
-                >
-                  <Heart className={`h-4 w-4 ${isFavorite(currentVideo.videoId) ? 'fill-current' : ''}`} />
-                </Button>
-                <Button
-                  onClick={handleNext}
-                  disabled={currentVideoIndex === videos.length - 1}
-                  className="flex-1"
-                >
-                  Próximo
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
+        {/* Player Principal */}
+        <div className="max-w-4xl mx-auto space-y-6 mb-10">
+          <div className="animate-fade-in">
+            <div className={isMobile ? "aspect-[4/3] sm:aspect-video" : ""}>
+              <CustomVideoPlayer
+                videoId={currentVideo.videoId}
+                title={currentVideo.title}
+                platform={currentVideo.platform as "youtube" | "vimeo"}
+                autoplay={true}
+                showPixMessage={false}
+                customThumbnail={getVideoThumbnail(currentVideo.videoId, currentVideo.platform)}
+              />
+            </div>
+            
+            {/* Botões de navegação abaixo do player */}
+            <div className="flex gap-3 mt-2">
+              <Button
+                variant="outline"
+                onClick={handlePrevious}
+                disabled={currentVideoIndex === 0}
+                className="flex-1"
+              >
+                <ChevronLeft className="mr-2 h-4 w-4" />
+                Anterior
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => toggleFavorite({ videoId: currentVideo.videoId, title: currentVideo.title, thumbnail: getVideoThumbnail(currentVideo.videoId, currentVideo.platform), module: "Vestidos de Crochê", modulePath: "/vestidos-croche" })}
+                className={`shrink-0 ${isFavorite(currentVideo.videoId) ? 'text-primary border-primary/50 bg-primary/10' : ''}`}
+                aria-label="Favoritar"
+              >
+                <Heart className={`h-4 w-4 ${isFavorite(currentVideo.videoId) ? 'fill-current' : ''}`} />
+              </Button>
+              <Button
+                onClick={handleNext}
+                disabled={currentVideoIndex === videos.length - 1}
+                className="flex-1"
+              >
+                Próximo
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
           </div>
 
-          {/* Lista de Vídeos */}
-          <div className="lg:col-span-1 lg:row-span-2">
-            <Card className="lg:sticky lg:top-8 shadow-card animate-fade-in">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Todas as Aulas (256)
-                </h3>
-
-                {/* Filtros */}
-                <div className="space-y-3 mb-4">
-                  <Input
-                    placeholder="Buscar aula ou projeto..."
-                    value={searchTerm}
-                    onChange={(e) => {
-                      setSearchTerm(e.target.value);
-                    }}
-                    className="h-10"
-                  />
-                  <Select value={filterProject} onValueChange={(value) => {
-                    setFilterProject(value);
-                  }}>
-                    <SelectTrigger className="h-10">
-                      <SelectValue placeholder="Filtrar por projeto" />
-                    </SelectTrigger>
-                    <SelectContent className="max-h-[300px]">
-                      <SelectItem value="all">Todos os projetos</SelectItem>
-                      {uniqueProjects.map(project => (
-                        <SelectItem key={project} value={project}>{project}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {/* Lista com scroll */}
-                <div ref={videoListRef} className="space-y-3 max-h-[400px] lg:max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
-                  {displayedVideos.map((video, index) => {
-                    const actualIndex = videos.findIndex(v => v.id === video.id);
-                    return (
-                      <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${Math.min(index, 10) * 0.03}s` }}>
-                        <VideoCard
-                          title={video.title}
-                          duration={video.part ? `Parte ${video.part}` : "Completo"}
-                          thumbnail={getVideoThumbnail(video.videoId, video.platform)}
-                          videoNumber={video.id}
-                          isActive={actualIndex === currentVideoIndex}
-                          isFavorite={isFavorite(video.videoId)}
-                          onToggleFavorite={() => toggleFavorite({ videoId: video.videoId, title: video.title, thumbnail: getVideoThumbnail(video.videoId, video.platform), module: "Vestidos de Crochê", modulePath: "/vestidos-croche" })}
-                          onClick={() => handleVideoSelect(index)}
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-
-              </CardContent>
-            </Card>
-          </div>
-
           {/* Sobre esta Aula */}
-          <div className="lg:col-span-2">
-            <Card className="shadow-card">
-              <CardContent className="p-4 sm:p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Sobre esta Aula
-                </h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Neste tutorial completo, você aprenderá todas as técnicas necessárias para 
-                  criar este lindo {currentVideo.project.toLowerCase()}. Siga o passo a passo com atenção e tire 
-                  suas dúvidas nos comentários.
-                </p>
-                
-                {/* Visualização do Projeto */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <span className="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs">IA</span>
-                    Visualização do Projeto
-                  </h4>
-                  <div className={`grid grid-cols-1 ${(projectGraphics[currentVideo.project] || videoDiagrams[currentVideo.videoId]) ? 'sm:grid-cols-2' : ''} gap-4`}>
+          <Card className="shadow-card">
+            <CardContent className="p-4 sm:p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                Sobre esta Aula
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Neste tutorial completo, você aprenderá todas as técnicas necessárias para 
+                criar este lindo {currentVideo.project.toLowerCase()}. Siga o passo a passo com atenção e tire 
+                suas dúvidas nos comentários.
+              </p>
+              
+              {/* Visualização do Projeto */}
+              <div className="mb-6">
+                <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <span className="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs">IA</span>
+                  Visualização do Projeto
+                </h4>
+                <div className={`grid grid-cols-1 ${(projectGraphics[currentVideo.project] || videoDiagrams[currentVideo.videoId]) ? 'sm:grid-cols-2' : ''} gap-4`}>
+                  <div className="space-y-2">
+                    <p className="text-sm text-muted-foreground font-medium">Resultado Final</p>
+                    <div className="relative overflow-hidden rounded-lg border border-border bg-muted/30">
+                      <img 
+                        src={getVideoThumbnail(currentVideo.videoId, currentVideo.platform)} 
+                        alt={`Preview do ${currentVideo.project}`}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                  {(projectGraphics[currentVideo.project] || videoDiagrams[currentVideo.videoId]) && (
                     <div className="space-y-2">
-                      <p className="text-sm text-muted-foreground font-medium">Resultado Final</p>
-                      <div className="relative overflow-hidden rounded-lg border border-border bg-muted/30">
+                      <p className="text-sm text-muted-foreground font-medium">Diagrama de Pontos</p>
+                      <div className="relative overflow-hidden rounded-lg border border-border bg-white">
                         <img 
-                          src={getVideoThumbnail(currentVideo.videoId, currentVideo.platform)} 
-                          alt={`Preview do ${currentVideo.project}`}
+                          src={videoDiagrams[currentVideo.videoId] || projectGraphics[currentVideo.project]?.diagram} 
+                          alt={`Diagrama de pontos do ${currentVideo.title}`}
                           className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
                       </div>
                     </div>
-                    {(projectGraphics[currentVideo.project] || videoDiagrams[currentVideo.videoId]) && (
-                      <div className="space-y-2">
-                        <p className="text-sm text-muted-foreground font-medium">Diagrama de Pontos</p>
-                        <div className="relative overflow-hidden rounded-lg border border-border bg-white">
-                          <img 
-                            src={videoDiagrams[currentVideo.videoId] || projectGraphics[currentVideo.project]?.diagram} 
-                            alt={`Diagrama de pontos do ${currentVideo.title}`}
-                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  )}
                 </div>
-                
-                <div className="bg-accent/20 border border-accent rounded-lg p-4">
-                  <h4 className="font-semibold text-foreground mb-2">Materiais Necessários:</h4>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• Linha de sua preferência (quantidade varia por projeto)</li>
-                    <li>• Agulha de crochê adequada para a linha</li>
-                    <li>• Tesoura e agulha de tapeçaria</li>
-                    <li>• Marcadores de ponto (opcional)</li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+              
+              <div className="bg-accent/20 border border-accent rounded-lg p-4">
+                <h4 className="font-semibold text-foreground mb-2">Materiais Necessários:</h4>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• Linha de sua preferência (quantidade varia por projeto)</li>
+                  <li>• Agulha de crochê adequada para a linha</li>
+                  <li>• Tesoura e agulha de tapeçaria</li>
+                  <li>• Marcadores de ponto (opcional)</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
         </div>
+
+        {/* Todas as Aulas - Full Width */}
+        <section className="animate-fade-in">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+              Todas as Aulas ({videos.length})
+            </h2>
+            <p className="text-muted-foreground">Clique em qualquer aula para assistir</p>
+          </div>
+
+          {/* Filtros */}
+          <div className="flex flex-col sm:flex-row gap-3 mb-6 max-w-2xl mx-auto">
+            <Input
+              placeholder="Buscar aula ou projeto..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="h-10"
+            />
+            <Select value={filterProject} onValueChange={setFilterProject}>
+              <SelectTrigger className="h-10 sm:w-[220px]">
+                <SelectValue placeholder="Filtrar por projeto" />
+              </SelectTrigger>
+              <SelectContent className="max-h-[300px]">
+                <SelectItem value="all">Todos os projetos</SelectItem>
+                {uniqueProjects.map(project => (
+                  <SelectItem key={project} value={project}>{project}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Grid de Vídeos */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {displayedVideos.map((video, index) => {
+              const actualIndex = videos.findIndex(v => v.id === video.id);
+              return (
+                <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${Math.min(index, 10) * 0.03}s` }}>
+                  <VideoCard
+                    title={video.title}
+                    duration={video.part ? `Parte ${video.part}` : "Completo"}
+                    thumbnail={getVideoThumbnail(video.videoId, video.platform)}
+                    videoNumber={video.id}
+                    isActive={actualIndex === currentVideoIndex}
+                    isFavorite={isFavorite(video.videoId)}
+                    onToggleFavorite={() => toggleFavorite({ videoId: video.videoId, title: video.title, thumbnail: getVideoThumbnail(video.videoId, video.platform), module: "Vestidos de Crochê", modulePath: "/vestidos-croche" })}
+                    onClick={() => handleVideoSelect(index)}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </section>
       </div>
 
       <style>{`
