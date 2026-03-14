@@ -811,36 +811,6 @@ const VestidosCroche = () => {
                   })}
                 </div>
 
-                {/* Paginação */}
-                {totalPages > 1 && (
-                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => {
-                        setCurrentPage(p => Math.max(1, p - 1));
-                        videoListRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      disabled={currentPage === 1}
-                    >
-                      <ChevronLeft className="h-4 w-4" />
-                    </Button>
-                    <span className="text-sm text-muted-foreground">
-                      Página {currentPage} de {totalPages}
-                    </span>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => {
-                        setCurrentPage(p => Math.min(totalPages, p + 1));
-                        videoListRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      disabled={currentPage === totalPages}
-                    >
-                      <ChevronRight className="h-4 w-4" />
-                    </Button>
-                  </div>
-                )}
               </CardContent>
             </Card>
           </div>
