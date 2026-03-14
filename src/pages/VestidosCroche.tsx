@@ -626,9 +626,7 @@ const VestidosCroche = () => {
   const [cameFromCarousel, setCameFromCarousel] = useState(!!autoplayVideoId);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterProject, setFilterProject] = useState("all");
-  const [currentPage, setCurrentPage] = useState(1);
   const videoListRef = useRef<HTMLDivElement>(null);
-  const videosPerPage = 12;
   const { isFavorite, toggleFavorite } = useFavorites();
 
   // Helper para resolver URL da thumbnail
