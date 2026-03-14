@@ -671,8 +671,8 @@ const VestidosCroche = () => {
 
   const displayedVideos = filteredVideos;
 
-  const handleVideoSelect = (index: number) => {
-    const actualIndex = videos.findIndex(v => v.id === filteredVideos[startIndex + index].id);
+  const handleVideoSelect = (filteredIndex: number) => {
+    const actualIndex = videos.findIndex(v => v.id === filteredVideos[filteredIndex].id);
     setCurrentVideoIndex(actualIndex);
     setCameFromCarousel(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
