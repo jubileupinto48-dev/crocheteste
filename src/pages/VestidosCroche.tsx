@@ -626,9 +626,7 @@ const VestidosCroche = () => {
   const [cameFromCarousel, setCameFromCarousel] = useState(!!autoplayVideoId);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterProject, setFilterProject] = useState("all");
-  const [currentPage, setCurrentPage] = useState(1);
   const videoListRef = useRef<HTMLDivElement>(null);
-  const videosPerPage = 12;
   const { isFavorite, toggleFavorite } = useFavorites();
 
   // Helper para resolver URL da thumbnail
@@ -669,12 +667,10 @@ const VestidosCroche = () => {
     return matchesSearch && matchesProject;
   });
 
-  const totalPages = Math.ceil(filteredVideos.length / videosPerPage);
-  const startIndex = (currentPage - 1) * videosPerPage;
-  const paginatedVideos = filteredVideos.slice(startIndex, startIndex + videosPerPage);
+  const displayedVideos = filteredVideos;
 
-  const handleVideoSelect = (index: number) => {
-    const actualIndex = videos.findIndex(v => v.id === filteredVideos[startIndex + index].id);
+  const handleVideoSelect = (filteredIndex: number) => {
+    const actualIndex = videos.findIndex(v => v.id === filteredVideos[filteredIndex].id);
     setCurrentVideoIndex(actualIndex);
     setCameFromCarousel(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -772,13 +768,11 @@ const VestidosCroche = () => {
                     value={searchTerm}
                     onChange={(e) => {
                       setSearchTerm(e.target.value);
-                      setCurrentPage(1);
                     }}
                     className="h-10"
                   />
                   <Select value={filterProject} onValueChange={(value) => {
                     setFilterProject(value);
-                    setCurrentPage(1);
                   }}>
                     <SelectTrigger className="h-10">
                       <SelectValue placeholder="Filtrar por projeto" />
@@ -794,10 +788,10 @@ const VestidosCroche = () => {
 
                 {/* Lista com scroll */}
                 <div ref={videoListRef} className="space-y-3 max-h-[400px] lg:max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
-                  {paginatedVideos.map((video, index) => {
+                  {displayedVideos.map((video, index) => {
                     const actualIndex = videos.findIndex(v => v.id === video.id);
                     return (
-                      <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
+                      <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${Math.min(index, 10) * 0.03}s` }}>
                         <VideoCard
                           title={video.title}
                           duration={video.part ? `Parte ${video.part}` : "Completo"}
@@ -813,36 +807,6 @@ const VestidosCroche = () => {
                   })}
                 </div>
 
-                {/* Paginação */}
-                {totalPages > 1 && (
-                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => {
-                        setCurrentPage(p => Math.max(1, p - 1));
-                        videoListRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      disabled={currentPage === 1}
-                    >
-                      <ChevronLeft className="h-4 w-4" />
-                    </Button>
-                    <span className="text-sm text-muted-foreground">
-                      Página {currentPage} de {totalPages}
-                    </span>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => {
-                        setCurrentPage(p => Math.min(totalPages, p + 1));
-                        videoListRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      disabled={currentPage === totalPages}
-                    >
-                      <ChevronRight className="h-4 w-4" />
-                    </Button>
-                  </div>
-                )}
               </CardContent>
             </Card>
           </div>
