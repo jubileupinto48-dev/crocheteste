@@ -178,15 +178,8 @@ export const FeaturedCarousel = () => {
     };
   }, [api]);
 
-  const handlePlay = (videoId: string) => {
-    // Split Vimeo IDs with privacy hash (e.g. "123?h=abc") into separate params
-    // to avoid URL encoding issues on mobile Safari
-    if (videoId.includes('?h=')) {
-      const [id, rest] = videoId.split('?h=');
-      navigate(`/vestidos-croche?video=${id}&h=${rest}&autoplay=true`);
-    } else {
-      navigate(`/vestidos-croche?video=${videoId}&autoplay=true`);
-    }
+  const handlePlay = () => {
+    navigate('/vestidos-croche');
   };
 
   return (
