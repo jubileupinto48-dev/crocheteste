@@ -206,7 +206,7 @@ export const FeaturedCarousel = () => {
             <CarouselItem key={video.id} className="pl-2 md:pl-4 basis-full md:basis-4/5 lg:basis-3/4">
               <div 
                 className="relative aspect-video rounded-2xl overflow-hidden cursor-pointer group shadow-xl"
-                onClick={() => handlePlay(video.videoId)}
+                onClick={() => handlePlay()}
               >
                 {/* Thumbnail */}
                 <img
