@@ -609,7 +609,10 @@ const VestidosCroche = () => {
   const uniqueProjects = [...new Set(videos.map(v => v.project))];
 
   const [searchParams] = useSearchParams();
-  const autoplayVideoId = searchParams.get("video");
+  // Reconstruct full Vimeo ID with privacy hash if present
+  const rawVideoId = searchParams.get("video");
+  const vimeoHash = searchParams.get("h");
+  const autoplayVideoId = rawVideoId && vimeoHash ? `${rawVideoId}?h=${vimeoHash}` : rawVideoId;
   const shouldAutoplay = searchParams.get("autoplay") === "true";
 
   // Encontrar índice do vídeo baseado na URL
