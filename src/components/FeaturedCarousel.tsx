@@ -178,15 +178,8 @@ export const FeaturedCarousel = () => {
     };
   }, [api]);
 
-  const handlePlay = (videoId: string) => {
-    // Split Vimeo IDs with privacy hash (e.g. "123?h=abc") into separate params
-    // to avoid URL encoding issues on mobile Safari
-    if (videoId.includes('?h=')) {
-      const [id, rest] = videoId.split('?h=');
-      navigate(`/vestidos-croche?video=${id}&h=${rest}&autoplay=true`);
-    } else {
-      navigate(`/vestidos-croche?video=${videoId}&autoplay=true`);
-    }
+  const handlePlay = () => {
+    navigate('/vestidos-croche');
   };
 
   return (
@@ -213,7 +206,7 @@ export const FeaturedCarousel = () => {
             <CarouselItem key={video.id} className="pl-2 md:pl-4 basis-full md:basis-4/5 lg:basis-3/4">
               <div 
                 className="relative aspect-video rounded-2xl overflow-hidden cursor-pointer group shadow-xl"
-                onClick={() => handlePlay(video.videoId)}
+                onClick={() => handlePlay()}
               >
                 {/* Thumbnail */}
                 <img
