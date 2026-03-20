@@ -11,6 +11,7 @@ interface VideoCardProps {
   isActive?: boolean;
   isFavorite?: boolean;
   onToggleFavorite?: (e: React.MouseEvent) => void;
+  onImageReady?: () => void;
   onClick: () => void;
 }
 
@@ -22,6 +23,7 @@ export const VideoCard = ({
   isActive = false,
   isFavorite = false,
   onToggleFavorite,
+  onImageReady,
   onClick 
 }: VideoCardProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -45,7 +47,14 @@ export const VideoCard = ({
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
             loading="lazy"
-            onLoad={() => setImageLoaded(true)}
+            onLoad={() => {
+              setImageLoaded(true);
+              onImageReady?.();
+            }}
+            onError={() => {
+              setImageLoaded(true);
+              onImageReady?.();
+            }}
           />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <PlayCircle className="w-16 h-16 text-white" />
