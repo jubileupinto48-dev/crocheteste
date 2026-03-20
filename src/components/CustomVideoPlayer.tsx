@@ -337,7 +337,7 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   if (isPlayingInline) {
     return (
       <Card className="overflow-hidden shadow-card">
-        <div className="relative aspect-video bg-black">
+      <div ref={iframeContainerRef} className="relative aspect-video bg-black">
           <iframe
             src={getEmbedUrl()}
             title={title}
