@@ -259,6 +259,7 @@ interface CustomVideoPlayerProps {
 
 export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autoplay = false, showPixMessage = false, customThumbnail }: CustomVideoPlayerProps) => {
   const [isPlayingInline, setIsPlayingInline] = useState(false);
+  const iframeContainerRef = useRef<HTMLDivElement>(null);
   const [isPlayingModal, setIsPlayingModal] = useState(false);
   const [showingPixOverlay, setShowingPixOverlay] = useState(false);
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
