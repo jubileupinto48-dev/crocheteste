@@ -625,10 +625,13 @@ const VestidosCroche = () => {
   };
 
   const isMobile = useIsMobile();
+  const batchSize = 10;
   const [currentVideoIndex, setCurrentVideoIndex] = useState(getInitialVideoIndex);
   const [cameFromCarousel, setCameFromCarousel] = useState(!!autoplayVideoId);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterProject, setFilterProject] = useState("all");
+  const [visibleCount, setVisibleCount] = useState(batchSize);
+  const [loadedThumbnailIds, setLoadedThumbnailIds] = useState<string[]>([]);
   const videoListRef = useRef<HTMLDivElement>(null);
   const { isFavorite, toggleFavorite } = useFavorites();
 
@@ -671,6 +674,31 @@ const VestidosCroche = () => {
   });
 
   const displayedVideos = filteredVideos;
+  const visibleVideos = displayedVideos.slice(0, visibleCount);
+  const currentBatchVideos = visibleVideos.slice(Math.max(visibleCount - batchSize, 0), visibleCount);
+
+  useEffect(() => {
+    setVisibleCount(Math.min(batchSize, displayedVideos.length));
+    setLoadedThumbnailIds([]);
+  }, [searchTerm, filterProject, displayedVideos.length]);
+
+  const handleThumbnailReady = useCallback((videoId: string) => {
+    setLoadedThumbnailIds(prev => prev.includes(videoId) ? prev : [...prev, videoId]);
+  }, []);
+
+  useEffect(() => {
+    if (!currentBatchVideos.length || visibleCount >= displayedVideos.length) {
+      return;
+    }
+
+    const currentBatchLoaded = currentBatchVideos.every(video =>
+      loadedThumbnailIds.includes(video.videoId)
+    );
+
+    if (currentBatchLoaded) {
+      setVisibleCount(prev => Math.min(prev + batchSize, displayedVideos.length));
+    }
+  }, [currentBatchVideos, displayedVideos.length, loadedThumbnailIds, visibleCount, batchSize]);
 
   const handleVideoSelect = (filteredIndex: number) => {
     const actualIndex = videos.findIndex(v => v.id === filteredVideos[filteredIndex].id);
@@ -786,8 +814,8 @@ const VestidosCroche = () => {
           </div>
 
           {/* Grid de Vídeos */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {displayedVideos.map((video, index) => {
+          <div ref={videoListRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {visibleVideos.map((video, index) => {
               const actualIndex = videos.findIndex(v => v.id === video.id);
               return (
                 <div key={video.id} className="animate-fade-in" style={{ animationDelay: `${Math.min(index, 10) * 0.03}s` }}>
@@ -798,6 +826,7 @@ const VestidosCroche = () => {
                     videoNumber={video.id}
                     isActive={actualIndex === currentVideoIndex}
                     isFavorite={isFavorite(video.videoId)}
+                    onImageReady={() => handleThumbnailReady(video.videoId)}
                     onToggleFavorite={() => toggleFavorite({ videoId: video.videoId, title: video.title, thumbnail: getVideoThumbnail(video.videoId, video.platform), module: "Vestidos de Crochê", modulePath: "/vestidos-croche" })}
                     onClick={() => handleVideoSelect(index)}
                   />
