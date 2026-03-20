@@ -315,18 +315,21 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
 
   const handlePlay = () => {
     setIsPlayingInline(true);
-    // Request fullscreen after iframe renders
-    setTimeout(() => {
-      const container = iframeContainerRef.current;
-      if (container) {
-        const requestFs = container.requestFullscreen 
-          || (container as any).webkitRequestFullscreen 
-          || (container as any).msRequestFullscreen;
-        if (requestFs) {
-          requestFs.call(container).catch(() => {});
+    // Request fullscreen only on mobile devices
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      setTimeout(() => {
+        const container = iframeContainerRef.current;
+        if (container) {
+          const requestFs = container.requestFullscreen 
+            || (container as any).webkitRequestFullscreen 
+            || (container as any).msRequestFullscreen;
+          if (requestFs) {
+            requestFs.call(container).catch(() => {});
+          }
         }
-      }
-    }, 100);
+      }, 100);
+    }
   };
 
   const handleCloseModal = () => {
