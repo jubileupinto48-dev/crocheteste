@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Play, X, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -259,6 +259,7 @@ interface CustomVideoPlayerProps {
 
 export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autoplay = false, showPixMessage = false, customThumbnail }: CustomVideoPlayerProps) => {
   const [isPlayingInline, setIsPlayingInline] = useState(false);
+  const iframeContainerRef = useRef<HTMLDivElement>(null);
   const [isPlayingModal, setIsPlayingModal] = useState(false);
   const [showingPixOverlay, setShowingPixOverlay] = useState(false);
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
@@ -313,11 +314,19 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   };
 
   const handlePlay = () => {
-    if (autoplay) {
-      setIsPlayingInline(true);
-    } else {
-      setIsPlayingModal(true);
-    }
+    setIsPlayingInline(true);
+    // Request fullscreen after iframe renders
+    setTimeout(() => {
+      const container = iframeContainerRef.current;
+      if (container) {
+        const requestFs = container.requestFullscreen 
+          || (container as any).webkitRequestFullscreen 
+          || (container as any).msRequestFullscreen;
+        if (requestFs) {
+          requestFs.call(container).catch(() => {});
+        }
+      }
+    }, 100);
   };
 
   const handleCloseModal = () => {
@@ -328,7 +337,7 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   if (isPlayingInline) {
     return (
       <Card className="overflow-hidden shadow-card">
-        <div className="relative aspect-video bg-black">
+      <div ref={iframeContainerRef} className="relative aspect-video bg-black">
           <iframe
             src={getEmbedUrl()}
             title={title}
