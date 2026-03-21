@@ -1,0 +1,6 @@
+[[headers]]
+  for = "/redirect.html"
+  [headers.values]
+    X-Frame-Options = "ALLOWALL"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline';"
+    X-Content-Type-Options = "nosniff"
