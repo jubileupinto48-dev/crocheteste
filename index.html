@@ -15,8 +15,24 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Lovable" />
     <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b3163096-358e-4811-b6a1-fe64f801af34/id-preview-ba6e7736--76b6f144-a24f-4e39-ac83-e7cb8a207d6e.lovable.app-1771399814498.png">
+    <script>
+      (function() {
+        var ua = navigator.userAgent || navigator.vendor || window.opera;
+        var isWhatsApp = /WhatsApp/i.test(ua);
+        if (isWhatsApp) {
+          var url = window.location.href;
+          var isAndroid = /Android/i.test(ua);
+          var isIOS = /iPhone|iPad|iPod/i.test(ua);
+          if (isAndroid) {
+            window.location.href = 'intent://' + url.replace(/^https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;end';
+          } else if (isIOS) {
+            window.location.href = 'x-safari-https://' + url.replace(/^https?:\/\//, '');
+          }
+        }
+      })();
+    </script>
     
-  
+
   
   
 
