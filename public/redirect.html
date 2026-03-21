@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecionando...</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #fff8f5;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    a {
+      margin-top: 20px;
+      display: inline-block;
+      background: #e91e8c;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    p { font-size: 15px; color: #666; }
+  </style>
+</head>
+<body>
+  <h2>🧶 Crochê da Josi</h2>
+  <p>Abrindo o site no seu navegador...</p>
+  <a id="btn" href="https://crochedajosi.site/">Toque aqui se não abrir automaticamente</a>
+
+  <script>
+    var url = "https://crochedajosi.site/";
+    var ua = navigator.userAgent || "";
+    var isAndroid = /android/i.test(ua);
+    var isIOS = /iphone|ipad|ipod/i.test(ua);
+    var isWhatsApp = /whatsapp/i.test(ua);
+
+    if (isWhatsApp) {
+      if (isAndroid) {
+        // Força abertura no navegador padrão do Android
+        window.location.href = "intent://" + url.replace(/^https?:\/\//, "") + "#Intent;scheme=https;package=com.android.chrome;end";
+      } else if (isIOS) {
+        // Força abertura no Safari
+        window.location.href = url;
+        setTimeout(function () {
+          window.location.href = url;
+        }, 500);
+      } else {
+        window.location.href = url;
+      }
+    } else {
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
