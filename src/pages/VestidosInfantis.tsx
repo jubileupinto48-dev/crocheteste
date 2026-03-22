@@ -52,14 +52,12 @@ const VestidosInfantis = () => {
   const handleNext = () => {
     if (currentVideoIndex < videos.length - 1) {
       setCurrentVideoIndex(currentVideoIndex + 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   const handlePrevious = () => {
     if (currentVideoIndex > 0) {
       setCurrentVideoIndex(currentVideoIndex - 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
