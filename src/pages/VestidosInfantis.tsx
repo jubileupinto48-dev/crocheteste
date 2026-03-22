@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { useFavorites } from "@/hooks/use-favorites";
 
 const VestidosInfantis = () => {
+  const isMobile = useIsMobile();
   const videos = [
     { id: 1, title: "Roupinha Infantil - Aula 1", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy", videoId: "13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy", platform: "gdrive" as const },
     { id: 2, title: "Roupinha Infantil - Aula 2", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=15yQAl2f_wZIf8FVzeM8ldSmHybKVzGSI", videoId: "15yQAl2f_wZIf8FVzeM8ldSmHybKVzGSI", platform: "gdrive" as const },
