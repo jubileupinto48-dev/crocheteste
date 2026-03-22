@@ -60,8 +60,6 @@ const VestidosInfantis = () => {
       setCurrentVideoIndex(currentVideoIndex - 1);
     }
   };
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
