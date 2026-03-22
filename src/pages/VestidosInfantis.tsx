@@ -80,7 +80,7 @@ const VestidosInfantis = () => {
         {/* Player */}
         <div className="max-w-4xl mx-auto mb-10">
           <div className="animate-fade-in">
-            <VideoPlayer videoId={videos[currentVideoIndex].driveId} title={videos[currentVideoIndex].title} platform="gdrive" />
+            <VideoPlayer videoId={videos[currentVideoIndex].videoId} title={videos[currentVideoIndex].title} platform={videos[currentVideoIndex].platform} />
             <div className="flex gap-3 mt-2">
               <Button variant="outline" onClick={handlePrevious} disabled={currentVideoIndex === 0} className="flex-1">
                 <ChevronLeft className="mr-2 h-4 w-4" /> Anterior
