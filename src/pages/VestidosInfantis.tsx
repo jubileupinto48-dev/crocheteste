@@ -3,12 +3,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { VideoPlayer } from "@/components/VideoPlayer";
+import { CustomVideoPlayer } from "@/components/CustomVideoPlayer";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { VideoCard } from "@/components/VideoCard";
 import { Input } from "@/components/ui/input";
 import { useFavorites } from "@/hooks/use-favorites";
 
 const VestidosInfantis = () => {
+  const isMobile = useIsMobile();
   const videos = [
     { id: 1, title: "Roupinha Infantil - Aula 1", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy", videoId: "13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy", platform: "gdrive" as const },
     { id: 2, title: "Roupinha Infantil - Aula 2", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=15yQAl2f_wZIf8FVzeM8ldSmHybKVzGSI", videoId: "15yQAl2f_wZIf8FVzeM8ldSmHybKVzGSI", platform: "gdrive" as const },
@@ -80,7 +82,16 @@ const VestidosInfantis = () => {
         {/* Player */}
         <div className="max-w-4xl mx-auto mb-10">
           <div className="animate-fade-in">
-            <VideoPlayer videoId={videos[currentVideoIndex].videoId} title={videos[currentVideoIndex].title} platform={videos[currentVideoIndex].platform} />
+            <div className={isMobile ? "aspect-[4/3] sm:aspect-video" : ""}>
+              <CustomVideoPlayer
+                videoId={videos[currentVideoIndex].videoId}
+                title={videos[currentVideoIndex].title}
+                platform={videos[currentVideoIndex].platform}
+                autoplay={true}
+                showPixMessage={false}
+                customThumbnail={videos[currentVideoIndex].thumbnail}
+              />
+            </div>
             <div className="flex gap-3 mt-2">
               <Button variant="outline" onClick={handlePrevious} disabled={currentVideoIndex === 0} className="flex-1">
                 <ChevronLeft className="mr-2 h-4 w-4" /> Anterior
