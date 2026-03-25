@@ -103,21 +103,19 @@ const allModuleVideos: FeaturedVideo[] = [
   { id: "brunnet", title: "Vestido Brunnet", thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/CONJUNTO_RENATA_11_u3f0vl.png", videoId: "1166456663" },
 ];
 
-const CAROUSEL_SIZE = 16;
-
-// Fisher-Yates shuffle, then pick first N
-function pickRandomVideos(videos: FeaturedVideo[], count: number): FeaturedVideo[] {
-  const arr = [...videos];
-  for (let i = arr.length - 1; i > 0; i--) {
+// Fisher-Yates shuffle
+function shuffleArray<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+    [a[i], a[j]] = [a[j], a[i]];
   }
-  return arr.slice(0, count);
+  return a;
 }
 
 export const FeaturedCarousel = () => {
   const navigate = useNavigate();
-  const [shuffledVideos] = useState(() => pickRandomVideos(allModuleVideos, CAROUSEL_SIZE));
+  const [shuffledVideos] = useState(() => shuffleArray(allModuleVideos));
   const [api, setApi] = useState<CarouselApi>();
   const resumeTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
