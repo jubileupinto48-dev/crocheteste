@@ -153,7 +153,7 @@ const getVideoThumbnail = (videoId: string, platform?: string) => {
 const MaisModelos = () => {
   const isMobile = useIsMobile();
 
-  const videos = [
+  const videos_raw = [
     { id: 1, title: "Conjunto Rosas", videoId: "1165896656?h=71c1d6054e", project: "Conjunto Rosas", part: null, platform: "vimeo" as const },
     { id: 2, title: "Top Estrela Brasil", videoId: "1165908076?h=3b842fbf9d", project: "Top Estrela Brasil", part: null, platform: "vimeo" as const },
     { id: 3, title: "Conjunto Franja - Parte 1", videoId: "1165823586?h=95ae5df629", project: "Conjunto Franja", part: 1, platform: "vimeo" as const },
@@ -232,6 +232,23 @@ const MaisModelos = () => {
     { id: 75, title: "Cropped Amari", videoId: "1166456178", project: "Cropped Amari", part: null, platform: "vimeo" as const },
     { id: 76, title: "Cropped Tati", videoId: "1166456612", project: "Cropped Tati", part: null, platform: "vimeo" as const },
   ];
+
+  // Shuffle por grupos de projeto (mantém partes juntas e em ordem)
+  const videos = useState(() => {
+    const groups: typeof videos_raw[] = [];
+    const seen = new Set<string>();
+    for (const v of videos_raw) {
+      if (!seen.has(v.project)) {
+        seen.add(v.project);
+        groups.push(videos_raw.filter(x => x.project === v.project));
+      }
+    }
+    for (let i = groups.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [groups[i], groups[j]] = [groups[j], groups[i]];
+    }
+    return groups.flat().map((v, i) => ({ ...v, id: i + 1 }));
+  })[0];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
