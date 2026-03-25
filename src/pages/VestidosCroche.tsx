@@ -340,7 +340,7 @@ const getVideoThumbnail = (videoId: string, platform?: string) => {
 };
 
 const VestidosCroche = () => {
-  const videos = [
+  const videos_raw = [
     // ===== PÁGINA 1 (1-20) =====
     { id: 1, title: "Vestido Longo de Crochê", videoId: "1165908032?h=4e8257a515", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 2, title: "Vestido Longo de Crochê 2", videoId: "1165906778?h=ca85d54254", project: "Destaque", part: null, platform: "vimeo" as const },
