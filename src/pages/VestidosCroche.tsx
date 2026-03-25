@@ -340,7 +340,7 @@ const getVideoThumbnail = (videoId: string, platform?: string) => {
 };
 
 const VestidosCroche = () => {
-  const videos = [
+  const videos_raw = [
     // ===== PÁGINA 1 (1-20) =====
     { id: 1, title: "Vestido Longo de Crochê", videoId: "1165908032?h=4e8257a515", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 2, title: "Vestido Longo de Crochê 2", videoId: "1165906778?h=ca85d54254", project: "Destaque", part: null, platform: "vimeo" as const },
@@ -604,6 +604,27 @@ const VestidosCroche = () => {
     { id: 181, title: "Vestido Laís - Parte 3", videoId: "1166456240", project: "Vestido Laís", part: 3, platform: "vimeo" as const },
     
   ].map((v, i) => ({ ...v, id: i + 1 }));
+
+  // Shuffle por grupos de projeto (mantém partes juntas e em ordem)
+  const shuffledVideos = useState(() => {
+    // Agrupar por projeto mantendo a ordem das partes
+    const groups: typeof videos_raw[] = [];
+    const seen = new Set<string>();
+    for (const v of videos_raw) {
+      if (!seen.has(v.project)) {
+        seen.add(v.project);
+        groups.push(videos_raw.filter(x => x.project === v.project));
+      }
+    }
+    // Fisher-Yates nos grupos
+    for (let i = groups.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [groups[i], groups[j]] = [groups[j], groups[i]];
+    }
+    return groups.flat().map((v, i) => ({ ...v, id: i + 1 }));
+  })[0];
+
+  const videos = shuffledVideos;
 
   // Extrair projetos únicos para o filtro
   const uniqueProjects = [...new Set(videos.map(v => v.project))];

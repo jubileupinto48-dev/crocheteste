@@ -117,15 +117,14 @@ const allFeaturedVideos: FeaturedVideo[] = [
   },
 ];
 
-// Shuffle array using Fisher-Yates, keeping first three fixed (Vestido Longo + Decote V + Top Estrela)
+// Shuffle array using Fisher-Yates - all items shuffled
 function shuffleCarousel(videos: FeaturedVideo[]): FeaturedVideo[] {
-  const fixed = videos.slice(0, 3);
-  const rest = videos.slice(3);
-  for (let i = rest.length - 1; i > 0; i--) {
+  const arr = [...videos];
+  for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [rest[i], rest[j]] = [rest[j], rest[i]];
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
-  return [...fixed, ...rest];
+  return arr;
 }
 
 export const FeaturedCarousel = () => {
