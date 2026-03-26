@@ -219,7 +219,7 @@ export const FeaturedCarousel = () => {
 
       {/* Carousel Dots Indicator */}
       <div className="flex justify-center gap-2 mt-4">
-        {shuffledVideos.map((video) => (
+        {allModuleVideos.map((video) => (
           <div
             key={video.id}
             className="w-2 h-2 rounded-full bg-primary/30 transition-colors"
