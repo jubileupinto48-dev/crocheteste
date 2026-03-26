@@ -103,19 +103,8 @@ const allModuleVideos: FeaturedVideo[] = [
   { id: "brunnet", title: "Vestido Brunnet", thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/CONJUNTO_RENATA_11_u3f0vl.png", videoId: "1166456663" },
 ];
 
-// Fisher-Yates shuffle
-function shuffleArray<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 export const FeaturedCarousel = () => {
   const navigate = useNavigate();
-  const [shuffledVideos] = useState(() => shuffleArray(allModuleVideos));
   const [api, setApi] = useState<CarouselApi>();
   const resumeTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -187,7 +176,7 @@ export const FeaturedCarousel = () => {
         className="w-full"
       >
         <CarouselContent className="-ml-2 md:-ml-4">
-          {shuffledVideos.map((video) => (
+          {allModuleVideos.map((video) => (
             <CarouselItem key={video.id} className="pl-2 md:pl-4 basis-full md:basis-4/5 lg:basis-3/4">
               <div 
                 className="relative aspect-video rounded-2xl overflow-hidden cursor-pointer group shadow-xl"
@@ -230,7 +219,7 @@ export const FeaturedCarousel = () => {
 
       {/* Carousel Dots Indicator */}
       <div className="flex justify-center gap-2 mt-4">
-        {shuffledVideos.map((video) => (
+        {allModuleVideos.map((video) => (
           <div
             key={video.id}
             className="w-2 h-2 rounded-full bg-primary/30 transition-colors"

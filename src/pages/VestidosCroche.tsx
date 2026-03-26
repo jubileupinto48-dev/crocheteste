@@ -605,26 +605,7 @@ const VestidosCroche = () => {
     
   ].map((v, i) => ({ ...v, id: i + 1 }));
 
-  // Shuffle por grupos de projeto (mantém partes juntas e em ordem)
-  const shuffledVideos = useState(() => {
-    // Agrupar por projeto mantendo a ordem das partes
-    const groups: typeof videos_raw[] = [];
-    const seen = new Set<string>();
-    for (const v of videos_raw) {
-      if (!seen.has(v.project)) {
-        seen.add(v.project);
-        groups.push(videos_raw.filter(x => x.project === v.project));
-      }
-    }
-    // Fisher-Yates nos grupos
-    for (let i = groups.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [groups[i], groups[j]] = [groups[j], groups[i]];
-    }
-    return groups.flat().map((v, i) => ({ ...v, id: i + 1 }));
-  })[0];
-
-  const videos = shuffledVideos;
+  const videos = videos_raw;
 
   // Extrair projetos únicos para o filtro
   const uniqueProjects = [...new Set(videos.map(v => v.project))];

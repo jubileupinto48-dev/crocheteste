@@ -233,22 +233,7 @@ const MaisModelos = () => {
     { id: 76, title: "Cropped Tati", videoId: "1166456612", project: "Cropped Tati", part: null, platform: "vimeo" as const },
   ];
 
-  // Shuffle por grupos de projeto (mantém partes juntas e em ordem)
-  const videos = useState(() => {
-    const groups: typeof videos_raw[] = [];
-    const seen = new Set<string>();
-    for (const v of videos_raw) {
-      if (!seen.has(v.project)) {
-        seen.add(v.project);
-        groups.push(videos_raw.filter(x => x.project === v.project));
-      }
-    }
-    for (let i = groups.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [groups[i], groups[j]] = [groups[j], groups[i]];
-    }
-    return groups.flat().map((v, i) => ({ ...v, id: i + 1 }));
-  })[0];
+  const videos = videos_raw;
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
