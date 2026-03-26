@@ -341,18 +341,16 @@ const getVideoThumbnail = (videoId: string, platform?: string) => {
 
 const VestidosCroche = () => {
   const videos_raw = [
+    // ===== VESTIDOS (exclusivos do módulo) =====
     // ===== PÁGINA 1 (1-20) =====
     { id: 1, title: "Vestido Longo de Crochê", videoId: "1165908032?h=4e8257a515", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 2, title: "Vestido Longo de Crochê 2", videoId: "1165906778?h=ca85d54254", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 3, title: "Vestido Longo de Crochê 3", videoId: "1165907172?h=5916a23185", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 4, title: "Vestido Decote V", videoId: "1165903186?h=bb7c0e0908", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 5, title: "Vestido Raquel", videoId: "1165877185?h=ce49de91b5", project: "Destaque", part: null, platform: "vimeo" as const },
-    { id: 6, title: "Saída Renata", videoId: "1165899950?h=65fb9d0fc3", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 7, title: "Vestido Ciganinha", videoId: "1165905541?h=441d91f0bc", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 7, title: "Vestido Luxo", videoId: "1165412197?h=0fa29c051a", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 8, title: "Vestido Cleópatra", videoId: "1165896182?h=2ff4b53004", project: "Destaque", part: null, platform: "vimeo" as const },
-    { id: 9, title: "Conjunto Rosas", videoId: "1165896656?h=71c1d6054e", project: "Conjunto Rosas", part: null, platform: "vimeo" as const },
-    { id: 10, title: "Top Estrela Brasil", videoId: "1165908076?h=3b842fbf9d", project: "Top Estrela Brasil", part: null, platform: "vimeo" as const },
     // Virginia logo abaixo do Top Estrela Brasil
     { id: 11, title: "Vestido Virginia - Parte 1", videoId: "1165822436?h=73db5fd949", project: "Vestido Virginia", part: 1, platform: "vimeo" as const },
     { id: 12, title: "Vestido Virginia - Parte 2", videoId: "1165822491?h=426a5c76b5", project: "Vestido Virginia", part: 2, platform: "vimeo" as const },
@@ -363,78 +361,42 @@ const VestidosCroche = () => {
     // Saída Mel Maia logo abaixo do Angel
     { id: 16, title: "Saída Mel Maia - Parte 1", videoId: "1165822238?h=798063ee5e", project: "Saída Mel Maia", part: 1, platform: "vimeo" as const },
     { id: 17, title: "Saída Mel Maia - Parte 2", videoId: "1165822696?h=58d1366209", project: "Saída Mel Maia", part: 2, platform: "vimeo" as const },
-    // Conjunto Franja na página 1
-    { id: 18, title: "Conjunto Franja - Parte 1", videoId: "1165823586?h=95ae5df629", project: "Conjunto Franja", part: 1, platform: "vimeo" as const },
-    { id: 19, title: "Conjunto Franja - Parte 2", videoId: "1165823379?h=de1eeffff5", project: "Conjunto Franja", part: 2, platform: "vimeo" as const },
-    { id: 20, title: "Conjunto Square", videoId: "1165896871?h=f4895dbef0", project: "Conjunto Square", part: null, platform: "vimeo" as const },
     { id: 21, title: "Vestido Sereia", videoId: "1165908266?h=61b6de8549", project: "Vestido Sereia", part: null, platform: "vimeo" as const },
-
     // ===== PÁGINA 2+ (21+): Ordem específica no início, depois embaralhados =====
     // Vestido Maria no começo da página 2
     { id: 21, title: "Vestido Maria - Parte 1", videoId: "1165822301?h=88af25dec4", project: "Vestido Maria", part: 1, platform: "vimeo" as const },
     { id: 22, title: "Vestido Maria - Parte 2", videoId: "1165822154?h=5ec6b1f8af", project: "Vestido Maria", part: 2, platform: "vimeo" as const },
     { id: 23, title: "Vestido Maria - Parte 3", videoId: "1165822389?h=7d4dceda8d", project: "Vestido Maria", part: 3, platform: "vimeo" as const },
-    // Cropped Duda logo abaixo
-    { id: 24, title: "Cropped Duda", videoId: "1165825953?h=b67785daa5", project: "Cropped Duda", part: null, platform: "vimeo" as const },
     // Vestido Nala logo abaixo
     { id: 25, title: "Vestido Nala - Parte 1", videoId: "1165828828?h=a4c932ccd4", project: "Vestido Nala", part: 1, platform: "vimeo" as const },
     { id: 26, title: "Vestido Nala - Parte 2", videoId: "1165829077?h=2e1fffbb63", project: "Vestido Nala", part: 2, platform: "vimeo" as const },
-    // Cropped Lola logo abaixo
-    { id: 27, title: "Cropped Lola", videoId: "1165828668?h=95dd4603c4", project: "Cropped Lola", part: null, platform: "vimeo" as const },
     // Vestido Ana Paula logo abaixo
     { id: 28, title: "Vestido Ana Paula - Parte 1", videoId: "1165825235?h=e65562ca75", project: "Vestido Ana Paula", part: 1, platform: "vimeo" as const },
     { id: 29, title: "Vestido Ana Paula - Parte 2", videoId: "1165825126?h=78b247f600", project: "Vestido Ana Paula", part: 2, platform: "vimeo" as const },
     { id: 30, title: "Vestido Ana Paula - Parte 3", videoId: "1165825817?h=a8a15760a4", project: "Vestido Ana Paula", part: 3, platform: "vimeo" as const },
-
     // ===== Restante dos Vimeo (embaralhados) =====
     { id: 31, title: "Vestido Sophia", videoId: "1165826517?h=288eec92f1", project: "Vestido Sophia", part: null, platform: "vimeo" as const },
     { id: 32, title: "Vestido Juliana Paes - Parte 1", videoId: "1165823703?h=f2563c95af", project: "Vestido Juliana Paes", part: 1, platform: "vimeo" as const },
     { id: 33, title: "Vestido Juliana Paes - Parte 2", videoId: "1165823637?h=be2694c569", project: "Vestido Juliana Paes", part: 2, platform: "vimeo" as const },
     { id: 34, title: "Vestido Juliana Paes - Parte 3", videoId: "1165823010?h=773cd6f91e", project: "Vestido Juliana Paes", part: 3, platform: "vimeo" as const },
     { id: 35, title: "Vestido Juliana Paes - Parte 4", videoId: "1165824039?h=b270eff1a3", project: "Vestido Juliana Paes", part: 4, platform: "vimeo" as const },
-    { id: 36, title: "Conjunto Cali - Parte 1", videoId: "1165828774?h=0add065419", project: "Conjunto Cali", part: 1, platform: "vimeo" as const },
-    { id: 37, title: "Conjunto Cali - Parte 2", videoId: "1165828605?h=58d11062d4", project: "Conjunto Cali", part: 2, platform: "vimeo" as const },
-    { id: 38, title: "Conjunto Cali - Parte 3", videoId: "1165828438?h=456ae1cdb5", project: "Conjunto Cali", part: 3, platform: "vimeo" as const },
-    { id: 39, title: "Conjunto Cali - Parte 4", videoId: "1165828229?h=4acb08a378", project: "Conjunto Cali", part: 4, platform: "vimeo" as const },
     { id: 40, title: "Vestido Moana", videoId: "1165826035?h=8dbfaef2b0", project: "Vestido Moana", part: null, platform: "vimeo" as const },
     { id: 41, title: "Vestido Larissa - Parte 1", videoId: "1165829701?h=c3dde6b38a", project: "Vestido Larissa", part: 1, platform: "vimeo" as const },
     { id: 42, title: "Vestido Larissa - Parte 2", videoId: "1165829124?h=f7f7193ac1", project: "Vestido Larissa", part: 2, platform: "vimeo" as const },
     { id: 43, title: "Vestido Larissa - Parte 3", videoId: "1165829571?h=8d15bdff7a", project: "Vestido Larissa", part: 3, platform: "vimeo" as const },
-    { id: 44, title: "Calça Correntinha", videoId: "1165823422?h=3bad21440c", project: "Calça Correntinha", part: null, platform: "vimeo" as const },
     { id: 45, title: "Vestido Vanessa - Parte 1", videoId: "1165827065?h=0540e2af34", project: "Vestido Vanessa", part: 1, platform: "vimeo" as const },
     { id: 46, title: "Vestido Vanessa - Parte 2", videoId: "1165826296?h=8c5f4f7cfb", project: "Vestido Vanessa", part: 2, platform: "vimeo" as const },
     { id: 47, title: "Vestido Vanessa - Parte 3", videoId: "1165826387?h=9cf52087de", project: "Vestido Vanessa", part: 3, platform: "vimeo" as const },
-    { id: 48, title: "Conjunto Lore - Parte 1", videoId: "1165827131?h=c55fa2bddb", project: "Conjunto Lore", part: 1, platform: "vimeo" as const },
-    { id: 49, title: "Conjunto Lore - Parte 2", videoId: "1165827332?h=75278547ee", project: "Conjunto Lore", part: 2, platform: "vimeo" as const },
-    { id: 50, title: "Conjunto Lore - Parte 3", videoId: "1165824975?h=29ac896d60", project: "Conjunto Lore", part: 3, platform: "vimeo" as const },
-    { id: 51, title: "Saia Laura", videoId: "1165823777?h=2148619f8b", project: "Saia Laura", part: null, platform: "vimeo" as const },
     { id: 52, title: "Vestido Bel - Parte 1", videoId: "1165826717?h=fd78660abf", project: "Vestido Bel", part: 1, platform: "vimeo" as const },
     { id: 53, title: "Vestido Bel - Parte 2", videoId: "1165826152?h=d563f325dc", project: "Vestido Bel", part: 2, platform: "vimeo" as const },
-    { id: 54, title: "Conjunto Gabi - Parte 1", videoId: "1165823492?h=049b68c02a", project: "Conjunto Gabi", part: 1, platform: "vimeo" as const },
-    { id: 55, title: "Conjunto Gabi - Parte 2", videoId: "1165823953?h=6133197ea0", project: "Conjunto Gabi", part: 2, platform: "vimeo" as const },
-    { id: 56, title: "Conjunto Gabi - Dica Extra", videoId: "1165823551?h=e845f3f59b", project: "Conjunto Gabi", part: 3, platform: "vimeo" as const },
-    { id: 57, title: "Macacão Grassi - Parte 1", videoId: "1165828975?h=b2f003a62f", project: "Macacão Grassi", part: 1, platform: "vimeo" as const },
-    { id: 58, title: "Macacão Grassi - Parte 2", videoId: "1165829345?h=67f801752d", project: "Macacão Grassi", part: 2, platform: "vimeo" as const },
-    { id: 59, title: "Calça Tela", videoId: "1165823210?h=b5372b698b", project: "Calça Tela", part: null, platform: "vimeo" as const },
     { id: 60, title: "Vestido Yara - Parte 1", videoId: "1165825327?h=6fcce5e502", project: "Vestido Yara", part: 1, platform: "vimeo" as const },
     { id: 61, title: "Vestido Yara - Parte 2", videoId: "1165825757?h=00739caa67", project: "Vestido Yara", part: 2, platform: "vimeo" as const },
-    { id: 62, title: "Conjunto com Paetê Acrílico", videoId: "1165823127?h=80846c06c2", project: "Conjunto com Paetê Acrílico", part: null, platform: "vimeo" as const },
-    { id: 63, title: "Cropped Ana Clara", videoId: "1165823296?h=588db44c04", project: "Cropped Ana Clara", part: null, platform: "vimeo" as const },
     { id: 64, title: "Vestido Vanda", videoId: "1165826807?h=56f86f1de4", project: "Vestido Vanda", part: null, platform: "vimeo" as const },
-    { id: 65, title: "Suéter Sofia - Parte 1", videoId: "1165829840?h=bda1e8e5be", project: "Suéter Sofia", part: 1, platform: "vimeo" as const },
-    { id: 66, title: "Suéter Sofia - Parte 2", videoId: "1165828330?h=b9b9868fd2", project: "Suéter Sofia", part: 2, platform: "vimeo" as const },
     { id: 67, title: "Vestido Patricia - Parte 1", videoId: "1165823890?h=8a3a44f1d3", project: "Vestido Patricia", part: 1, platform: "vimeo" as const },
     { id: 68, title: "Vestido Patricia - Parte 2", videoId: "1165823819?h=d5bbc1ab0f", project: "Vestido Patricia", part: 2, platform: "vimeo" as const },
-    { id: 69, title: "Conjunto Lisi - Parte 1", videoId: "1165825489?h=4953414a7c", project: "Conjunto Lisi", part: 1, platform: "vimeo" as const },
-    { id: 70, title: "Conjunto Lisi - Parte 2", videoId: "1165825673?h=fb8f804677", project: "Conjunto Lisi", part: 2, platform: "vimeo" as const },
-    { id: 71, title: "Biquíni Eva", videoId: "1165826908?h=cf3b0678ab", project: "Biquíni Eva", part: null, platform: "vimeo" as const },
-    { id: 72, title: "Saia Amanda", videoId: "1165826996?h=639389fcf0", project: "Saia Amanda", part: null, platform: "vimeo" as const },
-    { id: 73, title: "Saia Nina", videoId: "1165825423?h=8cfc5ddc23", project: "Saia Nina", part: null, platform: "vimeo" as const },
     { id: 74, title: "Vestido Ana", videoId: "1165825582?h=f833fa35d1", project: "Vestido Ana", part: null, platform: "vimeo" as const },
     { id: 75, title: "Vestido Marina - Parte 1", videoId: "1165826240?h=bb6309f319", project: "Vestido Marina", part: 1, platform: "vimeo" as const },
     { id: 76, title: "Vestido Marina - Parte 2", videoId: "1165825869?h=8858cf55a6", project: "Vestido Marina", part: 2, platform: "vimeo" as const },
-    { id: 77, title: "Conjunto Letícia", videoId: "1165867234?h=6e2eed84e2", project: "Conjunto Letícia", part: null, platform: "vimeo" as const },
-
     // ===== YouTube empurrados da página 1 (com thumbnails) =====
     { id: 78, title: "Vestido Ana Clara", videoId: "1165898325?h=5af0c2457f", project: "Vestido Ana Clara", part: null, platform: "vimeo" as const },
     { id: 79, title: "Vestido Camila", videoId: "1165897115?h=2e6bdf5c09", project: "Vestido Camila", part: null, platform: "vimeo" as const },
@@ -444,11 +406,112 @@ const VestidosCroche = () => {
     { id: 83, title: "Vestido Evelyne", videoId: "1165897740?h=21a8c932d8", project: "Vestido Evelyne", part: null, platform: "vimeo" as const },
     { id: 84, title: "Vestido Flavia", videoId: "1165897922?h=83924a6988", project: "Vestido Flavia", part: null, platform: "vimeo" as const },
     { id: 85, title: "Vestido Noiva Longo", videoId: "1165417274?h=8e8af3b41e", project: "Vestido Noiva Longo", part: null, platform: "vimeo" as const },
-
     // ===== VÍDEOS MIGRADOS PARA VIMEO =====
     // Vestido Lore removido
     { id: 87, title: "Vestido Moçambique", videoId: "1165898928?h=ce0edc64ab", project: "Vestido Moçambique", part: null, platform: "vimeo" as const },
     { id: 88, title: "Vestido Raira", videoId: "1165899486?h=7759bd5d46", project: "Vestido Raira", part: null, platform: "vimeo" as const },
+    // ===== 110+: VÍDEOS ANTIGOS COM PIX (YouTube) =====
+    
+    // Vestido Patricia Poeta (3 partes)
+    { id: 111, title: "Vestido Patricia Poeta - Parte 1", videoId: "1166455223", project: "Vestido Patricia Poeta", part: 1, platform: "vimeo" as const },
+    { id: 112, title: "Vestido Patricia Poeta - Parte 2", videoId: "1166455407", project: "Vestido Patricia Poeta", part: 2, platform: "vimeo" as const },
+    { id: 113, title: "Vestido Patricia Poeta - Parte 3", videoId: "1166455304", project: "Vestido Patricia Poeta", part: 3, platform: "vimeo" as const },
+    // Vestido Alice (2 partes)
+    { id: 118, title: "Vestido Alice - Parte 1", videoId: "1166454267", project: "Vestido Alice", part: 1, platform: "vimeo" as const },
+    { id: 119, title: "Vestido Alice - Parte 2", videoId: "1166454162", project: "Vestido Alice", part: 2, platform: "vimeo" as const },
+    // Vestido Lari (3 partes)
+    { id: 123, title: "Vestido Lari - Parte 1", videoId: "1166454494", project: "Vestido Lari", part: 1, platform: "vimeo" as const },
+    { id: 124, title: "Vestido Lari - Parte 2", videoId: "1166454409", project: "Vestido Lari", part: 2, platform: "vimeo" as const },
+    { id: 125, title: "Vestido Lari - Parte 3", videoId: "1166454722", project: "Vestido Lari", part: 3, platform: "vimeo" as const },
+    // Vestido Nay (2 partes)
+    { id: 126, title: "Vestido Nay - Parte 1", videoId: "1166454610", project: "Vestido Nay", part: 1, platform: "vimeo" as const },
+    { id: 127, title: "Vestido Nay - Parte 2", videoId: "1166454887", project: "Vestido Nay", part: 2, platform: "vimeo" as const },
+    // Vestido Estrella (2 partes)
+    { id: 139, title: "Vestido Estrella - Parte 1", videoId: "1166452653", project: "Vestido Estrella", part: 1, platform: "vimeo" as const },
+    { id: 140, title: "Vestido Estrella - Parte 2", videoId: "1166453163", project: "Vestido Estrella", part: 2, platform: "vimeo" as const },
+    // Vestido Lore (4 partes)
+    { id: 141, title: "Vestido Lore - Parte 1", videoId: "1166452912", project: "Vestido Lore", part: 1, platform: "vimeo" as const },
+    { id: 142, title: "Vestido Lore - Parte 2", videoId: "1166452540", project: "Vestido Lore", part: 2, platform: "vimeo" as const },
+    { id: 143, title: "Vestido Lore - Parte 3", videoId: "1166453001", project: "Vestido Lore", part: 3, platform: "vimeo" as const },
+    { id: 144, title: "Vestido Lore - Parte 4", videoId: "1166453073", project: "Vestido Lore", part: 4, platform: "vimeo" as const },
+    // Vestido Gaia (2 partes)
+    { id: 145, title: "Vestido Gaia - Parte 1", videoId: "1166452269", project: "Vestido Gaia", part: 1, platform: "vimeo" as const },
+    { id: 146, title: "Vestido Gaia - Parte 2", videoId: "1166452022", project: "Vestido Gaia", part: 2, platform: "vimeo" as const },
+    // Vestido Yasmin (3 partes)
+    { id: 147, title: "Vestido Yasmin - Parte 1", videoId: "1166451870", project: "Vestido Yasmin", part: 1, platform: "vimeo" as const },
+    { id: 148, title: "Vestido Yasmin - Parte 2", videoId: "1166452191", project: "Vestido Yasmin", part: 2, platform: "vimeo" as const },
+    { id: 149, title: "Vestido Yasmin - Parte 3", videoId: "1166451669", project: "Vestido Yasmin", part: 3, platform: "vimeo" as const },
+    // Vestido Lorena (5 partes)
+    { id: 154, title: "Vestido Lorena - Parte 1", videoId: "1166451621", project: "Vestido Lorena", part: 1, platform: "vimeo" as const },
+    { id: 155, title: "Vestido Lorena - Parte 2", videoId: "1166451567", project: "Vestido Lorena", part: 2, platform: "vimeo" as const },
+    { id: 156, title: "Vestido Lorena - Parte 3", videoId: "1166451424", project: "Vestido Lorena", part: 3, platform: "vimeo" as const },
+    { id: 157, title: "Vestido Lorena - Parte 4", videoId: "1166451198", project: "Vestido Lorena", part: 4, platform: "vimeo" as const },
+    { id: 158, title: "Vestido Lorena - Parte 5", videoId: "1166451470", project: "Vestido Lorena", part: 5, platform: "vimeo" as const },
+    // Saída Rayssa (2 partes)
+    { id: 159, title: "Saída Rayssa - Parte 1", videoId: "1166450959", project: "Saída Rayssa", part: 1, platform: "vimeo" as const },
+    { id: 160, title: "Saída Rayssa - Parte 2", videoId: "1166451252", project: "Saída Rayssa", part: 2, platform: "vimeo" as const },
+    // Vestido Sol (3 partes)
+    { id: 161, title: "Vestido Sol - Parte 1", videoId: "1166451054", project: "Vestido Sol", part: 1, platform: "vimeo" as const },
+    { id: 162, title: "Vestido Sol - Parte 2", videoId: "1166451321", project: "Vestido Sol", part: 2, platform: "vimeo" as const },
+    { id: 163, title: "Vestido Sol - Parte 3", videoId: "1166451140", project: "Vestido Sol", part: 3, platform: "vimeo" as const },
+    // Vestido Abacaxi (2 partes)
+    { id: 164, title: "Vestido Abacaxi - Parte 1", videoId: "1166450255", project: "Vestido Abacaxi", part: 1, platform: "vimeo" as const },
+    { id: 165, title: "Vestido Abacaxi - Parte 2", videoId: "1166450136", project: "Vestido Abacaxi", part: 2, platform: "vimeo" as const },
+    // Vestido Bella (3 partes)
+    { id: 166, title: "Vestido Bella - Parte 1", videoId: "1166450761", project: "Vestido Bella", part: 1, platform: "vimeo" as const },
+    { id: 167, title: "Vestido Bella - Parte 2", videoId: "1166450392", project: "Vestido Bella", part: 2, platform: "vimeo" as const },
+    { id: 168, title: "Vestido Bella - Parte 3", videoId: "1166450675", project: "Vestido Bella", part: 3, platform: "vimeo" as const },
+    // Vestido e Cropped Julia (2 partes)
+    { id: 169, title: "Vestido e Cropped Julia - Parte 1", videoId: "1166450034", project: "Vestido e Cropped Julia", part: 1, platform: "vimeo" as const },
+    { id: 170, title: "Vestido e Cropped Julia - Parte 2", videoId: "1166456882", project: "Vestido e Cropped Julia", part: 2, platform: "vimeo" as const },
+    // Vestido Brunnet (3 partes)
+    { id: 171, title: "Vestido Brunnet - Parte 1", videoId: "1166456663", project: "Vestido Brunnet", part: 1, platform: "vimeo" as const },
+    { id: 172, title: "Vestido Brunnet - Parte 2", videoId: "1166450509", project: "Vestido Brunnet", part: 2, platform: "vimeo" as const },
+    { id: 173, title: "Vestido Brunnet - Parte 3", videoId: "1166450892", project: "Vestido Brunnet", part: 3, platform: "vimeo" as const },
+    // Vestido Dubai
+    { id: 178, title: "Vestido Dubai", videoId: "1166456435", project: "Vestido Dubai", part: null, platform: "vimeo" as const },
+    // Vestido Laís (3 partes)
+    { id: 179, title: "Vestido Laís - Parte 1", videoId: "1166456340", project: "Vestido Laís", part: 1, platform: "vimeo" as const },
+    { id: 180, title: "Vestido Laís - Parte 2", videoId: "1166456535", project: "Vestido Laís", part: 2, platform: "vimeo" as const },
+    { id: 181, title: "Vestido Laís - Parte 3", videoId: "1166456240", project: "Vestido Laís", part: 3, platform: "vimeo" as const },
+
+    // ===== CROPPEDS, BIQUÍNIS, CONJUNTOS (também no módulo Croppeds) =====
+    { id: 6, title: "Saída Renata", videoId: "1165899950?h=65fb9d0fc3", project: "Destaque", part: null, platform: "vimeo" as const },
+    { id: 9, title: "Conjunto Rosas", videoId: "1165896656?h=71c1d6054e", project: "Conjunto Rosas", part: null, platform: "vimeo" as const },
+    { id: 10, title: "Top Estrela Brasil", videoId: "1165908076?h=3b842fbf9d", project: "Top Estrela Brasil", part: null, platform: "vimeo" as const },
+    // Conjunto Franja na página 1
+    { id: 18, title: "Conjunto Franja - Parte 1", videoId: "1165823586?h=95ae5df629", project: "Conjunto Franja", part: 1, platform: "vimeo" as const },
+    { id: 19, title: "Conjunto Franja - Parte 2", videoId: "1165823379?h=de1eeffff5", project: "Conjunto Franja", part: 2, platform: "vimeo" as const },
+    { id: 20, title: "Conjunto Square", videoId: "1165896871?h=f4895dbef0", project: "Conjunto Square", part: null, platform: "vimeo" as const },
+    // Cropped Duda logo abaixo
+    { id: 24, title: "Cropped Duda", videoId: "1165825953?h=b67785daa5", project: "Cropped Duda", part: null, platform: "vimeo" as const },
+    // Cropped Lola logo abaixo
+    { id: 27, title: "Cropped Lola", videoId: "1165828668?h=95dd4603c4", project: "Cropped Lola", part: null, platform: "vimeo" as const },
+    { id: 36, title: "Conjunto Cali - Parte 1", videoId: "1165828774?h=0add065419", project: "Conjunto Cali", part: 1, platform: "vimeo" as const },
+    { id: 37, title: "Conjunto Cali - Parte 2", videoId: "1165828605?h=58d11062d4", project: "Conjunto Cali", part: 2, platform: "vimeo" as const },
+    { id: 38, title: "Conjunto Cali - Parte 3", videoId: "1165828438?h=456ae1cdb5", project: "Conjunto Cali", part: 3, platform: "vimeo" as const },
+    { id: 39, title: "Conjunto Cali - Parte 4", videoId: "1165828229?h=4acb08a378", project: "Conjunto Cali", part: 4, platform: "vimeo" as const },
+    { id: 44, title: "Calça Correntinha", videoId: "1165823422?h=3bad21440c", project: "Calça Correntinha", part: null, platform: "vimeo" as const },
+    { id: 48, title: "Conjunto Lore - Parte 1", videoId: "1165827131?h=c55fa2bddb", project: "Conjunto Lore", part: 1, platform: "vimeo" as const },
+    { id: 49, title: "Conjunto Lore - Parte 2", videoId: "1165827332?h=75278547ee", project: "Conjunto Lore", part: 2, platform: "vimeo" as const },
+    { id: 50, title: "Conjunto Lore - Parte 3", videoId: "1165824975?h=29ac896d60", project: "Conjunto Lore", part: 3, platform: "vimeo" as const },
+    { id: 51, title: "Saia Laura", videoId: "1165823777?h=2148619f8b", project: "Saia Laura", part: null, platform: "vimeo" as const },
+    { id: 54, title: "Conjunto Gabi - Parte 1", videoId: "1165823492?h=049b68c02a", project: "Conjunto Gabi", part: 1, platform: "vimeo" as const },
+    { id: 55, title: "Conjunto Gabi - Parte 2", videoId: "1165823953?h=6133197ea0", project: "Conjunto Gabi", part: 2, platform: "vimeo" as const },
+    { id: 56, title: "Conjunto Gabi - Dica Extra", videoId: "1165823551?h=e845f3f59b", project: "Conjunto Gabi", part: 3, platform: "vimeo" as const },
+    { id: 57, title: "Macacão Grassi - Parte 1", videoId: "1165828975?h=b2f003a62f", project: "Macacão Grassi", part: 1, platform: "vimeo" as const },
+    { id: 58, title: "Macacão Grassi - Parte 2", videoId: "1165829345?h=67f801752d", project: "Macacão Grassi", part: 2, platform: "vimeo" as const },
+    { id: 59, title: "Calça Tela", videoId: "1165823210?h=b5372b698b", project: "Calça Tela", part: null, platform: "vimeo" as const },
+    { id: 62, title: "Conjunto com Paetê Acrílico", videoId: "1165823127?h=80846c06c2", project: "Conjunto com Paetê Acrílico", part: null, platform: "vimeo" as const },
+    { id: 63, title: "Cropped Ana Clara", videoId: "1165823296?h=588db44c04", project: "Cropped Ana Clara", part: null, platform: "vimeo" as const },
+    { id: 65, title: "Suéter Sofia - Parte 1", videoId: "1165829840?h=bda1e8e5be", project: "Suéter Sofia", part: 1, platform: "vimeo" as const },
+    { id: 66, title: "Suéter Sofia - Parte 2", videoId: "1165828330?h=b9b9868fd2", project: "Suéter Sofia", part: 2, platform: "vimeo" as const },
+    { id: 69, title: "Conjunto Lisi - Parte 1", videoId: "1165825489?h=4953414a7c", project: "Conjunto Lisi", part: 1, platform: "vimeo" as const },
+    { id: 70, title: "Conjunto Lisi - Parte 2", videoId: "1165825673?h=fb8f804677", project: "Conjunto Lisi", part: 2, platform: "vimeo" as const },
+    { id: 71, title: "Biquíni Eva", videoId: "1165826908?h=cf3b0678ab", project: "Biquíni Eva", part: null, platform: "vimeo" as const },
+    { id: 72, title: "Saia Amanda", videoId: "1165826996?h=639389fcf0", project: "Saia Amanda", part: null, platform: "vimeo" as const },
+    { id: 73, title: "Saia Nina", videoId: "1165825423?h=8cfc5ddc23", project: "Saia Nina", part: null, platform: "vimeo" as const },
+    { id: 77, title: "Conjunto Letícia", videoId: "1165867234?h=6e2eed84e2", project: "Conjunto Letícia", part: null, platform: "vimeo" as const },
     { id: 89, title: "Sousplato Girafa", videoId: "1165898764?h=290f75b513", project: "Sousplato Girafa", part: null, platform: "vimeo" as const },
     { id: 90, title: "Saida Tereza", videoId: "1165899713?h=063db9139d", project: "Saida Tereza", part: null, platform: "vimeo" as const },
     { id: 91, title: "Saida Shirley", videoId: "1165908374?h=954ee77336", project: "Saida Shirley", part: null, platform: "vimeo" as const },
@@ -465,144 +528,47 @@ const VestidosCroche = () => {
     { id: 102, title: "Conjunto de Crochê Brilho", videoId: "1165902686?h=192b4bb0cb", project: "Conjunto Crochê Brilho", part: null, platform: "vimeo" as const },
     { id: 103, title: "Conjunto Praiana", videoId: "1165902854?h=c106849f13", project: "Conjunto Praiana", part: null, platform: "vimeo" as const },
     { id: 104, title: "Conjunto Camila", videoId: "1165905050?h=ddfb626d58", project: "Conjunto Camila", part: null, platform: "vimeo" as const },
-    
     { id: 106, title: "Calça Thais", videoId: "1165905314?h=0abf93f051", project: "Calça Thais", part: null, platform: "vimeo" as const },
     { id: 107, title: "Saida Brasil", videoId: "1165908138?h=11ec544581", project: "Saida Brasil", part: null, platform: "vimeo" as const },
     { id: 108, title: "Biquini Tomara que Caia", videoId: "1165416602?h=239fa20e43", project: "Destaque", part: null, platform: "vimeo" as const },
     { id: 109, title: "Top Brasil", videoId: "1165908193?h=44ce060d5e", project: "Top Brasil", part: null, platform: "vimeo" as const },
-
-    // ===== 110+: VÍDEOS ANTIGOS COM PIX (YouTube) =====
-    
-    // Vestido Patricia Poeta (3 partes)
-    { id: 111, title: "Vestido Patricia Poeta - Parte 1", videoId: "1166455223", project: "Vestido Patricia Poeta", part: 1, platform: "vimeo" as const },
-    { id: 112, title: "Vestido Patricia Poeta - Parte 2", videoId: "1166455407", project: "Vestido Patricia Poeta", part: 2, platform: "vimeo" as const },
-    { id: 113, title: "Vestido Patricia Poeta - Parte 3", videoId: "1166455304", project: "Vestido Patricia Poeta", part: 3, platform: "vimeo" as const },
-    
     // Conjunto Zelly (3 partes)
     { id: 114, title: "Conjunto Zelly - Parte 1", videoId: "1166455028", project: "Conjunto Zelly", part: 1, platform: "vimeo" as const },
     { id: 115, title: "Conjunto Zelly - Parte 2", videoId: "1166455627", project: "Conjunto Zelly", part: 2, platform: "vimeo" as const },
     { id: 116, title: "Conjunto Zelly - Parte 3", videoId: "1166455708", project: "Conjunto Zelly", part: 3, platform: "vimeo" as const },
-    
     // Cropped Livia
     { id: 117, title: "Cropped Livia", videoId: "1166455527", project: "Cropped Livia", part: null, platform: "vimeo" as const },
-    
-    // Vestido Alice (2 partes)
-    { id: 118, title: "Vestido Alice - Parte 1", videoId: "1166454267", project: "Vestido Alice", part: 1, platform: "vimeo" as const },
-    { id: 119, title: "Vestido Alice - Parte 2", videoId: "1166454162", project: "Vestido Alice", part: 2, platform: "vimeo" as const },
-    
     // Conjunto Renata (2 partes)
     { id: 120, title: "Conjunto Renata - Parte 1", videoId: "1166454958", project: "Conjunto Renata", part: 1, platform: "vimeo" as const },
     { id: 121, title: "Conjunto Renata - Parte 2", videoId: "1166454814", project: "Conjunto Renata", part: 2, platform: "vimeo" as const },
-    
-    // Vestido Lari (3 partes)
-    { id: 123, title: "Vestido Lari - Parte 1", videoId: "1166454494", project: "Vestido Lari", part: 1, platform: "vimeo" as const },
-    { id: 124, title: "Vestido Lari - Parte 2", videoId: "1166454409", project: "Vestido Lari", part: 2, platform: "vimeo" as const },
-    { id: 125, title: "Vestido Lari - Parte 3", videoId: "1166454722", project: "Vestido Lari", part: 3, platform: "vimeo" as const },
-    
-    // Vestido Nay (2 partes)
-    { id: 126, title: "Vestido Nay - Parte 1", videoId: "1166454610", project: "Vestido Nay", part: 1, platform: "vimeo" as const },
-    { id: 127, title: "Vestido Nay - Parte 2", videoId: "1166454887", project: "Vestido Nay", part: 2, platform: "vimeo" as const },
-    
-    
     // Conjunto Íris (2 partes)
     { id: 129, title: "Conjunto Íris - Parte 1", videoId: "1166453580", project: "Conjunto Íris", part: 1, platform: "vimeo" as const },
     { id: 130, title: "Conjunto Íris - Parte 2", videoId: "1166453263", project: "Conjunto Íris", part: 2, platform: "vimeo" as const },
-    
     // Conjunto Salles (3 partes)
     { id: 131, title: "Conjunto Salles - Parte 1", videoId: "1166454066", project: "Conjunto Salles", part: 1, platform: "vimeo" as const },
     { id: 132, title: "Conjunto Salles - Parte 2", videoId: "1166453471", project: "Conjunto Salles", part: 2, platform: "vimeo" as const },
     { id: 133, title: "Conjunto Salles - Parte 3", videoId: "1166453995", project: "Conjunto Salles", part: 3, platform: "vimeo" as const },
-    
     // Conjunto Scheila (2 partes)
     { id: 134, title: "Conjunto Scheila - Parte 1", videoId: "1166453825", project: "Conjunto Scheila", part: 1, platform: "vimeo" as const },
     { id: 135, title: "Conjunto Scheila - Parte 2", videoId: "1166453931", project: "Conjunto Scheila", part: 2, platform: "vimeo" as const },
-    
     // Cropped Angel
     { id: 136, title: "Cropped Angel", videoId: "1166453227", project: "Cropped Angel", part: null, platform: "vimeo" as const },
-    
     // Cropped Anitta
     { id: 137, title: "Cropped Anitta", videoId: "1166452434", project: "Cropped Anitta", part: null, platform: "vimeo" as const },
-    
     // Cropped Maré
     { id: 138, title: "Cropped Maré", videoId: "1166452773", project: "Cropped Maré", part: null, platform: "vimeo" as const },
-    
-    // Vestido Estrella (2 partes)
-    { id: 139, title: "Vestido Estrella - Parte 1", videoId: "1166452653", project: "Vestido Estrella", part: 1, platform: "vimeo" as const },
-    { id: 140, title: "Vestido Estrella - Parte 2", videoId: "1166453163", project: "Vestido Estrella", part: 2, platform: "vimeo" as const },
-    
-    // Vestido Lore (4 partes)
-    { id: 141, title: "Vestido Lore - Parte 1", videoId: "1166452912", project: "Vestido Lore", part: 1, platform: "vimeo" as const },
-    { id: 142, title: "Vestido Lore - Parte 2", videoId: "1166452540", project: "Vestido Lore", part: 2, platform: "vimeo" as const },
-    { id: 143, title: "Vestido Lore - Parte 3", videoId: "1166453001", project: "Vestido Lore", part: 3, platform: "vimeo" as const },
-    { id: 144, title: "Vestido Lore - Parte 4", videoId: "1166453073", project: "Vestido Lore", part: 4, platform: "vimeo" as const },
-    
-    // Vestido Gaia (2 partes)
-    { id: 145, title: "Vestido Gaia - Parte 1", videoId: "1166452269", project: "Vestido Gaia", part: 1, platform: "vimeo" as const },
-    { id: 146, title: "Vestido Gaia - Parte 2", videoId: "1166452022", project: "Vestido Gaia", part: 2, platform: "vimeo" as const },
-    
-    // Vestido Yasmin (3 partes)
-    { id: 147, title: "Vestido Yasmin - Parte 1", videoId: "1166451870", project: "Vestido Yasmin", part: 1, platform: "vimeo" as const },
-    { id: 148, title: "Vestido Yasmin - Parte 2", videoId: "1166452191", project: "Vestido Yasmin", part: 2, platform: "vimeo" as const },
-    { id: 149, title: "Vestido Yasmin - Parte 3", videoId: "1166451669", project: "Vestido Yasmin", part: 3, platform: "vimeo" as const },
-    
     // Conjunto Suri (4 partes)
     { id: 150, title: "Conjunto Suri - Parte 1", videoId: "1166451943", project: "Conjunto Suri", part: 1, platform: "vimeo" as const },
     { id: 151, title: "Conjunto Suri - Parte 2", videoId: "1166452358", project: "Conjunto Suri", part: 2, platform: "vimeo" as const },
     { id: 152, title: "Conjunto Suri - Parte 3", videoId: "1166451783", project: "Conjunto Suri", part: 3, platform: "vimeo" as const },
     { id: 153, title: "Conjunto Suri - Parte 4", videoId: "1166452111", project: "Conjunto Suri", part: 4, platform: "vimeo" as const },
-    
-    // Vestido Lorena (5 partes)
-    { id: 154, title: "Vestido Lorena - Parte 1", videoId: "1166451621", project: "Vestido Lorena", part: 1, platform: "vimeo" as const },
-    { id: 155, title: "Vestido Lorena - Parte 2", videoId: "1166451567", project: "Vestido Lorena", part: 2, platform: "vimeo" as const },
-    { id: 156, title: "Vestido Lorena - Parte 3", videoId: "1166451424", project: "Vestido Lorena", part: 3, platform: "vimeo" as const },
-    { id: 157, title: "Vestido Lorena - Parte 4", videoId: "1166451198", project: "Vestido Lorena", part: 4, platform: "vimeo" as const },
-    { id: 158, title: "Vestido Lorena - Parte 5", videoId: "1166451470", project: "Vestido Lorena", part: 5, platform: "vimeo" as const },
-    
-    // Saída Rayssa (2 partes)
-    { id: 159, title: "Saída Rayssa - Parte 1", videoId: "1166450959", project: "Saída Rayssa", part: 1, platform: "vimeo" as const },
-    { id: 160, title: "Saída Rayssa - Parte 2", videoId: "1166451252", project: "Saída Rayssa", part: 2, platform: "vimeo" as const },
-    
-    // Vestido Sol (3 partes)
-    { id: 161, title: "Vestido Sol - Parte 1", videoId: "1166451054", project: "Vestido Sol", part: 1, platform: "vimeo" as const },
-    { id: 162, title: "Vestido Sol - Parte 2", videoId: "1166451321", project: "Vestido Sol", part: 2, platform: "vimeo" as const },
-    { id: 163, title: "Vestido Sol - Parte 3", videoId: "1166451140", project: "Vestido Sol", part: 3, platform: "vimeo" as const },
-    
-    // Vestido Abacaxi (2 partes)
-    { id: 164, title: "Vestido Abacaxi - Parte 1", videoId: "1166450255", project: "Vestido Abacaxi", part: 1, platform: "vimeo" as const },
-    { id: 165, title: "Vestido Abacaxi - Parte 2", videoId: "1166450136", project: "Vestido Abacaxi", part: 2, platform: "vimeo" as const },
-    
-    // Vestido Bella (3 partes)
-    { id: 166, title: "Vestido Bella - Parte 1", videoId: "1166450761", project: "Vestido Bella", part: 1, platform: "vimeo" as const },
-    { id: 167, title: "Vestido Bella - Parte 2", videoId: "1166450392", project: "Vestido Bella", part: 2, platform: "vimeo" as const },
-    { id: 168, title: "Vestido Bella - Parte 3", videoId: "1166450675", project: "Vestido Bella", part: 3, platform: "vimeo" as const },
-    
-    // Vestido e Cropped Julia (2 partes)
-    { id: 169, title: "Vestido e Cropped Julia - Parte 1", videoId: "1166450034", project: "Vestido e Cropped Julia", part: 1, platform: "vimeo" as const },
-    { id: 170, title: "Vestido e Cropped Julia - Parte 2", videoId: "1166456882", project: "Vestido e Cropped Julia", part: 2, platform: "vimeo" as const },
-    
-    // Vestido Brunnet (3 partes)
-    { id: 171, title: "Vestido Brunnet - Parte 1", videoId: "1166456663", project: "Vestido Brunnet", part: 1, platform: "vimeo" as const },
-    { id: 172, title: "Vestido Brunnet - Parte 2", videoId: "1166450509", project: "Vestido Brunnet", part: 2, platform: "vimeo" as const },
-    { id: 173, title: "Vestido Brunnet - Parte 3", videoId: "1166450892", project: "Vestido Brunnet", part: 3, platform: "vimeo" as const },
-    
     // Conjunto Tamiris (2 partes)
     { id: 174, title: "Conjunto Tamiris - Parte 1", videoId: "1166455789", project: "Conjunto Tamiris", part: 1, platform: "vimeo" as const },
     { id: 175, title: "Conjunto Tamiris - Parte 2", videoId: "1166456097", project: "Conjunto Tamiris", part: 2, platform: "vimeo" as const },
-    
     // Cropped Amari
     { id: 176, title: "Cropped Amari", videoId: "1166456178", project: "Cropped Amari", part: null, platform: "vimeo" as const },
-    
     // Cropped Tati
     { id: 177, title: "Cropped Tati", videoId: "1166456612", project: "Cropped Tati", part: null, platform: "vimeo" as const },
-    
-    // Vestido Dubai
-    { id: 178, title: "Vestido Dubai", videoId: "1166456435", project: "Vestido Dubai", part: null, platform: "vimeo" as const },
-    
-    // Vestido Laís (3 partes)
-    { id: 179, title: "Vestido Laís - Parte 1", videoId: "1166456340", project: "Vestido Laís", part: 1, platform: "vimeo" as const },
-    { id: 180, title: "Vestido Laís - Parte 2", videoId: "1166456535", project: "Vestido Laís", part: 2, platform: "vimeo" as const },
-    { id: 181, title: "Vestido Laís - Parte 3", videoId: "1166456240", project: "Vestido Laís", part: 3, platform: "vimeo" as const },
-    
   ].map((v, i) => ({ ...v, id: i + 1 }));
 
   const videos = videos_raw;
