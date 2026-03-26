@@ -103,19 +103,8 @@ const allModuleVideos: FeaturedVideo[] = [
   { id: "brunnet", title: "Vestido Brunnet", thumbnail: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773103642/CONJUNTO_RENATA_11_u3f0vl.png", videoId: "1166456663" },
 ];
 
-// Fisher-Yates shuffle
-function shuffleArray<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 export const FeaturedCarousel = () => {
   const navigate = useNavigate();
-  const [shuffledVideos] = useState(() => shuffleArray(allModuleVideos));
   const [api, setApi] = useState<CarouselApi>();
   const resumeTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
