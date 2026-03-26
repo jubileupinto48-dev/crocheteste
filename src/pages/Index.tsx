@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ModuleCard } from "@/components/ModuleCard";
 import certificado from "@/assets/certificado.jpg";
+import moduloCroppeds from "@/assets/modulo-croppeds-thumbnail.jpg";
 import { ArrowRight, Copy, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
@@ -36,7 +37,7 @@ const Index = () => {
     id: 2,
     title: "Croppeds, Biquínis, Conjuntos",
     description: "Croppeds, biquínis, tops e peças estilosas para você arrasar.",
-    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/betania_vkoiiz.jpg",
+    image: moduloCroppeds,
     link: "/mais-modelos"
   }, {
     id: 3,
