@@ -37,7 +37,7 @@ const Index = () => {
     id: 2,
     title: "Croppeds, Biquínis, Conjuntos",
     description: "Croppeds, biquínis, tops e peças estilosas para você arrasar.",
-    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/betania_vkoiiz.jpg",
+    image: moduloCroppeds,
     link: "/mais-modelos"
   }, {
     id: 3,
