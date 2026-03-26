@@ -176,7 +176,7 @@ export const FeaturedCarousel = () => {
         className="w-full"
       >
         <CarouselContent className="-ml-2 md:-ml-4">
-          {shuffledVideos.map((video) => (
+          {allModuleVideos.map((video) => (
             <CarouselItem key={video.id} className="pl-2 md:pl-4 basis-full md:basis-4/5 lg:basis-3/4">
               <div 
                 className="relative aspect-video rounded-2xl overflow-hidden cursor-pointer group shadow-xl"
