@@ -34,49 +34,49 @@ const Index = () => {
     badge: "Destaque"
   }, {
     id: 2,
+    title: "Croppeds, Biquínis, Conjuntos",
+    description: "Croppeds, biquínis, tops e peças estilosas para você arrasar.",
+    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773045925/betania_vkoiiz.jpg",
+    link: "/mais-modelos"
+  }, {
+    id: 3,
     title: "Mini Curso para Iniciante",
     description: "Aprenda do zero com técnicas fundamentais de crochê passo a passo.",
     image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050451/WhatsApp_Image_2026-03-09_at_07.00.01_xsovpz.jpg",
     link: "/curso-completo",
     badge: "Iniciante"
   }, {
-    id: 3,
+    id: 4,
     title: "+2000 Modelos e Receitas",
     description: "Acesso completo a mais de 2000 modelos e receitas em PDF para todos os níveis.",
     image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050457/WhatsApp_Image_2026-03-09_at_07.00.02_dio5vz.jpg",
     link: "/modelos-receitas",
     badge: "Popular"
   }, {
-    id: 4,
+    id: 5,
     title: "Roupinhas Infantil",
     description: "Coleção especial de roupinhas adoráveis para bebês e crianças.",
     image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050458/WhatsApp_Image_2026-03-09_at_07.00.02_1_llwiwx.jpg",
     link: "/vestidos-infantis"
   }, {
-    id: 5,
+    id: 6,
     title: "Sapatinhos de Crochê",
     description: "Modelos adoráveis de sapatinhos e botinhas para os pequenos.",
     image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050476/WhatsApp_Image_2026-03-09_at_07.00.02_2_bcm2vq.jpg",
     link: "/sapatinhos-croche"
   }, {
-    id: 6,
+    id: 7,
     title: "Chapéus de Crochê",
     description: "Bucket hats, toucas e chapéus lindos para todas as idades.",
     image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050477/WhatsApp_Image_2026-03-09_at_07.00.02_3_t6jlp8.jpg",
     link: "/chapeu-croche",
     badge: "Novo"
   }, {
-    id: 7,
+    id: 8,
     title: "Bolsas de Crochê",
     description: "Designs modernos e elegantes de bolsas, carteiras e acessórios.",
     image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050479/WhatsApp_Image_2026-03-09_at_07.00.02_4_eorhcd.jpg",
     link: "/bolsas-croche"
-  }, {
-    id: 8,
-    title: "Modelos Adulto",
-    description: "Croppeds, biquínis, tops e peças estilosas para você arrasar.",
-    image: "https://res.cloudinary.com/dmwuhogih/image/upload/v1773050611/WhatsApp_Image_2026-03-09_at_07.03.15_sbj7tw.jpg",
-    link: "/mais-modelos"
   }, {
     id: 9,
     title: "Emitir Certificado",
