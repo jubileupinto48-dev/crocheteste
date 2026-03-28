@@ -795,7 +795,7 @@ const VestidosCroche = () => {
                     title={video.title}
                     duration={video.part ? `Parte ${video.part}` : "Completo"}
                     thumbnail={getVideoThumbnail(video.videoId, video.platform)}
-                    videoNumber={video.id}
+                    videoNumber={video.displayNumber}
                     isActive={actualIndex === currentVideoIndex}
                     isFavorite={isFavorite(video.videoId)}
                     onImageReady={() => handleThumbnailReady(video.videoId)}
