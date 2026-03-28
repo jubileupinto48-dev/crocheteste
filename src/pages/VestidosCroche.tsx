@@ -759,7 +759,7 @@ const VestidosCroche = () => {
         <section className="animate-fade-in">
           <div className="text-center mb-6">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-              Todas as Aulas (206)
+              Todas as Aulas (259)
             </h2>
             <p className="text-muted-foreground">Clique em qualquer aula para assistir</p>
           </div>
