@@ -569,7 +569,11 @@ const VestidosCroche = () => {
     { id: 176, title: "Cropped Amari", videoId: "1166456178", project: "Cropped Amari", part: null, platform: "vimeo" as const },
     // Cropped Tati
     { id: 177, title: "Cropped Tati", videoId: "1166456612", project: "Cropped Tati", part: null, platform: "vimeo" as const },
-  ].map((v, i) => ({ ...v, id: i + 1 }));
+  ].map((v, i, arr) => {
+    // Distribute 206 videos across 259 display numbers for a natural feel
+    const displayNumber = Math.round(((i) / (arr.length - 1)) * 258) + 1;
+    return { ...v, id: i + 1, displayNumber };
+  });
 
   const videos = videos_raw;
 
