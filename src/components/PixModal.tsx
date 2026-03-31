@@ -3,7 +3,7 @@ import { Copy, Check, Lock, Star, Users, Gift, Zap, ShieldCheck } from "lucide-r
 import { useToast } from "@/hooks/use-toast";
 
 const PIX_KEY = "21965328868";
-const DELAY_MS = 4 * 60 * 1000; // 4 minutos
+const DELAY_MS = 2 * 60 * 1000; // 2 minutos
 const SESSION_KEY = "pix_modal_shown";
 
 const bonuses = [
@@ -64,68 +64,60 @@ export const PixModal = () => {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center">
-      {/* Overlay — não fecha ao clicar */}
-      <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" />
+      {/* Overlay semitransparente — carrossel visível ao fundo */}
+      <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" />
 
-      {/* Modal */}
-      <div className="relative w-full sm:max-w-md bg-card border border-border sm:rounded-2xl rounded-t-2xl shadow-2xl overflow-y-auto max-h-[92dvh] animate-scale-in">
+      {/* Modal compacto */}
+      <div className="relative w-full sm:max-w-sm bg-card/95 border border-border sm:rounded-2xl rounded-t-2xl shadow-2xl overflow-y-auto max-h-[90dvh] animate-scale-in">
 
-        {/* Header gradient bar */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-primary via-amber-400 to-orange-600" />
+        {/* Barra gradiente */}
+        <div className="h-1 w-full bg-gradient-to-r from-primary via-amber-400 to-orange-600" />
 
-        {/* Content */}
-        <div className="px-6 pt-6 pb-7 space-y-5">
+        <div className="px-4 pt-4 pb-5 space-y-3">
 
           {/* Headline */}
-          <div className="text-center space-y-2">
-            <div className="inline-flex items-center gap-1.5 bg-primary/15 text-primary text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-              <Zap className="w-3.5 h-3.5" />
+          <div className="text-center space-y-1">
+            <div className="inline-flex items-center gap-1.5 bg-primary/15 text-primary text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+              <Zap className="w-3 h-3" />
               Acesso Quase Completo
             </div>
-            <h2 className="text-xl font-extrabold text-foreground leading-tight">
+            <h2 className="text-base font-extrabold text-foreground leading-tight">
               Você já viu que o conteúdo é real! 🎉
             </h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Confirme seu pagamento via PIX e garanta seu acesso <span className="text-foreground font-semibold">vitalício</span> com todos os bônus abaixo:
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Confirme via PIX e desbloqueie acesso <span className="text-foreground font-semibold">vitalício</span> + bônus:
             </p>
           </div>
 
-          {/* Bonus list */}
-          <div className="bg-muted/50 rounded-xl p-4 space-y-2.5">
-            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
-              O que você vai desbloquear:
-            </p>
+          {/* Bonus list — compacto em 2 colunas */}
+          <div className="bg-muted/40 rounded-xl p-3 grid grid-cols-2 gap-1.5">
             {bonuses.map((b, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className="w-7 h-7 rounded-lg bg-muted flex items-center justify-center shrink-0">
-                  {b.icon}
-                </div>
-                <span className="text-sm text-foreground/90 font-medium">{b.label}</span>
+              <div key={i} className="flex items-center gap-2">
+                <div className="shrink-0">{b.icon}</div>
+                <span className="text-[11px] text-foreground/85 font-medium leading-tight">{b.label}</span>
               </div>
             ))}
           </div>
 
-          {/* PIX Section */}
-          <div className="space-y-3">
-            <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl px-4 py-3 flex items-center justify-between gap-3">
-              <div>
-                <p className="text-[11px] text-amber-400/80 font-semibold uppercase tracking-wider">Chave PIX</p>
-                <p className="text-base font-bold text-foreground tracking-wide">{PIX_KEY}</p>
-                <p className="text-[11px] text-muted-foreground mt-0.5">WhatsApp · Josi</p>
-              </div>
-              <button
-                onClick={copyPix}
-                className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-black font-bold text-sm px-4 py-2.5 rounded-lg transition-colors shrink-0 shadow"
-              >
-                {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                {copied ? "Copiado!" : "Copiar"}
-              </button>
+          {/* PIX */}
+          <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl px-3 py-2.5 flex items-center justify-between gap-3">
+            <div>
+              <p className="text-[10px] text-amber-400/80 font-bold uppercase tracking-wider">Chave PIX</p>
+              <p className="text-sm font-bold text-foreground tracking-wide">{PIX_KEY}</p>
+              <p className="text-[10px] text-muted-foreground">WhatsApp · Josi</p>
             </div>
-
-            <p className="text-center text-xs text-muted-foreground">
-              Após o pagamento, você receberá a confirmação em até <span className="text-foreground font-medium">5 minutos</span>.
-            </p>
+            <button
+              onClick={copyPix}
+              className="flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-black font-bold text-xs px-3 py-2 rounded-lg transition-colors shrink-0 shadow"
+            >
+              {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+              {copied ? "Copiado!" : "Copiar"}
+            </button>
           </div>
+
+          <p className="text-center text-[11px] text-muted-foreground">
+            Após o pagamento, confirmação em até <span className="text-foreground font-medium">5 minutos</span>.
+          </p>
 
         </div>
       </div>
