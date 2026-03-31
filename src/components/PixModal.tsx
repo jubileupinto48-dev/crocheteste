@@ -64,8 +64,8 @@ export const PixModal = () => {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center">
-      {/* Overlay semitransparente — carrossel visível ao fundo */}
-      <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" />
+      {/* Overlay semitransparente — pointer-events-none para permitir scroll no fundo */}
+      <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px] pointer-events-none" />
 
       {/* Modal compacto */}
       <div className="relative w-full sm:max-w-sm bg-card/95 border border-border sm:rounded-2xl rounded-t-2xl shadow-2xl overflow-y-auto max-h-[90dvh] animate-scale-in">
@@ -104,7 +104,7 @@ export const PixModal = () => {
             <div>
               <p className="text-[10px] text-amber-400/80 font-bold uppercase tracking-wider">Chave PIX</p>
               <p className="text-sm font-bold text-foreground tracking-wide">{PIX_KEY}</p>
-              <p className="text-[10px] text-muted-foreground">WhatsApp · Josi</p>
+              <p className="text-[10px] text-muted-foreground">WhatsApp · Gabrielle Tavares</p>
             </div>
             <button
               onClick={copyPix}
@@ -116,7 +116,7 @@ export const PixModal = () => {
           </div>
 
           <p className="text-center text-[11px] text-muted-foreground">
-            Após o pagamento, confirmação em até <span className="text-foreground font-medium">5 minutos</span>.
+            Após o pagamento, confirmação em até <span className="text-foreground font-medium">2 minutos</span>.
           </p>
 
         </div>
