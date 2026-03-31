@@ -313,8 +313,11 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
     setTimeout(() => setPixCopied(false), 2000);
   };
 
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+
   const handlePlay = () => {
     setIsPlayingInline(true);
+    setIframeLoaded(false);
   };
 
   const handleCloseModal = () => {
@@ -325,13 +328,21 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   if (isPlayingInline) {
     return (
       <Card className="overflow-hidden shadow-card">
-      <div ref={iframeContainerRef} className="relative aspect-video bg-black">
+        <div ref={iframeContainerRef} className="relative aspect-video bg-black">
+          {/* Loading indicator */}
+          {!iframeLoaded && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black z-10">
+              <div className="w-10 h-10 rounded-full border-4 border-primary/30 border-t-primary animate-spin" />
+              <p className="text-white/70 text-sm font-medium">Carregando, aguarde...</p>
+            </div>
+          )}
           <iframe
             src={getEmbedUrl()}
             title={title}
-            className="w-full h-full"
+            className={`w-full h-full transition-opacity duration-300 ${iframeLoaded ? "opacity-100" : "opacity-0"}`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            onLoad={() => setIframeLoaded(true)}
           />
         </div>
       </Card>
