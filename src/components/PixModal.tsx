@@ -4,7 +4,6 @@ import { useToast } from "@/hooks/use-toast";
 
 const PIX_KEY = "21965328868";
 const DELAY_MS = 1 * 60 * 1000; // 1 minuto
-const SESSION_KEY = "pix_modal_shown";
 
 const bonuses = [
   {
@@ -39,11 +38,8 @@ export const PixModal = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    if (sessionStorage.getItem(SESSION_KEY)) return;
-
     const timer = setTimeout(() => {
       setOpen(true);
-      sessionStorage.setItem(SESSION_KEY, "1");
     }, DELAY_MS);
 
     return () => clearTimeout(timer);
