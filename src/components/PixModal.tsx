@@ -39,7 +39,11 @@ export const PixModal = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setOpen(true);
+      const carousel = document.getElementById("carousel-destaque");
+      if (carousel) {
+        carousel.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      setTimeout(() => setOpen(true), 600);
     }, DELAY_MS);
 
     return () => clearTimeout(timer);

@@ -134,7 +134,7 @@ const Index = () => {
         </section>
 
         {/* Featured Videos — Carousel */}
-        <section className="animate-fade-in">
+        <section id="carousel-destaque" className="animate-fade-in">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-1 h-6 bg-primary rounded-full shrink-0" />
             <div className="flex-1 min-w-0">
