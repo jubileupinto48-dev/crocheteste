@@ -100,7 +100,7 @@ export const PixModal = () => {
             <div>
               <p className="text-[10px] text-amber-400/80 font-bold uppercase tracking-wider">Chave PIX</p>
               <p className="text-sm font-bold text-foreground tracking-wide">{PIX_KEY}</p>
-              <p className="text-[10px] text-muted-foreground">WhatsApp · Gabrielle Tavares</p>
+              <p className="text-[10px] text-muted-foreground">Gabrielle Tavares</p>
             </div>
             <button
               onClick={copyPix}
