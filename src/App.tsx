@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { Header } from "./components/Header";
+import { PixModal } from "./components/PixModal";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import VestidosCroche from "./pages/VestidosCroche";
@@ -25,6 +27,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <Header />
+        <PixModal />
+        <div className="pt-16">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/vestidos-croche" element={<VestidosCroche />} />
@@ -39,6 +44,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
