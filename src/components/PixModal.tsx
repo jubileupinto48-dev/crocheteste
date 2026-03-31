@@ -3,7 +3,7 @@ import { Copy, Check, Lock, Star, Users, Gift, Zap, ShieldCheck } from "lucide-r
 import { useToast } from "@/hooks/use-toast";
 
 const PIX_KEY = "21965328868";
-const DELAY_MS = 2 * 60 * 1000; // 2 minutos
+const DELAY_MS = 1 * 60 * 1000; // 1 minuto
 const SESSION_KEY = "pix_modal_shown";
 
 const bonuses = [
