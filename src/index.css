@@ -16,8 +16,8 @@
     --popover: 222 24% 11%;
     --popover-foreground: 210 20% 94%;
 
-    /* Coral-orange — Hotmart's signature accent */
-    --primary: 22 95% 56%;
+    /* Rosa puxado pro roxo pastel — aconchego, confiança e carinho */
+    --primary: 322 62% 65%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 222 20% 16%;
@@ -26,7 +26,7 @@
     --muted: 222 18% 15%;
     --muted-foreground: 220 10% 50%;
 
-    --accent: 22 80% 65%;
+    --accent: 322 50% 72%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
@@ -34,18 +34,18 @@
 
     --border: 222 18% 18%;
     --input: 222 18% 18%;
-    --ring: 22 95% 56%;
+    --ring: 322 62% 65%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 222 28% 7%;
     --sidebar-foreground: 210 20% 94%;
-    --sidebar-primary: 22 95% 56%;
+    --sidebar-primary: 322 62% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 222 20% 16%;
     --sidebar-accent-foreground: 210 15% 80%;
     --sidebar-border: 222 18% 18%;
-    --sidebar-ring: 22 95% 56%;
+    --sidebar-ring: 322 62% 65%;
   }
 
   .dark {
@@ -61,21 +61,21 @@
     --secondary-foreground: 210 15% 80%;
     --muted: 222 18% 15%;
     --muted-foreground: 220 10% 50%;
-    --accent: 22 80% 65%;
+    --accent: 322 50% 72%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
     --border: 222 18% 18%;
     --input: 222 18% 18%;
-    --ring: 22 95% 56%;
+    --ring: 322 62% 65%;
     --sidebar-background: 222 28% 7%;
     --sidebar-foreground: 210 20% 94%;
-    --sidebar-primary: 22 95% 56%;
+    --sidebar-primary: 322 62% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 222 20% 16%;
     --sidebar-accent-foreground: 210 15% 80%;
     --sidebar-border: 222 18% 18%;
-    --sidebar-ring: 22 95% 56%;
+    --sidebar-ring: 322 62% 65%;
   }
 }
 

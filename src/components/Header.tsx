@@ -23,7 +23,7 @@ export const Header = () => {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-orange-600 flex items-center justify-center shadow-md">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center shadow-md">
             <span className="text-white font-extrabold text-base leading-none">C</span>
           </div>
           <div className="flex flex-col leading-tight">
@@ -69,7 +69,7 @@ export const Header = () => {
               onClick={() => setMenuOpen(!menuOpen)}
               className="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-full hover:bg-muted transition-colors"
             >
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-orange-600 flex items-center justify-center shadow">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center shadow">
                 <span className="text-white font-bold text-sm">A</span>
               </div>
               <span className="text-sm font-medium text-foreground">Aluna</span>

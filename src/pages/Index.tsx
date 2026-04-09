@@ -12,6 +12,7 @@ const Index = () => {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
   const pixKey = "21965328868";
+  const acessoLiberado = new URLSearchParams(window.location.search).get("acesso") === "liberado";
 
   const copyPixKey = () => {
     navigator.clipboard.writeText(pixKey);
@@ -98,27 +99,27 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
 
-      {/* PIX Notification Banner */}
-      <div className="bg-amber-500/8 border-b border-amber-500/20">
+      {/* PIX Notification Banner — oculto quando acesso liberado */}
+      {!acessoLiberado && <div className="bg-pink-500/8 border-b border-pink-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0">
-              <span className="text-amber-400 text-xs">⚡</span>
+            <div className="w-7 h-7 rounded-full bg-pink-500/20 flex items-center justify-center shrink-0">
+              <span className="text-pink-400 text-xs">⚡</span>
             </div>
             <p className="text-sm text-foreground/80 text-center sm:text-left">
-              <span className="font-semibold text-amber-400">Pagamento pendente</span>
+              <span className="font-semibold text-pink-400">Pagamento pendente</span>
               {" "}— Gostou do conteúdo? Apoie a Josi e confirme seu acesso via PIX.
             </p>
           </div>
           <button
             onClick={copyPixKey}
-            className="flex items-center gap-2 shrink-0 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-black font-semibold text-sm px-4 py-2 rounded-lg transition-colors duration-200 shadow-sm"
+            className="flex items-center gap-2 shrink-0 bg-pink-500 hover:bg-pink-400 active:bg-pink-600 text-white font-semibold text-sm px-4 py-2 rounded-lg transition-colors duration-200 shadow-sm"
           >
             {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
             {copied ? "Copiado!" : "Copiar Chave PIX"}
           </button>
         </div>
-      </div>
+      </div>}
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-14">
@@ -195,7 +196,7 @@ const Index = () => {
       <footer className="border-t border-border/40 mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-primary to-orange-600 flex items-center justify-center">
+            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center">
               <span className="text-white font-bold text-xs">J</span>
             </div>
             <span className="font-semibold text-foreground/70">Crochê da Josi</span>

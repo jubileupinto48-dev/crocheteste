@@ -37,7 +37,12 @@ export const PixModal = () => {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
 
+  // Não mostra modal se acesso já foi liberado
+  const acessoLiberado = new URLSearchParams(window.location.search).get("acesso") === "liberado";
+
   useEffect(() => {
+    if (acessoLiberado) return;
+
     const timer = setTimeout(() => {
       const carousel = document.getElementById("carousel-destaque");
       if (carousel) {
@@ -47,7 +52,7 @@ export const PixModal = () => {
     }, DELAY_MS);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [acessoLiberado]);
 
   const copyPix = () => {
     navigator.clipboard.writeText(PIX_KEY);
@@ -71,7 +76,7 @@ export const PixModal = () => {
       <div className="relative w-full sm:max-w-sm bg-card/95 border border-border sm:rounded-2xl rounded-t-2xl shadow-2xl overflow-y-auto max-h-[90dvh] animate-scale-in">
 
         {/* Barra gradiente */}
-        <div className="h-1 w-full bg-gradient-to-r from-primary via-amber-400 to-orange-600" />
+        <div className="h-1 w-full bg-gradient-to-r from-primary via-pink-400 to-purple-500" />
 
         <div className="px-4 pt-4 pb-5 space-y-3">
 
@@ -100,15 +105,15 @@ export const PixModal = () => {
           </div>
 
           {/* PIX */}
-          <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl px-3 py-2.5 flex items-center justify-between gap-3">
+          <div className="bg-pink-500/10 border border-pink-500/30 rounded-xl px-3 py-2.5 flex items-center justify-between gap-3">
             <div>
-              <p className="text-[10px] text-amber-400/80 font-bold uppercase tracking-wider">Chave PIX</p>
+              <p className="text-[10px] text-pink-400/80 font-bold uppercase tracking-wider">Chave PIX</p>
               <p className="text-sm font-bold text-foreground tracking-wide">{PIX_KEY}</p>
               <p className="text-[10px] text-muted-foreground">Gabrielle Tavares</p>
             </div>
             <button
               onClick={copyPix}
-              className="flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-black font-bold text-xs px-3 py-2 rounded-lg transition-colors shrink-0 shadow"
+              className="flex items-center gap-1.5 bg-pink-500 hover:bg-pink-400 active:bg-pink-600 text-white font-bold text-xs px-3 py-2 rounded-lg transition-colors shrink-0 shadow"
             >
               {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
               {copied ? "Copiado!" : "Copiar"}
