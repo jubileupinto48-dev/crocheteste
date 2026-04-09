@@ -1,47 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1230"/>
-      <stop offset="100%" style="stop-color:#2d1b4e"/>
+      <stop offset="0%" style="stop-color:#e8f4f8"/>
+      <stop offset="100%" style="stop-color:#d4e8f0"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b8d8e8;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#c8e0f0;stop-opacity:0.4"/>
     </linearGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#c45fa0"/>
       <stop offset="100%" style="stop-color:#8b5cf6"/>
     </linearGradient>
-    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#e879b0;stop-opacity:0.25"/>
-      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.08"/>
-    </linearGradient>
   </defs>
-  <rect width="800" height="450" fill="url(#bg)"/>
-  <circle cx="680" cy="100" r="190" fill="url(#glow)"/>
-  <circle cx="80" cy="380" r="130" fill="url(#glow)"/>
-  <rect width="800" height="4" fill="url(#accent)"/>
-  <!-- Bag silhouette -->
-  <g transform="translate(460, 60)" opacity="0.20">
-    <!-- Handle -->
-    <path d="M60 60 Q60 20 110 20 Q160 20 160 60" stroke="#e879b0" stroke-width="6" fill="none" stroke-linecap="round"/>
-    <!-- Body -->
-    <rect x="20" y="60" width="180" height="180" rx="20" stroke="#e879b0" stroke-width="4" fill="none"/>
-    <!-- Crochet grid texture -->
-    <line x1="20" y1="100" x2="200" y2="100" stroke="#c45fa0" stroke-width="2" opacity="0.7"/>
-    <line x1="20" y1="140" x2="200" y2="140" stroke="#c45fa0" stroke-width="2" opacity="0.7"/>
-    <line x1="20" y1="180" x2="200" y2="180" stroke="#c45fa0" stroke-width="2" opacity="0.7"/>
-    <line x1="60" y1="60" x2="60" y2="240" stroke="#8b5cf6" stroke-width="2" opacity="0.6"/>
-    <line x1="100" y1="60" x2="100" y2="240" stroke="#8b5cf6" stroke-width="2" opacity="0.6"/>
-    <line x1="140" y1="60" x2="140" y2="240" stroke="#8b5cf6" stroke-width="2" opacity="0.6"/>
+  <rect width="600" height="450" fill="url(#bg)"/>
+  <path d="M400 0 Q500 30 600 10 L600 0 Z" fill="url(#wave)"/>
+  <path d="M350 0 Q480 50 600 25 L600 0 Q500 30 400 0Z" fill="url(#wave)" opacity="0.5"/>
+  <path d="M0 380 Q150 350 300 390 Q450 430 600 400 L600 450 L0 450 Z" fill="url(#wave)" opacity="0.5"/>
+
+  <!-- Card 1 — tote bag large left -->
+  <g transform="translate(18,18)">
+    <rect width="270" height="395" rx="14" fill="#f5ece0" opacity="0.6"/>
+    <!-- Tote bag -->
+    <path d="M60 60 Q60 20 90 15 Q120 20 120 60" stroke="#a07040" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.55"/>
+    <rect x="25" y="60" width="130" height="160" rx="18" stroke="#a07040" stroke-width="5" fill="none" opacity="0.55"/>
+    <!-- Crochet grid on bag -->
+    <line x1="25" y1="100" x2="155" y2="100" stroke="#c09060" stroke-width="2.5" opacity="0.4"/>
+    <line x1="25" y1="140" x2="155" y2="140" stroke="#c09060" stroke-width="2.5" opacity="0.4"/>
+    <line x1="25" y1="180" x2="155" y2="180" stroke="#c09060" stroke-width="2.5" opacity="0.4"/>
+    <line x1="65" y1="60" x2="65" y2="220" stroke="#c09060" stroke-width="2.5" opacity="0.35"/>
+    <line x1="105" y1="60" x2="105" y2="220" stroke="#c09060" stroke-width="2.5" opacity="0.35"/>
+    <line x1="145" y1="60" x2="145" y2="220" stroke="#c09060" stroke-width="2.5" opacity="0.35"/>
     <!-- Clasp -->
-    <rect x="85" y="55" width="50" height="14" rx="7" stroke="#e879b0" stroke-width="3" fill="none"/>
+    <rect x="65" y="54" width="50" height="12" rx="6" stroke="#a07040" stroke-width="3" fill="none" opacity="0.5"/>
+    <text x="90" y="275" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#705020" text-anchor="middle">Bolsa Tote</text>
+    <text x="90" y="298" font-family="Arial, sans-serif" font-size="13" fill="#906040" text-anchor="middle">de Crochê</text>
+    <text x="90" y="355" font-family="Arial, sans-serif" font-size="12" fill="#c45fa0" opacity="0.8" text-anchor="middle">Elegante &amp; Moderno</text>
   </g>
-  <!-- Decorative diamonds -->
-  <g opacity="0.15">
-    <path d="M630 300 L650 270 L670 300 L650 330 Z" stroke="#e879b0" stroke-width="2" fill="none"/>
-    <path d="M680 320 L693 302 L706 320 L693 338 Z" stroke="#c45fa0" stroke-width="2" fill="none"/>
+
+  <!-- Card 2 — clutch/carteira top right -->
+  <g transform="translate(300,18)">
+    <rect width="282" height="185" rx="14" fill="#e8f0d8" opacity="0.6"/>
+    <!-- Clutch bag -->
+    <rect x="30" y="40" width="222" height="110" rx="14" stroke="#608040" stroke-width="5" fill="none" opacity="0.55"/>
+    <!-- clasp -->
+    <path d="M121 38 Q141 25 161 38" stroke="#608040" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <circle cx="141" cy="40" r="6" stroke="#608040" stroke-width="3" fill="none" opacity="0.5"/>
+    <!-- Texture -->
+    <path d="M30 75 Q90 62 141 75 Q192 88 252 75" stroke="#80a060" stroke-width="2" fill="none" opacity="0.4"/>
+    <path d="M30 100 Q90 87 141 100 Q192 113 252 100" stroke="#80a060" stroke-width="2" fill="none" opacity="0.4"/>
+    <path d="M30 125 Q90 112 141 125 Q192 138 252 125" stroke="#80a060" stroke-width="2" fill="none" opacity="0.4"/>
+    <text x="141" y="172" font-family="Arial, sans-serif" font-size="13" fill="#406020" text-anchor="middle" font-weight="600">Carteira &amp; Clutch</text>
   </g>
-  <!-- Main label -->
-  <rect x="60" y="160" width="6" height="110" rx="3" fill="url(#accent)"/>
-  <text x="86" y="215" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">Bolsas</text>
-  <text x="86" y="275" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">de Crochê</text>
-  <text x="86" y="330" font-family="Georgia, serif" font-size="24" font-weight="400" fill="#e879b0">Bolsas, Carteiras &amp; Acessórios</text>
-  <text x="86" y="395" font-family="Arial, sans-serif" font-size="18" fill="#c45fa0" letter-spacing="3">CROCHÊ DA JOSI</text>
+
+  <!-- Card 3 — crossbody bottom right -->
+  <g transform="translate(300,215)">
+    <rect width="282" height="198" rx="14" fill="#ece8f8" opacity="0.6"/>
+    <!-- Crossbody bag -->
+    <rect x="40" y="30" width="150" height="120" rx="14" stroke="#7060a0" stroke-width="5" fill="none" opacity="0.55"/>
+    <!-- Strap -->
+    <path d="M40 50 Q10 90 40 130" stroke="#7060a0" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.45"/>
+    <!-- Buckle -->
+    <rect x="16" y="82" width="26" height="18" rx="4" stroke="#7060a0" stroke-width="3" fill="none" opacity="0.5"/>
+    <!-- Flap -->
+    <path d="M40 30 Q115 10 190 30" stroke="#9070c0" stroke-width="4" fill="none" opacity="0.45"/>
+    <!-- Grid texture -->
+    <line x1="40" y1="70" x2="190" y2="70" stroke="#9070c0" stroke-width="2" opacity="0.35"/>
+    <line x1="40" y1="105" x2="190" y2="105" stroke="#9070c0" stroke-width="2" opacity="0.35"/>
+    <line x1="90" y1="30" x2="90" y2="150" stroke="#9070c0" stroke-width="2" opacity="0.3"/>
+    <line x1="140" y1="30" x2="140" y2="150" stroke="#9070c0" stroke-width="2" opacity="0.3"/>
+    <text x="141" y="178" font-family="Arial, sans-serif" font-size="13" fill="#5040a0" text-anchor="middle" font-weight="600">Bolsa Transversal</text>
+  </g>
+
+  <rect x="0" y="420" width="600" height="30" fill="url(#accent)" opacity="0.85"/>
+  <text x="300" y="440" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">BOLSAS DE CROCHÊ · CROCHÊ DA JOSI</text>
 </svg>

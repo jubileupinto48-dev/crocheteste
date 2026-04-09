@@ -1,41 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1230"/>
-      <stop offset="100%" style="stop-color:#2d1b4e"/>
+      <stop offset="0%" style="stop-color:#e8f4f8"/>
+      <stop offset="100%" style="stop-color:#d4e8f0"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b8d8e8;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#c8e0f0;stop-opacity:0.4"/>
     </linearGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#c45fa0"/>
       <stop offset="100%" style="stop-color:#8b5cf6"/>
     </linearGradient>
-    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#e879b0;stop-opacity:0.25"/>
-      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.08"/>
-    </linearGradient>
   </defs>
-  <rect width="800" height="450" fill="url(#bg)"/>
-  <circle cx="660" cy="90" r="190" fill="url(#glow)"/>
-  <circle cx="90" cy="380" r="130" fill="url(#glow)"/>
-  <rect width="800" height="4" fill="url(#accent)"/>
-  <!-- Bucket hat silhouette -->
-  <g transform="translate(470, 60)" opacity="0.20">
-    <!-- Brim -->
-    <ellipse cx="145" cy="170" rx="165" ry="22" stroke="#e879b0" stroke-width="4" fill="none"/>
-    <!-- Crown -->
-    <path d="M30 170 Q20 80 145 60 Q270 80 260 170" stroke="#e879b0" stroke-width="4" fill="none"/>
+  <rect width="600" height="450" fill="url(#bg)"/>
+  <path d="M400 0 Q500 30 600 10 L600 0 Z" fill="url(#wave)"/>
+  <path d="M350 0 Q480 50 600 25 L600 0 Q500 30 400 0Z" fill="url(#wave)" opacity="0.5"/>
+  <path d="M0 380 Q150 350 300 390 Q450 430 600 400 L600 450 L0 450 Z" fill="url(#wave)" opacity="0.5"/>
+
+  <!-- Card 1 — bucket hat large -->
+  <g transform="translate(18,18)">
+    <rect width="270" height="200" rx="14" fill="#f0ece0" opacity="0.6"/>
+    <!-- Bucket hat -->
+    <ellipse cx="135" cy="162" rx="120" ry="18" stroke="#8a7040" stroke-width="5" fill="none" opacity="0.55"/>
+    <path d="M38 162 Q28 80 135 55 Q242 80 232 162" stroke="#8a7040" stroke-width="5" fill="none" opacity="0.55"/>
     <!-- Hatband -->
-    <line x1="32" y1="148" x2="258" y2="148" stroke="#c45fa0" stroke-width="3"/>
-    <!-- Crochet texture lines -->
-    <path d="M50 110 Q145 95 240 110" stroke="#8b5cf6" stroke-width="2" fill="none" opacity="0.7"/>
-    <path d="M38 130 Q145 118 252 130" stroke="#8b5cf6" stroke-width="2" fill="none" opacity="0.7"/>
+    <line x1="40" y1="138" x2="230" y2="138" stroke="#a08050" stroke-width="4" opacity="0.5"/>
+    <!-- Crochet rows -->
+    <path d="M45 100 Q90 88 135 100 Q180 88 225 100" stroke="#b09060" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <path d="M42 120 Q90 108 135 120 Q180 108 228 120" stroke="#b09060" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <text x="135" y="190" font-family="Arial, sans-serif" font-size="13" fill="#6a5020" text-anchor="middle" font-weight="700">Bucket Hat</text>
   </g>
-  <!-- Badge -->
-  <rect x="86" y="140" width="110" height="34" rx="17" fill="url(#accent)" opacity="0.9"/>
-  <text x="141" y="162" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">NOVO</text>
-  <!-- Main label -->
-  <rect x="60" y="190" width="6" height="80" rx="3" fill="url(#accent)"/>
-  <text x="86" y="245" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">Chapéus</text>
-  <text x="86" y="305" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">de Crochê</text>
-  <text x="86" y="360" font-family="Georgia, serif" font-size="24" font-weight="400" fill="#e879b0">Bucket Hats &amp; Toucas</text>
-  <text x="86" y="400" font-family="Arial, sans-serif" font-size="18" fill="#c45fa0" letter-spacing="3">CROCHÊ DA JOSI</text>
+
+  <!-- Card 2 — beanie top right -->
+  <g transform="translate(300,18)">
+    <rect width="282" height="200" rx="14" fill="#e8e0f4" opacity="0.6"/>
+    <!-- Beanie/Touca -->
+    <path d="M60 155 Q60 60 141 40 Q222 60 222 155" stroke="#7060a0" stroke-width="5" fill="none" opacity="0.55"/>
+    <ellipse cx="141" cy="155" rx="81" ry="14" stroke="#7060a0" stroke-width="4" fill="none" opacity="0.5"/>
+    <!-- Pom pom -->
+    <circle cx="141" cy="38" r="18" stroke="#9070c0" stroke-width="4" fill="none" opacity="0.5"/>
+    <!-- Crochet rows -->
+    <path d="M65 100 Q141 85 217 100" stroke="#9070c0" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <path d="M63 120 Q141 105 219 120" stroke="#9070c0" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <path d="M62 138 Q141 123 220 138" stroke="#9070c0" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <text x="141" y="185" font-family="Arial, sans-serif" font-size="13" fill="#5040a0" text-anchor="middle" font-weight="700">Touca &amp; Gorro</text>
+  </g>
+
+  <!-- Card 3 — bottom left -->
+  <g transform="translate(18,230)">
+    <rect width="180" height="178" rx="14" fill="#e0f0e0" opacity="0.6"/>
+    <!-- Cowboy/wide-brim hat -->
+    <ellipse cx="90" cy="145" rx="80" ry="13" stroke="#408040" stroke-width="4" fill="none" opacity="0.5"/>
+    <path d="M25 145 Q18 75 90 60 Q162 75 155 145" stroke="#408040" stroke-width="4" fill="none" opacity="0.5"/>
+    <!-- Hatband with flower -->
+    <line x1="27" y1="120" x2="153" y2="120" stroke="#60a060" stroke-width="3" opacity="0.45"/>
+    <circle cx="90" cy="120" r="8" fill="#e06080" opacity="0.4"/>
+    <text x="90" y="168" font-family="Arial, sans-serif" font-size="12" fill="#305030" text-anchor="middle" font-weight="600">Chapéu Florido</text>
+  </g>
+
+  <!-- Card 4 — bottom right -->
+  <g transform="translate(210,230)">
+    <rect width="372" height="178" rx="14" fill="#fce8f0" opacity="0.6"/>
+    <!-- NEW badge -->
+    <rect x="20" y="20" width="80" height="28" rx="14" fill="url(#accent)" opacity="0.8"/>
+    <text x="60" y="38" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1">NOVO</text>
+    <!-- Text -->
+    <text x="186" y="95" font-family="Georgia, serif" font-size="24" font-weight="700" fill="#8040a0" opacity="0.7" text-anchor="middle">Chapéus de Crochê</text>
+    <text x="186" y="125" font-family="Arial, sans-serif" font-size="14" fill="#a060b0" opacity="0.6" text-anchor="middle">Bucket Hats, Toucas</text>
+    <text x="186" y="148" font-family="Arial, sans-serif" font-size="14" fill="#a060b0" opacity="0.6" text-anchor="middle">&amp; Chapéus Floridos</text>
+    <text x="186" y="162" font-family="Arial, sans-serif" font-size="13" fill="#c45fa0" opacity="0.7" text-anchor="middle">para todas as idades</text>
+  </g>
+
+  <rect x="0" y="420" width="600" height="30" fill="url(#accent)" opacity="0.85"/>
+  <text x="300" y="440" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">CHAPÉUS DE CROCHÊ · CROCHÊ DA JOSI</text>
 </svg>

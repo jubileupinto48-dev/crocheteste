@@ -1,43 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1230"/>
-      <stop offset="100%" style="stop-color:#2d1b4e"/>
+      <stop offset="0%" style="stop-color:#e8f4f8"/>
+      <stop offset="100%" style="stop-color:#d4e8f0"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b8d8e8;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#c8e0f0;stop-opacity:0.4"/>
     </linearGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#c45fa0"/>
       <stop offset="100%" style="stop-color:#8b5cf6"/>
     </linearGradient>
-    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#e879b0;stop-opacity:0.25"/>
-      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.08"/>
-    </linearGradient>
   </defs>
-  <rect width="800" height="450" fill="url(#bg)"/>
-  <circle cx="660" cy="80" r="180" fill="url(#glow)"/>
-  <circle cx="90" cy="380" r="130" fill="url(#glow)"/>
-  <rect width="800" height="4" fill="url(#accent)"/>
-  <!-- Heart decorations -->
-  <g opacity="0.12">
-    <path d="M620 120 Q640 90 670 120 Q700 90 720 120 Q720 160 670 200 Q620 160 620 120Z" fill="#e879b0"/>
-    <path d="M560 60 Q572 44 584 60 Q596 44 608 60 Q608 80 584 100 Q560 80 560 60Z" fill="#c45fa0"/>
+  <rect width="600" height="450" fill="url(#bg)"/>
+  <path d="M400 0 Q500 30 600 10 L600 0 Z" fill="url(#wave)"/>
+  <path d="M350 0 Q480 50 600 25 L600 0 Q500 30 400 0Z" fill="url(#wave)" opacity="0.5"/>
+  <path d="M0 380 Q150 350 300 390 Q450 430 600 400 L600 450 L0 450 Z" fill="url(#wave)" opacity="0.5"/>
+
+  <!-- Card 1 — baby onesie -->
+  <g transform="translate(18, 18)">
+    <rect width="180" height="195" rx="14" fill="#fce8f0" opacity="0.6"/>
+    <path d="M75 30 L50 65 L25 55 L38 105 L142 105 L155 55 L130 65 L105 30 Q90 42 75 30Z" stroke="#d06080" stroke-width="5" fill="none" stroke-linejoin="round" opacity="0.55" transform="translate(0,20)"/>
+    <rect x="38" y="145" width="104" height="45" rx="5" stroke="#d06080" stroke-width="4" fill="none" opacity="0.5"/>
+    <!-- Bow on onesie -->
+    <path d="M75 147 Q65 138 60 147 Q65 156 75 147Z" fill="#e090a0" opacity="0.5"/>
+    <path d="M75 147 Q85 138 90 147 Q85 156 75 147Z" fill="#e090a0" opacity="0.5"/>
+    <text x="90" y="188" font-family="Arial, sans-serif" font-size="12" fill="#a04060" text-anchor="middle" font-weight="600">Body &amp; Macacão</text>
   </g>
-  <!-- Baby onesie icon -->
-  <g transform="translate(490, 100)" opacity="0.16">
-    <path d="M60 0 L30 30 L0 20 L15 70 L105 70 L120 20 L90 30 Z" stroke="#e879b0" stroke-width="4" fill="none" stroke-linejoin="round"/>
-    <rect x="25" y="70" width="70" height="90" rx="5" stroke="#e879b0" stroke-width="4" fill="none"/>
-    <path d="M55 140 L55 160 L75 160 L75 140" stroke="#c45fa0" stroke-width="3" fill="none"/>
+
+  <!-- Card 2 — top middle -->
+  <g transform="translate(210, 18)">
+    <rect width="180" height="195" rx="14" fill="#fff0d8" opacity="0.6"/>
+    <!-- Baby shoes -->
+    <path d="M35 110 Q20 110 14 130 Q8 150 28 158 L130 158 L130 118 Q130 88 108 80 L90 62 Q76 48 62 62 Z" stroke="#c08040" stroke-width="5" fill="none" stroke-linejoin="round" opacity="0.5" transform="translate(10,-20) scale(0.85)"/>
+    <!-- Bow on shoe -->
+    <path d="M55 105 Q45 96 40 105 Q45 114 55 105Z" fill="#d0a050" opacity="0.5" transform="translate(10,-20) scale(0.85)"/>
+    <path d="M55 105 Q65 96 70 105 Q65 114 55 105Z" fill="#d0a050" opacity="0.5" transform="translate(10,-20) scale(0.85)"/>
+    <text x="90" y="188" font-family="Arial, sans-serif" font-size="12" fill="#806020" text-anchor="middle" font-weight="600">Sapatinhos</text>
   </g>
-  <!-- Tiny stars -->
-  <g opacity="0.3">
-    <text x="640" y="280" font-size="20" fill="#e879b0">★</text>
-    <text x="700" y="250" font-size="14" fill="#8b5cf6">★</text>
-    <text x="670" y="310" font-size="10" fill="#c45fa0">★</text>
+
+  <!-- Card 3 — top right tall -->
+  <g transform="translate(402, 18)">
+    <rect width="180" height="405" rx="14" fill="#e8f0e8" opacity="0.6"/>
+    <!-- Little dress -->
+    <path d="M60 30 L40 65 L25 58 L35 105 L145 105 L155 58 L140 65 L120 30 Q90 44 60 30Z" stroke="#508050" stroke-width="5" fill="none" stroke-linejoin="round" opacity="0.5"/>
+    <rect x="35" y="105" width="110" height="100" rx="8" stroke="#508050" stroke-width="4" fill="none" opacity="0.45"/>
+    <!-- Ruffles -->
+    <path d="M35 135 Q60 120 90 135 Q120 150 145 135" stroke="#508050" stroke-width="3" fill="none" opacity="0.4"/>
+    <path d="M35 165 Q60 150 90 165 Q120 180 145 165" stroke="#508050" stroke-width="3" fill="none" opacity="0.4"/>
+    <!-- Hearts decoration -->
+    <text x="90" y="250" font-family="Arial" font-size="30" fill="#e06080" opacity="0.35" text-anchor="middle">♥ ♥</text>
+    <text x="90" y="290" font-family="Arial" font-size="20" fill="#e06080" opacity="0.3" text-anchor="middle">♥ ♥ ♥</text>
+    <!-- bottom label -->
+    <text x="90" y="360" font-family="Arial, sans-serif" font-size="13" fill="#305030" text-anchor="middle" font-weight="700">Roupinhas</text>
+    <text x="90" y="380" font-family="Arial, sans-serif" font-size="12" fill="#305030" text-anchor="middle" font-weight="600">Infantil</text>
+    <text x="90" y="396" font-family="Arial, sans-serif" font-size="11" fill="#508050" text-anchor="middle">Bebês &amp; Crianças</text>
   </g>
-  <!-- Main label -->
-  <rect x="60" y="160" width="6" height="110" rx="3" fill="url(#accent)"/>
-  <text x="86" y="215" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">Roupinhas</text>
-  <text x="86" y="275" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">Infantil</text>
-  <text x="86" y="330" font-family="Georgia, serif" font-size="26" font-weight="400" fill="#e879b0">Bebês &amp; Crianças</text>
-  <text x="86" y="395" font-family="Arial, sans-serif" font-size="18" fill="#c45fa0" letter-spacing="3">CROCHÊ DA JOSI</text>
+
+  <!-- Card 4 — bottom left -->
+  <g transform="translate(18, 225)">
+    <rect width="372" height="178" rx="14" fill="#f0e8f8" opacity="0.6"/>
+    <!-- Star rating + hearts -->
+    <text x="60" y="90" font-family="Arial" font-size="40" fill="#e06080" opacity="0.4">♥</text>
+    <text x="130" y="90" font-family="Arial" font-size="40" fill="#c045fa" opacity="0.3">♥</text>
+    <text x="200" y="90" font-family="Arial" font-size="40" fill="#e06080" opacity="0.4">♥</text>
+    <text x="270" y="90" font-family="Arial" font-size="40" fill="#c045fa" opacity="0.3">♥</text>
+    <text x="186" y="130" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#8040a0" opacity="0.65" text-anchor="middle">Coleção Especial</text>
+    <text x="186" y="155" font-family="Arial, sans-serif" font-size="14" fill="#a060b0" opacity="0.6" text-anchor="middle">para os pequenos da casa</text>
+  </g>
+
+  <rect x="0" y="420" width="600" height="30" fill="url(#accent)" opacity="0.85"/>
+  <text x="300" y="440" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">ROUPINHAS INFANTIL · CROCHÊ DA JOSI</text>
 </svg>
