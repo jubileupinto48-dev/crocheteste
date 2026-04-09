@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1230"/>
+      <stop offset="100%" style="stop-color:#2d1b4e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c45fa0"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e879b0;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="680" cy="90" r="190" fill="url(#glow)"/>
+  <circle cx="100" cy="400" r="140" fill="url(#glow)"/>
+  <rect width="800" height="4" fill="url(#accent)"/>
+  <!-- Book/PDF icon decorative -->
+  <g transform="translate(510, 80)" opacity="0.18">
+    <rect x="0" y="0" width="200" height="260" rx="8" stroke="#e879b0" stroke-width="4" fill="none"/>
+    <rect x="15" y="0" width="200" height="260" rx="8" stroke="#8b5cf6" stroke-width="3" fill="none" transform="translate(8,8)"/>
+    <line x1="30" y1="60" x2="170" y2="60" stroke="#e879b0" stroke-width="3"/>
+    <line x1="30" y1="90" x2="170" y2="90" stroke="#e879b0" stroke-width="2"/>
+    <line x1="30" y1="118" x2="130" y2="118" stroke="#c45fa0" stroke-width="2"/>
+    <line x1="30" y1="146" x2="150" y2="146" stroke="#c45fa0" stroke-width="2"/>
+    <line x1="30" y1="174" x2="110" y2="174" stroke="#8b5cf6" stroke-width="2"/>
+  </g>
+  <!-- Number highlight -->
+  <text x="86" y="190" font-family="Georgia, serif" font-size="110" font-weight="900" fill="url(#accent)" opacity="0.15">2000</text>
+  <!-- Badge -->
+  <rect x="86" y="140" width="130" height="34" rx="17" fill="url(#accent)" opacity="0.9"/>
+  <text x="151" y="162" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">POPULAR</text>
+  <!-- Main label -->
+  <rect x="60" y="190" width="6" height="110" rx="3" fill="url(#accent)"/>
+  <text x="86" y="240" font-family="Georgia, serif" font-size="46" font-weight="700" fill="white">+2000 Modelos</text>
+  <text x="86" y="295" font-family="Georgia, serif" font-size="46" font-weight="700" fill="white">&amp; Receitas</text>
+  <text x="86" y="348" font-family="Georgia, serif" font-size="30" font-weight="400" fill="#e879b0">em PDF</text>
+  <text x="86" y="395" font-family="Arial, sans-serif" font-size="18" fill="#c45fa0" letter-spacing="3">CROCHÊ DA JOSI</text>
+</svg>

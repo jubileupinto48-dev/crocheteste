@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1230"/>
+      <stop offset="100%" style="stop-color:#2d1b4e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c45fa0"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e879b0;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Decorative circles -->
+  <circle cx="650" cy="80" r="180" fill="url(#glow)"/>
+  <circle cx="120" cy="380" r="120" fill="url(#glow)"/>
+  <!-- Top accent bar -->
+  <rect width="800" height="4" fill="url(#accent)"/>
+  <!-- Decorative crochet pattern lines -->
+  <g opacity="0.08">
+    <path d="M0 80 Q100 60 200 80 Q300 100 400 80 Q500 60 600 80 Q700 100 800 80" stroke="#e879b0" stroke-width="2" fill="none"/>
+    <path d="M0 160 Q100 140 200 160 Q300 180 400 160 Q500 140 600 160 Q700 180 800 160" stroke="#e879b0" stroke-width="2" fill="none"/>
+    <path d="M0 370 Q100 350 200 370 Q300 390 400 370 Q500 350 600 370 Q700 390 800 370" stroke="#8b5cf6" stroke-width="2" fill="none"/>
+  </g>
+  <!-- Clothing icons - simplified outlines -->
+  <g opacity="0.15" transform="translate(520, 60)">
+    <!-- Crop top silhouette -->
+    <path d="M60 0 L20 30 L0 30 L0 80 L120 80 L120 30 L100 30 Z" stroke="#e879b0" stroke-width="3" fill="none"/>
+    <path d="M40 0 Q60 10 80 0" stroke="#e879b0" stroke-width="3" fill="none"/>
+    <!-- Bikini top -->
+    <path d="M140 20 Q155 0 170 20 L160 55 L150 55 Z" stroke="#c45fa0" stroke-width="2.5" fill="none"/>
+    <path d="M185 20 Q200 0 215 20 L205 55 L195 55 Z" stroke="#c45fa0" stroke-width="2.5" fill="none"/>
+    <line x1="170" y1="30" x2="185" y2="30" stroke="#c45fa0" stroke-width="2.5"/>
+  </g>
+  <!-- Main label -->
+  <rect x="60" y="160" width="6" height="80" rx="3" fill="url(#accent)"/>
+  <text x="86" y="210" font-family="Georgia, serif" font-size="48" font-weight="700" fill="white">Croppeds,</text>
+  <text x="86" y="265" font-family="Georgia, serif" font-size="48" font-weight="700" fill="white">Biquínis &amp;</text>
+  <text x="86" y="320" font-family="Georgia, serif" font-size="48" font-weight="700" fill="white">Conjuntos</text>
+  <!-- Subtitle -->
+  <text x="86" y="370" font-family="Arial, sans-serif" font-size="18" fill="#c45fa0" letter-spacing="3">CROCHÊ DA JOSI</text>
+  <!-- Sparkle dots -->
+  <circle cx="600" cy="200" r="4" fill="#e879b0" opacity="0.8"/>
+  <circle cx="630" cy="170" r="2.5" fill="#8b5cf6" opacity="0.6"/>
+  <circle cx="660" cy="220" r="3" fill="#e879b0" opacity="0.5"/>
+  <circle cx="580" cy="240" r="2" fill="#c45fa0" opacity="0.7"/>
+</svg>

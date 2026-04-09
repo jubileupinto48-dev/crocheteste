@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1230"/>
+      <stop offset="100%" style="stop-color:#2d1b4e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c45fa0"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e879b0;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="660" cy="90" r="190" fill="url(#glow)"/>
+  <circle cx="90" cy="380" r="130" fill="url(#glow)"/>
+  <rect width="800" height="4" fill="url(#accent)"/>
+  <!-- Bucket hat silhouette -->
+  <g transform="translate(470, 60)" opacity="0.20">
+    <!-- Brim -->
+    <ellipse cx="145" cy="170" rx="165" ry="22" stroke="#e879b0" stroke-width="4" fill="none"/>
+    <!-- Crown -->
+    <path d="M30 170 Q20 80 145 60 Q270 80 260 170" stroke="#e879b0" stroke-width="4" fill="none"/>
+    <!-- Hatband -->
+    <line x1="32" y1="148" x2="258" y2="148" stroke="#c45fa0" stroke-width="3"/>
+    <!-- Crochet texture lines -->
+    <path d="M50 110 Q145 95 240 110" stroke="#8b5cf6" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M38 130 Q145 118 252 130" stroke="#8b5cf6" stroke-width="2" fill="none" opacity="0.7"/>
+  </g>
+  <!-- Badge -->
+  <rect x="86" y="140" width="110" height="34" rx="17" fill="url(#accent)" opacity="0.9"/>
+  <text x="141" y="162" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">NOVO</text>
+  <!-- Main label -->
+  <rect x="60" y="190" width="6" height="80" rx="3" fill="url(#accent)"/>
+  <text x="86" y="245" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">Chapéus</text>
+  <text x="86" y="305" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">de Crochê</text>
+  <text x="86" y="360" font-family="Georgia, serif" font-size="24" font-weight="400" fill="#e879b0">Bucket Hats &amp; Toucas</text>
+  <text x="86" y="400" font-family="Arial, sans-serif" font-size="18" fill="#c45fa0" letter-spacing="3">CROCHÊ DA JOSI</text>
+</svg>

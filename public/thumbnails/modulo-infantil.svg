@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1230"/>
+      <stop offset="100%" style="stop-color:#2d1b4e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c45fa0"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e879b0;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="660" cy="80" r="180" fill="url(#glow)"/>
+  <circle cx="90" cy="380" r="130" fill="url(#glow)"/>
+  <rect width="800" height="4" fill="url(#accent)"/>
+  <!-- Heart decorations -->
+  <g opacity="0.12">
+    <path d="M620 120 Q640 90 670 120 Q700 90 720 120 Q720 160 670 200 Q620 160 620 120Z" fill="#e879b0"/>
+    <path d="M560 60 Q572 44 584 60 Q596 44 608 60 Q608 80 584 100 Q560 80 560 60Z" fill="#c45fa0"/>
+  </g>
+  <!-- Baby onesie icon -->
+  <g transform="translate(490, 100)" opacity="0.16">
+    <path d="M60 0 L30 30 L0 20 L15 70 L105 70 L120 20 L90 30 Z" stroke="#e879b0" stroke-width="4" fill="none" stroke-linejoin="round"/>
+    <rect x="25" y="70" width="70" height="90" rx="5" stroke="#e879b0" stroke-width="4" fill="none"/>
+    <path d="M55 140 L55 160 L75 160 L75 140" stroke="#c45fa0" stroke-width="3" fill="none"/>
+  </g>
+  <!-- Tiny stars -->
+  <g opacity="0.3">
+    <text x="640" y="280" font-size="20" fill="#e879b0">★</text>
+    <text x="700" y="250" font-size="14" fill="#8b5cf6">★</text>
+    <text x="670" y="310" font-size="10" fill="#c45fa0">★</text>
+  </g>
+  <!-- Main label -->
+  <rect x="60" y="160" width="6" height="110" rx="3" fill="url(#accent)"/>
+  <text x="86" y="215" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">Roupinhas</text>
+  <text x="86" y="275" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">Infantil</text>
+  <text x="86" y="330" font-family="Georgia, serif" font-size="26" font-weight="400" fill="#e879b0">Bebês &amp; Crianças</text>
+  <text x="86" y="395" font-family="Arial, sans-serif" font-size="18" fill="#c45fa0" letter-spacing="3">CROCHÊ DA JOSI</text>
+</svg>

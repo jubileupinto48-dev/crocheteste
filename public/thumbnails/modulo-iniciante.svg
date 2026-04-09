@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1230"/>
+      <stop offset="100%" style="stop-color:#2d1b4e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c45fa0"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e879b0;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="700" cy="100" r="200" fill="url(#glow)"/>
+  <circle cx="80" cy="350" r="130" fill="url(#glow)"/>
+  <rect width="800" height="4" fill="url(#accent)"/>
+  <!-- Star/beginner icons -->
+  <g opacity="0.12" transform="translate(490, 50)">
+    <text x="0" y="100" font-size="120" fill="#e879b0">✦</text>
+    <text x="120" y="60" font-size="70" fill="#8b5cf6">✦</text>
+    <text x="200" y="120" font-size="50" fill="#c45fa0">✦</text>
+  </g>
+  <!-- Crochet hook icon -->
+  <g transform="translate(560, 120)" opacity="0.2">
+    <path d="M80 0 L80 160 Q80 200 50 210 Q20 220 10 200 Q0 180 20 170 Q40 160 50 175" stroke="#e879b0" stroke-width="12" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Wave decoration -->
+  <g opacity="0.07">
+    <path d="M0 420 Q200 390 400 420 Q600 450 800 420" stroke="#e879b0" stroke-width="3" fill="none"/>
+    <path d="M0 400 Q200 370 400 400 Q600 430 800 400" stroke="#8b5cf6" stroke-width="2" fill="none"/>
+  </g>
+  <!-- Badge -->
+  <rect x="86" y="140" width="150" height="34" rx="17" fill="url(#accent)" opacity="0.9"/>
+  <text x="161" y="162" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">INICIANTE</text>
+  <!-- Main label -->
+  <rect x="60" y="190" width="6" height="110" rx="3" fill="url(#accent)"/>
+  <text x="86" y="240" font-family="Georgia, serif" font-size="48" font-weight="700" fill="white">Mini Curso</text>
+  <text x="86" y="295" font-family="Georgia, serif" font-size="48" font-weight="700" fill="white">para</text>
+  <text x="86" y="350" font-family="Georgia, serif" font-size="48" font-weight="700" fill="white">Iniciante</text>
+  <text x="86" y="395" font-family="Arial, sans-serif" font-size="18" fill="#c45fa0" letter-spacing="3">CROCHÊ DA JOSI</text>
+</svg>

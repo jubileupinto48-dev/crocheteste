@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1230"/>
+      <stop offset="100%" style="stop-color:#2d1b4e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c45fa0"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e879b0;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="670" cy="100" r="180" fill="url(#glow)"/>
+  <circle cx="80" cy="370" r="130" fill="url(#glow)"/>
+  <rect width="800" height="4" fill="url(#accent)"/>
+  <!-- Shoe/bootie silhouettes -->
+  <g transform="translate(460, 80)" opacity="0.18">
+    <!-- Bootie 1 -->
+    <path d="M40 100 Q10 100 0 130 Q-10 160 20 170 L160 170 L160 120 Q160 80 130 70 L100 40 Q80 20 60 40 Z" stroke="#e879b0" stroke-width="4" fill="none" stroke-linejoin="round"/>
+    <path d="M60 40 Q70 20 90 30" stroke="#e879b0" stroke-width="3" fill="none"/>
+    <!-- Bootie 2 (smaller) -->
+    <path d="M200 120 Q180 120 172 142 Q164 165 184 172 L290 172 L290 135 Q290 105 268 98 L248 78 Q233 62 218 78 Z" stroke="#c45fa0" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  </g>
+  <!-- Bow decoration -->
+  <g transform="translate(600, 170)" opacity="0.2">
+    <path d="M0 20 Q-30 0 -40 20 Q-30 40 0 20Z" stroke="#e879b0" stroke-width="3" fill="none"/>
+    <path d="M0 20 Q30 0 40 20 Q30 40 0 20Z" stroke="#e879b0" stroke-width="3" fill="none"/>
+    <circle cx="0" cy="20" r="5" fill="#e879b0" opacity="0.8"/>
+  </g>
+  <!-- Main label -->
+  <rect x="60" y="160" width="6" height="110" rx="3" fill="url(#accent)"/>
+  <text x="86" y="215" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">Sapatinhos</text>
+  <text x="86" y="275" font-family="Georgia, serif" font-size="52" font-weight="700" fill="white">de Crochê</text>
+  <text x="86" y="330" font-family="Georgia, serif" font-size="26" font-weight="400" fill="#e879b0">Bebês &amp; Crianças</text>
+  <text x="86" y="395" font-family="Arial, sans-serif" font-size="18" fill="#c45fa0" letter-spacing="3">CROCHÊ DA JOSI</text>
+</svg>
