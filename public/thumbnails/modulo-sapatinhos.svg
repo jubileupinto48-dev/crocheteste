@@ -1,66 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="400" viewBox="0 0 600 400">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#e8f4f8"/>
-      <stop offset="100%" style="stop-color:#d4e8f0"/>
-    </linearGradient>
-    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#b8d8e8;stop-opacity:0.6"/>
-      <stop offset="100%" style="stop-color:#c8e0f0;stop-opacity:0.4"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+    <clipPath id="s1"><rect width="200" height="185"/></clipPath>
+    <clipPath id="s2"><rect width="200" height="185"/></clipPath>
+    <clipPath id="s3"><rect width="200" height="185"/></clipPath>
+    <clipPath id="s4"><rect width="300" height="175"/></clipPath>
+    <clipPath id="s5"><rect width="300" height="175"/></clipPath>
+    <linearGradient id="sbar" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#c45fa0"/>
       <stop offset="100%" style="stop-color:#8b5cf6"/>
     </linearGradient>
   </defs>
-  <rect width="600" height="450" fill="url(#bg)"/>
-  <path d="M400 0 Q500 30 600 10 L600 0 Z" fill="url(#wave)"/>
-  <path d="M350 0 Q480 50 600 25 L600 0 Q500 30 400 0Z" fill="url(#wave)" opacity="0.5"/>
-  <path d="M0 380 Q150 350 300 390 Q450 430 600 400 L600 450 L0 450 Z" fill="url(#wave)" opacity="0.5"/>
 
-  <!-- Card 1 large — left -->
-  <g transform="translate(18,18)">
-    <rect width="270" height="395" rx="14" fill="#fce8f0" opacity="0.6"/>
-    <!-- Bootie big -->
-    <path d="M75 80 Q40 80 28 115 Q16 150 48 162 L200 162 L200 100 Q200 58 168 46 L140 18 Q118 -4 96 18 Z" stroke="#d06080" stroke-width="6" fill="none" stroke-linejoin="round" opacity="0.5" transform="translate(10,50)"/>
-    <!-- Bow -->
-    <path d="M95 174 Q78 158 72 174 Q78 190 95 174Z" fill="#e090a0" opacity="0.55" transform="translate(10,50)"/>
-    <path d="M95 174 Q112 158 118 174 Q112 190 95 174Z" fill="#e090a0" opacity="0.55" transform="translate(10,50)"/>
-    <circle cx="105" cy="224" r="5" fill="#d06080" opacity="0.5"/>
-    <!-- Crochet pattern on shoe -->
-    <path d="M60 145 Q80 138 100 145 Q120 152 140 145" stroke="#e090a0" stroke-width="2.5" fill="none" opacity="0.45" transform="translate(10,50)"/>
-    <path d="M60 162 Q80 155 100 162 Q120 169 140 162" stroke="#e090a0" stroke-width="2.5" fill="none" opacity="0.45" transform="translate(10,50)"/>
-    <text x="135" y="330" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#a04060" text-anchor="middle">Sapatinhos</text>
-    <text x="135" y="352" font-family="Arial, sans-serif" font-size="13" fill="#c06080" text-anchor="middle">de Crochê</text>
-    <text x="135" y="375" font-family="Arial, sans-serif" font-size="12" fill="#d080a0" text-anchor="middle">Bebês &amp; Crianças</text>
+  <g transform="translate(0,0)" clip-path="url(#s1)">
+    <image href="/thumbnails/amigurumi-2731820.jpg" x="0" y="0" width="200" height="185" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+  <g transform="translate(201,0)" clip-path="url(#s2)">
+    <image href="/thumbnails/crochet-hook-pink.jpg" x="0" y="0" width="200" height="185" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+  <g transform="translate(402,0)" clip-path="url(#s3)">
+    <image href="/thumbnails/baby-713959.jpg" x="0" y="0" width="200" height="185" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+  <g transform="translate(0,186)" clip-path="url(#s4)">
+    <image href="/thumbnails/crochet-hands-purple.jpg" x="0" y="0" width="300" height="175" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+  <g transform="translate(301,186)" clip-path="url(#s5)">
+    <image href="/thumbnails/yarn-13428009.jpg" x="0" y="0" width="300" height="175" preserveAspectRatio="xMidYMid slice"/>
   </g>
 
-  <!-- Card 2 — top right -->
-  <g transform="translate(300,18)">
-    <rect width="282" height="190" rx="14" fill="#fff0e0" opacity="0.6"/>
-    <!-- Bootie 2 — smaller style -->
-    <path d="M50 60 Q30 60 22 82 Q14 105 34 112 L150 112 L150 75 Q150 50 132 44 L116 24 Q104 10 90 24 Z" stroke="#c08040" stroke-width="5" fill="none" stroke-linejoin="round" opacity="0.5" transform="translate(30,20)"/>
-    <path d="M80 86 Q85 78 90 86 Q85 94 80 86Z" fill="#d0a050" opacity="0.55" transform="translate(30,20)"/>
-    <path d="M90 86 Q95 78 100 86 Q95 94 90 86Z" fill="#d0a050" opacity="0.55" transform="translate(30,20)"/>
-    <text x="141" y="175" font-family="Arial, sans-serif" font-size="12" fill="#806020" text-anchor="middle" font-weight="600">Botinhas</text>
-  </g>
-
-  <!-- Card 3 — bottom right -->
-  <g transform="translate(300,220)">
-    <rect width="282" height="193" rx="14" fill="#e8f0fc" opacity="0.6"/>
-    <!-- 3 small booties in a row -->
-    <g opacity="0.5">
-      <!-- bootie 1 -->
-      <path d="M20 80 Q10 80 6 96 Q2 112 14 118 L70 118 L70 90 Q70 68 58 62 L50 48 Q44 38 36 48 Z" stroke="#6080c0" stroke-width="4" fill="none" stroke-linejoin="round"/>
-      <!-- bootie 2 -->
-      <path d="M110 80 Q100 80 96 96 Q92 112 104 118 L160 118 L160 90 Q160 68 148 62 L140 48 Q134 38 126 48 Z" stroke="#8060c0" stroke-width="4" fill="none" stroke-linejoin="round"/>
-      <!-- bootie 3 -->
-      <path d="M200 80 Q190 80 186 96 Q182 112 194 118 L250 118 L250 90 Q250 68 238 62 L230 48 Q224 38 216 48 Z" stroke="#c06080" stroke-width="4" fill="none" stroke-linejoin="round"/>
-    </g>
-    <text x="141" y="155" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#4060a0" text-anchor="middle">Modelos Variados</text>
-    <text x="141" y="175" font-family="Arial, sans-serif" font-size="11" fill="#6080b0" text-anchor="middle">para todas as idades</text>
-  </g>
-
-  <rect x="0" y="420" width="600" height="30" fill="url(#accent)" opacity="0.85"/>
-  <text x="300" y="440" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">SAPATINHOS DE CROCHÊ · CROCHÊ DA JOSI</text>
+  <rect x="0" y="361" width="600" height="39" fill="url(#sbar)"/>
+  <text x="300" y="385" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">SAPATINHOS DE CROCHÊ · CROCHÊ DA JOSI</text>
 </svg>

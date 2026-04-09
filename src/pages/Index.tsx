@@ -43,6 +43,13 @@ const Index = () => {
     },
     {
       id: 3,
+      title: "Roupinhas Infantil",
+      description: "Coleção especial de roupinhas adoráveis para bebês e crianças.",
+      image: "/thumbnails/modulo-infantil.svg",
+      link: "/vestidos-infantis",
+    },
+    {
+      id: 4,
       title: "Mini Curso para Iniciante",
       description: "Aprenda do zero com técnicas fundamentais de crochê passo a passo.",
       image: "/thumbnails/modulo-iniciante.svg",
@@ -50,19 +57,12 @@ const Index = () => {
       badge: "Iniciante",
     },
     {
-      id: 4,
+      id: 5,
       title: "+2000 Modelos e Receitas",
       description: "Acesso completo a mais de 2000 modelos e receitas em PDF para todos os níveis.",
       image: "/thumbnails/modulo-receitas.svg",
       link: "/modelos-receitas",
       badge: "Popular",
-    },
-    {
-      id: 5,
-      title: "Roupinhas Infantil",
-      description: "Coleção especial de roupinhas adoráveis para bebês e crianças.",
-      image: "/thumbnails/modulo-infantil.svg",
-      link: "/vestidos-infantis",
     },
     {
       id: 6,
