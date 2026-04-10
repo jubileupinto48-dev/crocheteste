@@ -99,44 +99,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
 
-      {/* PIX Notification Banner */}
-      {!acessoLiberado && (
-        <div style={{ background: 'hsl(322 40% 13% / 0.6)', borderBottom: '1px solid hsl(322 40% 25% / 0.4)' }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                style={{ background: 'hsl(322 40% 22% / 0.7)' }}
-              >
-                <span className="text-sm" style={{ color: 'hsl(322 62% 75%)' }}>⚡</span>
-              </div>
-              <div>
-                <p className="text-sm font-bold mb-0.5" style={{ color: 'hsl(322 62% 75%)' }}>
-                  Pagamento pendente — Gabrielle Tavares (Minha Filha)
-                </p>
-                <p className="text-sm" style={{ color: 'hsl(20 12% 72%)' }}>
-                  Gostou do conteúdo? Apoie a Josi e confirme seu acesso via PIX.
-                </p>
-                <p className="text-xs mt-1 font-mono font-bold" style={{ color: 'hsl(322 50% 68%)' }}>
-                  Chave PIX: {pixKey}
-                </p>
-              </div>
-            </div>
-            <button
-              onClick={copyPixKey}
-              className="flex items-center gap-2 shrink-0 font-bold text-sm px-5 py-2.5 rounded-xl transition-all duration-200 shadow-md"
-              style={{
-                background: 'linear-gradient(135deg, hsl(322 62% 60%), hsl(280 50% 52%))',
-                color: 'white',
-                animation: copied ? 'none' : 'pix-pulse 2.5s ease-in-out infinite',
-              }}
-            >
-              {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-              {copied ? "Copiado!" : "Copiar Chave PIX"}
-            </button>
-          </div>
-        </div>
-      )}
-
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-14">
 
@@ -233,8 +195,73 @@ const Index = () => {
         </section>
       </main>
 
+      {/* PIX Banner — acima do rodapé, apenas se pagamento pendente */}
+      {!acessoLiberado && (
+        <div className="mx-4 mb-4 rounded-2xl overflow-hidden"
+          style={{ border: '1px solid hsl(322 40% 28% / 0.5)', background: 'hsl(322 35% 11% / 0.9)' }}
+        >
+          <div className="px-5 py-5 flex flex-col gap-4">
+            {/* Header row */}
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
+                style={{ background: 'hsl(322 40% 20%)' }}
+              >
+                <span className="text-base">⚡</span>
+              </div>
+              <div>
+                <p className="text-sm font-bold leading-tight" style={{ color: 'hsl(322 62% 78%)' }}>
+                  Pagamento pendente
+                </p>
+                <p className="text-xs mt-0.5" style={{ color: 'hsl(20 12% 65%)' }}>
+                  Gabrielle Tavares (Minha Filha)
+                </p>
+              </div>
+            </div>
+
+            {/* Message */}
+            <p className="text-sm leading-relaxed" style={{ color: 'hsl(20 10% 70%)' }}>
+              Gostou do conteúdo? Apoie a Josi e confirme seu acesso via PIX. 💕
+            </p>
+
+            {/* PIX key display */}
+            <div className="flex items-center gap-3 rounded-xl px-4 py-3"
+              style={{ background: 'hsl(322 30% 8%)', border: '1px solid hsl(322 30% 22%)' }}
+            >
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-wider mb-0.5"
+                  style={{ color: 'hsl(322 40% 55%)' }}
+                >
+                  Chave PIX (Celular)
+                </p>
+                <p className="text-base font-mono font-bold tracking-wide"
+                  style={{ color: 'hsl(322 62% 78%)' }}
+                >
+                  {pixKey}
+                </p>
+              </div>
+            </div>
+
+            {/* Copy button — full width on mobile */}
+            <button
+              onClick={copyPixKey}
+              className="w-full flex items-center justify-center gap-2 font-bold text-sm py-3.5 rounded-xl transition-all duration-200"
+              style={{
+                background: copied
+                  ? 'hsl(142 60% 35%)'
+                  : 'linear-gradient(135deg, hsl(322 62% 60%), hsl(280 50% 52%))',
+                color: 'white',
+                animation: copied ? 'none' : 'pix-pulse 2.5s ease-in-out infinite',
+              }}
+            >
+              {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
+              {copied ? "Chave copiada!" : "Copiar Chave PIX"}
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Footer */}
-      <footer style={{ borderTop: '1px solid hsl(330 14% 16%)', marginTop: '2rem' }}>
+      <footer style={{ borderTop: '1px solid hsl(330 14% 16%)', marginTop: '0' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ color: 'hsl(330 8% 42%)' }}
         >
