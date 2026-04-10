@@ -106,7 +106,7 @@ export const PixModal = () => {
                   Você merece esse certificado! 🏆
                 </h2>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Confirme seu PIX e baixe seu certificado <span className="text-foreground font-semibold">oficial</span> agora mesmo:
+                  Confirme seu PIX e baixe seu certificado <span className="text-foreground font-semibold">oficial, válido em todo o Brasil</span> agora mesmo:
                 </p>
               </>
             ) : (
