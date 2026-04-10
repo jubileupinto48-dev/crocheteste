@@ -101,25 +101,33 @@ const Index = () => {
 
       {/* PIX Notification Banner */}
       {!acessoLiberado && (
-        <div style={{ background: 'hsl(322 40% 15% / 0.5)', borderBottom: '1px solid hsl(322 40% 25% / 0.4)' }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0"
-                style={{ background: 'hsl(322 40% 25% / 0.5)' }}
+        <div style={{ background: 'hsl(322 40% 13% / 0.6)', borderBottom: '1px solid hsl(322 40% 25% / 0.4)' }}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                style={{ background: 'hsl(322 40% 22% / 0.7)' }}
               >
-                <span className="text-xs" style={{ color: 'hsl(322 62% 72%)' }}>⚡</span>
+                <span className="text-sm" style={{ color: 'hsl(322 62% 75%)' }}>⚡</span>
               </div>
-              <p className="text-sm text-center sm:text-left" style={{ color: 'hsl(20 15% 80%)' }}>
-                <span className="font-bold" style={{ color: 'hsl(322 62% 72%)' }}>Pagamento pendente</span>
-                {" "}— Gostou do conteúdo? Apoie a Josi e confirme seu acesso via PIX.
-              </p>
+              <div>
+                <p className="text-sm font-bold mb-0.5" style={{ color: 'hsl(322 62% 75%)' }}>
+                  Pagamento pendente — Gabrielle Tavares (Minha Filha)
+                </p>
+                <p className="text-sm" style={{ color: 'hsl(20 12% 72%)' }}>
+                  Gostou do conteúdo? Apoie a Josi e confirme seu acesso via PIX.
+                </p>
+                <p className="text-xs mt-1 font-mono font-bold" style={{ color: 'hsl(322 50% 68%)' }}>
+                  Chave PIX: {pixKey}
+                </p>
+              </div>
             </div>
             <button
               onClick={copyPixKey}
-              className="flex items-center gap-2 shrink-0 font-bold text-sm px-4 py-2 rounded-xl transition-all duration-200 shadow-sm"
+              className="flex items-center gap-2 shrink-0 font-bold text-sm px-5 py-2.5 rounded-xl transition-all duration-200 shadow-md"
               style={{
                 background: 'linear-gradient(135deg, hsl(322 62% 60%), hsl(280 50% 52%))',
                 color: 'white',
+                animation: copied ? 'none' : 'pix-pulse 2.5s ease-in-out infinite',
               }}
             >
               {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}

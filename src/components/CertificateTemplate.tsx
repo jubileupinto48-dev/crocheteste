@@ -67,25 +67,27 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
         <div className="absolute inset-0 flex flex-col items-center justify-center p-20">
           {/* Logo and Header */}
           <div className="flex items-center gap-6 mb-4">
-            <img 
-              src="https://res.cloudinary.com/dzetm6plq/image/upload/v1769727551/ChatGPT_Image_29_de_jan._de_2026__19_57_14-removebg-preview_ubmchr.png" 
-              alt="Crochê da Josi Logo" 
+            <img
+              src="/thumbnails/logo-crochedajosi.png"
+              alt="Crochê da Josi Logo"
               className="w-20 h-20 object-contain"
+              crossOrigin="anonymous"
             />
             <div className="text-center">
               <div className="text-pink-600 text-lg tracking-[0.2em] uppercase mb-1" style={{ fontFamily: "'Georgia', serif" }}>
                 Crochê da Josi
               </div>
-              <h1 className="text-4xl font-bold tracking-wide" style={{ 
+              <h1 className="text-4xl font-bold tracking-wide" style={{
                 color: "#be185d",
               }}>
                 CERTIFICADO
               </h1>
             </div>
-            <img 
-              src="https://res.cloudinary.com/dzetm6plq/image/upload/v1769727551/ChatGPT_Image_29_de_jan._de_2026__19_57_14-removebg-preview_ubmchr.png" 
-              alt="Crochê da Josi Logo" 
+            <img
+              src="/thumbnails/logo-crochedajosi.png"
+              alt="Crochê da Josi Logo"
               className="w-20 h-20 object-contain"
+              crossOrigin="anonymous"
             />
           </div>
 
@@ -144,11 +146,18 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
           {/* Signature Area */}
           <div className="flex items-end gap-20">
             <div className="text-center">
+              <img
+                src="/thumbnails/assinatura.png"
+                alt="Assinatura"
+                crossOrigin="anonymous"
+                style={{ height: 64, margin: "0 auto 4px auto", objectFit: "contain" }}
+              />
               <div style={{ width: 220, height: 0, borderTop: "1.5px solid rgba(194, 24, 91, 0.55)", margin: "0 auto 8px auto" }} />
               <p className="text-pink-700 text-sm font-medium">Josi Morone</p>
               <p className="text-orange-500 text-xs">Instrutora</p>
             </div>
             <div className="text-center">
+              <div style={{ height: 68 }} />
               <div style={{ width: 220, height: 0, borderTop: "1.5px solid rgba(194, 24, 91, 0.55)", margin: "0 auto 8px auto" }} />
               <p className="text-pink-700 text-sm font-medium">Crochê da Josi</p>
               <p className="text-orange-500 text-xs">Escola de Artesanato</p>

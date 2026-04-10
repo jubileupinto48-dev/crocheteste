@@ -23,10 +23,11 @@ const Certificado = () => {
   const waitForImages = (root: HTMLElement): Promise<void> => {
     const images = root.querySelectorAll("img");
     const promises = Array.from(images).map((img) => {
-      if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+      // If already complete (success or failure), resolve immediately
+      if (img.complete) return Promise.resolve();
       return new Promise<void>((resolve) => {
         img.onload = () => resolve();
-        img.onerror = () => resolve(); // Don't block on failed images
+        img.onerror = () => resolve();
       });
     });
     return Promise.all(promises).then(() => {});
@@ -54,17 +55,6 @@ const Certificado = () => {
       // The export container is always off-screen with fixed 1123x794 size
       // Wait a tick for React to flush any pending state into it
       await new Promise(resolve => setTimeout(resolve, 300));
-
-      // Validate dimensions
-      const rect = el.getBoundingClientRect();
-      if (rect.width <= 0 || rect.height <= 0) {
-        toast({
-          title: "Erro ao gerar certificado",
-          description: "Não foi possível gerar o PDF agora. Recarregue a página e tente novamente.",
-          variant: "destructive",
-        });
-        return;
-      }
 
       // Wait for fonts and images
       if (document.fonts?.ready) {

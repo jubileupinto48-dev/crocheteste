@@ -24,18 +24,25 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between gap-4">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 shrink-0 group">
+        <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
           <img
             src="/thumbnails/logo-crochedajosi.png"
             alt="Crochê da Josi"
             className="h-11 w-auto transition-opacity duration-200 group-hover:opacity-90"
             style={{ filter: 'drop-shadow(0 1px 4px hsl(322 40% 30% / 0.4))' }}
           />
-          <span className="hidden sm:block text-[9.5px] font-semibold tracking-[0.18em] uppercase"
-            style={{ color: 'hsl(322 55% 62%)' }}
-          >
-            Área de Membros
-          </span>
+          <div className="hidden sm:flex flex-col leading-tight">
+            <span className="font-display font-semibold text-[15px] italic tracking-tight"
+              style={{ color: 'hsl(20 18% 93%)', letterSpacing: '-0.01em' }}
+            >
+              Crochê da Josi
+            </span>
+            <span className="text-[9.5px] font-semibold tracking-[0.18em] uppercase"
+              style={{ color: 'hsl(322 55% 62%)' }}
+            >
+              Área de Membros
+            </span>
+          </div>
         </Link>
 
         {/* Nav links — desktop */}
