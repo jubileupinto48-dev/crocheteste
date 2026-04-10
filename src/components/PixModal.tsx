@@ -37,8 +37,10 @@ export const PixModal = () => {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
 
-  // Não mostra modal se acesso já foi liberado
-  const acessoLiberado = new URLSearchParams(window.location.search).get("acesso") === "liberado";
+  // Não mostra modal se acesso já foi liberado (subdomínio pago ou parâmetro URL)
+  const hostname = window.location.hostname;
+  const isPaidSubdomain = hostname !== 'crochedajosi.com' && hostname !== 'www.crochedajosi.com' && hostname !== 'localhost' && hostname !== '127.0.0.1';
+  const acessoLiberado = isPaidSubdomain || new URLSearchParams(window.location.search).get("acesso") === "liberado";
 
   useEffect(() => {
     if (acessoLiberado) return;
