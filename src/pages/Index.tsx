@@ -14,7 +14,9 @@ const Index = () => {
   const [timeLeft, setTimeLeft] = useState(COUNTDOWN_SECONDS);
   const { toast } = useToast();
   const pixKey = "21965328868";
-  const acessoLiberado = new URLSearchParams(window.location.search).get("acesso") === "liberado";
+  const hostname = window.location.hostname;
+  const isPaidSubdomain = hostname !== 'crochedajosi.com' && hostname !== 'www.crochedajosi.com' && hostname !== 'localhost' && hostname !== '127.0.0.1';
+  const acessoLiberado = isPaidSubdomain || new URLSearchParams(window.location.search).get("acesso") === "liberado";
 
   useEffect(() => {
     if (acessoLiberado) return;
@@ -22,6 +24,19 @@ const Index = () => {
       setTimeLeft(t => t > 0 ? t - 1 : 0);
     }, 1000);
     return () => clearInterval(interval);
+  }, [acessoLiberado]);
+
+  useEffect(() => {
+    if (!acessoLiberado) return;
+    if (sessionStorage.getItem('boas-vindas')) return;
+    sessionStorage.setItem('boas-vindas', '1');
+    setTimeout(() => {
+      toast({
+        title: "Seja bem-vinda! 🎉",
+        description: "Obrigada pelo seu pagamento! Seu acesso vitalício está liberado. Bons estudos! 💖",
+        duration: 6000,
+      });
+    }, 800);
   }, [acessoLiberado]);
 
   const formatTime = (s: number) => {
