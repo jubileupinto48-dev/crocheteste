@@ -222,7 +222,7 @@ const Certificado = () => {
               size="lg"
               variant="outline"
               className="h-14 text-base"
-              onClick={acessoLiberado ? handlePreview : handleRestrictedAction}
+              onClick={handlePreview}
             >
               <Eye className="mr-2 h-5 w-5" />
               Visualizar Certificado
