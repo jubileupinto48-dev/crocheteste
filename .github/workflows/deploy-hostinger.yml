@@ -23,10 +23,7 @@ jobs:
       - name: Compilar o projeto
         run: npm run build
 
-      - name: Listar arquivos do dist
-        run: ls -la ./dist/
-
-      - name: Enviar arquivos para Hostinger via FTP
+      - name: Deploy para crochedajosi.com
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -35,4 +32,13 @@ jobs:
           local-dir: ./dist/
           server-dir: /public_html/
           dangerous-clean-slate: false
-          log-level: verbose
+
+      - name: Deploy para membros.crochedajosi.com
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /membros/
+          dangerous-clean-slate: false
