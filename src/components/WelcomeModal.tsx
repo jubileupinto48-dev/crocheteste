@@ -25,7 +25,7 @@ export const WelcomeModal = () => {
       localStorage.setItem("alunaName", nome.trim());
       localStorage.setItem("boas-vindas-modal", "1");
       setSalvo(true);
-      setTimeout(() => setOpen(false), 1800);
+      setTimeout(() => window.location.reload(), 1500);
     }
   };
 
