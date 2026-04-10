@@ -35,6 +35,7 @@ const bonuses = [
 export const PixModal = () => {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [context, setContext] = useState<"default" | "certificado">("default");
   const { toast } = useToast();
 
   // Não mostra modal se acesso já foi liberado (subdomínio pago ou parâmetro URL)
@@ -46,7 +47,11 @@ export const PixModal = () => {
     if (acessoLiberado) return;
 
     // Permite abrir o modal via evento global
-    const handleForceOpen = () => setOpen(true);
+    const handleForceOpen = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      setContext(detail === "certificado" ? "certificado" : "default");
+      setOpen(true);
+    };
     window.addEventListener("pix-modal-open", handleForceOpen);
 
     const timer = setTimeout(() => {
@@ -91,16 +96,33 @@ export const PixModal = () => {
 
           {/* Headline */}
           <div className="text-center space-y-1">
-            <div className="inline-flex items-center gap-1.5 bg-primary/15 text-primary text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-              <Zap className="w-3 h-3" />
-              Acesso Quase Completo
-            </div>
-            <h2 className="text-base font-extrabold text-foreground leading-tight">
-              Você já viu que o conteúdo é real! 🎉
-            </h2>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              Confirme via PIX e desbloqueie acesso <span className="text-foreground font-semibold">vitalício</span> + bônus:
-            </p>
+            {context === "certificado" ? (
+              <>
+                <div className="inline-flex items-center gap-1.5 bg-primary/15 text-primary text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                  <Star className="w-3 h-3" />
+                  Seu certificado está pronto!
+                </div>
+                <h2 className="text-base font-extrabold text-foreground leading-tight">
+                  Você merece esse certificado! 🏆
+                </h2>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Confirme seu PIX e baixe seu certificado <span className="text-foreground font-semibold">oficial</span> agora mesmo:
+                </p>
+              </>
+            ) : (
+              <>
+                <div className="inline-flex items-center gap-1.5 bg-primary/15 text-primary text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                  <Zap className="w-3 h-3" />
+                  Acesso Quase Completo
+                </div>
+                <h2 className="text-base font-extrabold text-foreground leading-tight">
+                  Você já viu que o conteúdo é real! 🎉
+                </h2>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Confirme via PIX e desbloqueie acesso <span className="text-foreground font-semibold">vitalício</span> + bônus:
+                </p>
+              </>
+            )}
           </div>
 
           {/* Bonus list — compacto em 2 colunas */}

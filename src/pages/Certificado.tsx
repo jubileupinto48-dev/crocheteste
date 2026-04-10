@@ -51,6 +51,12 @@ const Certificado = () => {
       return;
     }
 
+    // Bloqueia download no site não pago
+    if (!acessoLiberado) {
+      window.dispatchEvent(new CustomEvent("pix-modal-open", { detail: "certificado" }));
+      return;
+    }
+
     setIsGenerating(true);
 
     try {
@@ -230,7 +236,7 @@ const Certificado = () => {
             <Button
               size="lg"
               className="shadow-soft h-14 text-base"
-              onClick={acessoLiberado ? handleGeneratePDF : handleRestrictedAction}
+              onClick={handleGeneratePDF}
               disabled={isGenerating}
             >
               {isGenerating ? (
