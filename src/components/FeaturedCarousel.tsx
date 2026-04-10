@@ -21,7 +21,7 @@ interface FeaturedVideo {
 // Pool completo de projetos do módulo de vestidos — 1 representante por projeto com thumbnail única
 const allModuleVideos: FeaturedVideo[] = [
   // Ordem prioritária definida
-  { id: "longo", title: "Vestido Longo de Crochê", thumbnail: "/thumbnails/ozGPS_H5J44-HD.jpg", videoId: "1165908032?h=4e8257a515" },
+  { id: "longo", title: "Vestido Longo de Crochê", thumbnail: "/thumbnails/vestido-longo-thumb.jpg", videoId: "1165908032?h=4e8257a515" },
   { id: "raquel", title: "Vestido Raquel", thumbnail: "/thumbnails/VEERDE VERTICAL (1).png", videoId: "1165877185?h=ce49de91b5" },
   { id: "anapaula", title: "Vestido Ana Paula", thumbnail: "/thumbnails/VESTIDO ANA PAULA.png", videoId: "1165825235?h=e65562ca75" },
   { id: "decotev", title: "Vestido Decote V", thumbnail: "/thumbnails/ozGPS_H5J44-HD.jpg", videoId: "1165903186?h=bb7c0e0908" },

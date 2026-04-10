@@ -49,9 +49,9 @@ const videoDiagrams: Record<string, string> = {
 // Custom thumbnails for videos
 const customThumbnails: Record<string, string> = {
   // Vestido Longo de Crochê (1, 2, 3)
-  "1165908032?h=4e8257a515": "/thumbnails/ozGPS_H5J44-HD.jpg",
-  "1165906778?h=ca85d54254": "/thumbnails/ozGPS_H5J44-HD.jpg",
-  "1165907172?h=5916a23185": "/thumbnails/ozGPS_H5J44-HD.jpg",
+  "1165908032?h=4e8257a515": "/thumbnails/vestido-longo-thumb.jpg",
+  "1165906778?h=ca85d54254": "/thumbnails/vestido-longo-thumb.jpg",
+  "1165907172?h=5916a23185": "/thumbnails/vestido-longo-thumb.jpg",
   // Vestido Decote V
   "1165903186?h=bb7c0e0908": "/thumbnails/ozGPS_H5J44-HD.jpg",
   // Vestido Raquel

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ModuleCard } from "@/components/ModuleCard";
 import certificado from "@/assets/certificado.jpg";
 import moduloCroppeds from "@/assets/modulo-croppeds-thumbnail.jpg";
-import { Copy, Check, BookOpen } from "lucide-react";
+import { Copy, Check, BookOpen, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { useToast } from "@/hooks/use-toast";
@@ -99,54 +99,87 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
 
-      {/* PIX Notification Banner — oculto quando acesso liberado */}
-      {!acessoLiberado && <div className="bg-pink-500/8 border-b border-pink-500/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-full bg-pink-500/20 flex items-center justify-center shrink-0">
-              <span className="text-pink-400 text-xs">⚡</span>
+      {/* PIX Notification Banner */}
+      {!acessoLiberado && (
+        <div style={{ background: 'hsl(322 40% 15% / 0.5)', borderBottom: '1px solid hsl(322 40% 25% / 0.4)' }}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0"
+                style={{ background: 'hsl(322 40% 25% / 0.5)' }}
+              >
+                <span className="text-xs" style={{ color: 'hsl(322 62% 72%)' }}>⚡</span>
+              </div>
+              <p className="text-sm text-center sm:text-left" style={{ color: 'hsl(20 15% 80%)' }}>
+                <span className="font-bold" style={{ color: 'hsl(322 62% 72%)' }}>Pagamento pendente</span>
+                {" "}— Gostou do conteúdo? Apoie a Josi e confirme seu acesso via PIX.
+              </p>
             </div>
-            <p className="text-sm text-foreground/80 text-center sm:text-left">
-              <span className="font-semibold text-pink-400">Pagamento pendente</span>
-              {" "}— Gostou do conteúdo? Apoie a Josi e confirme seu acesso via PIX.
-            </p>
+            <button
+              onClick={copyPixKey}
+              className="flex items-center gap-2 shrink-0 font-bold text-sm px-4 py-2 rounded-xl transition-all duration-200 shadow-sm"
+              style={{
+                background: 'linear-gradient(135deg, hsl(322 62% 60%), hsl(280 50% 52%))',
+                color: 'white',
+              }}
+            >
+              {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+              {copied ? "Copiado!" : "Copiar Chave PIX"}
+            </button>
           </div>
-          <button
-            onClick={copyPixKey}
-            className="flex items-center gap-2 shrink-0 bg-pink-500 hover:bg-pink-400 active:bg-pink-600 text-white font-semibold text-sm px-4 py-2 rounded-lg transition-colors duration-200 shadow-sm"
-          >
-            {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-            {copied ? "Copiado!" : "Copiar Chave PIX"}
-          </button>
         </div>
-      </div>}
+      )}
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-14">
 
         {/* Welcome */}
         <section className="animate-fade-in">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-foreground mb-1">
-            Bem-vinda! 👋
-          </h1>
-          <p className="text-muted-foreground text-base">
-            Aqui estão todos os seus conteúdos disponíveis. Bons estudos!
-          </p>
+          <div className="flex items-end gap-4">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest mb-2"
+                style={{ color: 'hsl(322 55% 62%)', letterSpacing: '0.14em' }}
+              >
+                ✦ Bem-vinda de volta
+              </p>
+              <h1 className="font-display text-3xl md:text-4xl font-semibold text-foreground"
+                style={{ letterSpacing: '-0.02em', lineHeight: 1.2 }}
+              >
+                Seu ateliê de crochê
+                <span className="block italic" style={{ color: 'hsl(322 55% 70%)' }}>
+                  te espera, Aluna!
+                </span>
+              </h1>
+              <p className="mt-3 text-base" style={{ color: 'hsl(330 8% 52%)' }}>
+                Todos os seus conteúdos disponíveis abaixo. Bons estudos!
+              </p>
+            </div>
+          </div>
+          {/* Decorative yarn divider */}
+          <div className="mt-8 flex items-center gap-3">
+            <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, hsl(322 40% 30% / 0.6), transparent)' }} />
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: 'hsl(322 40% 45%)' }}>
+              ✦ ✦ ✦
+            </span>
+            <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, hsl(322 40% 30% / 0.6))' }} />
+          </div>
         </section>
 
         {/* Featured Videos — Carousel */}
         <section id="carousel-destaque" className="animate-fade-in">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-1 h-6 bg-primary rounded-full shrink-0" />
+            <div className="w-1 h-7 rounded-full" style={{ background: 'linear-gradient(180deg, hsl(322 62% 65%), hsl(280 50% 55%))' }} />
             <div className="flex-1 min-w-0">
-              <h2 className="text-xl font-bold text-foreground">Vestidos em Destaque</h2>
-              <p className="text-sm text-muted-foreground mt-0.5">
+              <h2 className="font-display text-xl font-semibold text-foreground" style={{ letterSpacing: '-0.01em' }}>
+                Vestidos em Destaque
+              </h2>
+              <p className="text-sm mt-0.5" style={{ color: 'hsl(330 8% 46%)' }}>
                 Navegue pelo carrossel e clique para assistir
               </p>
             </div>
             <Link
               to="/vestidos-croche"
-              className="shrink-0 text-sm text-primary font-semibold hover:underline"
+              className="shrink-0 text-sm font-bold transition-colors duration-200"
+              style={{ color: 'hsl(322 55% 65%)' }}
             >
               Ver todos →
             </Link>
@@ -160,13 +193,13 @@ const Index = () => {
         {/* All Modules */}
         <section className="animate-fade-in">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-1 h-6 bg-primary rounded-full shrink-0" />
+            <div className="w-1 h-7 rounded-full" style={{ background: 'linear-gradient(180deg, hsl(322 62% 65%), hsl(280 50% 55%))' }} />
             <div>
-              <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-primary" />
+              <h2 className="font-display text-xl font-semibold text-foreground flex items-center gap-2" style={{ letterSpacing: '-0.01em' }}>
+                <BookOpen className="w-5 h-5" style={{ color: 'hsl(322 55% 65%)' }} />
                 Todos os Módulos
               </h2>
-              <p className="text-sm text-muted-foreground mt-0.5">
+              <p className="text-sm mt-0.5" style={{ color: 'hsl(330 8% 46%)' }}>
                 {modules.length} módulos disponíveis — clique para acessar
               </p>
             </div>
@@ -193,15 +226,28 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border/40 mt-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center">
-              <span className="text-white font-bold text-xs">J</span>
+      <footer style={{ borderTop: '1px solid hsl(330 14% 16%)', marginTop: '2rem' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ color: 'hsl(330 8% 42%)' }}
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full flex items-center justify-center shadow-md"
+              style={{ background: 'linear-gradient(135deg, hsl(322 62% 62%), hsl(280 50% 55%))' }}
+            >
+              <span className="font-display text-white font-semibold text-sm italic">J</span>
             </div>
-            <span className="font-semibold text-foreground/70">Crochê da Josi</span>
+            <div>
+              <span className="font-display font-semibold text-sm italic block"
+                style={{ color: 'hsl(20 15% 78%)' }}
+              >
+                Crochê da Josi
+              </span>
+              <span className="text-xs" style={{ color: 'hsl(322 40% 50%)' }}>Feito com carinho ✦</span>
+            </div>
           </div>
-          <p>© {new Date().getFullYear()} Crochê da Josi — Todos os direitos reservados</p>
+          <p className="text-xs text-center" style={{ color: 'hsl(330 8% 38%)' }}>
+            © {new Date().getFullYear()} Crochê da Josi — Todos os direitos reservados
+          </p>
         </div>
       </footer>
     </div>

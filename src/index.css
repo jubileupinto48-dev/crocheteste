@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,75 +6,75 @@
 
 @layer base {
   :root {
-    /* Hotmart-inspired dark theme */
-    --background: 222 28% 7%;
-    --foreground: 210 20% 94%;
+    /* Ateliê da Josi — rosé-noir quente, artesanal */
+    --background: 330 20% 7%;
+    --foreground: 20 18% 93%;
 
-    --card: 222 24% 11%;
-    --card-foreground: 210 20% 94%;
+    --card: 330 16% 10.5%;
+    --card-foreground: 20 18% 93%;
 
-    --popover: 222 24% 11%;
-    --popover-foreground: 210 20% 94%;
+    --popover: 330 16% 10.5%;
+    --popover-foreground: 20 18% 93%;
 
-    /* Rosa puxado pro roxo pastel — aconchego, confiança e carinho */
+    /* Rosa-violeta caloroso — identidade Josi */
     --primary: 322 62% 65%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 20% 16%;
-    --secondary-foreground: 210 15% 80%;
+    --secondary: 330 13% 17%;
+    --secondary-foreground: 20 12% 76%;
 
-    --muted: 222 18% 15%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 330 13% 14%;
+    --muted-foreground: 330 8% 46%;
 
-    --accent: 322 50% 72%;
+    --accent: 348 52% 66%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 18% 18%;
-    --input: 222 18% 18%;
+    --border: 330 14% 16%;
+    --input: 330 14% 16%;
     --ring: 322 62% 65%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;
 
-    --sidebar-background: 222 28% 7%;
-    --sidebar-foreground: 210 20% 94%;
+    --sidebar-background: 330 20% 7%;
+    --sidebar-foreground: 20 18% 93%;
     --sidebar-primary: 322 62% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 20% 16%;
-    --sidebar-accent-foreground: 210 15% 80%;
-    --sidebar-border: 222 18% 18%;
+    --sidebar-accent: 330 13% 17%;
+    --sidebar-accent-foreground: 20 12% 76%;
+    --sidebar-border: 330 14% 16%;
     --sidebar-ring: 322 62% 65%;
   }
 
   .dark {
-    --background: 222 28% 7%;
-    --foreground: 210 20% 94%;
-    --card: 222 24% 11%;
-    --card-foreground: 210 20% 94%;
-    --popover: 222 24% 11%;
-    --popover-foreground: 210 20% 94%;
-    --primary: 22 95% 56%;
+    --background: 330 20% 7%;
+    --foreground: 20 18% 93%;
+    --card: 330 16% 10.5%;
+    --card-foreground: 20 18% 93%;
+    --popover: 330 16% 10.5%;
+    --popover-foreground: 20 18% 93%;
+    --primary: 322 62% 65%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 222 20% 16%;
-    --secondary-foreground: 210 15% 80%;
-    --muted: 222 18% 15%;
-    --muted-foreground: 220 10% 50%;
-    --accent: 322 50% 72%;
+    --secondary: 330 13% 17%;
+    --secondary-foreground: 20 12% 76%;
+    --muted: 330 13% 14%;
+    --muted-foreground: 330 8% 46%;
+    --accent: 348 52% 66%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 222 18% 18%;
-    --input: 222 18% 18%;
+    --border: 330 14% 16%;
+    --input: 330 14% 16%;
     --ring: 322 62% 65%;
-    --sidebar-background: 222 28% 7%;
-    --sidebar-foreground: 210 20% 94%;
+    --sidebar-background: 330 20% 7%;
+    --sidebar-foreground: 20 18% 93%;
     --sidebar-primary: 322 62% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 20% 16%;
-    --sidebar-accent-foreground: 210 15% 80%;
-    --sidebar-border: 222 18% 18%;
+    --sidebar-accent: 330 13% 17%;
+    --sidebar-accent-foreground: 20 12% 76%;
+    --sidebar-border: 330 14% 16%;
     --sidebar-ring: 322 62% 65%;
   }
 }
@@ -86,41 +86,104 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    /* Subtle warm texture overlay */
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(322 40% 18% / 0.25) 0%, transparent 70%);
   }
 }
 
 @layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  }
+
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+    @apply transition-all duration-300 hover:-translate-y-1;
   }
 
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(22 95% 56%), hsl(15 90% 45%));
+    background: linear-gradient(135deg, hsl(322 62% 65%), hsl(280 55% 58%));
   }
 
   .shadow-soft {
-    box-shadow: 0 4px 20px -4px hsl(22 95% 56% / 0.2);
+    box-shadow: 0 4px 24px -4px hsl(322 62% 65% / 0.25);
   }
 
   .shadow-card {
-    box-shadow: 0 2px 16px -2px hsl(222 40% 4% / 0.6);
+    box-shadow:
+      0 2px 16px -2px hsl(330 30% 4% / 0.7),
+      0 0 0 1px hsl(330 14% 16% / 0.8);
+  }
+
+  .shadow-card-hover {
+    box-shadow:
+      0 8px 32px -4px hsl(330 30% 4% / 0.6),
+      0 0 0 1px hsl(322 40% 40% / 0.25),
+      0 0 20px -6px hsl(322 62% 65% / 0.2);
+  }
+
+  /* Decorative crochet-inspired yarn divider */
+  .yarn-divider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .yarn-divider::before,
+  .yarn-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(322 62% 65% / 0.4), transparent);
+  }
+
+  /* Lace-dot accent */
+  .lace-dots {
+    background-image: radial-gradient(circle, hsl(322 62% 65% / 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 
   .animate-pulse-slow {
     animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease both;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      hsl(322 62% 65% / 0.08) 50%,
+      transparent 60%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse-slow {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+    box-shadow: 0 0 0 0 hsl(322 62% 65% / 0.4);
   }
   50% {
     transform: scale(1.05);
-    box-shadow: 0 0 20px 5px rgba(220, 38, 38, 0.2);
+    box-shadow: 0 0 20px 5px hsl(322 62% 65% / 0.2);
   }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 #lovable-badge {
