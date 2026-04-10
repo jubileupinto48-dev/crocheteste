@@ -1,4 +1,9 @@
 Options -MultiViews
 RewriteEngine On
+
+AddType application/javascript .js .mjs
+AddType text/css .css
+
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.html [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [L]
