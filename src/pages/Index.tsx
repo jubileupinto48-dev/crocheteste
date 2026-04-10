@@ -17,6 +17,7 @@ const Index = () => {
   const hostname = window.location.hostname;
   const isPaidSubdomain = hostname !== 'crochedajosi.com' && hostname !== 'www.crochedajosi.com' && hostname !== 'localhost' && hostname !== '127.0.0.1';
   const acessoLiberado = isPaidSubdomain || new URLSearchParams(window.location.search).get("acesso") === "liberado";
+  const alunaName = localStorage.getItem("alunaName");
 
   useEffect(() => {
     if (acessoLiberado) return;
@@ -137,7 +138,7 @@ const Index = () => {
               >
                 Seu ateliê de crochê
                 <span className="block italic" style={{ color: 'hsl(322 55% 70%)' }}>
-                  te espera, Aluna!
+                  te espera, {alunaName || "Aluna"}!
                 </span>
               </h1>
               <p className="mt-3 text-base" style={{ color: 'hsl(330 8% 52%)' }}>
