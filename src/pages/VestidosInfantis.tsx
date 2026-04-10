@@ -12,13 +12,13 @@ import { useFavorites } from "@/hooks/use-favorites";
 const VestidosInfantis = () => {
   const isMobile = useIsMobile();
   const videos = [
-    { id: 1, title: "Roupinha Infantil - Aula 1", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy", videoId: "13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy", platform: "gdrive" as const },
-    { id: 2, title: "Roupinha Infantil - Aula 2", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=15yQAl2f_wZIf8FVzeM8ldSmHybKVzGSI", videoId: "15yQAl2f_wZIf8FVzeM8ldSmHybKVzGSI", platform: "gdrive" as const },
-    { id: 3, title: "Roupinha Infantil - Aula 3", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=1O5WB357pXITJ-RfE_KBTWpPn7V6qGkgw", videoId: "1O5WB357pXITJ-RfE_KBTWpPn7V6qGkgw", platform: "gdrive" as const },
-    { id: 4, title: "Roupinha Infantil - Aula 4", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=14iLA_ysURYK8n38sxk0G311YJtAt3oRt", videoId: "14iLA_ysURYK8n38sxk0G311YJtAt3oRt", platform: "gdrive" as const },
-    { id: 5, title: "Roupinha Infantil - Aula 5", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=1bPnhgs5N8KRusKlvQPueqym2w0Y8z8jP", videoId: "1bPnhgs5N8KRusKlvQPueqym2w0Y8z8jP", platform: "gdrive" as const },
-    { id: 6, title: "Roupinha Infantil - Aula 6", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=16ufU8MytgqyPr4Fo7pzAdOO0dRz6LaTa", videoId: "16ufU8MytgqyPr4Fo7pzAdOO0dRz6LaTa", platform: "gdrive" as const },
-    { id: 7, title: "Roupinha Infantil - Aula 7", duration: "Vídeo completo", thumbnail: "https://drive.google.com/thumbnail?id=1QqFa2gsQKtDOX3GsgNL0FWl-5zDTbl1Y", videoId: "1QqFa2gsQKtDOX3GsgNL0FWl-5zDTbl1Y", platform: "gdrive" as const },
+    { id: 1, title: "Roupinha Infantil - Aula 1", duration: "Vídeo completo", thumbnail: "/thumbnails/inf-gd-13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy.jpg", videoId: "13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy", platform: "gdrive" as const },
+    { id: 2, title: "Roupinha Infantil - Aula 2", duration: "Vídeo completo", thumbnail: "/thumbnails/inf-gd-15yQAl2f_wZIf8FVzeM8ldSmHybKVzGSI.jpg", videoId: "15yQAl2f_wZIf8FVzeM8ldSmHybKVzGSI", platform: "gdrive" as const },
+    { id: 3, title: "Roupinha Infantil - Aula 3", duration: "Vídeo completo", thumbnail: "/thumbnails/inf-gd-1O5WB357pXITJ-RfE_KBTWpPn7V6qGkgw.jpg", videoId: "1O5WB357pXITJ-RfE_KBTWpPn7V6qGkgw", platform: "gdrive" as const },
+    { id: 4, title: "Roupinha Infantil - Aula 4", duration: "Vídeo completo", thumbnail: "/thumbnails/inf-gd-14iLA_ysURYK8n38sxk0G311YJtAt3oRt.jpg", videoId: "14iLA_ysURYK8n38sxk0G311YJtAt3oRt", platform: "gdrive" as const },
+    { id: 5, title: "Roupinha Infantil - Aula 5", duration: "Vídeo completo", thumbnail: "/thumbnails/inf-gd-1bPnhgs5N8KRusKlvQPueqym2w0Y8z8jP.jpg", videoId: "1bPnhgs5N8KRusKlvQPueqym2w0Y8z8jP", platform: "gdrive" as const },
+    { id: 6, title: "Roupinha Infantil - Aula 6", duration: "Vídeo completo", thumbnail: "/thumbnails/inf-gd-16ufU8MytgqyPr4Fo7pzAdOO0dRz6LaTa.jpg", videoId: "16ufU8MytgqyPr4Fo7pzAdOO0dRz6LaTa", platform: "gdrive" as const },
+    { id: 7, title: "Roupinha Infantil - Aula 7", duration: "Vídeo completo", thumbnail: "/thumbnails/inf-gd-1QqFa2gsQKtDOX3GsgNL0FWl-5zDTbl1Y.jpg", videoId: "1QqFa2gsQKtDOX3GsgNL0FWl-5zDTbl1Y", platform: "gdrive" as const },
     { id: 8, title: "Roupinha Infantil - Aula 8", duration: "Vídeo completo", thumbnail: "https://img.youtube.com/vi/EJQXSPohZqc/hqdefault.jpg", videoId: "EJQXSPohZqc", platform: "youtube" as const },
     { id: 9, title: "Roupinha Infantil - Aula 9", duration: "Vídeo completo", thumbnail: "https://img.youtube.com/vi/N_jQNWk-cVc/hqdefault.jpg", videoId: "N_jQNWk-cVc", platform: "youtube" as const },
     { id: 10, title: "Roupinha Infantil - Aula 10", duration: "Vídeo completo", thumbnail: "https://img.youtube.com/vi/ScUQH35_1sg/hqdefault.jpg", videoId: "ScUQH35_1sg", platform: "youtube" as const },

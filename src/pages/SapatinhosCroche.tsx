@@ -10,16 +10,16 @@ import { useFavorites } from "@/hooks/use-favorites";
 
 const SapatinhosCroche = () => {
   const videos = [
-    { id: 1, title: "Sapatinho de Crochê para Bebê - Fácil e Delicado", duration: "25 min", thumbnail: "https://drive.google.com/thumbnail?id=193LuNFt8kfcH33VcU0z7zZOJrZ9ajSwf", driveId: "193LuNFt8kfcH33VcU0z7zZOJrZ9ajSwf", category: "Sapatinho Menina" },
-    { id: 2, title: "Sapatinho de Crochê RN - Saída de Maternidade", duration: "30 min", thumbnail: "https://drive.google.com/thumbnail?id=14DkXx42ghiGOfknP3cDQjrUqp6v8pN6I", driveId: "14DkXx42ghiGOfknP3cDQjrUqp6v8pN6I", category: "Sapatinho Menina" },
-    { id: 3, title: "Sapatilha de Crochê para Bebê - Muito Fácil", duration: "28 min", thumbnail: "https://drive.google.com/thumbnail?id=1Ld77T6QQc4vADvAeulHlFN6D0Nltre_y", driveId: "1Ld77T6QQc4vADvAeulHlFN6D0Nltre_y", category: "Sandalinha" },
-    { id: 4, title: "Sapatinho de Crochê para Bebê - Tamanho 10cm", duration: "22 min", thumbnail: "https://drive.google.com/thumbnail?id=1TKrQJzB1KeJ_mstEKtqAHuFDMG5yck6O", driveId: "1TKrQJzB1KeJ_mstEKtqAHuFDMG5yck6O", category: "Sandalinha" },
-    { id: 5, title: "Botinha de Crochê para Bebê - Ursinho", duration: "35 min", thumbnail: "https://drive.google.com/thumbnail?id=1J8cz1ywtljN0b5ggIjkWy7aB25WShQKL", driveId: "1J8cz1ywtljN0b5ggIjkWy7aB25WShQKL", category: "Botinha" },
-    { id: 6, title: "Botinha para Iniciantes - Saída de Maternidade", duration: "32 min", thumbnail: "https://drive.google.com/thumbnail?id=1kT2ZAYHJt4Ztdq6N5gG27hMX0OngQYTT", driveId: "1kT2ZAYHJt4Ztdq6N5gG27hMX0OngQYTT", category: "Botinha" },
-    { id: 7, title: "Sapatinho de Crochê Unissex", duration: "28 min", thumbnail: "https://drive.google.com/thumbnail?id=1F6HTu027kEVX73U4zk7FSrRQHpThu1-C", driveId: "1F6HTu027kEVX73U4zk7FSrRQHpThu1-C", category: "Sapatinho Fechado" },
-    { id: 8, title: "Sapatinho Estilo Crocs - Tutorial Completo 10cm", duration: "40 min", thumbnail: "https://drive.google.com/thumbnail?id=1X-RTGw7Bc8SvdxycEzQY1-aIINT_OpY0", driveId: "1X-RTGw7Bc8SvdxycEzQY1-aIINT_OpY0", category: "Sapatinho Fechado" },
-    { id: 9, title: "Tênis de Crochê para Bebê - Tam 9cm", duration: "38 min", thumbnail: "https://drive.google.com/thumbnail?id=1GDcK_t8pzY8nhG9RGvb9YfTpX4X5O2UY", driveId: "1GDcK_t8pzY8nhG9RGvb9YfTpX4X5O2UY", category: "Tênis" },
-    { id: 10, title: "Tênis Tipo All Star - Sapatinho de Crochê", duration: "45 min", thumbnail: "https://drive.google.com/thumbnail?id=1QzvUSSDvol9K9YYnWHYtLxIgB5r8HDhh", driveId: "1QzvUSSDvol9K9YYnWHYtLxIgB5r8HDhh", category: "Tênis" },
+    { id: 1, title: "Sapatinho de Crochê para Bebê - Fácil e Delicado", duration: "25 min", thumbnail: "/thumbnails/sap-193LuNFt8kfcH33VcU0z7zZOJrZ9ajSwf.jpg", driveId: "193LuNFt8kfcH33VcU0z7zZOJrZ9ajSwf", category: "Sapatinho Menina" },
+    { id: 2, title: "Sapatinho de Crochê RN - Saída de Maternidade", duration: "30 min", thumbnail: "/thumbnails/sap-14DkXx42ghiGOfknP3cDQjrUqp6v8pN6I.jpg", driveId: "14DkXx42ghiGOfknP3cDQjrUqp6v8pN6I", category: "Sapatinho Menina" },
+    { id: 3, title: "Sapatilha de Crochê para Bebê - Muito Fácil", duration: "28 min", thumbnail: "/thumbnails/sap2-1Ld77T6QQc4vADvAeulHlFN6D0Nltre_y.jpg", driveId: "1Ld77T6QQc4vADvAeulHlFN6D0Nltre_y", category: "Sandalinha" },
+    { id: 4, title: "Sapatinho de Crochê para Bebê - Tamanho 10cm", duration: "22 min", thumbnail: "/thumbnails/sap2-1TKrQJzB1KeJ_mstEKtqAHuFDMG5yck6O.jpg", driveId: "1TKrQJzB1KeJ_mstEKtqAHuFDMG5yck6O", category: "Sandalinha" },
+    { id: 5, title: "Botinha de Crochê para Bebê - Ursinho", duration: "25 min", thumbnail: "/thumbnails/sap-1J8cz1ywtljN0b5ggIjkWy7aB25WShQKL.jpg", driveId: "1J8cz1ywtljN0b5ggIjkWy7aB25WShQKL", category: "Botinha" },
+    { id: 6, title: "Botinha para Iniciantes - Saída de Maternidade", duration: "32 min", thumbnail: "/thumbnails/sap2-1kT2ZAYHJt4Ztdq6N5gG27hMX0OngQYTT.jpg", driveId: "1kT2ZAYHJt4Ztdq6N5gG27hMX0OngQYTT", category: "Botinha" },
+    { id: 7, title: "Sapatinho de Crochê Unissex", duration: "28 min", thumbnail: "/thumbnails/sap-1F6HTu027kEVX73U4zk7FSrRQHpThu1-C.jpg", driveId: "1F6HTu027kEVX73U4zk7FSrRQHpThu1-C", category: "Sapatinho Fechado" },
+    { id: 8, title: "Sapatinho Estilo Crocs - Tutorial Completo 10cm", duration: "40 min", thumbnail: "/thumbnails/sap2-1X-RTGw7Bc8SvdxycEzQY1-aIINT_OpY0.jpg", driveId: "1X-RTGw7Bc8SvdxycEzQY1-aIINT_OpY0", category: "Sapatinho Fechado" },
+    { id: 9, title: "Tênis de Crochê para Bebê - Tam 9cm", duration: "38 min", thumbnail: "/thumbnails/sap-1GDcK_t8pzY8nhG9RGvb9YfTpX4X5O2UY.jpg", driveId: "1GDcK_t8pzY8nhG9RGvb9YfTpX4X5O2UY", category: "Tênis" },
+    { id: 10, title: "Tênis Tipo All Star - Sapatinho de Crochê", duration: "45 min", thumbnail: "/thumbnails/sap2-1QzvUSSDvol9K9YYnWHYtLxIgB5r8HDhh.jpg", driveId: "1QzvUSSDvol9K9YYnWHYtLxIgB5r8HDhh", category: "Tênis" },
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);

@@ -231,19 +231,13 @@ const Index = () => {
           style={{ color: 'hsl(330 8% 42%)' }}
         >
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center shadow-md"
-              style={{ background: 'linear-gradient(135deg, hsl(322 62% 62%), hsl(280 50% 55%))' }}
-            >
-              <span className="font-display text-white font-semibold text-sm italic">J</span>
-            </div>
-            <div>
-              <span className="font-display font-semibold text-sm italic block"
-                style={{ color: 'hsl(20 15% 78%)' }}
-              >
-                Crochê da Josi
-              </span>
-              <span className="text-xs" style={{ color: 'hsl(322 40% 50%)' }}>Feito com carinho ✦</span>
-            </div>
+            <img
+              src="/thumbnails/logo-crochedajosi.png"
+              alt="Crochê da Josi"
+              className="h-10 w-auto"
+              style={{ filter: 'drop-shadow(0 1px 4px hsl(322 40% 30% / 0.3))' }}
+            />
+            <span className="text-xs" style={{ color: 'hsl(322 40% 50%)' }}>Feito com carinho ✦</span>
           </div>
           <p className="text-xs text-center" style={{ color: 'hsl(330 8% 38%)' }}>
             © {new Date().getFullYear()} Crochê da Josi — Todos os direitos reservados

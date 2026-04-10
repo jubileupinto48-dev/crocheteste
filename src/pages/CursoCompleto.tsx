@@ -80,7 +80,7 @@ const CursoCompleto = () => {
   const currentVideo = videos[currentVideoIndex];
 
   const getThumbnail = (video: typeof videos[0]) => {
-    if (video.platform === "gdrive") return `https://drive.google.com/thumbnail?id=${video.videoId}&sz=w640`;
+    if (video.platform === "gdrive") return `/thumbnails/ini-gd-thumb.jpg`;
     if (video.platform === "vimeo") return `https://vumbnail.com/${video.videoId}.jpg`;
     return `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
   };

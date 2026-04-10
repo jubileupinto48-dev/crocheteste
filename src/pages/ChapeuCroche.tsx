@@ -10,13 +10,13 @@ import { useFavorites } from "@/hooks/use-favorites";
 
 const ChapeuCroche = () => {
   const videos = [
-    { id: 1, title: "Bucket Hat de Inverno em Crochê - Fio Lã Mollet", duration: "35 min", thumbnail: "https://drive.google.com/thumbnail?id=18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Bucket Hat" },
-    { id: 2, title: "Chapéu de Crochê Infantil", duration: "28 min", thumbnail: "https://drive.google.com/thumbnail?id=1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", driveId: "1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", category: "Chapéu Infantil" },
-    { id: 3, title: "Chapéu Infantil - Modelo 2", duration: "30 min", thumbnail: "https://drive.google.com/thumbnail?id=18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Chapéu Infantil" },
-    { id: 4, title: "Chapéu Branco de Crochê", duration: "32 min", thumbnail: "https://drive.google.com/thumbnail?id=1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", driveId: "1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", category: "Chapéu" },
-    { id: 5, title: "Chapéu de Morango Infantil", duration: "38 min", thumbnail: "https://drive.google.com/thumbnail?id=18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Chapéu Infantil" },
-    { id: 6, title: "Chapéu Verde Infantil", duration: "25 min", thumbnail: "https://drive.google.com/thumbnail?id=1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", driveId: "1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", category: "Chapéu Infantil" },
-    { id: 7, title: "Touca Olaf de Crochê", duration: "42 min", thumbnail: "https://drive.google.com/thumbnail?id=18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Touca" },
+    { id: 1, title: "Bucket Hat de Inverno em Crochê - Fio Lã Mollet", duration: "35 min", thumbnail: "/thumbnails/chapeu-gdrive-1.jpg", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Bucket Hat" },
+    { id: 2, title: "Chapéu de Crochê Infantil", duration: "28 min", thumbnail: "/thumbnails/chapeu-gdrive-2.jpg", driveId: "1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", category: "Chapéu Infantil" },
+    { id: 3, title: "Chapéu Infantil - Modelo 2", duration: "30 min", thumbnail: "/thumbnails/chapeu-gdrive-1.jpg", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Chapéu Infantil" },
+    { id: 4, title: "Chapéu Branco de Crochê", duration: "32 min", thumbnail: "/thumbnails/chapeu-gdrive-2.jpg", driveId: "1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", category: "Chapéu" },
+    { id: 5, title: "Chapéu de Morango Infantil", duration: "38 min", thumbnail: "/thumbnails/chapeu-gdrive-1.jpg", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Chapéu Infantil" },
+    { id: 6, title: "Chapéu Verde Infantil", duration: "25 min", thumbnail: "/thumbnails/chapeu-gdrive-2.jpg", driveId: "1z4IpQGUOGESZ7tg-tNwxc3Y_HiHJ9RVU", category: "Chapéu Infantil" },
+    { id: 7, title: "Touca Olaf de Crochê", duration: "42 min", thumbnail: "/thumbnails/chapeu-gdrive-1.jpg", driveId: "18BehOZT6V6o0LOZwezDf80WMGrOOeYiF", category: "Touca" },
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);

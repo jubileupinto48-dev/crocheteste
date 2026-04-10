@@ -24,29 +24,18 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between gap-4">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 shrink-0 group">
-          {/* Yarn ball icon */}
-          <div className="w-9 h-9 rounded-full flex items-center justify-center shadow-md relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, hsl(322 62% 62%), hsl(280 50% 55%))' }}
+        <Link to="/" className="flex items-center gap-2 shrink-0 group">
+          <img
+            src="/thumbnails/logo-crochedajosi.png"
+            alt="Crochê da Josi"
+            className="h-11 w-auto transition-opacity duration-200 group-hover:opacity-90"
+            style={{ filter: 'drop-shadow(0 1px 4px hsl(322 40% 30% / 0.4))' }}
+          />
+          <span className="hidden sm:block text-[9.5px] font-semibold tracking-[0.18em] uppercase"
+            style={{ color: 'hsl(322 55% 62%)' }}
           >
-            {/* Stylized crochet hook / J letter */}
-            <span className="font-display text-white font-bold text-base leading-none italic">J</span>
-            <div className="absolute inset-0 rounded-full opacity-30"
-              style={{ background: 'radial-gradient(circle at 35% 35%, white 0%, transparent 60%)' }}
-            />
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="font-display text-foreground font-semibold text-[15px] tracking-tight italic"
-              style={{ letterSpacing: '-0.01em' }}
-            >
-              Crochê da Josi
-            </span>
-            <span className="text-[9.5px] font-semibold tracking-[0.18em] uppercase"
-              style={{ color: 'hsl(322 55% 62%)' }}
-            >
-              Área de Membros
-            </span>
-          </div>
+            Área de Membros
+          </span>
         </Link>
 
         {/* Nav links — desktop */}

@@ -10,13 +10,13 @@ import { useFavorites } from "@/hooks/use-favorites";
 
 const BolsasCroche = () => {
   const videos = [
-    { id: 1, title: "Bag Gringa de Crochê - Versão Atualizada", duration: "35 min", thumbnail: "https://drive.google.com/thumbnail?id=1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Bag Gringa" },
-    { id: 2, title: "Bolsa de Crochê com Fio de Malha", duration: "40 min", thumbnail: "https://drive.google.com/thumbnail?id=1cZTA03xROF2R64HXEhavjYwhzm78ylk2", driveId: "1cZTA03xROF2R64HXEhavjYwhzm78ylk2", category: "Bolsa de Ombro" },
-    { id: 3, title: "Bolsa de Ombro de Crochê - Modelo 1", duration: "38 min", thumbnail: "https://drive.google.com/thumbnail?id=1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Bolsa de Ombro" },
-    { id: 4, title: "Bolsa de Ombro de Crochê - Modelo 2", duration: "42 min", thumbnail: "https://drive.google.com/thumbnail?id=1cZTA03xROF2R64HXEhavjYwhzm78ylk2", driveId: "1cZTA03xROF2R64HXEhavjYwhzm78ylk2", category: "Bolsa de Ombro" },
-    { id: 5, title: "Bolsa Fácil de Crochê", duration: "30 min", thumbnail: "https://drive.google.com/thumbnail?id=1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Bolsa Fácil" },
-    { id: 6, title: "Clutch de Crochê - Modelo 1", duration: "28 min", thumbnail: "https://drive.google.com/thumbnail?id=1cZTA03xROF2R64HXEhavjYwhzm78ylk2", driveId: "1cZTA03xROF2R64HXEhavjYwhzm78ylk2", category: "Clutch" },
-    { id: 7, title: "Clutch de Crochê - Modelo 2", duration: "32 min", thumbnail: "https://drive.google.com/thumbnail?id=1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Clutch" },
+    { id: 1, title: "Bag Gringa de Crochê - Versão Atualizada", duration: "35 min", thumbnail: "/thumbnails/bolsa-1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI.jpg", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Bag Gringa" },
+    { id: 2, title: "Bolsa de Crochê com Fio de Malha", duration: "40 min", thumbnail: "/thumbnails/bolsa-1cZTA03xROF2R64HXEhavjYwhzm78ylk2.jpg", driveId: "1cZTA03xROF2R64HXEhavjYwhzm78ylk2", category: "Bolsa de Ombro" },
+    { id: 3, title: "Bolsa de Ombro de Crochê - Modelo 1", duration: "38 min", thumbnail: "/thumbnails/bolsa-1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI.jpg", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Bolsa de Ombro" },
+    { id: 4, title: "Bolsa de Ombro de Crochê - Modelo 2", duration: "42 min", thumbnail: "/thumbnails/bolsa-1cZTA03xROF2R64HXEhavjYwhzm78ylk2.jpg", driveId: "1cZTA03xROF2R64HXEhavjYwhzm78ylk2", category: "Bolsa de Ombro" },
+    { id: 5, title: "Bolsa Fácil de Crochê", duration: "30 min", thumbnail: "/thumbnails/bolsa-1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI.jpg", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Bolsa Fácil" },
+    { id: 6, title: "Clutch de Crochê - Modelo 1", duration: "28 min", thumbnail: "/thumbnails/bolsa-1cZTA03xROF2R64HXEhavjYwhzm78ylk2.jpg", driveId: "1cZTA03xROF2R64HXEhavjYwhzm78ylk2", category: "Clutch" },
+    { id: 7, title: "Clutch de Crochê - Modelo 2", duration: "32 min", thumbnail: "/thumbnails/bolsa-1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI.jpg", driveId: "1d4ZOvxMTMM6IzyhusTn1ilTGUCaQWzjI", category: "Clutch" },
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
