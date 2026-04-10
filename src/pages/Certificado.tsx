@@ -20,6 +20,14 @@ const Certificado = () => {
   const exportRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
+  const hostname = window.location.hostname;
+  const isPaidSubdomain = hostname !== 'crochedajosi.com' && hostname !== 'www.crochedajosi.com' && hostname !== 'localhost' && hostname !== '127.0.0.1';
+  const acessoLiberado = isPaidSubdomain || new URLSearchParams(window.location.search).get("acesso") === "liberado";
+
+  const handleRestrictedAction = () => {
+    window.dispatchEvent(new Event("pix-modal-open"));
+  };
+
   const waitForImages = (root: HTMLElement): Promise<void> => {
     const images = root.querySelectorAll("img");
     const promises = Array.from(images).map((img) => {
@@ -210,19 +218,19 @@ const Certificado = () => {
           </Card>
 
           <div className="grid md:grid-cols-2 gap-4 animate-scale-in mb-8">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="outline"
               className="h-14 text-base"
-              onClick={handlePreview}
+              onClick={acessoLiberado ? handlePreview : handleRestrictedAction}
             >
               <Eye className="mr-2 h-5 w-5" />
               Visualizar Certificado
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="shadow-soft h-14 text-base"
-              onClick={handleGeneratePDF}
+              onClick={acessoLiberado ? handleGeneratePDF : handleRestrictedAction}
               disabled={isGenerating}
             >
               {isGenerating ? (

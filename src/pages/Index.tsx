@@ -221,33 +221,19 @@ const Index = () => {
 
           {/* WhatsApp Group CTA — abaixo do Certificado */}
           <div className="mt-6 animate-fade-in">
-            {acessoLiberado ? (
-              <a
-                href="https://chat.whatsapp.com/GSRWW9KHlTYH41ZJ3D3AWt?mode=gi_t"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-full py-4 rounded-2xl font-bold text-base transition-all duration-200 active:scale-95"
-                style={{
-                  background: 'linear-gradient(135deg, #25d366, #128c7e)',
-                  color: 'white',
-                  boxShadow: '0 4px 20px hsl(145 70% 35% / 0.35)',
-                }}
-              >
-                Entrar no Grupo Exclusivo do WhatsApp
-              </a>
-            ) : (
-              <button
-                onClick={() => window.dispatchEvent(new Event("pix-modal-open"))}
-                className="flex items-center justify-center w-full py-4 rounded-2xl font-bold text-base transition-all duration-200 active:scale-95"
-                style={{
-                  background: 'linear-gradient(135deg, #25d366, #128c7e)',
-                  color: 'white',
-                  boxShadow: '0 4px 20px hsl(145 70% 35% / 0.35)',
-                }}
-              >
-                Entrar no Grupo Exclusivo do WhatsApp
-              </button>
-            )}
+            <a
+              href="https://chat.whatsapp.com/GSRWW9KHlTYH41ZJ3D3AWt?mode=gi_t"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-full py-4 rounded-2xl font-bold text-base transition-all duration-200 active:scale-95"
+              style={{
+                background: 'linear-gradient(135deg, #25d366, #128c7e)',
+                color: 'white',
+                boxShadow: '0 4px 20px hsl(145 70% 35% / 0.35)',
+              }}
+            >
+              Entrar no Grupo Exclusivo do WhatsApp
+            </a>
             <p className="text-center text-xs mt-2" style={{ color: 'hsl(330 8% 42%)' }}>
               Acesso aos bônus, novidades e suporte direto com a Josi
             </p>
