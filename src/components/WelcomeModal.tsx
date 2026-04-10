@@ -15,7 +15,7 @@ export const WelcomeModal = () => {
 
   useEffect(() => {
     if (!isPaidSubdomain) return;
-    if (sessionStorage.getItem("boas-vindas-modal")) return;
+    if (localStorage.getItem("boas-vindas-modal")) return;
     const timer = setTimeout(() => setOpen(true), 600);
     return () => clearTimeout(timer);
   }, [isPaidSubdomain]);
@@ -24,7 +24,7 @@ export const WelcomeModal = () => {
     if (nome.trim()) {
       localStorage.setItem("alunaName", nome.trim());
     }
-    sessionStorage.setItem("boas-vindas-modal", "1");
+    localStorage.setItem("boas-vindas-modal", "1");
     setSalvo(true);
     setTimeout(() => setOpen(false), 1800);
   };
