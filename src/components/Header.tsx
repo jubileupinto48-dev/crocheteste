@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { Bell, BookOpen, Heart, Award, ChevronDown, Menu, X } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const { toast } = useToast();
+  const alunaName = localStorage.getItem("alunaName") || "Aluna";
+  const inicial = alunaName.charAt(0).toUpperCase();
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -16,6 +20,20 @@ export const Header = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleBell = () => {
+    toast({
+      title: "Notificações ativadas! 🔔",
+      description: "Sempre que sair conteúdo novo vamos te notificar! 💖",
+      duration: 4000,
+    });
+  };
+
+  const navLinks = [
+    { to: "/curso-completo", icon: BookOpen, label: "Meus Cursos" },
+    { to: "/favoritos", icon: Heart, label: "Favoritos" },
+    { to: "/certificado", icon: Award, label: "Certificado" },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 h-16"
@@ -47,11 +65,7 @@ export const Header = () => {
 
         {/* Nav links — desktop */}
         <nav className="hidden md:flex items-center gap-0.5">
-          {[
-            { to: "/", icon: BookOpen, label: "Meus Cursos" },
-            { to: "/", icon: Heart, label: "Favoritos" },
-            { to: "/certificado", icon: Award, label: "Certificado" },
-          ].map(({ to, icon: Icon, label }) => (
+          {navLinks.map(({ to, icon: Icon, label }) => (
             <Link
               key={label}
               to={to}
@@ -75,6 +89,7 @@ export const Header = () => {
         {/* Right side */}
         <div className="flex items-center gap-2 shrink-0">
           <button
+            onClick={handleBell}
             className="p-2 rounded-full transition-colors duration-200"
             style={{ color: 'hsl(330 8% 46%)' }}
             onMouseEnter={e => {
@@ -101,11 +116,11 @@ export const Header = () => {
               <div className="w-8 h-8 rounded-full flex items-center justify-center shadow relative overflow-hidden"
                 style={{ background: 'linear-gradient(135deg, hsl(322 62% 62%), hsl(280 50% 55%))' }}
               >
-                <span className="font-display text-white font-semibold text-sm italic">A</span>
+                <span className="font-display text-white font-semibold text-sm italic">{inicial}</span>
               </div>
-              <span className="text-sm font-semibold">Aluna</span>
+              <span className="text-sm font-semibold">{alunaName}</span>
               <ChevronDown
-                className={`w-3.5 h-3.5 transition-transform duration-200`}
+                className="w-3.5 h-3.5 transition-transform duration-200"
                 style={{ color: 'hsl(330 8% 46%)', transform: menuOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
               />
             </button>
@@ -115,14 +130,11 @@ export const Header = () => {
                 style={{ background: 'hsl(330 16% 12%)', border: '1px solid hsl(330 14% 20%)' }}
               >
                 <div className="px-4 py-3" style={{ borderBottom: '1px solid hsl(330 14% 18%)' }}>
-                  <p className="text-sm font-bold text-foreground font-display italic">Aluna</p>
+                  <p className="text-sm font-bold text-foreground font-display italic">{alunaName}</p>
                   <p className="text-xs mt-0.5" style={{ color: 'hsl(322 55% 62%)' }}>Membro ativo</p>
                 </div>
                 <div className="py-1">
-                  {[
-                    { to: "/", icon: BookOpen, label: "Meus Cursos" },
-                    { to: "/certificado", icon: Award, label: "Certificado" },
-                  ].map(({ to, icon: Icon, label }) => (
+                  {navLinks.map(({ to, icon: Icon, label }) => (
                     <Link
                       key={label}
                       to={to}
@@ -151,14 +163,6 @@ export const Header = () => {
           <button
             className="md:hidden p-2 rounded-lg transition-colors duration-200"
             style={{ color: 'hsl(330 8% 46%)' }}
-            onMouseEnter={e => {
-              (e.currentTarget as HTMLElement).style.color = 'hsl(20 18% 93%)';
-              (e.currentTarget as HTMLElement).style.background = 'hsl(330 14% 16%)';
-            }}
-            onMouseLeave={e => {
-              (e.currentTarget as HTMLElement).style.color = 'hsl(330 8% 46%)';
-              (e.currentTarget as HTMLElement).style.background = 'transparent';
-            }}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -172,11 +176,7 @@ export const Header = () => {
           style={{ background: 'hsl(330 16% 10%)', borderBottom: '1px solid hsl(330 14% 18%)' }}
         >
           <nav className="flex flex-col py-2 px-4">
-            {[
-              { to: "/", icon: BookOpen, label: "Meus Cursos" },
-              { to: "/", icon: Heart, label: "Favoritos" },
-              { to: "/certificado", icon: Award, label: "Certificado" },
-            ].map(({ to, icon: Icon, label }) => (
+            {navLinks.map(({ to, icon: Icon, label }) => (
               <Link
                 key={label}
                 to={to}

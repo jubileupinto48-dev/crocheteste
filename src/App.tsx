@@ -20,6 +20,7 @@ const BolsasCroche     = lazy(() => import("./pages/BolsasCroche"));
 const Certificado      = lazy(() => import("./pages/Certificado"));
 const MaisModelos      = lazy(() => import("./pages/MaisModelos"));
 const ChapeuCroche     = lazy(() => import("./pages/ChapeuCroche"));
+const Favoritos        = lazy(() => import("./pages/Favoritos"));
 const NotFound         = lazy(() => import("./pages/NotFound"));
 
 const PageLoader = () => (
@@ -58,6 +59,7 @@ const App = () => (
               <Route path="/certificado"       element={<Certificado />} />
               <Route path="/mais-modelos"      element={<MaisModelos />} />
               <Route path="/chapeu-croche"     element={<ChapeuCroche />} />
+              <Route path="/favoritos"         element={<Favoritos />} />
               <Route path="*"                  element={<NotFound />} />
             </Routes>
           </Suspense>
