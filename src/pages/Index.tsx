@@ -1,18 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ModuleCard } from "@/components/ModuleCard";
 import certificado from "@/assets/certificado.jpg";
 import moduloCroppeds from "@/assets/modulo-croppeds-thumbnail.jpg";
-import { Copy, Check, BookOpen, Sparkles } from "lucide-react";
+import { Copy, Check, BookOpen, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { useToast } from "@/hooks/use-toast";
 import { FavoritesSection } from "@/components/FavoritesSection";
 
+const COUNTDOWN_SECONDS = 10 * 60; // 10 minutes
+
 const Index = () => {
   const [copied, setCopied] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(COUNTDOWN_SECONDS);
   const { toast } = useToast();
   const pixKey = "21965328868";
   const acessoLiberado = new URLSearchParams(window.location.search).get("acesso") === "liberado";
+
+  useEffect(() => {
+    if (acessoLiberado) return;
+    const interval = setInterval(() => {
+      setTimeLeft(t => t > 0 ? t - 1 : 0);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [acessoLiberado]);
+
+  const formatTime = (s: number) => {
+    const m = Math.floor(s / 60).toString().padStart(2, '0');
+    const sec = (s % 60).toString().padStart(2, '0');
+    return { m, sec };
+  };
+
+  const { m, sec } = formatTime(timeLeft);
 
   const copyPixKey = () => {
     navigator.clipboard.writeText(pixKey);
@@ -192,6 +211,27 @@ const Index = () => {
               </div>
             ))}
           </div>
+
+          {/* WhatsApp Group CTA — abaixo do Certificado */}
+          <div className="mt-6 animate-fade-in">
+            <a
+              href="https://chat.whatsapp.com/GSRWW9KHlTYH41ZJ3D3AWt?mode=gi_t"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-base transition-all duration-200 active:scale-95"
+              style={{
+                background: 'linear-gradient(135deg, #25d366, #128c7e)',
+                color: 'white',
+                boxShadow: '0 4px 20px hsl(145 70% 35% / 0.35)',
+              }}
+            >
+              <MessageCircle className="w-6 h-6" />
+              Entrar no Grupo Exclusivo do WhatsApp 🎉
+            </a>
+            <p className="text-center text-xs mt-2" style={{ color: 'hsl(330 8% 42%)' }}>
+              Acesso aos bônus, novidades e suporte direto com a Josi
+            </p>
+          </div>
         </section>
       </main>
 
@@ -219,9 +259,39 @@ const Index = () => {
             </div>
 
             {/* Message */}
-            <p className="text-sm leading-relaxed" style={{ color: 'hsl(20 10% 70%)' }}>
-              Gostou do conteúdo? Apoie a Josi e confirme seu acesso via PIX. 💕
+            <p className="text-sm leading-relaxed font-medium" style={{ color: 'hsl(20 10% 82%)' }}>
+              Gostou do conteúdo? confirme seu pix para eu te enviar todos os bônus e acesso vitalício! 🙏💖
             </p>
+
+            {/* Countdown */}
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <div className="rounded-xl px-3 py-2 min-w-[52px] text-center"
+                  style={{ background: 'hsl(322 30% 8%)', border: '1px solid hsl(322 40% 28%)' }}
+                >
+                  <span className="font-mono font-extrabold text-2xl leading-none"
+                    style={{ color: timeLeft < 60 ? 'hsl(0 80% 65%)' : 'hsl(322 62% 78%)' }}
+                  >{m}</span>
+                  <p className="text-[9px] font-semibold uppercase tracking-wider mt-0.5"
+                    style={{ color: 'hsl(322 30% 50%)' }}>min</p>
+                </div>
+                <span className="font-extrabold text-2xl" style={{ color: 'hsl(322 50% 65%)' }}>:</span>
+                <div className="rounded-xl px-3 py-2 min-w-[52px] text-center"
+                  style={{ background: 'hsl(322 30% 8%)', border: '1px solid hsl(322 40% 28%)' }}
+                >
+                  <span className="font-mono font-extrabold text-2xl leading-none"
+                    style={{ color: timeLeft < 60 ? 'hsl(0 80% 65%)' : 'hsl(322 62% 78%)' }}
+                  >{sec}</span>
+                  <p className="text-[9px] font-semibold uppercase tracking-wider mt-0.5"
+                    style={{ color: 'hsl(322 30% 50%)' }}>seg</p>
+                </div>
+              </div>
+              <p className="text-xs font-bold uppercase tracking-wider"
+                style={{ color: 'hsl(38 90% 60%)' }}
+              >
+                ⏰ Valor promocional apenas Hoje!
+              </p>
+            </div>
 
             {/* PIX key display */}
             <div className="flex items-center gap-3 rounded-xl px-4 py-3"

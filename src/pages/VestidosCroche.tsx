@@ -602,7 +602,14 @@ const VestidosCroche = () => {
   const [cameFromCarousel, setCameFromCarousel] = useState(!!autoplayVideoId);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterProject, setFilterProject] = useState("all");
-  const [visibleCount, setVisibleCount] = useState(batchSize);
+  // Se navegou de um vídeo específico, expande a lista para incluí-lo
+  const [visibleCount, setVisibleCount] = useState(() => {
+    if (autoplayVideoId) {
+      const idx = videos.findIndex(v => v.videoId === autoplayVideoId);
+      if (idx >= 0) return Math.ceil((idx + 1) / batchSize) * batchSize;
+    }
+    return batchSize;
+  });
   const [loadedThumbnailIds, setLoadedThumbnailIds] = useState<string[]>([]);
   const videoListRef = useRef<HTMLDivElement>(null);
   const { isFavorite, toggleFavorite } = useFavorites();

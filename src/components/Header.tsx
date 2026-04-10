@@ -31,7 +31,7 @@ export const Header = () => {
             className="h-11 w-auto transition-opacity duration-200 group-hover:opacity-90"
             style={{ filter: 'drop-shadow(0 1px 4px hsl(322 40% 30% / 0.4))' }}
           />
-          <div className="hidden sm:flex flex-col leading-tight">
+          <div className="flex flex-col leading-tight">
             <span className="font-display font-semibold text-[15px] italic tracking-tight"
               style={{ color: 'hsl(20 18% 93%)', letterSpacing: '-0.01em' }}
             >

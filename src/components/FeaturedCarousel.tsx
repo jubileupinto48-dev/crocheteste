@@ -154,8 +154,12 @@ export const FeaturedCarousel = () => {
     };
   }, [api]);
 
-  const handlePlay = () => {
-    navigate('/vestidos-croche');
+  const handlePlay = (video: FeaturedVideo) => {
+    // Parse videoId: "1165908032?h=4e8257a515" → ?video=...&h=...
+    const [baseId, hashPart] = video.videoId.split('?h=');
+    const params = new URLSearchParams({ video: baseId });
+    if (hashPart) params.set('h', hashPart);
+    navigate(`/vestidos-croche?${params.toString()}`);
   };
 
   return (
@@ -180,9 +184,9 @@ export const FeaturedCarousel = () => {
         <CarouselContent className="-ml-2 md:-ml-4">
           {allModuleVideos.map((video) => (
             <CarouselItem key={video.id} className="pl-2 md:pl-4 basis-full md:basis-4/5 lg:basis-3/4">
-              <div 
+              <div
                 className="relative aspect-video rounded-2xl overflow-hidden cursor-pointer group shadow-xl"
-                onClick={() => handlePlay()}
+                onClick={() => handlePlay(video)}
               >
                 {/* Thumbnail */}
                 <img
