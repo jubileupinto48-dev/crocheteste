@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ModuleCard } from "@/components/ModuleCard";
 import certificado from "@/assets/certificado.jpg";
 import moduloCroppeds from "@/assets/modulo-croppeds-thumbnail.jpg";
-import { Copy, Check, BookOpen, MessageCircle } from "lucide-react";
+import { Copy, Check, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { useToast } from "@/hooks/use-toast";
@@ -218,15 +218,14 @@ const Index = () => {
               href="https://chat.whatsapp.com/GSRWW9KHlTYH41ZJ3D3AWt?mode=gi_t"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-base transition-all duration-200 active:scale-95"
+              className="flex items-center justify-center w-full py-4 rounded-2xl font-bold text-base transition-all duration-200 active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #25d366, #128c7e)',
                 color: 'white',
                 boxShadow: '0 4px 20px hsl(145 70% 35% / 0.35)',
               }}
             >
-              <MessageCircle className="w-6 h-6" />
-              Entrar no Grupo Exclusivo do WhatsApp 🎉
+              Entrar no Grupo Exclusivo do WhatsApp
             </a>
             <p className="text-center text-xs mt-2" style={{ color: 'hsl(330 8% 42%)' }}>
               Acesso aos bônus, novidades e suporte direto com a Josi
