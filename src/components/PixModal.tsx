@@ -151,6 +151,12 @@ export const PixModal = () => {
             </button>
           </div>
 
+          <div className="rounded-xl px-3 py-2.5 text-center" style={{ background: 'hsl(322 30% 12%)', border: '1px solid hsl(322 35% 22%)' }}>
+            <p className="text-[11px] leading-relaxed" style={{ color: 'hsl(20 10% 72%)' }}>
+              💖 Você já provou que quer aprender de verdade! Envie o comprovante e <span className="font-semibold text-white">todo o acesso é liberado na hora</span> — certificado, grupo VIP e todos os bônus. 🎀
+            </p>
+          </div>
+
           <p className="text-center text-[11px] text-muted-foreground">
             Após o pagamento, confirmação em até <span className="text-foreground font-medium">2 minutos</span>.
           </p>
