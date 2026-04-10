@@ -344,8 +344,10 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
     if (platform === "gdrive") {
       return `https://drive.google.com/file/d/${videoId}/preview`;
     }
-    const separator = videoId.includes('?') ? '&' : '?';
-    return `https://player.vimeo.com/video/${videoId}${separator}autoplay=1`;
+    const [baseId, hashPart] = videoId.split('?h=');
+    let url = `https://player.vimeo.com/video/${baseId}?autoplay=1&playsinline=1&autopause=0&transparent=0&quality=auto`;
+    if (hashPart) url += `&h=${hashPart}`;
+    return url;
   };
 
   const copyPixKey = () => {
@@ -359,10 +361,31 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
   };
 
   const [iframeLoaded, setIframeLoaded] = useState(false);
+  const [loadingTooLong, setLoadingTooLong] = useState(false);
+  const [iframeSrc, setIframeSrc] = useState("");
+  const loadTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const handlePlay = () => {
     setIsPlayingInline(true);
     setIframeLoaded(false);
+    setLoadingTooLong(false);
+    setIframeSrc(getEmbedUrl());
+    // Se demorar mais de 12s, mostra botão de retry
+    loadTimerRef.current = setTimeout(() => setLoadingTooLong(true), 12000);
+  };
+
+  const handleRetry = () => {
+    setIframeLoaded(false);
+    setLoadingTooLong(false);
+    // Força reload trocando src
+    setIframeSrc("");
+    setTimeout(() => setIframeSrc(getEmbedUrl()), 100);
+    loadTimerRef.current = setTimeout(() => setLoadingTooLong(true), 12000);
+  };
+
+  const handleIframeLoad = () => {
+    setIframeLoaded(true);
+    if (loadTimerRef.current) clearTimeout(loadTimerRef.current);
   };
 
   const handleCloseModal = () => {
@@ -378,17 +401,30 @@ export const CustomVideoPlayer = ({ videoId, title, platform = "youtube", autopl
           {!iframeLoaded && (
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black z-10">
               <div className="w-10 h-10 rounded-full border-4 border-primary/30 border-t-primary animate-spin" />
-              <p className="text-white/70 text-sm font-medium">Carregando, aguarde...</p>
+              <p className="text-white/70 text-sm font-medium">Carregando vídeo...</p>
+              {loadingTooLong && (
+                <button
+                  onClick={handleRetry}
+                  className="mt-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white"
+                  style={{ background: 'linear-gradient(135deg, hsl(322 62% 55%), hsl(280 50% 50%))' }}
+                >
+                  Tentar novamente
+                </button>
+              )}
             </div>
           )}
-          <iframe
-            src={getEmbedUrl()}
-            title={title}
-            className={`w-full h-full transition-opacity duration-300 ${iframeLoaded ? "opacity-100" : "opacity-0"}`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            onLoad={() => setIframeLoaded(true)}
-          />
+          {iframeSrc && (
+            <iframe
+              src={iframeSrc}
+              title={title}
+              className={`w-full h-full transition-opacity duration-300 ${iframeLoaded ? "opacity-100" : "opacity-0"}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              // @ts-ignore
+              playsinline="1"
+              onLoad={handleIframeLoad}
+            />
+          )}
         </div>
       </Card>
     );
