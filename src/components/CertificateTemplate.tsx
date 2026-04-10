@@ -150,14 +150,19 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
                 src="/thumbnails/assinatura.png"
                 alt="Assinatura"
                 crossOrigin="anonymous"
-                style={{ height: 64, margin: "0 auto 4px auto", objectFit: "contain" }}
+                style={{ height: 64, margin: "0 auto 12px auto", objectFit: "contain" }}
               />
               <div style={{ width: 220, height: 0, borderTop: "1.5px solid rgba(194, 24, 91, 0.55)", margin: "0 auto 8px auto" }} />
               <p className="text-pink-700 text-sm font-medium">Josi Morone</p>
               <p className="text-orange-500 text-xs">Instrutora</p>
             </div>
             <div className="text-center">
-              <div style={{ height: 68 }} />
+              <img
+                src="/thumbnails/assinatura.png"
+                alt="Assinatura"
+                crossOrigin="anonymous"
+                style={{ height: 64, margin: "0 auto 12px auto", objectFit: "contain" }}
+              />
               <div style={{ width: 220, height: 0, borderTop: "1.5px solid rgba(194, 24, 91, 0.55)", margin: "0 auto 8px auto" }} />
               <p className="text-pink-700 text-sm font-medium">Crochê da Josi</p>
               <p className="text-orange-500 text-xs">Escola de Artesanato</p>

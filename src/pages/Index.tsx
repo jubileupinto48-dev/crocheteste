@@ -26,18 +26,6 @@ const Index = () => {
     return () => clearInterval(interval);
   }, [acessoLiberado]);
 
-  useEffect(() => {
-    if (!acessoLiberado) return;
-    if (sessionStorage.getItem('boas-vindas')) return;
-    sessionStorage.setItem('boas-vindas', '1');
-    setTimeout(() => {
-      toast({
-        title: "Seja bem-vinda! 🎉",
-        description: "Obrigada pelo seu pagamento! Seu acesso vitalício está liberado. Bons estudos! 💖",
-        duration: 6000,
-      });
-    }, 800);
-  }, [acessoLiberado]);
 
   const formatTime = (s: number) => {
     const m = Math.floor(s / 60).toString().padStart(2, '0');

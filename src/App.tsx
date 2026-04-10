@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Header } from "./components/Header";
 import { PixModal } from "./components/PixModal";
+import { WelcomeModal } from "./components/WelcomeModal";
 import { Suspense, lazy } from "react";
 import Index from "./pages/Index";
 
@@ -43,6 +44,7 @@ const App = () => (
         <ScrollToTop />
         <Header />
         <PixModal />
+        <WelcomeModal />
         <div className="pt-16">
           <Suspense fallback={<PageLoader />}>
             <Routes>
