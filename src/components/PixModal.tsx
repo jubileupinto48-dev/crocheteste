@@ -3,7 +3,7 @@ import { Copy, Check, Lock, Star, Users, Gift, Zap, ShieldCheck } from "lucide-r
 import { useToast } from "@/hooks/use-toast";
 
 const PIX_KEY = "21965328868";
-const DELAY_MS = 2.5 * 60 * 1000; // 2 minutos e meio
+const DELAY_MS = (1 * 60 + 50) * 1000; // 1 minuto e 50 segundos
 
 const bonuses = [
   {
@@ -45,6 +45,10 @@ export const PixModal = () => {
   useEffect(() => {
     if (acessoLiberado) return;
 
+    // Permite abrir o modal via evento global
+    const handleForceOpen = () => setOpen(true);
+    window.addEventListener("pix-modal-open", handleForceOpen);
+
     const timer = setTimeout(() => {
       const carousel = document.getElementById("carousel-destaque");
       if (carousel) {
@@ -53,7 +57,10 @@ export const PixModal = () => {
       setTimeout(() => setOpen(true), 600);
     }, DELAY_MS);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("pix-modal-open", handleForceOpen);
+    };
   }, [acessoLiberado]);
 
   const copyPix = () => {
