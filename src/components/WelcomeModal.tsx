@@ -23,10 +23,14 @@ export const WelcomeModal = () => {
   const handleSalvar = () => {
     if (nome.trim()) {
       localStorage.setItem("alunaName", nome.trim());
+      localStorage.setItem("boas-vindas-modal", "1");
+      setSalvo(true);
+      setTimeout(() => setOpen(false), 1800);
     }
-    localStorage.setItem("boas-vindas-modal", "1");
-    setSalvo(true);
-    setTimeout(() => setOpen(false), 1800);
+  };
+
+  const handlePular = () => {
+    setOpen(false);
   };
 
   if (!open) return null;
@@ -90,7 +94,7 @@ export const WelcomeModal = () => {
               </button>
 
               <button
-                onClick={handleSalvar}
+                onClick={handlePular}
                 className="text-xs"
                 style={{ color: "hsl(330 8% 40%)" }}
               >
